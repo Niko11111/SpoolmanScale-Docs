@@ -1,0 +1,102 @@
+site_name: SpoolmanScale
+site_description: Open-source ESP32-S3 filament scale with NFC — integrates with Spoolman and FilaMan
+site_url: https://niko11111.github.io/SpoolmanScale-Docs
+repo_name: Niko11111/SpoolmanScale
+repo_url: https://github.com/Niko11111/SpoolmanScale
+edit_uri: ""
+
+theme:
+  name: material
+  palette:
+    scheme: slate
+    primary: custom
+    accent: custom
+  font:
+    text: Inter
+    code: JetBrains Mono
+  logo: assets/logo.png
+  favicon: assets/logo.png
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+    - content.code.annotate
+    - toc.integrate
+
+extra_css:
+  - assets/extra.css
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Niko11111/SpoolmanScale
+      name: GitHub
+    - icon: fontawesome/brands/discord
+      link: https://discord.gg/GzQzGa5pBG
+      name: Discord
+    - icon: simple/kofi
+      link: https://ko-fi.com/formfollowsfunction
+      name: Ko-fi
+
+copyright: Copyright &copy; 2025-2026 Nikolai Herrmann | FormFollowsFunction
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - attr_list
+  - def_list
+  - tables
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - Getting Started:
+    - Overview: getting-started/index.md
+    - Bill of Materials: getting-started/bom.md
+    - Wiring: getting-started/wiring.md
+    - Assembly: getting-started/assembly.md
+    - Flashing: getting-started/flashing.md
+    - First Setup: getting-started/first-setup.md
+  - Hardware:
+    - Overview: hardware/index.md
+    - WT32-SC01 Plus: hardware/display.md
+    - PN532 NFC Reader: hardware/nfc.md
+    - NAU7802 Load Cell ADC: hardware/nau7802.md
+    - 3D Printed Case: hardware/case.md
+  - Firmware:
+    - Overview: firmware/index.md
+    - Changelog: firmware/changelog.md
+    - OTA Update: firmware/ota.md
+    - PlatformIO Setup: firmware/platformio.md
+  - Features:
+    - Overview: features/index.md
+    - NFC Tag Reading & Writing: features/nfc.md
+    - Spoolman Integration: features/spoolman.md
+    - FilaMan Integration: features/filaman.md
+    - Weight Tracking: features/weight.md
+    - Auto Weight Update: features/auto-weight.md
+    - Drying Reminder: features/drying.md
+  - SpoolmanScale Pro:
+    - Overview: reference/pro.md
+    - Raspberry Pi Setup: reference/pi-setup.md
+    - Flask Web UI: reference/flask-ui.md
+  - Community:
+    - Discord: community/discord.md
+    - Contributing: community/contributing.md
+    - Troubleshooting: community/troubleshooting.md

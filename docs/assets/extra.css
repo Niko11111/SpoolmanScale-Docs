@@ -1,0 +1,246 @@
+/* SpoolmanScale – Custom MkDocs Material Theme */
+
+:root {
+  --md-primary-fg-color:        #28d49a;
+  --md-primary-fg-color--light: #40e0b0;
+  --md-primary-fg-color--dark:  #1aaa7a;
+  --md-accent-fg-color:         #28d49a;
+  --md-default-bg-color:        #0a1020;
+  --md-default-fg-color:        #e8f0ff;
+  --md-default-fg-color--light: #c8d8f0;
+  --md-default-fg-color--lighter: #4a6fa0;
+  --md-code-bg-color:           #0d1830;
+  --md-typeset-a-color:         #28d49a;
+}
+
+/* Hintergrund */
+.md-main {
+  background-color: #0a1020;
+}
+
+.md-content {
+  background-color: #0a1020;
+}
+
+/* Header */
+.md-header {
+  background-color: #06080f;
+  border-bottom: 1px solid #1a3060;
+}
+
+/* Navigation Sidebar */
+.md-nav__link--active,
+.md-nav__link:is(:focus, :hover) {
+  color: #28d49a;
+}
+
+/* Tabs */
+.md-tabs {
+  background-color: #06080f;
+  border-bottom: 1px solid #1a3060;
+}
+
+.md-tabs__link--active {
+  color: #28d49a;
+}
+
+/* Code Blöcke */
+.md-typeset code {
+  background-color: #0d1830;
+  color: #28d49a;
+  border-radius: 4px;
+}
+
+.md-typeset pre > code {
+  color: #c8d8f0;
+}
+
+.highlight {
+  border-left: 3px solid #28d49a;
+}
+
+/* Admonitions */
+.md-typeset .admonition,
+.md-typeset details {
+  border-color: #1a3060;
+  background-color: #0b1525;
+}
+
+.md-typeset .admonition-title,
+.md-typeset summary {
+  background-color: #0d2040;
+}
+
+.md-typeset .note > .admonition-title,
+.md-typeset .note > summary {
+  background-color: rgba(40, 212, 154, 0.1);
+}
+
+.md-typeset .note {
+  border-color: #28d49a;
+}
+
+.md-typeset .warning > .admonition-title,
+.md-typeset .warning > summary {
+  background-color: rgba(240, 184, 56, 0.1);
+}
+
+.md-typeset .warning {
+  border-color: #f0b838;
+}
+
+.md-typeset .danger > .admonition-title,
+.md-typeset .danger > summary {
+  background-color: rgba(255, 80, 80, 0.1);
+}
+
+.md-typeset .danger {
+  border-color: #ff5050;
+}
+
+/* Tabellen */
+.md-typeset table:not([class]) {
+  background-color: #0b1525;
+  border: 1px solid #1a3060;
+}
+
+.md-typeset table:not([class]) th {
+  background-color: #0d2040;
+  color: #28d49a;
+}
+
+.md-typeset table:not([class]) tr:hover {
+  background-color: #0d2040;
+}
+
+/* Hero Section (Startseite) */
+.tx-hero {
+  margin: 0;
+  padding: 4rem 1rem 3rem;
+  background: linear-gradient(135deg, #06080f 0%, #0a1020 50%, #061520 100%);
+  border-bottom: 1px solid #1a3060;
+  text-align: center;
+}
+
+.tx-hero h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #28d49a;
+  margin-bottom: 0.5rem;
+  letter-spacing: -1px;
+}
+
+.tx-hero p {
+  font-size: 1.2rem;
+  color: #c8d8f0;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+.tx-hero__badges {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.tx-hero__cta {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.tx-hero__cta a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.tx-hero__cta .primary {
+  background-color: #28d49a;
+  color: #0a1020;
+}
+
+.tx-hero__cta .primary:hover {
+  background-color: #40e0b0;
+  transform: translateY(-2px);
+}
+
+.tx-hero__cta .secondary {
+  background-color: transparent;
+  color: #28d49a;
+  border: 1px solid #28d49a;
+}
+
+.tx-hero__cta .secondary:hover {
+  background-color: rgba(40, 212, 154, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Feature Cards */
+.tx-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.tx-feature-card {
+  background-color: #0b1525;
+  border: 1px solid #1a3060;
+  border-radius: 10px;
+  padding: 1.5rem;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.tx-feature-card:hover {
+  border-color: #28d49a;
+  transform: translateY(-2px);
+}
+
+.tx-feature-card__icon {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.tx-feature-card h3 {
+  color: #e8f0ff;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+}
+
+.tx-feature-card p {
+  color: #4a6fa0;
+  font-size: 0.875rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ASCII Diagramme */
+.md-typeset pre code.language-ascii,
+.md-typeset pre code.language-text {
+  color: #8ab0d8;
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+/* Footer */
+.md-footer {
+  background-color: #06080f;
+  border-top: 1px solid #1a3060;
+}
+
+/* Search */
+.md-search__form {
+  background-color: #0d1830;
+  border: 1px solid #1a3060;
+}
