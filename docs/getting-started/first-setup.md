@@ -4,68 +4,57 @@ After flashing, SpoolmanScale walks you through a setup wizard on first boot.
 
 ---
 
-## Step 1: WiFi
+## Step 1: Language
 
-On first boot, the device opens a **WiFi setup screen**.
+Choose your language — currently **German** and **English** are supported.
+
+---
+
+## Step 2: WiFi
 
 1. Tap **Scan Networks**
 2. Select your network from the list
 3. Enter your password using the on-screen numpad
 4. Tap **Connect**
 
-The device saves your WiFi credentials and connects automatically on every boot.
-
 !!! note "2.4 GHz only"
     The ESP32-S3 supports **2.4 GHz WiFi only**. 5 GHz networks will not appear in the scan.
 
 ---
 
-## Step 2: Backend
+## Step 3: Spoolman
 
-Choose your filament management backend:
+Enter your Spoolman server address:
 
-=== "Spoolman"
-    1. Select **Spoolman** on the backend screen
-    2. Enter your Spoolman IP address (e.g. `192.168.1.100`)
-    3. Port: **7912** (default)
-    4. Tap **Test Connection**
+1. Enter the IP address of your Spoolman instance (e.g. `192.168.1.100`)
+2. Enter the port (default: **7912**)
+3. Tap **Test Connection**
 
-=== "FilaMan"
-    1. Select **FilaMan** on the backend screen
-    2. Enter your FilaMan IP and port
-    3. Tap **Test Connection**
-
-!!! tip "SpoolmanScale Pro"
-    If you have a SpoolmanScale Pro (with Raspberry Pi), the device can auto-detect and receive credentials from the Pi. See [SpoolmanScale Pro](../reference/pro.md).
+!!! note "FilaMan support — coming soon"
+    FilaMan backend selection is planned for a future firmware version.
 
 ---
 
-## Step 3: Scale Calibration
+## Step 4: Extra Fields
 
-The scale needs a known reference weight to calibrate.
+SpoolmanScale uses a custom extra field on your Spoolman spools to store the NFC tag UID. On first connect, the device checks if this field exists in your Spoolman instance and creates it automatically if not.
 
-1. Go to **Settings → Scale → Calibrate**
-2. Tap **Tare** (with nothing on the scale)
-3. Place a known weight (e.g. a full, known filament spool, or kitchen weight)
-4. Enter the weight in grams
-5. Tap **Calibrate**
-
-The calibration is saved to flash (NVS) and survives reboots and firmware updates.
-
-!!! tip "Recalibrate after relocation"
-    If you move the scale significantly, recalibrate. Temperature changes can also slightly affect readings.
+No action needed — this happens in the background.
 
 ---
 
-## Step 4: Tag your spools
+## Step 5: Scale Calibration
 
-1. Place a spool on the scale
-2. Tap the **NFC tag area** (the circular window on the enclosure) with an NTAG sticker
-3. The device shows **"No tag found"** — tap **Link Spool**
-4. Select the spool from your Spoolman/FilaMan database
-5. Tap **Write Tag** — the spool ID is written to the NFC sticker
+The scale needs a known reference weight to calibrate accurately.
 
-Next time you place this spool, it's recognized instantly.
+1. Go to **Settings → Scale → Calibration**
+2. Tap **Tare** with nothing on the scale
+3. Place a known weight — ideally ~1000 g (a full filament spool verified on a kitchen scale works well)
+4. Enter the exact weight in grams
+5. Tap **Calibrate** and save
+
+!!! tip "Better reference = better accuracy"
+    The more precise your reference weight, the more accurate your results. Recalibrate if you move the device significantly.
 
 ---
 
@@ -74,9 +63,8 @@ Next time you place this spool, it's recognized instantly.
 The main screen shows:
 
 - Filament type, vendor, color swatch
-- Remaining weight (from Spoolman/FilaMan)
-- Live scale weight
-- Difference between database and scale
+- Remaining weight from Spoolman
+- Live scale weight + difference
 - Last used / last dried dates
 
 See [Features](../features/index.md) for everything the device can do.
