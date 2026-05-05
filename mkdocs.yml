@@ -8,9 +8,20 @@ edit_uri: ""
 theme:
   name: material
   palette:
-    scheme: slate
-    primary: custom
-    accent: custom
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
   font:
     text: Inter
     code: JetBrains Mono
@@ -62,7 +73,6 @@ markdown_extensions:
   - tables
   - toc:
       permalink: true
-  - md_in_html
 
 nav:
   - Home: index.md

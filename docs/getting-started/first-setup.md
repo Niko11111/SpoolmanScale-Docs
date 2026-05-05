@@ -6,7 +6,7 @@ After flashing, SpoolmanScale walks you through a setup wizard on first boot.
 
 ## Step 1: Language
 
-Choose your language — currently **German** and **English** are supported.
+Choose your language — **English** or **German**. This can be changed later in Settings.
 
 ---
 
@@ -37,15 +37,21 @@ Enter your Spoolman server address:
 
 ## Step 4: Extra Fields
 
-SpoolmanScale uses a custom extra field on your Spoolman spools to store the NFC tag UID. On first connect, the device checks if this field exists in your Spoolman instance and creates it automatically if not.
+SpoolmanScale uses two custom extra fields in Spoolman to store NFC tag UIDs and drying dates:
 
-No action needed — this happens in the background.
+| Field | Type | Used for |
+|---|---|---|
+| `tag` | Text | NFC tag UID |
+| `last_dried` | DateTime | Last drying date |
+
+On first connect, SpoolmanScale checks if these fields already exist in your Spoolman instance. If they don't, you can let SpoolmanScale create them for you automatically.
+
+!!! tip "Troubleshooting extra fields"
+    If something doesn't work as expected, you can create a test field manually in Spoolman under **Settings → Extra Fields** to verify the connection is working correctly.
 
 ---
 
 ## Step 5: Scale Calibration
-
-The scale needs a known reference weight to calibrate accurately.
 
 1. Go to **Settings → Scale → Calibration**
 2. Tap **Tare** with nothing on the scale

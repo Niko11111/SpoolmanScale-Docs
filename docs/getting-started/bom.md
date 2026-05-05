@@ -1,68 +1,64 @@
 # Bill of Materials
 
-Everything you need to build a SpoolmanScale. Links are suggestions — equivalents work fine.
+!!! warning "Beta build guide"
+    If something is unclear or doesn't fit your hardware batch, please report it on [Discord](https://discord.gg/GzQzGa5pBG) or [MakerWorld](https://makerworld.com/de/models/2713675-spoolmanscale#profileId-3005075).
 
 ---
 
 ## Core Components
 
-| Component | Description | Where to buy |
+| Component | Model | Link |
 |---|---|---|
-| **WT32-SC01 Plus** | ESP32-S3 + 3.5" 480×320 IPS touchscreen | [AliExpress](https://aliexpress.com) · [Elecrow](https://elecrow.com) |
-| **PN532 NFC Breakout** | NFC reader, I²C mode | AliExpress · Amazon |
-| **SparkFun NAU7802** | Qwiic Scale ADC (24-bit) | [SparkFun](https://www.sparkfun.com/products/15242) · Mouser |
-| **5 kg Load Cell** | Single-point, flat type | AliExpress · Amazon |
+| MCU + Display | WT32-SC01 Plus (ESP32-S3, 480×320, ST7796) | [AliExpress](https://a.aliexpress.com/_Ey1VKfI) |
+| Debug Board (recommended) | ZXACC-ESPDB | [AliExpress](https://a.aliexpress.com/_Eu5Y0Ug) |
+| NFC Reader | PN532 | [AliExpress](https://a.aliexpress.com/_ExScN8M) |
+| Scale ADC | NAU7802 (Adafruit) | [AliExpress](https://a.aliexpress.com/_EvlFNj2) |
+| Load Cell | YZC-133 **2 kg** beam cell (5 kg works too) | [AliExpress](https://a.aliexpress.com/_EuhhVF2) |
+| Connector Cables | STEMMA QT / JST cables | [AliExpress](https://a.aliexpress.com/_Ezjg6fQ) |
+| Connector Cables (recommended) | Micro JST 1.0 SH 5-pin – easier assembly | [Amazon](https://amzn.eu/d/0aKJ4Va9) |
+| USB-C Panel Mount 90° | 30 cm, full USB-C PD + data support | [AliExpress](https://a.aliexpress.com/_EjQ6sma) |
+
+!!! tip "2 kg vs 5 kg load cell"
+    The 2 kg cell is recommended — most filament spools are well within range. A 5 kg cell works too but may be slightly less precise at low weights.
 
 ---
 
-## Enclosure & Mounting
+## Additional Materials
 
-| Component | Notes |
+- Thin stranded wire in 5 different colors (black, red, yellow, white, green — ~30–40 cm each)
+- 2× M5×25 socket head screws
+- 2× M4×15 socket head screws
+- 9× M2.5×5 self-tapping screws
+- 2–4× M2×4.4 self-tapping screws ([example](https://a.aliexpress.com/_EyCD3rS))
+
+Self-tapping screws are recommended, but standard machine screws (M2.5×5, M2×4) will likely work as well.
+
+---
+
+## 3D Printed Enclosure
+
+Download from MakerWorld:
+
+👉 [makerworld.com/@FormFollowsF](https://makerworld.com/de/models/2713675-spoolmanscale#profileId-3005075)
+
+All parts fit on 3 print plates (currently distributed across 4). TPU is recommended for the feet — they grip better. Otherwise self-adhesive silicone feet work just as well.
+
+---
+
+## Budget Estimate
+
+| Item | Approx. cost |
 |---|---|
-| **3D-printed case** | Download from [MakerWorld @FormFollowsF](https://makerworld.com) |
-| **M3×8 screws** | ~8 pcs for case assembly |
-| **M3 heat-set inserts** | For lid/base thread |
+| WT32-SC01 Plus | ~€35 |
+| PN532, NAU7802, Load Cell, Cables | ~€15–25 |
+| Screws, wire | ~€5 |
+| **Total** | **~€50–60** |
 
----
-
-## Wiring & Connectors
-
-| Component | Notes |
-|---|---|
-| **JST 1.25mm 4-pin cable** | For load cell (or solder direct) |
-| **Dupont cables (F-F)** | ~15 cm, for NFC + scale to WT32 |
-| **Thin wire** | 0.15–0.25 mm², for soldering |
-
----
-
-## Tools
-
-| Tool | Notes |
-|---|---|
-| Soldering iron | Fine tip recommended |
-| Multimeter | For continuity check after wiring |
-| USB-C cable | Data-capable — for flashing |
-| 3D printer | PLA or PETG, 0.2 mm layer height |
-
----
-
-## Optional (SpoolmanScale Pro)
-
-| Component | Notes |
-|---|---|
-| **Raspberry Pi Zero 2W** | For local Spoolman / FilaMan server |
-| **microSD card** | 16 GB+ for Pi OS |
-| **Pi Zero USB adapter** | OTG or hub for Pi access |
-
-See [SpoolmanScale Pro](../reference/pro.md) for details.
-
----
-
-!!! tip "Budget estimate"
-    Core build: approx. **€35–50** depending on shipping and where you order. The WT32-SC01 Plus is the biggest cost at ~€20–25.
+!!! note "Shipping time"
+    Most parts ship from China. Expect **6–15 days** delivery depending on your location and shipping option.
 
 ---
 
 ## Next Step
 
-➡️ [Wiring Guide](wiring.md)
+➡️ [Wiring](wiring.md)

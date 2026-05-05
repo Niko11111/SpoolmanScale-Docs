@@ -14,7 +14,7 @@ Download the printable enclosure from MakerWorld:
 All parts fit on 3 print plates (currently distributed across 4). TPU is recommended for the feet — they grip better. Otherwise self-adhesive silicone feet work just as well.
 
 !!! note "Display fit"
-    Display dimensions can vary slightly between batches. If the enclosure is too tight or too loose, please report it on Discord.
+    Display dimensions can vary slightly between batches. If the enclosure is too tight or too loose, please report it on Discord or leave a comment on MakerWorld.
 
 ---
 

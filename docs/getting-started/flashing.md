@@ -1,12 +1,10 @@
 # Flashing the Firmware
 
-SpoolmanScale firmware can be flashed three ways. The **Web Flasher** is the easiest — no software needed.
-
 ---
 
-## Option A: Web Flasher (recommended)
+## First-time Flash — Web Flasher
 
-The easiest way. Works in any Chrome-based browser (Chrome, Edge, Brave).
+The Web Flasher is required for the very first flash. It works in any Chrome-based browser (Chrome, Edge, Brave) — no software installation needed.
 
 1. Connect your WT32-SC01 Plus to your PC via USB-C (data-capable cable!)
 2. Open **[niko11111.github.io/SpoolmanScale](https://niko11111.github.io/SpoolmanScale)**
@@ -22,31 +20,26 @@ The easiest way. Works in any Chrome-based browser (Chrome, Edge, Brave).
 
 ---
 
-## Option B: OTA Update (existing devices)
+## Firmware Updates — OTA (existing devices)
 
-If you already have SpoolmanScale v0.4.0 or later installed, you can update wirelessly:
+Once SpoolmanScale is running, all future updates happen directly on the device — no PC or cable needed.
 
-1. Go to the **Settings → System** menu on the device
+
+**Manual update:**
+
+1. Go to **Settings → System → Firmware → Update via GitHub**
 2. Tap **Check for Updates**
 3. If an update is available, tap **Install**
 
 The device downloads and installs the firmware automatically, then reboots.
 
-See [OTA Update](../firmware/ota.md) for details.
+**Manual file upload:**
 
----
+If OTA fails or you want to install a specific version:
 
-## Option C: USB via PlatformIO (developers)
-
-For developers who want to build from source:
-
-```bash
-git clone https://github.com/Niko11111/SpoolmanScale.git
-cd SpoolmanScale
-pio run --target upload
-```
-
-See [PlatformIO Setup](../firmware/platformio.md) for the full development setup.
+1. Download the `.bin` file from [GitHub Releases](https://github.com/Niko11111/SpoolmanScale/releases)
+2. Go to **Settings → System → Firmware → Upload via web browser**
+3. Select the file from any browser — PC or smartphone
 
 ---
 
@@ -57,7 +50,6 @@ See [PlatformIO Setup](../firmware/platformio.md) for the full development setup
 | Device not detected | Use a data-capable USB-C cable; try a different port |
 | Flash fails halfway | Hold BOOT button on device while connecting, then flash |
 | Device reboots but shows nothing | Check display connection on WT32-SC01 Plus |
-| Wrong firmware / bricked | Hold BOOT + press EN to enter download mode, re-flash |
 
 ---
 

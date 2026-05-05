@@ -1,6 +1,8 @@
-# SpoolmanScale
 
 <div class="tx-hero">
+  <div align="center">
+  <img src="assets/images/logo_trans_4.png" width="200"/>
+  </div>
   <h1>SpoolmanScale</h1>
   <p>Open-source ESP32-S3 filament scale with NFC — integrates with Spoolman and FilaMan. No cloud. No subscription. Just works.</p>
 
