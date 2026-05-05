@@ -1,0 +1,27 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Serve Docs locally",
+      "type": "shell",
+      "command": "python3 -m mkdocs serve",
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Deploy Docs (push to GitHub)",
+      "type": "shell",
+      "command": "git add . && git commit -m 'Update docs' && git push",
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "problemMatcher": []
+    }
+  ]
+}

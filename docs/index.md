@@ -16,6 +16,11 @@
   </div>
 </div>
 
+<div class="tx-product-photos">
+  <img src="assets/images/product_3.jpeg" alt="SpoolmanScale" />
+  <img src="assets/images/product_4.jpeg" alt="SpoolmanScale" />
+</div>
+
 ---
 
 ## What is SpoolmanScale?
@@ -64,7 +69,7 @@ SpoolmanScale is a standalone, self-contained filament scale for 3D printing. Pl
 | Microcontroller | ESP32-S3 (WT32-SC01 Plus) |
 | Display | 3.5" IPS 480×320, Capacitive Touch |
 | NFC Reader | PN532 (I²C) |
-| Scale ADC | SparkFun NAU7802 (I²C) |
+| Scale ADC | NAU7802 (I²C) |
 | Load Cell | 5 kg single-point |
 | Enclosure | Custom 3D-printed (MakerWorld) |
 
@@ -89,7 +94,7 @@ SpoolmanScale is a standalone, self-contained filament scale for 3D printing. Pl
 
 ## Community
 
-SpoolmanScale is open-source and community-driven. 
+SpoolmanScale is open-source and community-driven.
 
 - **Discord** — [discord.gg/GzQzGa5pBG](https://discord.gg/GzQzGa5pBG)
 - **GitHub** — [github.com/Niko11111/SpoolmanScale](https://github.com/Niko11111/SpoolmanScale)

@@ -244,3 +244,21 @@
   background-color: #0d1830;
   border: 1px solid #1a3060;
 }
+
+/* Produktfotos Startseite */
+.tx-product-photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 2rem 0;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.tx-product-photos img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid #1a3060;
+}

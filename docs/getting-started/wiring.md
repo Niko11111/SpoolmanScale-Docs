@@ -9,6 +9,15 @@ The PN532 and NAU7802 share the same I²C bus (SDA/SCL) and are wired **in paral
 
 ---
 
+<div style="position: relative; width: 100%; padding-top: calc(max(56.25%, 400px));">
+  <iframe src="https://app.cirkitdesigner.com/project/680d6e91-778a-40bd-a907-62be13f7a97b?view=interactive_preview" 
+          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;">
+  </iframe>
+</div>
+<p>Edit this project interactively in <a href="https://app.cirkitdesigner.com/project/680d6e91-778a-40bd-a907-62be13f7a97b" target="_blank">Cirkit Designer</a>.</p>
+
+---
+
 ## WT32-SC01 Plus I/O Connector
 
 | Pin | Color | Signal | Connects to |
@@ -29,8 +38,8 @@ The PN532 and NAU7802 share the same I²C bus (SDA/SCL) and are wired **in paral
   │ 1 │ 2 │ 3 │ 4 │ 5 │ 6 │ 7 │ 8 │
   │5V │GND│SDA│SCL│ - │ - │RST│   │
   └───┴───┴───┴───┴───┴───┴───┴───┘
-    │   │   │   │               │
-    │   │   │   │               └── PN532 RST
+    │   │   │   │           │
+    │   │   │   │           └── PN532 RST
     │   │   └───┴── PN532 SDA + NAU7802 SDA (parallel)
     │   │       └── PN532 SCL + NAU7802 SCL (parallel)
     │   └────────── PN532 GND + NAU7802 GND
@@ -164,6 +173,13 @@ The safest option is soldering directly to the labeled pads on the NAU7802 (VIN,
 ```
 
 ---
+
+## Wiring Photos:
+
+![Step 1](../assets/images/assembly_1.jpeg)
+![Step 2](../assets/images/assembly_2.jpeg)
+![Step 3](../assets/images/assembly_3.jpeg)
+![Step 4](../assets/images/assembly_4.jpeg)
 
 ## Next Step
 
