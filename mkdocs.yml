@@ -87,6 +87,7 @@ nav:
     - Overview: hardware/index.md
     - WT32-SC01 Plus: hardware/display.md
     - PN532 NFC Reader: hardware/nfc.md
+    - NFC Tag Compatibility: hardware/nfc-tags.md
     - NAU7802 Load Cell ADC: hardware/nau7802.md
     - 3D Printed Case: hardware/case.md
   - Firmware:

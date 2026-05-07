@@ -33,7 +33,8 @@ Common problems and how to fix them.
 
 ??? question "NFC tag not recognized"
     - Hold the spool steady directly over the NFC window
-    - Try a different NTAG sticker — some cheap stickers have defects
+    - Try a different [NTAG](../hardware/nfc-tags.md) sticker — some cheap stickers have defects
+    - Not sure if your tag is compatible? See the [NFC Tag Compatibility Guide](../hardware/nfc-tags.md)
 
 ---
 
