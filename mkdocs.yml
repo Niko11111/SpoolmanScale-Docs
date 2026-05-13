@@ -40,6 +40,9 @@ theme:
 extra_css:
   - assets/extra.css
 
+extra_javascript:
+  - assets/lightbox.js
+
 extra:
   social:
     - icon: fontawesome/brands/github
