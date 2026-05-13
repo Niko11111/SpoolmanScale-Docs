@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+function initLightbox() {
   // Lightbox erstellen
   const lightbox = document.createElement("div");
   lightbox.className = "ssc-lightbox";
@@ -21,21 +21,26 @@ document.addEventListener("DOMContentLoaded", function () {
     lbImg.src = "";
   }
 
-  // Alle Tabellenbilder klickbar machen
   document.querySelectorAll(".md-typeset table img").forEach(function (img) {
+    img.style.cursor = "zoom-in";
     img.addEventListener("click", function () {
       openLightbox(img.src, img.alt);
     });
   });
 
-  // Schließen per Klick auf Hintergrund oder X
   lightbox.addEventListener("click", function (e) {
     if (e.target === lightbox) closeLightbox();
   });
   lbClose.addEventListener("click", closeLightbox);
 
-  // Schließen per ESC
   document.addEventListener("keydown", function (e) {
     if (e.key === "Escape") closeLightbox();
   });
-});
+}
+
+// Safari-kompatibel: alle Zustände abdecken
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initLightbox);
+} else {
+  initLightbox();
+}
