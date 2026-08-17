@@ -79,9 +79,29 @@ The firmware will not crash or freeze. Unknown tags are silently ignored.
 
 ---
 
+## Tag Positioning — Closer Is Not Better
+
+This is the most common cause of unreliable NTAG reads, and it is the opposite of what most people expect: a tag pressed directly against the reader often reads **worse** than one a few millimetres away.
+
+The reader antenna and the tag form a loosely coupled transformer. At very close range the coupling becomes so strong that the tag's load is reflected back onto the reader's resonant circuit and detunes it away from 13.56 MHz. The field collapses, and at the same time the tag's response becomes small relative to the carrier, so the reader struggles to decode it. The result is a dead zone right at the antenna surface, with reliable reading starting a little further out.
+
+!!! tip "If a tag reads badly, add distance before replacing it"
+    A gap of roughly **5 to 20 mm** is the sweet spot for most sticker tags. A few layers of foam tape or a small printed spacer under the tag is usually all it takes. Some users have needed as much as 20 mm.
+
+A few practical points:
+
+- Do not stick the tag where it will end up flush against the reader surface.
+- Larger tags tolerate closer placement than small ones — a 25 mm sticker behaves differently from a 15 mm one.
+- Do not stick the tag onto metal or over a metal spool insert, which detunes the tag itself.
+- The reader position is fixed by the case and a spool can only shift about 10 mm on the weighing plate, so the distance has to come from the tag side.
+
+**Why Bambu Lab spools rarely show this:** their tag sits recessed inside the spool core and naturally keeps a few millimetres of distance. A sticker glued to the outside of a third-party spool does not. This is a large part of why NTAG has a reputation for being the less reliable of the two, when the real difference is often just mounting.
+
+---
+
 ## Known Limitation — Auto Location Popup
 
-NTAG tags use a more complex RF protocol than Bambu Lab's MIFARE Classic tags. The PN532 may intermittently fail to detect an NTAG tag even when the spool hasn't moved, briefly interpreting it as removed and then re-detected.
+NTAG tags use a more complex RF protocol than Bambu Lab's MIFARE Classic tags. The PN532 may intermittently fail to detect an NTAG tag even when the spool hasn't moved, briefly interpreting it as removed and then re-detected. If you see this often, check the positioning guidance above first — too little distance is a more frequent cause than too much.
 
 Under normal operation this has no visible effect. **The one exception is the Auto Location Popup feature** — a spurious removal event can trigger the location picker even though the spool is still on the reader.
 
