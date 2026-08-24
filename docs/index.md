@@ -9,7 +9,7 @@
   <div class="tx-hero__badges">
     <img src="https://img.shields.io/github/v/release/Niko11111/SpoolmanScale?label=Firmware&color=28d49a&style=flat-square" alt="Version">
     <img src="https://img.shields.io/github/license/Niko11111/SpoolmanScale?color=28d49a&style=flat-square" alt="License">
-    <img src="https://img.shields.io/discord/1488259904929140846?label=Discord&color=5865F2&style=flat-square" alt="Discord">
+    <img src="https://img.shields.io/badge/Discord-Join-5865F2?style=flat-square&logo=discord&logoColor=white" alt="Discord">
   </div>
 
   <div class="tx-hero__cta">
