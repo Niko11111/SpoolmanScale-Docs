@@ -85,4 +85,4 @@ Common problems and how to fix them.
 ---
 
 !!! tip "Still stuck?"
-    Join the [Discord](https://discord.gg/GzQzGa5pBG) — the community is happy to help.
+    Join the [Discord](https://discord.gg/TQvdxGuFcq) — the community is happy to help.

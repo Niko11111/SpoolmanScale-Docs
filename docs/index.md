@@ -9,7 +9,7 @@
   <div class="tx-hero__badges">
     <img src="https://img.shields.io/github/v/release/Niko11111/SpoolmanScale?label=Firmware&color=28d49a&style=flat-square" alt="Version">
     <img src="https://img.shields.io/github/license/Niko11111/SpoolmanScale?color=28d49a&style=flat-square" alt="License">
-    <img src="https://img.shields.io/discord/1234567890?label=Discord&color=5865F2&style=flat-square" alt="Discord">
+    <img src="https://img.shields.io/discord/1488259904929140846?label=Discord&color=5865F2&style=flat-square" alt="Discord">
   </div>
 
   <div class="tx-hero__cta">
@@ -98,7 +98,7 @@ SpoolmanScale is a standalone, self-contained filament scale for 3D printing. Pl
 
 SpoolmanScale is open-source and community-driven.
 
-- **Discord** — [discord.gg/GzQzGa5pBG](https://discord.gg/GzQzGa5pBG)
+- **Discord** — [discord.gg/TQvdxGuFcq](https://discord.gg/TQvdxGuFcq)
 - **GitHub** — [github.com/Niko11111/SpoolmanScale](https://github.com/Niko11111/SpoolmanScale)
 - **MakerWorld** — 3D models [@FormFollowsF](https://makerworld.com)
 - **Ko-fi** — [Support the project](https://ko-fi.com/formfollowsfunction)

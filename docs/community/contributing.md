@@ -7,7 +7,7 @@ SpoolmanScale is open-source and contributions are welcome — whether it's code
 ## Ways to Contribute
 
 - **Bug reports** — open an [issue on GitHub](https://github.com/Niko11111/SpoolmanScale/issues)
-- **Feature requests** — open an issue or discuss on [Discord](https://discord.gg/GzQzGa5pBG)
+- **Feature requests** — open an issue or discuss on [Discord](https://discord.gg/TQvdxGuFcq)
 - **Code** — open a Pull Request
 - **Documentation** — fix errors or add missing content in the [Docs repo](https://github.com/Niko11111/SpoolmanScale-Docs)
 - **Testing** — try beta firmware and report findings on Discord

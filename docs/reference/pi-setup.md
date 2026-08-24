@@ -1,6 +1,6 @@
 # Pi Setup
 
-This guide walks you through setting up the SpoolmanScale Pro Pi stack from scratch. If you're not comfortable with the terminal, join the [Discord](https://discord.gg/GzQzGa5pBG) — the community is happy to help.
+This guide walks you through setting up the SpoolmanScale Pro Pi stack from scratch. If you're not comfortable with the terminal, join the [Discord](https://discord.gg/TQvdxGuFcq) — the community is happy to help.
 
 !!! note "For makers"
     This guide is for people who want to build and set up the Pro stack themselves. A pre-built version may become available in the future.

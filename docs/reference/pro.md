@@ -63,7 +63,7 @@ You can switch at any time from the web UI — no reinstall needed.
 
 ## Interested in a pre-built version?
 
-Not ready to build it yourself? Leave a comment on [MakerWorld](https://makerworld.com/de/models/2713675-spoolmanscale) or join the [Discord](https://discord.gg/GzQzGa5pBG) — if there's enough interest, a pre-built Pro version may become available.
+Not ready to build it yourself? Leave a comment on [MakerWorld](https://makerworld.com/de/models/2713675-spoolmanscale) or join the [Discord](https://discord.gg/TQvdxGuFcq) — if there's enough interest, a pre-built Pro version may become available.
 
 ---
 

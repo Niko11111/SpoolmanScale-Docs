@@ -1,7 +1,7 @@
 # Assembly
 
 !!! warning "Beta build guide"
-    If something is unclear or doesn't fit your hardware batch, please report it on [Discord](https://discord.gg/GzQzGa5pBG) or [MakerWorld](https://makerworld.com/de/models/2713675-spoolmanscale#profileId-3005075).
+    If something is unclear or doesn't fit your hardware batch, please report it on [Discord](https://discord.gg/TQvdxGuFcq) or [MakerWorld](https://makerworld.com/de/models/2713675-spoolmanscale#profileId-3005075).
 
 ---
 
