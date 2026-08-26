@@ -26,9 +26,9 @@ The PN532 and NAU7802 share the same I²C bus (SDA/SCL) and are wired **in paral
 | **2** | Black | GND | PN532 GND + NAU7802 GND |
 | **3** | Yellow | GPIO10 (SDA) | PN532 SDA + NAU7802 SDA |
 | **4** | Green | GPIO11 (SCL) | PN532 SCL + NAU7802 SCL |
-| **5** | Blue | — | unused |
-| **6** | White | — | unused |
-| **7** | Brown | GPIO12 (RST) | PN532 RST |
+| **5** | Blue | GPIO12 (RST) | PN532 RST |
+| **6** | White | GPIO13 | unused |
+| **7** | Brown | GPIO14 | unused |
 
 ### ASCII — I/O Connector Overview
 
@@ -36,10 +36,10 @@ The PN532 and NAU7802 share the same I²C bus (SDA/SCL) and are wired **in paral
   WT32-SC01 Plus I/O Connector (8-pin, use pins 1-7)
   ┌───┬───┬───┬───┬───┬───┬───┬───┐
   │ 1 │ 2 │ 3 │ 4 │ 5 │ 6 │ 7 │ 8 │
-  │5V │GND│SDA│SCL│ - │ - │RST│   │
+  │5V │GND│SDA│SCL│RST│ - │ - │   │
   └───┴───┴───┴───┴───┴───┴───┴───┘
-    │   │   │   │           │
-    │   │   │   │           └── PN532 RST
+    │   │   │   │   │
+    │   │   │   │   └── PN532 RST
     │   │   └───┴── PN532 SDA + NAU7802 SDA (parallel)
     │   │       └── PN532 SCL + NAU7802 SCL (parallel)
     │   └────────── PN532 GND + NAU7802 GND
@@ -74,7 +74,7 @@ The PN532 has no connector — **wires must be soldered directly**.
 | 2 | Red | 5V | Pin 1 (Red) |
 | 3 | Yellow | SDA | Pin 3 (Yellow) |
 | 4 | White | SCL | Pin 4 (Green) |
-| 5 | Orange | RST | Pin 7 (Brown) |
+| 5 | Orange | RST | Pin 5 (Blue) |
 
 ### ASCII — PN532 to WT32
 
@@ -86,7 +86,7 @@ The PN532 has no connector — **wires must be soldered directly**.
   │  VCC  ───┼── Red ───────────── │── Pin 1  (5V)        │
   │  SDA  ───┼── Yellow ────────── │── Pin 3  (GPIO10)    │
   │  SCL  ───┼── White ─────────── │── Pin 4  (GPIO11)    │
-  │  RST  ───┼── Orange ────────── │── Pin 7  (GPIO12)    │
+  │  RST  ───┼── Orange ────────── │── Pin 5  (GPIO12)    │
   └──────────┘                     └──────────────────────┘
 ```
 
@@ -160,7 +160,7 @@ The safest option is soldering directly to the labeled pads on the NAU7802 (VIN,
   │                     └─────────────────── NAU7802 SDA
   │ Pin 4 (SCL)  ───────┬─────────────────── PN532 SCL
   │                     └─────────────────── NAU7802 SCL
-  │ Pin 7 (RST)  ─────────────────────────── PN532 RST
+  │ Pin 5 (RST)  ─────────────────────────── PN532 RST
   └─────────────────────────────────────────┘
 
                                 NAU7802 Screw Terminals

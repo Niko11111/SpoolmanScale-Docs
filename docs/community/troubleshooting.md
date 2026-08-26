@@ -12,6 +12,28 @@ Common problems and how to fix them.
     - If values are negative, swap A+ and A-
     - Recalibrate via **Settings → Scale → Calibration**
 
+??? question "Scale shows an absurd number, e.g. -3487423847234 g"
+    That number is not a measurement. When the I²C bus is broken, every register
+    read comes back as all ones, which the firmware reads as "conversion ready"
+    plus a sample of -1. Fix the bus first, the number follows.
+
+    - Open the serial monitor at 115200 baud and look at the boot line
+      `I2C_EXT scan:` - it lists every address that answers. Expected:
+      `0x24 PN532, 0x2A NAU7802`
+    - Repeated `[E][Wire.cpp:499] ... returned Error -1` means "no device
+      acknowledged". That is a wiring fault, not an address conflict: 0x24 and
+      0x2A cannot collide, and the touch controller sits on a separate bus
+    - Check the solder joints **while the plug is seated**. A cold joint measures
+      fine on the bench and opens under strain
+    - SDA (Pin 3) and SCL (Pin 4) not swapped, GND (Pin 2) continuous
+
+??? question "Weight is still wrong after fixing the wiring"
+    A calibration taken while the bus was broken is stored in the device and
+    survives the repair.
+
+    - **Settings → Scale → Reset calibration**, then TARE and calibrate again
+      with a reference weight
+
 ??? question "Scale weight is inaccurate"
     - Recalibrate with a precise reference weight (~1000 g recommended)
     - Make sure nothing touches the weighing platform during tare
@@ -28,7 +50,7 @@ Common problems and how to fix them.
 ??? question "NFC reader not detected on boot"
     - Does the **LED on the PN532** light up? If not, check power — 5V on Pin 1 of the WT32 I/O connector
     - Check PN532 jumpers — must be set to I²C mode
-    - Verify wiring: SDA → Pin 3, SCL → Pin 4, RST → Pin 7
+    - Verify wiring: SDA → Pin 3, SCL → Pin 4, RST → Pin 5
     - Do not connect PN532 via NAU7802 STEMMA QT passthrough (only 3.3V)
 
 ??? question "NFC tag not recognized"
