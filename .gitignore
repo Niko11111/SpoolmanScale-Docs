@@ -1,0 +1,4 @@
+# macOS drops .DS_Store into any folder opened in Finder. Three of them had
+# been committed before this rule existed. Global rather than per folder: the
+# next one appears in whichever directory gets opened next.
+**/.DS_Store
