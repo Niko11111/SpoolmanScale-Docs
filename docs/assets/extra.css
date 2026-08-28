@@ -388,6 +388,61 @@
   opacity: 0.85;
 }
 
+/* Backend-Logos */
+.md-typeset .backend-logos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin: 1.5rem 0 2rem;
+}
+
+/* The three logos are drawn for light backgrounds - BamBuddy's wordmark is
+   near-black and disappears in dark mode - so they sit on their own plate
+   rather than on the page. object-fit keeps three very different aspect
+   ratios reading as one row. */
+.md-typeset .backend-logos img {
+  height: 44px;
+  width: 128px;
+  object-fit: contain;
+  margin: 0;
+  padding: 6px 10px;
+  background: #fff;
+  border-radius: 8px;
+}
+
+.md-typeset img.backend-logo {
+  height: 36px;
+  width: 108px;
+  object-fit: contain;
+  object-position: left center;
+  display: block;
+  margin: 0 0 1rem;
+  padding: 5px 8px;
+  background: #fff;
+  border-radius: 8px;
+}
+
+/* UI-Screenshots aus dem Simulator */
+.md-typeset p > img[src*="/ui/"],
+.md-typeset .tabbed-content img[src*="/ui/"] {
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  display: block;
+  margin: 1.2rem auto;
+  border-radius: 10px;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  cursor: zoom-in;
+  transition: opacity 0.2s;
+}
+
+.md-typeset p > img[src*="/ui/"]:hover,
+.md-typeset .tabbed-content img[src*="/ui/"]:hover {
+  opacity: 0.85;
+}
+
 /* Lightbox */
 .ssc-lightbox {
   display: none;

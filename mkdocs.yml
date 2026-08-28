@@ -1,5 +1,5 @@
 site_name: SpoolmanScale
-site_description: Open-source ESP32-S3 filament scale with NFC — integrates with Spoolman and FilaMan
+site_description: Open-source ESP32-S3 filament scale with NFC - talks to Spoolman, FilaMan and BamBuddy
 site_url: https://niko11111.github.io/SpoolmanScale-Docs
 repo_name: Niko11111/SpoolmanScale
 repo_url: https://github.com/Niko11111/SpoolmanScale
@@ -28,14 +28,20 @@ theme:
   logo: assets/logo.png
   favicon: assets/logo.png
   features:
+    # Four tabs across the top, the section index is the tab itself - which is
+    # what removes the old "Overview" pages that only relisted the sidebar.
     - navigation.tabs
-    - navigation.expand
-    - navigation.path
+    - navigation.indexes
     - navigation.top
+    - navigation.tracking
+    - navigation.footer
+    - toc.follow
     - search.highlight
     - search.suggest
     - content.code.copy
     - content.code.annotate
+    # Picking "Spoolman" or "FilaMan" on one page picks it on every page.
+    - content.tabs.link
 
 extra_css:
   - assets/extra.css
@@ -49,7 +55,7 @@ extra:
       link: https://github.com/Niko11111/SpoolmanScale
       name: GitHub
     - icon: fontawesome/brands/discord
-      link: https://discord.gg/TQvdxGuFcq
+      link: https://discord.gg/xadskCrPFu
       name: Discord
     - icon: simple/kofi
       link: https://ko-fi.com/formfollowsfunction
@@ -59,6 +65,76 @@ copyright: Copyright &copy; 2025-2026 Nikolai Herrmann | FormFollowsFunction
 
 plugins:
   - search
+  - redirects:
+      redirect_maps:
+        # The old six-tab tree. These paths are linked from MakerWorld, Discord
+        # and the GitHub README, so they have to keep working.
+        getting-started/index.md: build/index.md
+        getting-started/bom.md: build/bom.md
+        getting-started/wiring.md: build/wiring.md
+        getting-started/assembly.md: build/assembly.md
+        getting-started/flashing.md: use/index.md
+        getting-started/first-setup.md: use/index.md
+        hardware/index.md: build/parts.md
+        hardware/display.md: build/parts.md
+        hardware/nfc.md: build/parts.md
+        hardware/nau7802.md: build/parts.md
+        hardware/nfc-tags.md: use/tags.md
+        hardware/case.md: build/case.md
+        firmware/index.md: use/updating.md
+        firmware/ota.md: use/updating.md
+        firmware/changelog.md: use/updating.md
+        firmware/platformio.md: help/contributing.md
+        features/index.md: use/index.md
+        features/nfc.md: use/tags.md
+        features/spoolman.md: use/backends.md
+        features/filaman.md: use/backends.md
+        features/weight.md: use/weighing.md
+        features/auto-weight.md: use/weighing.md
+        features/drying.md: use/drying.md
+        reference/pro.md: pro/index.md
+        reference/pi-setup.md: pro/pi-setup.md
+        reference/flask-ui.md: pro/web-ui.md
+        community/discord.md: help/contributing.md
+        community/contributing.md: help/contributing.md
+        community/troubleshooting.md: help/troubleshooting.md
+  # Suffix structure: wiring.md next to wiring.de.md. A page without a German
+  # file falls back to English rather than 404ing, so this stays rollout-safe.
+  - i18n:
+      docs_structure: suffix
+      fallback_to_default: true
+      languages:
+        - locale: en
+          default: true
+          name: English
+          build: true
+        - locale: de
+          name: Deutsch
+          build: true
+          nav_translations:
+            Build: Bauen
+            Bill of materials: Stückliste
+            Wiring: Verkabelung
+            Assembly: Zusammenbau
+            Printing the case: Gehäuse drucken
+            The parts in detail: Die Bauteile im Detail
+            Use: Benutzen
+            Flashing & first setup: Flashen & Ersteinrichtung
+            The main screen: Der Hauptbildschirm
+            Backends: Backends
+            NFC tags: NFC-Tags
+            Weighing & calibration: Wiegen & Kalibrieren
+            Drying & location: Trocknung & Lagerort
+            The web interface: Web-Interface
+            Updating the firmware: Firmware aktualisieren
+            Pro: Pro
+            Raspberry Pi setup: Raspberry Pi einrichten
+            Pro web UI: Pro Web-UI
+            Help: Hilfe
+            What the scale is telling you: Was die Waage dir sagt
+            Troubleshooting: Troubleshooting
+            FAQ: FAQ
+            Contributing & Discord: Mitmachen & Discord
 
 markdown_extensions:
   - admonition
@@ -72,45 +148,38 @@ markdown_extensions:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - attr_list
+  - md_in_html
   - def_list
   - tables
   - toc:
       permalink: true
+      # H3 only clutters the right rail on the wiring and tag pages.
+      toc_depth: 2
 
 nav:
   - Home: index.md
-  - Getting Started:
-    - Overview: getting-started/index.md
-    - Bill of Materials: getting-started/bom.md
-    - Wiring: getting-started/wiring.md
-    - Assembly: getting-started/assembly.md
-    - Flashing: getting-started/flashing.md
-    - First Setup: getting-started/first-setup.md
-  - Hardware:
-    - Overview: hardware/index.md
-    - WT32-SC01 Plus: hardware/display.md
-    - PN532 NFC Reader: hardware/nfc.md
-    - NFC Tag Compatibility: hardware/nfc-tags.md
-    - NAU7802 Load Cell ADC: hardware/nau7802.md
-    - 3D Printed Case: hardware/case.md
-  - Firmware:
-    - Overview: firmware/index.md
-    - Changelog: firmware/changelog.md
-    - OTA Update: firmware/ota.md
-    - PlatformIO Setup: firmware/platformio.md
-  - Features:
-    - Overview: features/index.md
-    - NFC Tag Reading & Writing: features/nfc.md
-    - Spoolman Integration: features/spoolman.md
-    - FilaMan Integration: features/filaman.md
-    - Weight Tracking: features/weight.md
-    - Auto Weight Update: features/auto-weight.md
-    - Drying Reminder: features/drying.md
-  - SpoolmanScale Pro:
-    - Overview: reference/pro.md
-    - Raspberry Pi Setup: reference/pi-setup.md
-    - Flask Web UI: reference/flask-ui.md
-  - Community:
-    - Discord: community/discord.md
-    - Contributing: community/contributing.md
-    - Troubleshooting: community/troubleshooting.md
+  - Build:
+    - build/index.md
+    - Bill of materials: build/bom.md
+    - Wiring: build/wiring.md
+    - Assembly: build/assembly.md
+    - Printing the case: build/case.md
+    - The parts in detail: build/parts.md
+  - Use:
+    - use/index.md
+    - The main screen: use/main-screen.md
+    - Backends: use/backends.md
+    - NFC tags: use/tags.md
+    - Weighing & calibration: use/weighing.md
+    - Drying & location: use/drying.md
+    - The web interface: use/web.md
+    - Updating the firmware: use/updating.md
+  - Pro:
+    - pro/index.md
+    - Raspberry Pi setup: pro/pi-setup.md
+    - Pro web UI: pro/web-ui.md
+  - Help:
+    - help/index.md
+    - Troubleshooting: help/troubleshooting.md
+    - FAQ: help/faq.md
+    - Contributing & Discord: help/contributing.md

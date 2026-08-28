@@ -21,7 +21,17 @@ function initLightbox() {
     lbImg.src = "";
   }
 
-  document.querySelectorAll(".md-typeset table img").forEach(function (img) {
+  // Table thumbnails (the BOM) plus every content image - the UI screenshots
+  // are 1440x960 and unreadable at page width without this. The logo, the
+  // badges and anything already wrapped in a link are left alone.
+  var selector = [
+    ".md-typeset table img",
+    ".md-typeset p > img",
+    ".md-typeset .tabbed-content img"
+  ].join(", ");
+
+  document.querySelectorAll(selector).forEach(function (img) {
+    if (img.closest("a")) return;
     img.style.cursor = "zoom-in";
     img.addEventListener("click", function () {
       openLightbox(img.src, img.alt);
