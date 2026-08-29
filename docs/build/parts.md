@@ -10,7 +10,7 @@ What each module does and the numbers you need when something misbehaves.
 │      │                                    │
 │      │ I2C  (SDA GPIO10, SCL GPIO11)      │
 │      ├─────────────── PN532 NFC Reader    │
-│      │                (RST GPIO12)        │
+│      │                                    │
 │      └─────────────── NAU7802 ADC         │
 │                            │              │
 │                        Load Cell          │
@@ -48,7 +48,7 @@ Reads and, since v0.7.0, writes NFC tags.
 | I2C address | `0x24` |
 | Frequency | 13.56 MHz |
 | Protocol | ISO 14443A |
-| Pins | SDA `GPIO10`, SCL `GPIO11`, RST `GPIO12` (connector pin 5, blue) |
+| Pins | SDA `GPIO10`, SCL `GPIO11`, RST `GPIO14` (pin 7, brown) - see [Wiring](wiring.md) |
 
 !!! danger "Set the DIP switches before you solder"
     The PN532 has to be in **I2C mode**: **SW1 = ON**, **SW2 = OFF**. In HSU or

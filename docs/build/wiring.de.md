@@ -21,9 +21,9 @@ PN532 und NAU7802 teilen sich denselben I²C-Bus (SDA/SCL) und werden
 | **2** | Schwarz | GND | PN532 GND + NAU7802 GND |
 | **3** | Gelb | GPIO10 (SDA) | PN532 SDA + NAU7802 SDA |
 | **4** | Grün | GPIO11 (SCL) | PN532 SCL + NAU7802 SCL |
-| **5** | Blau | GPIO12 (RST) | PN532 RST |
+| **5** | Blau | GPIO12 | unbenutzt |
 | **6** | Weiß | GPIO13 | unbenutzt |
-| **7** | Braun | GPIO14 | unbenutzt |
+| **7** | Braun | GPIO14 | PN532 RSTPDN - siehe Hinweis unten |
 
 ---
 
@@ -48,6 +48,22 @@ Der PN532 hat keinen Stecker - **die Adern werden direkt angelötet**.
     Halterung gerade groß genug, den Stecker durchzuführen - dann kannst du alles
     außerhalb des Gehäuses löten und beim Endzusammenbau nur noch einstecken.
 
+!!! danger "Die Reset-Leitung wandert - die Fotos auf dieser Seite zeigen noch den alten Stand"
+    Löte den orangen RST-Draht auf **RSTPDN**, den obersten Pin der beschrifteten
+    10-poligen Stiftleiste (die mit RSTPDN, SIGIN, SIGOUT, SIGCLK, INT1, INT0,
+    DBGTXD, DBGRXD, AUX1, AUX2).
+
+    Alle Bauanleitungen bis August 2026 führten ihn auf die gegenüberliegende
+    Leiste, wo das Modul einen **Ausgang** herausführt statt seines
+    Reset-Eingangs - der Reset hat also an keiner vorher gebauten SpoolmanScale
+    je funktioniert.
+
+    **Es geht nichts kaputt, wenn du ihn lässt.** Der Leser kam auch ohne Reset
+    immer sauber hoch, und eine Waage, die nie umgelötet wird, verhält sich
+    genau wie heute.
+
+    Die Verkabelungsfotos weiter unten sind noch nicht neu aufgenommen.
+
 ### PN532-Belegung (JST SH 1,0 mm, 5-polig, Kabelfarben von Drittanbietern)
 
 | PN532-Pin | Farbe (Drittanbieter) | Signal | WT32-I/O-Pin |
@@ -56,7 +72,37 @@ Der PN532 hat keinen Stecker - **die Adern werden direkt angelötet**.
 | 2 | Rot | 5V | Pin 1 (rot) |
 | 3 | Gelb | SDA | Pin 3 (gelb) |
 | 4 | Weiß | SCL | Pin 4 (grün) |
-| 5 | Orange | RST | Pin 5 (blau) |
+| 5 | Orange | **RSTPDN** | Pin 7 (braun) |
+
+---
+
+
+## Nach dem Umlöten
+
+Die Waage glaubt der Reset-Leitung nicht einfach. Sie misst sie, auf deinem
+Gerät, und benutzt sie erst, wenn die Messung sagt, dass der Draht sitzt.
+
+1. **Einstellungen → System → NFC-Reset prüfen**
+2. **Reset-Leitung sitzt** heißt: der Leser hat darauf reagiert, im Reset
+   gehalten zu werden. In der Zeile steht dann *Leitung geprüft, aktiv*, und ab
+   dem nächsten Start macht die Waage einen echten Hardware-Reset, statt den
+   Leser nur neu anzusprechen.
+3. **Keine Wirkung** heißt: der Draht liegt noch auf dem alten Pad, oder die
+   Lötstelle hat keinen Kontakt. Es ändert sich nichts, die Waage arbeitet
+   weiter wie bisher.
+
+Der Test zieht die Leitung fünf Millisekunden auf Masse und schaut, ob der Leser
+das merkt. Er arbeitet mit offenem Kollektor, senkt also nur und treibt nie -
+auf einer Waage mit der alten Verdrahtung kann er dem Ausgang des Moduls nichts
+entgegensetzen. Genau deshalb darf ihn jeder ausführen.
+
+!!! info "Was es bringt"
+    Ein Hardware-Reset ist der stärkste Hebel, wenn sich der PN532 festfährt.
+    Ohne ihn kann die Erholung den Leser nur über I2C neu ansprechen, was die
+    meisten Fälle abdeckt, aber nicht alle. Wenn dein Leser nie gestolpert ist,
+    ändert das nichts, was dir auffallen würde - deshalb schlägt die Waage den
+    Umbau auch nur den Geräten vor, bei denen der Leser wirklich schon einmal
+    geholt werden musste.
 
 ---
 
@@ -105,7 +151,7 @@ umgepinnt werden müssen.
   │                     └─────────────────── NAU7802 SDA
   │ Pin 4 (SCL)  ───────┬─────────────────── PN532 SCL
   │                     └─────────────────── NAU7802 SCL
-  │ Pin 5 (RST)  ─────────────────────────── PN532 RST
+  │ Pin 7 (RST)  ─────────────────────────── PN532 RSTPDN
   └─────────────────────────────────────────┘
 
                                 NAU7802 Schraubklemmen

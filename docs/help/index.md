@@ -75,15 +75,18 @@ Otherwise the PN532 needs **5V from pin 1** of the I/O cable.
 The PN532 acknowledges `0x24` but answers no command. That means it *is* set to
 I2C - it would not answer at all otherwise - and SDA and SCL are right too.
 
-**Check the RST wire on connector pin 5 (blue, GPIO12).** Without it the chip
-stays in reset and says nothing.
+**Check the two DIP switches first:** I2C needs **SW1 = ON**, **SW2 = OFF**. A
+switch resting between positions is the most common cause.
 
-Also make sure both DIP switches sit firmly: SW1 = ON, SW2 = OFF.
+**Then check the 5V on pin 1.** Too little supply lets the chip announce itself
+on the bus without being able to work.
 
-!!! note "The on-device text names pin 7"
-    Up to and including v0.7.0 this popup on the device says "pin 7 (brown)".
-    Pin 7 is GPIO14 and nothing drives it. The reset line is **pin 5 (blue)**,
-    which is what `PN532_RESET = 12` in the firmware actually uses.
+!!! info "Whether there is a reset to pull depends on your wiring"
+    Scales built before September 2026 have the orange RST wire on a pad that is
+    an output of the module rather than its reset input, so no reset reaches the
+    chip and unplugging is the only hard reset there is. Moving the wire to
+    RSTPDN fixes that - see [Wiring](../build/wiring.md#after-the-rewiring). The
+    scale measures the line itself and only uses it once the check has passed.
 
 ---
 

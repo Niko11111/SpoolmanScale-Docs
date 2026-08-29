@@ -89,4 +89,4 @@ Bottom right. Four tiles:
 | **Connection** | WiFi, backend, addresses and credentials |
 | **Scale** | [bag weight](weighing.md), [drying](drying.md), location, [tag writing](tags.md), calibration |
 | **Display** | brightness, timeout, date format |
-| **System** | [web interface](web.md), [firmware](updating.md), language, info, restart, factory reset |
+| **System** | [web interface](web.md), [firmware](updating.md), language, info, [NFC reset check](../build/wiring.md#after-the-rewiring), restart, factory reset |

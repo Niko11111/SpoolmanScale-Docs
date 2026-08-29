@@ -89,4 +89,4 @@ Unten rechts. Vier Kacheln:
 | **Verbindung** | WLAN, Backend, Adressen und Zugangsdaten |
 | **Waage** | [Beutelgewicht](weighing.md), [Trocknung](drying.md), Lagerort, [Tag-Schreiben](tags.md), Kalibrierung |
 | **Anzeige** | Helligkeit, Zeitabschaltung, Datumsformat |
-| **System** | [Weboberfläche](web.md), [Firmware](updating.md), Sprache, Info, Neustart, Werksreset |
+| **System** | [Weboberfläche](web.md), [Firmware](updating.md), Sprache, Info, [NFC-Reset prüfen](../build/wiring.de.md#nach-dem-umloten), Neustart, Werksreset |

@@ -76,17 +76,20 @@ Sonst braucht der PN532 **5V von Pin 1** des I/O-Kabels.
 Der PN532 bestätigt `0x24`, beantwortet aber keinen Befehl. Er steht damit *auf*
 I2C - sonst würde er sich gar nicht melden - und SDA und SCL stimmen ebenfalls.
 
-**Prüfe die RST-Leitung an Buchsenpin 5 (blau, GPIO12).** Ohne sie bleibt der
-Chip im Reset und schweigt.
+**Prüfe zuerst die beiden DIP-Schalter:** Für I2C muss **SW1 = ON** und
+**SW2 = OFF** stehen. Ein Schalter zwischen zwei Stellungen ist die häufigste
+Ursache.
 
-Kontrolliere außerdem, ob die beiden DIP-Schalter sauber einrasten:
-SW1 = ON, SW2 = OFF.
+**Prüfe dann die 5V an Pin 1.** Zu wenig Spannung lässt den Chip sich am Bus
+melden, ohne dass er arbeiten kann.
 
-!!! note "Der Text am Gerät nennt Pin 7"
-    Bis einschließlich v0.7.0 steht in diesem Popup am Gerät "Pin 7 (braun)".
-    Pin 7 ist GPIO14, und den treibt nichts. Die Reset-Leitung ist
-    **Pin 5 (blau)** - das ist auch, was `PN532_RESET = 12` in der Firmware
-    tatsächlich benutzt.
+!!! info "Ob es einen Reset zu ziehen gibt, hängt an deiner Verdrahtung"
+    Bei Waagen von vor September 2026 liegt der orange RST-Draht auf einem Pad,
+    das ein Ausgang des Moduls ist statt seines Reset-Eingangs - es erreicht
+    also kein Reset den Chip, und Aus- und wieder Einstecken ist der einzige
+    harte Reset. Auf RSTPDN umgelötet ist das behoben, siehe
+    [Verkabelung](../build/wiring.de.md#nach-dem-umloten). Die Waage misst die
+    Leitung selbst und benutzt sie erst, wenn die Prüfung bestanden ist.
 
 ---
 

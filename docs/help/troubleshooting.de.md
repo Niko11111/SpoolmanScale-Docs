@@ -60,7 +60,7 @@ der Pi.
     - Leuchtet die **LED auf dem PN532**? Wenn nicht, prüfe die Versorgung -
       5V auf Pin 1 der WT32-I/O-Buchse
     - DIP-Schalter des PN532 prüfen - muss auf I²C stehen (SW1 = ON, SW2 = OFF)
-    - Verkabelung prüfen: SDA → Pin 3, SCL → Pin 4, RST → Pin 5
+    - Verkabelung prüfen: SDA → Pin 3, SCL → Pin 4, RST → Pin 7
     - Den PN532 nicht über den STEMMA-QT-Durchgang der NAU7802 anschließen
       (nur 3,3V)
 

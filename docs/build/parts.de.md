@@ -10,7 +10,7 @@ Was jedes Modul tut, und die Zahlen, die du brauchst, wenn etwas nicht mitspielt
 │      │                                    │
 │      │ I2C  (SDA GPIO10, SCL GPIO11)      │
 │      ├─────────────── PN532 NFC-Reader    │
-│      │                (RST GPIO12)        │
+│      │                                    │
 │      └─────────────── NAU7802 ADC         │
 │                            │              │
 │                        Wägezelle          │
@@ -48,7 +48,7 @@ Liest NFC-Tags und beschreibt sie seit v0.7.0 auch.
 | I2C-Adresse | `0x24` |
 | Frequenz | 13,56 MHz |
 | Protokoll | ISO 14443A |
-| Pins | SDA `GPIO10`, SCL `GPIO11`, RST `GPIO12` (Buchsenpin 5, blau) |
+| Pins | SDA `GPIO10`, SCL `GPIO11`, RST `GPIO14` (Pin 7, braun) - siehe [Verkabelung](wiring.md) |
 
 !!! danger "DIP-Schalter vor dem Löten stellen"
     Der PN532 muss im **I2C-Modus** stehen: **SW1 = ON**, **SW2 = OFF**. In der
