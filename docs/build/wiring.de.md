@@ -79,6 +79,11 @@ Der PN532 hat keinen Stecker - **die Adern werden direkt angelötet**.
 
 ## Nach dem Umlöten
 
+!!! note "Braucht Firmware v0.7.1 oder neuer"
+    Die hier beschriebene Prüfung kommt mit v0.7.1. Unter v0.7.0 gibt es den
+    Menüeintrag noch nicht - das Umlöten selbst ist trotzdem richtig und muss
+    nicht zweimal gemacht werden, die Waage kann es nur noch nicht bestätigen.
+
 Die Waage glaubt der Reset-Leitung nicht einfach. Sie misst sie, auf deinem
 Gerät, und benutzt sie erst, wenn die Messung sagt, dass der Draht sitzt.
 

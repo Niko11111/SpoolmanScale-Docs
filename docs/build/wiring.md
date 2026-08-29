@@ -71,6 +71,11 @@ The PN532 has no connector - **wires must be soldered directly**.
 
 ## After the rewiring
 
+!!! note "Needs firmware v0.7.1 or newer"
+    The check described here arrives with v0.7.1. On v0.7.0 the menu entry does
+    not exist yet - the rewiring itself is already correct and nothing has to be
+    done twice, the scale simply cannot confirm it yet.
+
 The scale does not take the reset line on trust. It measures it, on your
 device, and only uses it once the measurement says the wire is really there.
 
