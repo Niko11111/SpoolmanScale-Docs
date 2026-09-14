@@ -78,6 +78,15 @@ appear in the scan.
 
 ---
 
+## Do I have to type my WiFi password on the scale?
+
+No. The web flasher asks for it right after flashing, and on the scale
+**Set up by phone** lets you enter it on your phone instead. Typing it on the
+touchscreen still works, with every character. See
+[Step 2 - WiFi](../use/index.md#step-2-wifi).
+
+---
+
 ## Can two people use the web interface at once?
 
 It is a small embedded web server on a microcontroller. It works, but it is

@@ -15,6 +15,8 @@ Das allererste Mal läuft über USB. Es funktioniert in jedem Chrome-Browser
 3. Auf **Flash Latest** klicken
 4. Den seriellen Port des Geräts auswählen
 5. Etwa 60 Sekunden warten
+6. Der Browser bietet an, dein WLAN einzurichten. Jetzt eingeben, oder
+   überspringen und in Schritt 2 an der Waage erledigen
 
 !!! warning "Es muss ein Datenkabel sein"
     Viele USB-C-Kabel führen nur Strom. Taucht kein serieller Port auf, ist das
@@ -22,6 +24,11 @@ Das allererste Mal läuft über USB. Es funktioniert in jedem Chrome-Browser
 
 !!! note "Chrome, nicht Firefox"
     Der Flasher benutzt die WebSerial-API. Firefox hat sie nicht.
+
+!!! tip "WLAN später ändern"
+    Die Flasher-Seite ändert auch das WLAN einer Waage, die schon läuft. Per
+    USB anschließen, Seite öffnen, auf den Knopf klicken, Port wählen und
+    **Change Wi-Fi** wählen. Geflasht wird dabei nichts.
 
 Jedes spätere Update läuft am Gerät selbst oder aus dem Browser über das
 Netzwerk. Siehe [Firmware aktualisieren](updating.md) - das Kabel brauchst du
@@ -38,10 +45,37 @@ danach nicht mehr.
 
 ## Schritt 2 - WLAN
 
-1. **Netzwerke suchen** antippen
-2. Deins aus der Liste wählen
-3. Passwort eingeben
-4. **Verbinden** antippen
+Hast du das WLAN schon im Web-Flasher eingegeben, zeigt die Waage **Bereits
+mit einem WLAN verbunden.** mit Netz, IP und Signal. Tippe auf **Weiter**, oder
+auf **WLAN ändern**, um ein anderes zu wählen.
+
+Sonst gibt es zwei Wege, und beim zweiten tippst du das Passwort gar nicht an
+der Waage.
+
+=== "Am Touchscreen"
+
+    1. Die Liste der Netze füllt sich von selbst, der Knopf oben sucht erneut
+    2. Dein Netz antippen
+    3. Passwort eingeben. `1#` schaltet auf Ziffern und Sonderzeichen, auch
+       `^ ~ |` und `` ` ``
+    4. Mit ✓ oder ↵ bestätigen
+
+=== "Mit dem Handy"
+
+    1. Unter der Liste **Per Handy einrichten** antippen
+    2. Die Waage öffnet ein eigenes WLAN und zeigt zwei QR-Codes. Mit dem
+       linken trittst du bei; das Passwort ist jedes Mal neu und steht nur auf
+       dem Display
+    3. Die Einrichtungsseite öffnet sich meist von selbst. Sonst den rechten
+       QR-Code scannen oder `http://10.42.0.1/` öffnen
+    4. Dein Netz wählen oder den Namen eines versteckten eintippen, Passwort
+       eingeben und **Verbinden** antippen
+    5. Die Waage schließt ihr eigenes WLAN, verbindet sich und zeigt das
+       Ergebnis auf dem Display
+
+    !!! tip "Das Handy meldet, das Netz habe kein Internet"
+        Stimmt, es ist das eigene Netz der Waage. Verbunden bleiben, sonst
+        wechseln manche Handys auf mobile Daten und die Seite lädt nicht.
 
 !!! note "Nur 2,4 GHz"
     Der ESP32-S3 hat kein 5-GHz-Funkteil. Ein 5-GHz-Netz taucht in der Suche
@@ -84,6 +118,10 @@ kannst du das jederzeit unter **Einstellungen → Verbindung** oder in der
 
     Der Key ist **optional**: eine BamBuddy-Instanz mit abgeschalteter
     Authentifizierung antwortet auch ohne.
+
+    Ist die Authentifizierung an, meldet der Verbindungstest **API-Key fehlt
+    noch**, bis du ihn eingetragen hast. Das ist so gewollt, die Einrichtung
+    geht weiter zu dem Schritt, in dem der Key eingetragen wird.
 
     | Feld | Beispiel |
     |---|---|

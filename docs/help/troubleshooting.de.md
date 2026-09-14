@@ -79,6 +79,12 @@ der Pi.
 ??? question "Gerät verbindet sich nicht mit dem WLAN"
     - SpoolmanScale kann **nur 2,4 GHz** - 5-GHz-Netze tauchen gar nicht auf
     - Passwort genau prüfen (Groß- und Kleinschreibung)
+    - Enthält das Passwort `^`, `~`, `|` oder `` ` ``? Firmware vor v0.7.2 kann
+      sie nicht tippen. Die aktuelle Version über den Web-Flasher aufspielen,
+      der dann auch nach dem WLAN fragt
+    - Verstecktes Netz: Es taucht in der Liste nicht auf. **Per Handy
+      einrichten** nehmen und den Namen eintippen, siehe
+      [Schritt 2 - WLAN](../use/index.md#schritt-2-wlan)
     - Bei der Einrichtung näher an den Router gehen
 
 ??? question "Backend von der Waage aus nicht erreichbar"

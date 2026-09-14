@@ -80,6 +80,15 @@ der Suche nicht einmal auf.
 
 ---
 
+## Muss ich das WLAN-Passwort an der Waage tippen?
+
+Nein. Der Web-Flasher fragt direkt nach dem Flashen danach, und an der Waage
+kannst du es über **Per Handy einrichten** am Handy eingeben. Am Touchscreen
+geht es weiterhin, mit allen Zeichen. Siehe
+[Schritt 2 - WLAN](../use/index.md#schritt-2-wlan).
+
+---
+
 ## Können zwei Leute gleichzeitig in die Weboberfläche?
 
 Es ist ein kleiner eingebetteter Webserver auf einem Mikrocontroller. Es

@@ -70,6 +70,11 @@ Problems the scale cannot work out by itself: network, backend, tags, the Pi.
 ??? question "Device doesn't connect to WiFi"
     - SpoolmanScale supports **2.4 GHz only** - 5 GHz networks will not appear
     - Double-check password (case sensitive)
+    - Password contains `^`, `~`, `|` or `` ` ``? Firmware before v0.7.2 cannot
+      type them. Flash the current version with the web flasher, which then
+      also asks for the WiFi
+    - Hidden network: it does not appear in the list. Use **Set up by phone**
+      and type its name, see [Step 2 - WiFi](../use/index.md#step-2-wifi)
     - Move closer to the router during setup
 
 ??? question "Can't reach Spoolman from SpoolmanScale"

@@ -15,6 +15,8 @@ browser (Chrome, Edge, Brave), with nothing to install.
 3. Click **Flash Latest**
 4. Pick the serial port of your device
 5. Wait about 60 seconds
+6. The browser offers to set up your WiFi. Enter it now, or skip it and do it
+   on the scale in step 2
 
 !!! warning "It has to be a data cable"
     Many USB-C cables carry power only. If no serial port shows up, that is the
@@ -22,6 +24,11 @@ browser (Chrome, Edge, Brave), with nothing to install.
 
 !!! note "Chrome, not Firefox"
     The flasher uses the WebSerial API. Firefox does not implement it.
+
+!!! tip "Changing the WiFi later"
+    The flasher page also changes the WiFi of a scale that is already
+    installed. Connect it by USB, open the page, click the button, pick the
+    port and choose **Change Wi-Fi**. Nothing gets flashed.
 
 Every later update runs on the device itself or from your browser over the
 network. See [Updating the firmware](updating.md) - you will not need the cable
@@ -37,10 +44,37 @@ again.
 
 ## Step 2 - WiFi
 
-1. Tap **Scan networks**
-2. Pick yours from the list
-3. Type the password
-4. Tap **Connect**
+If you already entered your WiFi in the web flasher, the scale shows
+**Already connected to WiFi.** with the network, its IP and the signal. Tap
+**Next**, or **Change WiFi** to pick a different one.
+
+Otherwise there are two ways, and with the second one the password is never
+typed on the scale.
+
+=== "On the touchscreen"
+
+    1. The list of networks fills by itself; the button at the top scans again
+    2. Tap your network
+    3. Type the password. `1#` switches to digits and special characters,
+       including `^ ~ |` and `` ` ``
+    4. Confirm with ✓ or ↵
+
+=== "With your phone"
+
+    1. Tap **Set up by phone** below the list
+    2. The scale opens a WiFi network of its own and shows two QR codes. Scan
+       the left one to join; the password is new every time and only on the
+       display
+    3. The setup page usually opens by itself. If not, scan the right QR code
+       or open `http://10.42.0.1/`
+    4. Pick your network, or type the name of a hidden one, enter the password
+       and tap **Connect**
+    5. The scale closes its own network, connects and shows the result on its
+       display
+
+    !!! tip "The phone says the network has no internet"
+        That is right, it is the scale's own network. Stay connected, otherwise
+        some phones switch to mobile data and the page does not load.
 
 !!! note "2.4 GHz only"
     The ESP32-S3 has no 5 GHz radio. A 5 GHz network will not appear in the
@@ -83,6 +117,10 @@ time under **Settings → Connection** or from the
 
     The key is **optional**: a BamBuddy instance with authentication switched
     off answers without one.
+
+    With authentication switched on, the connection test says **API key still
+    missing** until you have entered it. That is expected, and the setup
+    carries on to the step where the key goes in.
 
     | Field | Example |
     |---|---|
