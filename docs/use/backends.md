@@ -68,15 +68,17 @@ new backend about whatever spool is on the pad.
     ![FilaMan](../assets/images/backends/filaman_logo.png){ .backend-logo }
 
     The full range, plus what FilaMan brings itself. It needs two credentials,
-    because FilaMan has no per-device permissions:
+    created in two different places in FilaMan:
 
-    | Credential | Used for |
-    |---|---|
-    | Device token | heartbeat, weight reporting, reading |
-    | API key | everything that writes |
+    | Credential | Used for | Created in FilaMan |
+    |---|---|---|
+    | API key | everything that writes | gear icon next to your user name → **API Keys** |
+    | Device token | heartbeat, weight reporting, reading | **Admin Panel → Devices → Create Device** |
 
-    The device token comes from registering the 6 character code the scale
-    shows. The API key you create in the FilaMan UI.
+    Creating a device gives you a 6 character code, not the token itself: enter
+    the code on the scale and it trades it for the token. FilaMan shows the key
+    and the code only once, and both should come from an admin account. Step by
+    step in [First setup](index.md#step-3-pick-a-backend).
 
     **The tag features reach furthest here.** FilaMan can send the scale a write
     request together with the tag contents, and you confirm it on the device.

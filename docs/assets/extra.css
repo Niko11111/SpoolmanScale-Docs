@@ -424,9 +424,11 @@
   border-radius: 8px;
 }
 
-/* UI-Screenshots aus dem Simulator */
+/* UI-Screenshots aus dem Simulator, und FilaMan-Screenshots in der Einrichtung */
 .md-typeset p > img[src*="/ui/"],
-.md-typeset .tabbed-content img[src*="/ui/"] {
+.md-typeset .tabbed-content img[src*="/ui/"],
+.md-typeset p > img[src*="/filaman/"],
+.md-typeset .tabbed-content img[src*="/filaman/"] {
   width: 100%;
   max-width: 480px;
   height: auto;

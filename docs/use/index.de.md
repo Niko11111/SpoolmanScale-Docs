@@ -101,15 +101,49 @@ kannst du das jederzeit unter **Einstellungen → Verbindung** oder in der
 
 === "FilaMan"
 
-    FilaMan braucht **zwei** getrennte Zugänge, weil es keine Rechte pro Gerät
-    kennt: ein Device-Token zum Lesen und Gewichtmelden, und einen API-Key für
-    alles, was schreibt.
+    FilaMan braucht **zwei** Zugänge und legt sie an zwei verschiedenen
+    Stellen an. Zuerst den Host eintragen und die Verbindung testen. Klappt
+    der Test, zeigt **Weiter** eine Adresse: Die öffnest du am Rechner im
+    Browser, und die Zugangsdaten gehören dort auf der Seite **Backend** in die
+    Karte **Zugangsdaten**. Später kommst du über
+    **Einstellungen → Verbindung → Im Browser einrichten** wieder dorthin.
 
-    | Feld | Woher es kommt |
+    | Feld | Beispiel / woher es kommt |
     |---|---|
     | Host | `192.168.1.100:8002` |
-    | Device-Token | Den 6-stelligen Code registrieren, den die Waage anzeigt |
-    | API-Key | Legst du in der FilaMan-Oberfläche an |
+    | API-Key | FilaMan: Zahnrad → **API Keys** |
+    | Gerätecode | FilaMan: **Admin-Bereich → Geräte** |
+
+    **1. API-Key.** In FilaMan auf das **Zahnrad** neben dem Benutzernamen
+    unten in der Seitenleiste klicken, **API Keys** öffnen und einen Key
+    erstellen, zum Beispiel mit dem Namen `SpoolmanScale`. Unter **API-Key**
+    eintragen und **Speichern** drücken.
+
+    ![FilaMan-Einstellungen, erreichbar über das Zahnrad neben dem Benutzernamen](../assets/images/filaman/filaman_1_settings.png)
+
+    ![API-Key in FilaMan erstellen](../assets/images/filaman/filaman_2_api_keys.png)
+
+    **2. Gerätecode.** In FilaMan **Admin-Bereich → Geräte** öffnen und
+    **Gerät erstellen** klicken. FilaMan zeigt einen 6-stelligen Code aus
+    Ziffern und Großbuchstaben. Der Dialog heißt **Geräte-Token erstellt**
+    (englisch *Device Token Created*), zeigt aber den Code, nicht das Token.
+    Unter **Gerätecode** eintragen und **Registrieren** drücken. Die Waage
+    tauscht den Code gegen ein Device-Token, danach ist er verbraucht.
+
+    ![Die Karte Geräte im Admin-Bereich von FilaMan](../assets/images/filaman/filaman_3_admin_panel.png)
+
+    ![Gerät in FilaMan erstellen](../assets/images/filaman/filaman_4_create_device.png)
+
+    ![Der 6-stellige Code, den FilaMan nur einmal zeigt](../assets/images/filaman/filaman_5_device_code.png)
+
+    !!! warning "Beides wird nur einmal angezeigt"
+        Key und Code gleich kopieren, sobald FilaMan sie zeigt. Geht einer
+        verloren, einfach neu anlegen.
+
+    !!! info "Für beides ein Admin-Konto"
+        Ein Gerät anlegen kann nur ein Admin. Ein API-Key hat die Rechte des
+        Kontos, das ihn erstellt hat. Den Key also ebenfalls mit dem
+        Admin-Konto erstellen, sonst lehnt FilaMan die AMS-Zuordnung ab.
 
 === "BamBuddy"
 

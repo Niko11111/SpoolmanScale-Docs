@@ -100,15 +100,48 @@ time under **Settings → Connection** or from the
 
 === "FilaMan"
 
-    FilaMan needs **two** separate credentials, because it has no per-device
-    permissions: a device token for reading and reporting weight, and an API
-    key for everything that writes.
+    FilaMan needs **two** credentials, and it creates them in two different
+    places. Enter the host and test the connection first. Once the test
+    passes, **Next** shows an address: open it in a browser on your computer,
+    and the credentials go into the **Credentials** card of the **Backend**
+    page. Later you get back there under
+    **Settings → Connection → Set up in browser**.
 
-    | Field | Where it comes from |
+    | Field | Example / where it comes from |
     |---|---|
     | Host | `192.168.1.100:8002` |
-    | Device token | Register the 6 character code the scale shows |
-    | API key | Created by you in the FilaMan UI |
+    | API key | FilaMan: gear icon → **API Keys** |
+    | Device code | FilaMan: **Admin Panel → Devices** |
+
+    **1. API key.** In FilaMan, click the **gear icon** next to your user name
+    at the bottom of the sidebar, open **API Keys** and create a key, named
+    `SpoolmanScale` for example. Enter it under **API key** and press **Save**.
+
+    ![FilaMan settings, reached from the gear icon next to the user name](../assets/images/filaman/filaman_1_settings.png)
+
+    ![Creating an API key in FilaMan](../assets/images/filaman/filaman_2_api_keys.png)
+
+    **2. Device code.** In FilaMan, open **Admin Panel → Devices** and click
+    **Create Device**. FilaMan shows a 6 character code of digits and capital
+    letters. The dialog is titled **Device Token Created**, but what it shows
+    is the code, not the token. Enter it under **Device code** and press
+    **Register**. The scale trades the code for a device token, and the code
+    is used up.
+
+    ![The Devices card in FilaMan's Admin Panel](../assets/images/filaman/filaman_3_admin_panel.png)
+
+    ![Creating a device in FilaMan](../assets/images/filaman/filaman_4_create_device.png)
+
+    ![The 6 character code FilaMan shows once](../assets/images/filaman/filaman_5_device_code.png)
+
+    !!! warning "Both are shown only once"
+        Copy the key and the code the moment FilaMan shows them. If one gets
+        lost, create a new one.
+
+    !!! info "Use an admin account for both"
+        Only an admin can create a device. An API key has the rights of the
+        account that created it, so create the key with the admin account as
+        well, or FilaMan refuses the AMS assignment.
 
 === "BamBuddy"
 

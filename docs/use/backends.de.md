@@ -70,15 +70,18 @@ Backend neu abgefragt.
     ![FilaMan](../assets/images/backends/filaman_logo.png){ .backend-logo }
 
     Der volle Umfang, plus alles, was FilaMan selbst mitbringt. Es braucht zwei
-    Zugänge, weil FilaMan keine Rechte pro Gerät kennt:
+    Zugänge, die in FilaMan an zwei verschiedenen Stellen entstehen:
 
-    | Zugang | Wofür |
-    |---|---|
-    | Device-Token | Heartbeat, Gewicht melden, Lesen |
-    | API-Key | alles, was schreibt |
+    | Zugang | Wofür | Anzulegen in FilaMan |
+    |---|---|---|
+    | API-Key | alles, was schreibt | Zahnrad neben dem Benutzernamen → **API Keys** |
+    | Device-Token | Heartbeat, Gewicht melden, Lesen | **Admin-Bereich → Geräte → Gerät erstellen** |
 
-    Das Device-Token entsteht, indem du den 6-stelligen Code registrierst, den
-    die Waage anzeigt. Den API-Key legst du in der FilaMan-Oberfläche an.
+    Ein neues Gerät liefert einen 6-stelligen Code, nicht das Token selbst: Du
+    trägst den Code an der Waage ein, und sie tauscht ihn gegen das Token.
+    FilaMan zeigt Key und Code nur einmal, und beides sollte von einem
+    Admin-Konto kommen. Schritt für Schritt in der
+    [Ersteinrichtung](index.md#schritt-3-backend-wahlen).
 
     **Hier greifen die Tag-Funktionen am weitesten.** FilaMan kann der Waage
     einen Schreibauftrag samt Tag-Inhalt schicken, den du am Gerät bestätigst.
