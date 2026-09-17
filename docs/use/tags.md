@@ -11,12 +11,21 @@ Everything follows from the length of the tag's UID:
 
 | UID length | Tag type | What happens |
 |---|---|---|
-| 4 bytes | MIFARE Classic, including Bambu Lab's internal tags | **Bambu flow** - KDF decryption |
+| 4 bytes | MIFARE Classic: Bambu Lab's internal tags, Snapmaker and Creality spool tags, plain cards and stickers | **Bambu flow** - KDF decryption; a tag that refuses the Bambu keys is looked up by its UID |
 | 7 bytes | NTAG / MIFARE Ultralight | **NTAG flow** - UID is the link key |
 | anything else | unknown | **ignored**, no action |
 
 An unknown tag does not crash or freeze anything. The NFC indicator blinks
 green, no spool appears, and removing the tag resets it.
+
+A 4 byte tag that is not from Bambu Lab, such as a Snapmaker or Creality spool
+tag or a plain MIFARE Classic sticker, takes around ten seconds to show up.
+The scale tries the Bambu keys first, six times over, and only then accepts
+that the tag is a plain one and looks its UID up in the backend. That order is
+deliberate: a Bambu tag that reads badly gets every one of those attempts, so
+it is never mistaken for a plain card. From then on the tag behaves like an
+NTAG: it can be linked to a spool, and the UID is what the backend stores. The
+scale never reads what Snapmaker or Creality wrote into their tags.
 
 ---
 
@@ -133,7 +142,8 @@ Round 25 mm stickers are the most common and sit well on spool hubs.
 | MIFARE Ultralight | 7 bytes | yes | no | most stable to read |
 | MIFARE Ultralight C | 7 bytes | yes | no | works fine |
 | Bambu Lab internal | 4 bytes | yes | **never** | encrypted, Bambu flow |
-| MIFARE Classic 1K / 4K / Mini | 4 bytes | no | no | triggers the Bambu flow |
+| Snapmaker, Creality spool tags | 4 bytes | yes | no | MIFARE Classic 1K, identified by UID only |
+| MIFARE Classic 1K / 4K / Mini | 4 bytes | yes | no | by UID, after the Bambu attempt: around ten seconds |
 | MIFARE DESFire | 7 bytes | unreliable | no | not recommended |
 | ISO 15693 | - | no | no | wrong protocol |
 
@@ -203,5 +213,5 @@ With a free NFC app such as **NFC Tools**:
 Or just put it on the scale:
 
 - Spool info, or "not found" → compatible
-- Reading animation, then nothing → most likely MIFARE Classic
+- Reading animation for around ten seconds, then spool info or "not found" → plain MIFARE Classic, identified by its UID
 - Nothing at all → ignored, wrong UID length

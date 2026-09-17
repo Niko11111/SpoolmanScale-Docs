@@ -11,13 +11,23 @@ Alles folgt aus der Länge der UID:
 
 | UID-Länge | Tag-Typ | Was passiert |
 |---|---|---|
-| 4 Byte | MIFARE Classic, auch Bambu Labs interne Tags | **Bambu-Flow** - KDF-Entschlüsselung |
+| 4 Byte | MIFARE Classic: Bambu Labs interne Tags, Spulentags von Snapmaker und Creality, einfache Karten und Sticker | **Bambu-Flow** - KDF-Entschlüsselung; ein Tag, der die Bambu-Schlüssel ablehnt, wird über seine UID gesucht |
 | 7 Byte | NTAG / MIFARE Ultralight | **NTAG-Flow** - die UID ist der Schlüssel |
 | alles andere | unbekannt | wird **ignoriert**, nichts passiert |
 
 Ein unbekannter Tag bringt nichts zum Absturz und nichts zum Hängen. Die
 NFC-Anzeige blinkt grün, es erscheint keine Spule, und nach dem Abnehmen ist
 alles wie vorher.
+
+Ein 4-Byte-Tag, der nicht von Bambu Lab stammt, etwa ein Spulentag von
+Snapmaker oder Creality oder ein einfacher MIFARE-Classic-Sticker, braucht
+etwa zehn Sekunden, bis er erscheint. Die Waage probiert zuerst die
+Bambu-Schlüssel, sechsmal hintereinander, und nimmt erst dann hin, dass es ein
+einfacher Tag ist, und sucht seine UID im Backend. Die Reihenfolge ist Absicht:
+ein schlecht lesbarer Bambu-Tag bekommt jeden dieser Versuche und wird so nie
+für eine einfache Karte gehalten. Danach verhält sich der Tag wie ein NTAG: er
+lässt sich mit einer Spule verknüpfen, und das Backend speichert die UID. Was
+Snapmaker oder Creality in ihre Tags geschrieben haben, liest die Waage nicht.
 
 ---
 
@@ -136,7 +146,8 @@ Runde 25-mm-Aufkleber sind am verbreitetsten und passen gut auf Spulenkerne.
 | MIFARE Ultralight | 7 Byte | ja | nein | am stabilsten zu lesen |
 | MIFARE Ultralight C | 7 Byte | ja | nein | läuft problemlos |
 | Bambu Lab intern | 4 Byte | ja | **nie** | verschlüsselt, Bambu-Flow |
-| MIFARE Classic 1K / 4K / Mini | 4 Byte | nein | nein | löst den Bambu-Flow aus |
+| Snapmaker-, Creality-Spulentags | 4 Byte | ja | nein | MIFARE Classic 1K, nur über die UID erkannt |
+| MIFARE Classic 1K / 4K / Mini | 4 Byte | ja | nein | über die UID, nach dem Bambu-Versuch: etwa zehn Sekunden |
 | MIFARE DESFire | 7 Byte | unzuverlässig | nein | nicht empfohlen |
 | ISO 15693 | - | nein | nein | falsches Protokoll |
 
@@ -209,5 +220,5 @@ Mit einer kostenlosen NFC-App wie **NFC Tools**:
 Oder einfach auf die Waage legen:
 
 - Spulendaten oder "nicht gefunden" → kompatibel
-- Leseanimation, dann nichts → höchstwahrscheinlich MIFARE Classic
+- Leseanimation für etwa zehn Sekunden, dann Spulendaten oder "nicht gefunden" → MIFARE Classic, über die UID erkannt
 - Gar nichts → ignoriert, falsche UID-Länge

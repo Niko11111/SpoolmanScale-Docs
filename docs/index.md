@@ -67,7 +67,7 @@ manager - without opening a browser.
   <div class="tx-feature-card">
     <div class="tx-feature-card__icon">📡</div>
     <h3>NFC identification</h3>
-    <p>Tag your spools once. Put one down to identify it. NTAG213/215/216 and Bambu Lab's own tags.</p>
+    <p>Tag your spools once. Put one down to identify it. NTAG213/215/216, Bambu Lab's own tags and any MIFARE Classic tag.</p>
   </div>
   <div class="tx-feature-card">
     <div class="tx-feature-card__icon">⚖️</div>

@@ -67,7 +67,7 @@ deiner Filamentverwaltung ab - ohne dass du einen Browser aufmachen musst.
   <div class="tx-feature-card">
     <div class="tx-feature-card__icon">📡</div>
     <h3>Erkennung per NFC</h3>
-    <p>Spulen einmal taggen. Auflegen genügt zum Erkennen. NTAG213/215/216 und Bambu Labs eigene Tags.</p>
+    <p>Spulen einmal taggen. Auflegen genügt zum Erkennen. NTAG213/215/216, Bambu Labs eigene Tags und jeder MIFARE-Classic-Tag.</p>
   </div>
   <div class="tx-feature-card">
     <div class="tx-feature-card__icon">⚖️</div>
