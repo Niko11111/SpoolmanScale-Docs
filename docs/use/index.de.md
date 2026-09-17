@@ -110,7 +110,7 @@ kannst du das jederzeit unter **Einstellungen → Verbindung** oder in der
 
     | Feld | Beispiel / woher es kommt |
     |---|---|
-    | Host | `192.168.1.100:8002` |
+    | Host | `192.168.1.100:8083` |
     | API-Key | FilaMan: Zahnrad → **API Keys** |
     | Gerätecode | FilaMan: **Admin-Bereich → Geräte** |
 

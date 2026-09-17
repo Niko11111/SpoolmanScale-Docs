@@ -20,7 +20,7 @@ Backend neu abgefragt.
 
 | | Spoolman | FilaMan | BamBuddy |
 |---|---|---|---|
-| Üblicher Port | `7912` | `8002` | `8000` |
+| Üblicher Port | `7912` | `8083` | `8000` |
 | Zugangsdaten | keine | Device-Token **und** API-Key | ein API-Key, optional |
 | Finden, wiegen, zurückschreiben | ja | ja | ja |
 | Tags verknüpfen und lösen | ja | ja | ja |

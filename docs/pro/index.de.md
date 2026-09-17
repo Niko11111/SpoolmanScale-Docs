@@ -49,7 +49,7 @@ Bei der Ersteinrichtung wählst du zwischen:
 
 | | Spoolman | FilaMan |
 |---|---|---|
-| Port | 7912 | 8002 |
+| Port | 7912 | 8083 |
 | Community | Groß, etabliert | Wachsend |
 | Oberfläche | Funktional | Modern |
 | Mobile App | - | iOS & Android |

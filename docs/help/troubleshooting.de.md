@@ -91,7 +91,7 @@ der Pi.
     - Prüfen, ob das Backend läuft und von einem anderen Gerät im Netz erreichbar
       ist
     - Die IP-Adresse benutzen, nicht den Hostnamen
-    - Port prüfen - üblich sind Spoolman 7912, FilaMan 8002, BamBuddy 8000.
+    - Port prüfen - üblich sind Spoolman 7912, FilaMan 8083, BamBuddy 8000.
       Ohne Port geht die Anfrage an Port 80
     - Prüfen, ob beide Geräte im selben Netz hängen
 

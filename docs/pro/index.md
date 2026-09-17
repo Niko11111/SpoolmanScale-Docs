@@ -38,7 +38,7 @@ On first setup you choose between:
 
 | | Spoolman | FilaMan |
 |---|---|---|
-| Port | 7912 | 8002 |
+| Port | 7912 | 8083 |
 | Community | Large, established | Growing |
 | UI | Functional | Modern |
 | Mobile app | - | iOS & Android |

@@ -109,7 +109,7 @@ time under **Settings → Connection** or from the
 
     | Field | Example / where it comes from |
     |---|---|
-    | Host | `192.168.1.100:8002` |
+    | Host | `192.168.1.100:8083` |
     | API key | FilaMan: gear icon → **API Keys** |
     | Device code | FilaMan: **Admin Panel → Devices** |
 

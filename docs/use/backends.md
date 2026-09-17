@@ -19,7 +19,7 @@ new backend about whatever spool is on the pad.
 
 | | Spoolman | FilaMan | BamBuddy |
 |---|---|---|---|
-| Usual port | `7912` | `8002` | `8000` |
+| Usual port | `7912` | `8083` | `8000` |
 | Credentials | none | device token **and** API key | one API key, optional |
 | Find, weigh, write back | yes | yes | yes |
 | Link and unlink tags | yes | yes | yes |
