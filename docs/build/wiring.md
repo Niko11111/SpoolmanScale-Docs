@@ -9,6 +9,13 @@ The PN532 and NAU7802 share the same I²C bus (SDA/SCL) and are wired **in paral
 
 ---
 
+<div style="position: relative; width: 100%; padding-top: calc(max(56.25%, 400px));">
+  <iframe src="https://app.cirkitdesigner.com/project/680d6e91-778a-40bd-a907-62be13f7a97b?view=interactive_preview" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"></iframe>
+</div>
+<p style="margin-top: 5px;">Edit this project interactively in <a href="https://app.cirkitdesigner.com/project/680d6e91-778a-40bd-a907-62be13f7a97b" target="_blank">Cirkit Designer</a>.</p>
+
+---
+
 ## WT32-SC01 Plus I/O Connector
 
 | Pin | Color | Signal | Connects to |
