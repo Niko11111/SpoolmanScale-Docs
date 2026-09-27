@@ -65,7 +65,10 @@ Ein Fortschrittsbalken zeigt die Wartezeit, du siehst also, dass gleich
 geschrieben wird, statt dich zu fragen, ob es passiert ist.
 
 - Gespeichert wird **ohne** Beutelgewicht, im Bestand steht also die Spule allein
-- Abschaltbar über **Automatik aus**, wenn du lieber selbst drückst
+- Abschaltbar über **Auto deaktivieren**, wenn du lieber selbst drückst
+
+Nach dem Speichern, automatisch oder über **Gewicht updaten**, zeigen der
+Füllstandsbalken und seine Farbe sofort die neue Menge.
 
 !!! info "FilaMan ohne Tag"
     Bei FilaMan wird auch eine Spule ohne Tag automatisch gespeichert, solange
@@ -75,7 +78,7 @@ geschrieben wird, statt dich zu fragen, ob es passiert ist.
 
 ## Ganze Gramm
 
-Seit v0.7.0 zeigt und schreibt die Waage überall **ganze Gramm**.
+Die Waage zeigt und schreibt überall **ganze Gramm**.
 
 Spoolman leitete `used_weight` aus der gesendeten Nachkommastelle ab und machte
 daraus Zahlen wie `251,70000000000005 g`. Mit ganzen Gramm hört das ab der
@@ -83,9 +86,28 @@ nächsten Wägung auf.
 
 ---
 
-## Zuletzt-benutzt-Modus
+## Last Used Modus
 
-**Einstellungen → Waage → Zuletzt-benutzt-Modus**
+**Einstellungen → Waage → Last Used Modus**
 
 Was als "benutzt" zählt. Die Auswahl hängt vom Backend ab - Druckverbrauch oder
 Wiegen - damit das Datum auf dem Hauptbildschirm das bedeutet, was du erwartest.
+
+---
+
+## Ohne Wägezelle
+
+**Einstellungen → Waage → Waage vorhanden**
+
+Ein Gerät, das nur aus Display und Leser besteht, arbeitet als Tag-Terminal:
+Tag auflegen, Spule sehen, Lagerort und Drucker zuordnen. Schalte **Waage
+vorhanden** aus und starte neu:
+
+- die Gewichte verschwinden vom Hauptbildschirm, TARE ebenso
+- der Knopf **Gewicht updaten** wird zum Lagerort-Knopf
+- **Kalibrierung** und **Beutelgewicht** verschwinden aus dem Menü
+- die Waage meldet die fehlende Wägezelle nicht mehr als Defekt
+
+Den Schalter gibt es auch auf der Seite **Einstellungen** der
+[Weboberfläche](web.md), in der Karte **Panel**, mit einem Knopf zum Neustarten
+daneben. Zurück geht es auf demselben Weg.

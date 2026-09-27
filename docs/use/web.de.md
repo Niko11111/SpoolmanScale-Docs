@@ -1,42 +1,35 @@
 # Die Weboberfläche
 
-Alles, was das Gerät kann, im Browser - für v0.7.0 komplett neu gebaut, als
-einzelne Seiten statt einer langen Liste, zweisprachig und auf dem Handy so
-brauchbar wie am Rechner.
+Alles, was das Gerät kann, im Browser: einzelne Seiten, auf Deutsch, Englisch
+und Französisch, auf dem Handy genauso brauchbar wie am Rechner. Was du hier und
+am Gerät änderst, ist dieselbe Einstellung.
 
 Erreichbar unter **`http://spoolmanscale.local`** oder der IP-Adresse des
-Geräts. Einschalten unter **Einstellungen → System → Weboberfläche**.
+Geräts. Die IP steht unter
+**Einstellungen → Verbindung → WLAN-Einstellungen → WLAN-Status**.
 
-!!! tip "Keine IP-Adresse zu merken"
-    Die Waage meldet sich per mDNS als `spoolmanscale.local`. Löst dein Netz
-    oder dein Browser das nicht auf, geht die IP weiterhin - sie steht unter
-    **Einstellungen → Verbindung → WLAN Status**.
+![WLAN-Einstellungen mit der IP-Adresse unter WLAN-Status](../assets/images/ui/de/21_wifi_menu.png)
 
 ---
 
 ## Die drei Schalter
 
-Der Zugang ist nicht alles-oder-nichts. Drei Schalter unter
-**Einstellungen → System → Weboberfläche** entscheiden, wie viel ausgeliefert
-wird:
+Drei Schalter unter **Einstellungen → System → Weboberfläche** bestimmen, wie
+viel ausgeliefert wird:
 
-| Schalter | Liefert | Voreinstellung |
+| Schalter | Liefert aus | Standard |
 |---|---|---|
-| **Webserver** | der Hauptschalter. Aus antwortet Port 80 nicht mehr. | aus |
-| **Einstellungen** | Listenlimits, Trocknung, Anzeige, Backend-Zugangsdaten | aus |
-| **Wartung** | Firmware, Logs, Tags, Neustart | aus |
+| **Webserver** | der Hauptschalter. Aus antwortet Port 80 nicht mehr. | an |
+| **Einstellungen** | Backend, Trocknung, Drucker, Listenlimits, Anzeige, Tag-Automatik | aus |
+| **Wartung** | Tags, Logs, Firmware, Neustart | aus |
 
-!!! warning "Standardmäßig aus, und das mit Grund"
-    **Einstellungen** ändert das Verhalten der Waage und **Wartung** schreibt
-    Firmware und NFC-Tags - beides ohne Passwort. Sie bleiben aus, bis du sie
-    einschaltest. Schalte sie ein, wenn du sie brauchst, in einem Netz, dem du
-    traust.
+Schalte **Einstellungen** und **Wartung** ein, wenn du sie brauchst, in einem
+Netz, dem du vertraust. **Passwort** auf demselben Screen schützt beide mit 4
+bis 8 Ziffern.
 
-!!! note "Eine Ausnahme vom Hauptschalter"
-    Ist FilaMan eingerichtet und ein Geräte-Token hinterlegt, bleibt FilaMans
-    eigener Tag-Auslöser auch bei ausgeschaltetem Webserver erreichbar. Er
-    steuert die Waage von der Serverseite und würde sonst stillschweigend
-    ausfallen. Sonst antwortet nichts.
+!!! note "FilaMan läuft weiter"
+    Ist FilaMan eingerichtet, erreichen FilaMans eigene Tag-Anfragen die Waage
+    auch bei ausgeschaltetem Webserver.
 
 ---
 
@@ -45,49 +38,45 @@ wird:
 | Seite | Was sie tut | Braucht |
 |---|---|---|
 | **Status** | Live-Gewicht, aufliegende Spule, WLAN, Backend, Diagnose | Webserver |
-| **Backend** | Backend umschalten, Adressen und Zugangsdaten eintragen | Einstellungen |
-| **Trocknung** | Modi der Trocknungserinnerung und Intervalle je Material | Einstellungen |
-| **Tags schreiben** | Tag lesen, mit dem Bestand vergleichen, beschreiben | Wartung |
-| **Einstellungen** | Listenlimits, Anzeige, Gerätename, Zeitzone | Einstellungen |
-| **Logs** | Log ansehen, mitlaufen lassen, sortieren, kopieren, löschen | Wartung |
-| **Firmware** | GitHub prüfen, Release Notes lesen, installieren oder Datei hochladen | Wartung |
+| **Backend** | Backend, Adresse, Zugangsdaten, [Optionen](backends.md#optionen) | Einstellungen |
+| **Trocknung** | Trocknungserinnerung und Intervalle je Material | Einstellungen |
+| **Tags** | Tag auf dem Leser lesen, vergleichen, beschreiben, verknüpfen oder leeren | Wartung |
+| **Drucker** | Bluetooth und der [Etikettendrucker](labels.md) | Einstellungen |
+| **Einstellungen** | Listenlimits, Anzeige, Gerätename, Zeitzone, Snapmaker-Tags | Einstellungen |
+| **Logs** | wohin und wie viel protokolliert wird, Logs lesen und speichern | Wartung |
+| **Firmware** | Update von GitHub oder Datei hochladen | Wartung |
 
-Eine Seite, auf die du keinen Zugriff hast, taucht in der Leiste gar nicht erst
-auf, und ihre `/api/*`-Routen antworten mit 403, statt still nichts zu tun.
+![Die Seite Status](../assets/images/ui/de/web_status.png){ width="420" }
 
 ---
 
-## Tags schreiben
+## Tags
 
-Die Seite, für die sich der Weg lohnt. Sie zeigt **beide Seiten nebeneinander** -
-was jetzt auf dem Tag steht und was aus deinem Bestand draufkäme - mit farbig
-markierten Unterschieden, und du wählst das Format:
+Die Seite Tags zeigt, was auf dem Tag steht, neben dem, was aus deinem Bestand
+draufkäme, mit farbig markierten Unterschieden. Wähle das Format, dann schreib,
+leere oder verknüpfe den Tag nur. Der Tag muss dafür auf dem Leser liegen. Mehr
+unter [NFC-Tags](tags.md).
 
-| Format | Für |
-|---|---|
-| **OpenSpool** | das, was die Filament-Manager lesen |
-| **FilaMan** | derselbe Datensatz unter FilaMans eigenem Namen |
-| **Anycubic ACE** | den Drucker selbst, der es direkt liest |
-| **Leeren** | Tag zurück auf null |
+![Die Seite Tags](../assets/images/ui/de/web_tags.png){ width="420" }
 
-Ausführlich unter [NFC-Tags](tags.md).
+---
 
-!!! info "Geschrieben wird am Gerät"
-    Eine Anfrage aus dem Browser fasst den NFC-Bus nicht an. Sie parkt den
-    Auftrag, und die Waage führt ihn beim nächsten Durchlauf aus. Der Tag muss
-    also auf dem Leser liegen.
+## Logs
+
+- **Protokoll schreiben:** **Aus**, **SD-Karte** oder **Intern**. Intern braucht
+  keine Karte und hält die letzten 4.096 Zeilen.
+- **Umfang:** **Knapp**, **Normal** oder **Ausführlich**. Für einen
+  Fehlerbericht stell ihn vorher auf Ausführlich.
+- Logs lesen, filtern und speichern. Das **Sitzungsprotokoll** darunter zeigt
+  die Zeilen seit dem letzten Start.
+
+![Die Seite Logs](../assets/images/ui/de/web_logs.png){ width="420" }
 
 ---
 
 ## Firmware-Update
 
-Die Waage prüft selbst auf GitHub, zeigt dir die Release Notes, fragt vor dem
-Schreiben und meldet, wie weit sie ist. Du kannst auch eine `.bin` von Hand
-hochladen. Siehe [Firmware aktualisieren](updating.md).
-
----
-
-## Einstellungen an beiden Orten
-
-Was am Gerät geht, geht im Browser, und beide zeigen denselben Stand. Es gibt
-keine getrennte "Web-Konfiguration", die man nachziehen müsste.
+Die Seite prüft GitHub, zeigt die Release Notes und installiert das Update. Du
+kannst auch selbst eine `.bin`-Datei hochladen. Ein Update, das nicht mehr auf
+die Waage passt, wird nicht angeboten; die Seite verweist dann auf den
+Web-Flasher. Siehe [Firmware aktualisieren](updating.md).

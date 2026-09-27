@@ -40,7 +40,7 @@ beide Module sind stromlos - die Waage meldet das als
 
 ## PN532 NFC-Reader
 
-Liest NFC-Tags und beschreibt sie seit v0.7.0 auch.
+Liest und beschreibt NFC-Tags.
 
 | Eigenschaft | Wert |
 |---|---|

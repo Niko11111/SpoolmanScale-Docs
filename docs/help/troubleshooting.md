@@ -55,12 +55,15 @@ Problems the scale cannot work out by itself: network, backend, tags, the Pi.
 ??? question "NFC reader not detected on boot"
     - Does the **LED on the PN532** light up? If not, check power - 5V on Pin 1 of the WT32 I/O connector
     - Check PN532 jumpers - must be set to I²C mode
-    - Verify wiring: SDA → Pin 3, SCL → Pin 4, RST → Pin 7
+    - Verify wiring: SDA → Pin 3, SCL → Pin 4, RST (PN532 RSTPDN) → Pin 7, see
+      [Wiring](../build/wiring.md)
     - Do not connect PN532 via NAU7802 STEMMA QT passthrough (only 3.3V)
 
 ??? question "NFC tag not recognized"
     - Hold the spool steady directly over the NFC window
     - Try a different [NTAG](../use/tags.md) sticker - some cheap stickers have defects
+    - Too close is more common than too far: 5 to 20 mm between tag and reader
+      work best, see [Positioning](../use/tags.md#positioning-closer-is-not-better)
     - Not sure if your tag is compatible? See the [NFC tags](../use/tags.md)
 
 ---
@@ -77,10 +80,12 @@ Problems the scale cannot work out by itself: network, backend, tags, the Pi.
       and type its name, see [Step 2 - WiFi](../use/index.md#step-2-wifi)
     - Move closer to the router during setup
 
-??? question "Can't reach Spoolman from SpoolmanScale"
-    - Make sure Spoolman is running and reachable from another device on your network
+??? question "Can't reach the backend from the scale"
+    - Make sure the backend is running and reachable from another device on
+      your network
     - Use the IP address, not a hostname
-    - Check port - default is **7912**
+    - Check the port - the usual ones are Spoolman 7912, FilaMan 8083,
+      BamBuddy 8000. Without a port the request goes to port 80
     - Verify both devices are on the same network
 
 ---
@@ -97,8 +102,34 @@ Problems the scale cannot work out by itself: network, backend, tags, the Pi.
     - Try again - the GitHub download can time out on slow connections
     - Fall back to the Web Flasher or manual file upload if OTA keeps failing
 
+??? question "Update is not offered, or \"no longer fits\""
+    0.8.0 divides the scale's memory anew, and that only works over the cable.
+    A scale still on the old layout says the update no longer fits, or the web
+    upload reports that the file is larger than the storage of this scale.
+    The firmware on the device is fine, only the memory layout is too small.
+
+    - Update once over USB: open the
+      [web flasher](https://niko11111.github.io/SpoolmanScale/) in Chrome or
+      Edge, connect the scale and choose **Update**. It takes about 2 minutes,
+      and all settings are kept
+    - If the flasher offers "Install" instead, leave "Erase" unticked, or WiFi
+      and calibration are gone
+    - After that, updates arrive over the air as before. Details on
+      [Updating the firmware](../use/updating.md)
+
 ??? question "Display shows nothing after flashing"
     - Re-flash via the Web Flasher
+
+??? question "Sending a log / bug report"
+    - Open the **Logs** page in the web interface. It needs the
+      [Maintenance switch](../use/web.md#the-three-switches)
+    - Set **Scope** to **Verbose**, then repeat what went wrong
+    - No SD card? Set **Write the log** to **Internal**. The internal storage
+      holds 4,096 lines, that is several hours at Verbose
+    - **Download** the log and post it on
+      [Discord](https://discord.gg/xadskCrPFu) or in a
+      [GitHub issue](https://github.com/Niko11111/SpoolmanScale/issues), with
+      the firmware version and the backend you use
 
 ---
 

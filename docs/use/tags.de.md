@@ -1,224 +1,155 @@
 # NFC-Tags
 
-Welche Tags funktionieren, wie die Waage sie liest und - neu in v0.7.0 - wie sie
-sie beschreibt.
-
----
-
-## Woran die Waage einen Tag erkennt
-
-Alles folgt aus der Länge der UID:
-
-| UID-Länge | Tag-Typ | Was passiert |
-|---|---|---|
-| 4 Byte | MIFARE Classic: Bambu Labs interne Tags, Spulentags von Snapmaker und Creality, einfache Karten und Sticker | **Bambu-Flow** - KDF-Entschlüsselung; ein Tag, der die Bambu-Schlüssel ablehnt, wird über seine UID gesucht |
-| 7 Byte | NTAG / MIFARE Ultralight | **NTAG-Flow** - die UID ist der Schlüssel |
-| alles andere | unbekannt | wird **ignoriert**, nichts passiert |
-
-Ein unbekannter Tag bringt nichts zum Absturz und nichts zum Hängen. Die
-NFC-Anzeige blinkt grün, es erscheint keine Spule, und nach dem Abnehmen ist
-alles wie vorher.
-
-Ein 4-Byte-Tag, der nicht von Bambu Lab stammt, etwa ein Spulentag von
-Snapmaker oder Creality oder ein einfacher MIFARE-Classic-Sticker, braucht
-etwa zehn Sekunden, bis er erscheint. Die Waage probiert zuerst die
-Bambu-Schlüssel, sechsmal hintereinander, und nimmt erst dann hin, dass es ein
-einfacher Tag ist, und sucht seine UID im Backend. Die Reihenfolge ist Absicht:
-ein schlecht lesbarer Bambu-Tag bekommt jeden dieser Versuche und wird so nie
-für eine einfache Karte gehalten. Danach verhält sich der Tag wie ein NTAG: er
-lässt sich mit einer Spule verknüpfen, und das Backend speichert die UID. Was
-Snapmaker oder Creality in ihre Tags geschrieben haben, liest die Waage nicht.
+Welche Tags funktionieren, wie die Waage sie liest und wie sie sie beschreibt.
 
 ---
 
 ## Lesen
 
-Spule auflegen. Die Waage liest die UID, schlägt sie bei deinem
-[Backend](backends.md) nach und zeigt die Spule. Mehr ist es nicht.
+Leg eine Spule auf. Die Waage liest den Tag, fragt dein [Backend](backends.md)
+und zeigt die Spule. Mehr ist nicht zu tun.
 
-Die UID wird als reines Hex gespeichert (`04B9E542447080`), so wie es jedes
-andere Werkzeug rund um Spoolman tut - Verknüpfungen von woanders werden hier
-gefunden und umgekehrt.
+![Eine Spule von einem NTAG mit OpenSpool-Datensatz](../assets/images/ui/de/20_main_ntag.png)
+
+- **NTAG-Sticker** werden an ihrer UID erkannt. Sie wird als reines Hex
+  gespeichert (`04B9E542447080`), so wie es jedes andere Werkzeug rund um
+  Spoolman macht. Verknüpfungen von woanders werden hier gefunden und
+  umgekehrt.
+- **Bambu-Lab-Tags** werden gelesen und entschlüsselt: Material, Farbe und die
+  Spule kommen von selbst.
+- **MIFARE-Classic-Karten und -Sticker** werden an ihrer UID erkannt. Kennt
+  dein Backend die Karte, erscheint sie nach 3 bis 5 Sekunden, sonst nach etwa
+  zehn.
+- **Snapmaker-Tags** lassen sich ebenfalls lesen. Schalte dafür in der
+  [Weboberfläche](web.md) unter **Einstellungen** **Snapmaker-Tags lesen** ein.
+  Standardmäßig ist das aus, weil es andere MIFARE-Tags etwas bremst.
+
+### Die Tag-Ansicht
+
+Tipp auf den NFC-Chip in der Kopfzeile, und du siehst, was auf dem Tag auf dem
+Leser steht. Bei einem NTAG leert **Löschen** ihn, und **Spule #N schreiben**
+schreibt die Spule vom Bildschirm darauf.
+
+![Die Tag-Ansicht mit Löschen und Spule #12 schreiben](../assets/images/ui/de/x01_tag_view.png)
 
 ---
 
 ## Schreiben
 
-Bis v0.7.0 hat die Waage Tags nur gelesen. Jetzt schreibt sie sie auch, von
-selbst, im Hintergrund, **mit jedem Backend** - auch mit Spoolman, das dafür
-nichts mitbringen muss.
+Die Waage beschreibt Tags auch, mit jedem Backend, und auf dem Server braucht es
+dafür nichts Besonderes.
 
 !!! danger "Schreiben ersetzt alles auf dem Tag"
-    Ein Schreibvorgang ersetzt den Inhalt des Tags vollständig. Was jetzt darauf
-    steht, ist danach verloren. Bambu-Tags werden nie beschrieben.
-
-### Wann sie schreibt
+    Was jetzt auf dem Tag steht, ist danach weg. Bambu-Tags werden nie
+    beschrieben.
 
 **Einstellungen → Waage → Tag nach Verlinken beschreiben**
 
 ![Optionen für das Tag-Schreiben](../assets/images/ui/de/15_tagwrite.png)
 
-| Modus | Verhalten |
-|---|---|
-| **Aus** | Nur die UID wird mit der Spule verknüpft, der Tag bleibt unberührt. Schreiben geht weiterhin über die [Weboberfläche](web.md), wo vorher sichtbar ist, was draufgeht. |
-| **Fragen** | Die Waage fragt jedes Mal nach. |
-| **Immer schreiben** | Ohne Rückfrage, nur das Ergebnis wird gemeldet. |
+- **Aus** - nur die UID wird mit der Spule verknüpft, der Tag bleibt unberührt.
+- **Fragen** - die Waage fragt jedes Mal.
+- **Immer schreiben** - ohne Rückfrage, nur das Ergebnis wird gemeldet.
 
-### Wenn Tag und Bestand auseinanderlaufen
-
-Die Waage passt auch danach noch auf. Steht auf dem Tag etwas anderes als im
-Bestand - weil sich das Material geändert hat, die Farbe oder die Spule selbst -
-sagt sie Bescheid und bietet an, den Tag richtigzustellen. Abschaltbar unter
-**Einstellungen → Waage → Tag nach Verlinken beschreiben**.
+Während die Waage schreibt, bittet eine Karte mit Fortschrittsbalken, die Spule
+liegen zu lassen. **Bei Abweichung fragen** auf demselben Screen lässt die Waage
+später ein Neuschreiben anbieten, wenn der Tag nicht mehr zur Spule passt.
 
 ### Formate
 
-Das Format entscheidet, wer den Tag lesen kann.
-
 === "OpenSpool"
 
-    Ein NDEF-Datensatz mit Material, Farbe, Marke, Temperaturen und der
-    Spulen-ID. Das verstehen die Filament-Manager und OpenSpool-Leser.
-
-    **Die Voreinstellung, und die richtige Antwort, solange nichts dagegen
-    spricht.**
+    Material, Farbe, Marke, Temperaturen und die Spulen-ID, lesbar für
+    Filamentverwaltungen und OpenSpool-Leser. **Der Standard und die richtige
+    Wahl, solange du keinen Grund für etwas anderes hast.**
 
 === "FilaMan"
 
-    Derselbe Datensatz unter dem Protokollnamen, den eine FilaMan-Installation
-    erwartet.
-
-    Nimm das, wenn FilaMan dein Backend ist und dessen eigene Leser den Tag
-    aufnehmen sollen.
+    Derselbe Datensatz unter dem Namen, den FilaMan erwartet. Nimm ihn, wenn
+    FilaMan dein Backend ist und seine eigenen Leser und seine App den Tag
+    erkennen sollen.
 
 === "Anycubic ACE"
 
-    Gar kein Datensatz, sondern rohe Seiten mit Artikelnummer, Marke, Material,
-    Farbe, Düsen- und Betttemperatur, Durchmesser, Länge und Gewicht.
-
-    Die ACE liest diese Seiten selbst - das ist das Format, um den Drucker
-    direkt zu füttern statt einen Filament-Manager.
-
-=== "Leeren"
-
-    Setzt den Tag zurück auf null. Zu finden auf der Tag-Seite der
-    [Weboberfläche](web.md).
+    Die Rohseiten, die die Anycubic ACE selbst liest. Um den Drucker direkt zu
+    füttern statt einer Filamentverwaltung.
 
 ### Aus dem Browser
 
-Die Tag-Seite der [Weboberfläche](web.md) gibt dir die meiste Kontrolle: beide
-Seiten nebeneinander, was auf dem Tag steht und was draufkäme, mit farbig
-markierten Unterschieden, und das Format wählst du selbst.
+Die Seite **Tags** in der [Weboberfläche](web.md) zeigt, was auf dem Tag steht,
+neben dem, was draufkäme, und du wählst das Format. Dort kannst du einen Tag auch
+verknüpfen, ohne ihn zu beschreiben (**Nur verknüpfen**), und dir die Rohdaten
+ansehen. Der Tag muss dafür auf dem Leser liegen.
 
-Geschrieben wird trotzdem am Gerät - der NFC-Bus gehört der Waage, eine Anfrage
-aus dem Browser wird geparkt und beim nächsten Durchlauf ausgeführt. Der Tag muss
-also auf dem Leser liegen.
+---
+
+## Ein zweiter Tag pro Spule
+
+Ein Tag auf jeder Seite der Spule, und sie wird erkannt, egal wie herum sie
+liegt. Direkt nach dem Verknüpfen fragt die Waage nach dem zweiten: Spule
+umdrehen, fertig. Die Frage schaltest du unter **Einstellungen → Verbindung →
+Weitere Optionen → Zweites Tag abfragen** ein oder aus.
+
+Das braucht ein Backend, das mehrere Tags pro Spule kennt: Spoolman 0.27 oder
+neuer mit nativen Tags (oder dem Feld `card_uids`), oder FilaMan 1.3.1 oder
+neuer. BamBuddy kann das nicht.
+
+Verknüpfst du einen Tag, der schon zu einer anderen Spule gehört, zeigt die
+Waage beide Spulen und bietet **Umhängen** an.
+
+!!! tip "Happy Hare"
+    Happy Hare liest die Hardware-UID des Chips aus dem Feld `rfid_tag`. Schalte
+    **Chip-UID mitschreiben** ein (nur Spoolman, unter **Weitere Optionen**),
+    und die Waage trägt sie für dich ein.
 
 ---
 
 ## Welchen Tag soll ich kaufen?
 
-!!! warning "NTAG213 ist zum Schreiben zu klein"
-    Ein NTAG213 hat 144 Byte Nutzspeicher, und das reicht **nicht für den
-    OpenSpool- oder FilaMan-Datensatz**. Zum Lesen ist er einwandfrei, dort
-    zählt nur die UID - beschreiben lässt er sich nicht.
+**NTAG215.** Er wird zuverlässig gelesen und hat Platz für einen Datensatz, falls
+die Waage ihn beschreiben soll.
 
-    **Wenn die Waage deine Tags beschreiben soll, kauf NTAG215 oder NTAG216.**
+| Tag | Lesen | Schreiben | Hinweis |
+|---|---|---|---|
+| NTAG213 | ja | **nein** | 144 Byte, zu klein für einen Datensatz |
+| **NTAG215** | ja | ja | **empfohlen** |
+| NTAG216 | ja | ja | mehr Speicher, etwas teurer |
+| MIFARE Ultralight | ja | nein | sehr stabil beim Lesen |
+| MIFARE Classic, Creality, Snapmaker | ja | nein | über die UID |
+| Bambu Lab | ja | **nie** | verschlüsselt |
+| ISO 15693, Prusa OpenPrintTag | nein | nein | anderer Funkstandard |
 
-| Wenn du willst | Kauf | Suche nach |
-|---|---|---|
-| Nur lesen | NTAG213 | *"NTAG213 NFC Sticker"* |
-| Lesen und schreiben | **NTAG215** | *"NTAG215 NFC Sticker"* |
-| Schreiben mit Luft nach oben | NTAG216 | *"NTAG216 NFC Sticker"* |
-| Größtmögliche Lesestabilität | MIFARE Ultralight | *"MIFARE Ultralight NFC Sticker"* |
-
-Runde 25-mm-Aufkleber sind am verbreitetsten und passen gut auf Spulenkerne.
-
----
-
-## Kompatibilität
-
-| Tag-Typ | UID | Lesen | Schreiben | Anmerkung |
-|---|---|---|---|---|
-| NTAG213 | 7 Byte | ja | **nein** | 144 Byte, zu klein für einen Datensatz |
-| NTAG215 | 7 Byte | ja | ja | empfohlen |
-| NTAG216 | 7 Byte | ja | ja | mehr Speicher, etwas teurer |
-| MIFARE Ultralight | 7 Byte | ja | nein | am stabilsten zu lesen |
-| MIFARE Ultralight C | 7 Byte | ja | nein | läuft problemlos |
-| Bambu Lab intern | 4 Byte | ja | **nie** | verschlüsselt, Bambu-Flow |
-| Snapmaker-, Creality-Spulentags | 4 Byte | ja | nein | MIFARE Classic 1K, nur über die UID erkannt |
-| MIFARE Classic 1K / 4K / Mini | 4 Byte | ja | nein | über die UID, nach dem Bambu-Versuch: etwa zehn Sekunden |
-| MIFARE DESFire | 7 Byte | unzuverlässig | nein | nicht empfohlen |
-| ISO 15693 | - | nein | nein | falsches Protokoll |
+Runde 25-mm-Sticker sind am verbreitetsten und sitzen gut auf Spulennaben.
 
 ---
 
 ## Position - näher ist nicht besser
 
-Das ist die häufigste Ursache für unzuverlässige NTAG-Lesungen, und es ist das
-Gegenteil dessen, was die meisten erwarten: ein Tag, der direkt am Leser klebt,
-wird oft **schlechter** gelesen als einer ein paar Millimeter davor.
+Die häufigste Ursache für unzuverlässiges Lesen ist das Gegenteil dessen, was
+die meisten erwarten: Ein Tag direkt am Leser wird oft **schlechter** gelesen als
+einer ein paar Millimeter entfernt. Aus nächster Nähe verstimmt der Tag die
+Antenne des Lesers, und das Feld bricht zusammen.
 
-Leserantenne und Tag bilden einen lose gekoppelten Transformator. Auf sehr
-kurzer Distanz wird die Kopplung so stark, dass die Last des Tags auf den
-Schwingkreis des Lesers zurückwirkt und ihn von 13,56 MHz wegzieht. Das Feld
-bricht zusammen, und gleichzeitig wird die Antwort des Tags klein gegenüber dem
-Träger, sodass der Leser sie kaum noch dekodiert. Das Ergebnis ist eine Totzone
-direkt an der Antennenoberfläche - zuverlässig gelesen wird erst etwas weiter
-draußen.
+!!! tip "Liest ein Tag schlecht, erst Abstand schaffen, dann tauschen"
+    Etwa **5 bis 20 mm** Abstand sind für die meisten Sticker ideal. Ein paar
+    Lagen Schaumstoffband oder ein kleiner gedruckter Abstandshalter unter dem
+    Tag reichen meist.
 
-!!! tip "Liest ein Tag schlecht, gib ihm Abstand, bevor du ihn tauschst"
-    Etwa **5 bis 20 mm** sind für die meisten Aufkleber-Tags der beste Bereich.
-    Ein paar Lagen Schaumklebeband oder ein kleiner gedruckter Abstandshalter
-    unter dem Tag reichen meist. Manche brauchten bis zu 20 mm.
+- Klebe den Tag nicht auf Metall oder über einen Metalleinsatz der Spule.
+- Die Spule kann auf der Platte nur wenig rutschen, der Abstand muss also vom
+  Tag kommen.
 
-- Kleb den Tag nicht dorthin, wo er bündig auf der Leseroberfläche endet.
-- Größere Tags vertragen näheren Sitz als kleine - ein 25-mm-Aufkleber verhält
-  sich anders als ein 15-mm-Aufkleber.
-- Kleb den Tag nicht auf Metall oder über einen metallischen Spuleneinsatz, das
-  verstimmt den Tag selbst.
-- Die Position des Lesers gibt das Gehäuse vor, und eine Spule kann auf der
-  Wiegeplatte nur etwa 10 mm wandern - der Abstand muss also von der Tag-Seite
-  kommen.
-
-**Warum Bambu-Lab-Spulen das kaum zeigen:** ihr Tag sitzt versenkt im Spulenkern
-und hält dadurch von sich aus ein paar Millimeter Abstand. Ein Aufkleber außen
-auf einer Fremdspule tut das nicht. Das ist ein großer Teil des Rufs, NTAG sei
-der unzuverlässigere von beiden - der eigentliche Unterschied ist oft nur die
-Montage.
+Bambu-Lab-Spulen zeigen das selten, weil ihr Tag vertieft im Spulenkern sitzt.
 
 ---
 
-## Bekannte Einschränkung - das Lagerort-Popup
+## Verlorene Lesungen und die Lagerort-Frage
 
-NTAG-Tags benutzen ein komplexeres HF-Protokoll als Bambu Labs MIFARE-Classic-Tags.
-Der PN532 kann einen NTAG zwischendurch nicht erkennen, obwohl die Spule sich
-nicht bewegt hat - er liest sie kurz als abgenommen und dann wieder als aufgelegt.
+Ab und zu verliert der Leser einen NTAG kurz, obwohl die Spule nicht bewegt
+wurde. Die [Lagerort-Frage](drying.md#ortsabfrage-bei-entnahme) fällt darauf
+nicht herein: Sie prüft das Gewicht und kommt erst, wenn du die Spule wirklich
+abnimmst.
 
-Normalerweise hat das keine sichtbare Wirkung. **Die Ausnahme ist das
-automatische Lagerort-Popup** - ein solcher Fehlausschlag kann die Lagerort-Auswahl
-öffnen, während die Spule noch daliegt.
-
-!!! tip "Abhilfe"
-    Prüfe zuerst die Position weiter oben, zu wenig Abstand ist die häufigere
-    Ursache. Bleibt es dabei, schalte **Automatisches Lagerort-Popup** unter
-    **Einstellungen → Waage** aus. Sonst ändert sich nichts.
-
-Bambu-Lab-Spulen zeigen das nicht.
-
----
-
-## Tags erkennen, die du schon hast
-
-Mit einer kostenlosen NFC-App wie **NFC Tools**:
-
-1. Tag scannen
-2. Die App nennt den Typ, etwa "NTAG215" oder "MIFARE Classic 1K"
-3. Eine UID mit 7 Byte heißt: wird gelesen. NTAG215 oder 216 heißt: wird auch
-   beschrieben
-
-Oder einfach auf die Waage legen:
-
-- Spulendaten oder "nicht gefunden" → kompatibel
-- Leseanimation für etwa zehn Sekunden, dann Spulendaten oder "nicht gefunden" → MIFARE Classic, über die UID erkannt
-- Gar nichts → ignoriert, falsche UID-Länge
+Unter 50 g oder an einem Gerät ohne Wägezelle hat die Waage nur den Leser. Öffnet
+sich die Lagerort-Liste dann von selbst, prüf die Position oben oder schalte
+**Ortsabfrage bei Entnahme** unter **Einstellungen → Waage** aus.

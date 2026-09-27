@@ -11,7 +11,7 @@ Der schnellste Weg zu Hilfe, und der Ort, an dem Beta-Funde gemeldet werden:
 
 👉 **[discord.gg/xadskCrPFu](https://discord.gg/xadskCrPFu)**
 
-Über 100 Leute betreiben eine SpoolmanScale. Baufragen, Fotos von Verkabelungen,
+Über 200 Leute betreiben eine SpoolmanScale. Baufragen, Fotos von Verkabelungen,
 Tag-Ärger - alles gern gesehen.
 
 ---
@@ -42,7 +42,16 @@ In VS Code mit der PlatformIO-Erweiterung öffnen. Die Umgebung heißt
 pio run                 # bauen
 pio run -t upload       # über USB flashen
 pio device monitor      # serieller Monitor, 115200 Baud
+scripts/check.sh        # Hausregeln, braucht python3 und node
 ```
+
+Das erste `pio run` lädt einmalig die festgelegte Plattform mit Arduino-Core 3.3
+und ihre Toolchain herunter, das dauert ein paar Minuten. Spätere Builds gehen
+schneller.
+
+`scripts/check.sh` prüft die Richtlinien unten und einiges mehr. Die CI führt es
+bei jedem Push und jedem Pull Request aus, lass es also laufen, bevor du einen
+öffnest.
 
 !!! warning "PSRAM bleibt Quad"
     `board_build.arduino.memory_type` muss `qio_qspi` bleiben. Niemals OPI,
@@ -55,6 +64,9 @@ Einzelheiten stehen in
 
 - Alle Code-Kommentare auf **Englisch**
 - Alle UI-Texte über das Makro `T(STR_XXX)` - nie fest verdrahtet
+- Ein neuer UI-Text braucht Deutsch, Englisch und einen französischen Entwurf.
+  Das Französische läuft über `tools/lang_fr.py`, siehe
+  [tools/FRENCH_TRANSLATION.md](https://github.com/Niko11111/SpoolmanScale/blob/main/tools/FRENCH_TRANSLATION.md)
 - Keine Geviertstriche, nirgends - sie brechen die Xtensa-Toolchain in
   Kommentaren und erscheinen in der UI als Rechteck. Nimm " - "
 - Bibliotheksversionen festnageln, nie "latest"
@@ -66,7 +78,7 @@ Einzelheiten stehen in
 1. Repo forken
 2. Branch anlegen: `git checkout -b feature/mein-feature`
 3. Änderungen machen
-4. Pushen und einen PR gegen `main` öffnen
+4. Pushen und einen PR gegen `dev` öffnen
 
 ---
 

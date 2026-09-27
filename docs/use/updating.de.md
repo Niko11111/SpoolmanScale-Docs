@@ -2,8 +2,24 @@
 
 ![System-Einstellungen](../assets/images/ui/de/14_system.png)
 
-Nach dem [ersten Flash](index.md#der-erste-flash-der-web-flasher) brauchst du das
-USB-Kabel nie wieder. Updates laufen am Gerät oder aus dem Browser.
+Nach dem [ersten Flash](index.md#der-erste-flash-der-web-flasher) laufen Updates
+am Gerät oder aus dem Browser, ohne USB-Kabel.
+
+!!! note "Von 0.7.x kommend: ein Update per USB"
+    v0.8.0 teilt den Speicher der Waage neu auf (6 MB statt 3 MB für die
+    Firmware), und das geht nur über das Kabel, einmal. Öffne den
+    [Web-Flasher](https://niko11111.github.io/SpoolmanScale/) in Chrome oder
+    Edge, schließ die Waage an und wähle **Update**. Das dauert etwa 2 Minuten,
+    WLAN, Kalibrierung und Backend-Einstellungen bleiben erhalten. Bietet der
+    Flasher stattdessen "Install" an, lass "Erase" ohne Haken, sonst sind WLAN
+    und Kalibrierung weg.
+
+    Eine Waage, die den Schritt auslässt, läuft weiter und bekommt v0.8.0 auch
+    über WLAN. Sie erinnert dich bei jedem Start daran, mit QR-Code zum Flasher.
+    Spätere Updates, die größer sind als die alte Aufteilung erlaubt, lassen
+    sich dann nicht mehr über WLAN installieren.
+
+    ![Die Erinnerung mit QR-Code zum Web-Flasher](../assets/images/ui/de/x03_partition_hint.png)
 
 ---
 
@@ -26,6 +42,8 @@ Sie lädt, schreibt und startet von selbst neu und meldet dabei, wie weit sie is
 
 Die Firmware-Seite der [Weboberfläche](web.md) tut dasselbe mit mehr Platz zum
 Lesen und funktioniert auch vom Handy.
+
+![Die Seite Firmware im Browser](../assets/images/ui/de/web_firmware.png){ width="420" }
 
 !!! note "Braucht Wartung"
     Die Firmware-Seite liegt hinter dem Schalter **Wartung**, und der ist

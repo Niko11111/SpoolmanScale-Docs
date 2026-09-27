@@ -10,7 +10,7 @@ The fastest way to get help, and where beta findings are reported:
 
 👉 **[discord.gg/xadskCrPFu](https://discord.gg/xadskCrPFu)**
 
-Over 100 people are running a SpoolmanScale. Build questions, wiring photos,
+Over 200 people are running a SpoolmanScale. Build questions, wiring photos,
 tag troubles - all welcome.
 
 ---
@@ -41,7 +41,14 @@ Open it in VS Code with the PlatformIO extension. The environment is
 pio run                 # build
 pio run -t upload       # flash over USB
 pio device monitor      # serial monitor, 115200 baud
+scripts/check.sh        # house rules, needs python3 and node
 ```
+
+The first `pio run` downloads the pinned platform with Arduino core 3.3 and its
+toolchain once, which takes a few minutes. Later builds are quicker.
+
+`scripts/check.sh` checks the house rules below and a few more. CI runs it on
+every push and pull request, so run it before you open one.
 
 !!! warning "PSRAM stays Quad"
     `board_build.arduino.memory_type` must remain `qio_qspi`. Never OPI, never
@@ -54,6 +61,9 @@ Build details are in
 
 - All code comments in **English**
 - All UI strings via `T(STR_XXX)` macro - never hardcoded
+- A new UI string needs German, English and a French draft. The French goes
+  through `tools/lang_fr.py`, see
+  [tools/FRENCH_TRANSLATION.md](https://github.com/Niko11111/SpoolmanScale/blob/main/tools/FRENCH_TRANSLATION.md)
 - No em-dashes anywhere - they break the Xtensa toolchain in comments and
   render as a rectangle in the UI. Use " - "
 - Pin library versions, never "latest"
@@ -65,7 +75,7 @@ Build details are in
 1. Fork the repo
 2. Create a branch: `git checkout -b feature/my-feature`
 3. Make your changes
-4. Push and open a PR against `main`
+4. Push and open a PR against `dev`
 
 ---
 

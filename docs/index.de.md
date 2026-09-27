@@ -32,69 +32,55 @@ deiner Filamentverwaltung ab - ohne dass du einen Browser aufmachen musst.
 
 ---
 
-## Neu in v0.7.0
+## Neu in v0.8.0
 
-<div class="tx-feature-grid">
-  <div class="tx-feature-card">
-    <div class="tx-feature-card__icon">🔌</div>
-    <h3>Drei Backends</h3>
-    <p>Spoolman, FilaMan und jetzt BamBuddy. Jederzeit umschaltbar, die Einstellungen der anderen bleiben.</p>
-  </div>
-  <div class="tx-feature-card">
-    <div class="tx-feature-card__icon">🏷️</div>
-    <h3>NFC-Tags beschreiben</h3>
-    <p>Als OpenSpool, FilaMan oder Anycubic ACE, von selbst oder auf Nachfrage, mit jedem Backend.</p>
-  </div>
-  <div class="tx-feature-card">
-    <div class="tx-feature-card__icon">🌐</div>
-    <h3>Neue Weboberfläche</h3>
-    <p>Einzelne Seiten, zweisprachig, Firmware-Update im Browser, und auf dem Handy genauso brauchbar.</p>
-  </div>
-  <div class="tx-feature-card">
-    <div class="tx-feature-card__icon">🩺</div>
-    <h3>Sie sagt, was ihr fehlt</h3>
-    <p>Die Waage prüft sich selbst und benennt den Fehler im Klartext, mit Abhilfe und einem Knopf, der hinführt.</p>
-  </div>
-</div>
+- 🏷️ **Etikettendruck** *(Beta, erste Version)* - per Bluetooth auf einen Phomemo
+  M220 (M110 experimentell), mit Material, Farbe, Spulen-ID und QR-Code zur
+  Spule. Das ist ein Anfang: Etiketten aus dem Backend, ein kleiner Editor im
+  Browser, weitere Drucker und Größen sind geplant.
+- ⚡ **Deutlich schneller** - eine neue Spule verknüpfen dauert unter einer
+  Sekunde statt 2 bis 7 s, das Inventar lädt im Hintergrund, während der
+  Bildschirm weiterläuft, und der Touch wird 100-mal pro Sekunde gelesen.
+- 🧵 **Spoolman 0.27: native Tags** - Tags gehören zur Spule, mehrere pro
+  Spule, bestehende Waagen ziehen von selbst um.
+- 📇 **Tags** - Tipp auf den NFC-Chip in der Kopfzeile zeigt den Tag auf dem
+  Leser, Schreiben zeigt seinen Fortschritt, und Snapmaker-Tags lassen sich
+  lesen (optional).
+- 📝 **Log ohne SD-Karte** - im internen Speicher der Waage, lesbar im Browser.
+- 🇫🇷 **Französisch** - auf der Waage und in der Weboberfläche.
 
-[Vollständige Release Notes auf GitHub :material-arrow-right:](https://github.com/Niko11111/SpoolmanScale/releases){ .md-button }
+!!! note "Schon auf 0.7.x?"
+    Weil 0.8.0 den Speicher neu aufteilt, geht dieses eine Update einmal über
+    den [Web-Flasher](https://niko11111.github.io/SpoolmanScale/): verbinden,
+    **Update** wählen, etwa 2 Minuten, alle Einstellungen bleiben. Danach kommen
+    Updates wie gewohnt über WLAN. [Mehr](use/updating.md)
+
+[Alle Release Notes auf GitHub :material-arrow-right:](https://github.com/Niko11111/SpoolmanScale/releases/tag/v0.8.0){ .md-button }
 
 ---
 
 ## Was sie kann
 
-<div class="tx-feature-grid">
-  <div class="tx-feature-card">
-    <div class="tx-feature-card__icon">📡</div>
-    <h3>Erkennung per NFC</h3>
-    <p>Spulen einmal taggen. Auflegen genügt zum Erkennen. NTAG213/215/216, Bambu Labs eigene Tags und jeder MIFARE-Classic-Tag.</p>
-  </div>
-  <div class="tx-feature-card">
-    <div class="tx-feature-card__icon">⚖️</div>
-    <h3>Präzise Waage</h3>
-    <p>24-Bit-NAU7802 an einer 2-kg-Wägezelle. Tarieren, Beutelgewicht, Live-Differenz zum Bestand.</p>
-  </div>
-  <div class="tx-feature-card">
-    <div class="tx-feature-card__icon">📺</div>
-    <h3>480x320 Touchscreen</h3>
-    <p>Alles am Gerät. Für den Alltag brauchst du keinen Rechner.</p>
-  </div>
-  <div class="tx-feature-card">
-    <div class="tx-feature-card__icon">💧</div>
-    <h3>Trocknungserinnerung</h3>
-    <p>Je Material oder eine Regel für alles, mit Multiplikator für luftdichte Lagerung.</p>
-  </div>
-  <div class="tx-feature-card">
-    <div class="tx-feature-card__icon">🔄</div>
-    <h3>OTA-Updates</h3>
-    <p>Die Waage prüft GitHub selbst und installiert über WLAN. Das Kabel ist nur für den ersten Flash.</p>
-  </div>
-  <div class="tx-feature-card">
-    <div class="tx-feature-card__icon">🏠</div>
-    <h3>Vollständig lokal</h3>
-    <p>Keine Cloud, kein Konto. Läuft im eigenen Netz. Deine Daten bleiben deine.</p>
-  </div>
-</div>
+- 🔌 **Drei Backends** - [Spoolman, FilaMan oder BamBuddy](use/backends.md).
+  Jederzeit umschaltbar, die Einstellungen der anderen bleiben.
+- 📡 **Erkennung per NFC** - Spule auflegen, sie wird erkannt: NTAG, Bambu Labs
+  eigene Tags, MIFARE Classic, auf Wunsch ein Tag auf jeder Seite der Spule.
+  [NFC-Tags](use/tags.md)
+- ✍️ **Tags beschreiben** - als OpenSpool, FilaMan oder Anycubic ACE, von selbst
+  oder auf Nachfrage, mit jedem Backend.
+- ⚖️ **Präzise Waage** - 24-Bit-NAU7802 an einer 2-kg-Wägezelle. Tarieren,
+  Beutelgewicht, Live-Differenz zum Bestand. [Wiegen](use/weighing.md)
+- 🖨️ **AMS-Ansicht** - mit FilaMan und BamBuddy: jedes Fach mit Spule,
+  Restmenge und Trocknung, die Trocknung direkt aus der Karte eintragen.
+- 💧 **Trocknungserinnerung** - je Material oder eine Regel für alles, mit
+  Multiplikator für luftdichte Lagerung. [Trocknung & Lagerort](use/drying.md)
+- 🌐 **Weboberfläche** - einzelne Seiten in drei Sprachen, Firmware-Update im
+  Browser, auf dem Handy genauso brauchbar. [Weboberfläche](use/web.md)
+- 🩺 **Sie sagt, was ihr fehlt** - die Waage prüft sich selbst und benennt den
+  Fehler im Klartext, mit Abhilfe. [Was die Waage dir sagt](help/index.md)
+- 🔄 **Updates über WLAN** - die Waage prüft GitHub selbst und installiert
+  drahtlos. [Aktualisieren](use/updating.md)
+- 🏠 **Vollständig lokal** - keine Cloud, kein Konto. Läuft im eigenen Netz.
 
 ---
 
@@ -127,7 +113,7 @@ Etwa **50 bis 60 Euro** an Teilen. Einzelheiten in der
 === "Ich habe schon eine"
 
     - [Firmware aktualisieren](use/updating.md)
-    - [Was in v0.7.0 neu ist](https://github.com/Niko11111/SpoolmanScale/releases)
+    - [Was in v0.8.0 neu ist](https://github.com/Niko11111/SpoolmanScale/releases/tag/v0.8.0)
     - [Die Weboberfläche](use/web.md)
 
 === "Etwas stimmt nicht"

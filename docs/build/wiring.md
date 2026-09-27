@@ -48,10 +48,12 @@ The PN532 has no connector - **wires must be soldered directly**.
 !!! tip "JST SH 1.0mm connector"
     If you use a 5-pin JST SH 1.0mm pigtail on the PN532, the mount opening is just large enough to pass the connector through - allowing you to solder everything outside the enclosure and plug in during final assembly.
 
-!!! danger "The reset wire moves - the photos on this page still show the old way"
-    Solder the orange RST wire to **RSTPDN**, the topmost pin of the labelled
-    10-pin header (the one carrying RSTPDN, SIGIN, SIGOUT, SIGCLK, INT1, INT0,
-    DBGTXD, DBGRXD, AUX1, AUX2).
+!!! danger "The reset wire goes to RSTPDN"
+    Solder the orange RST wire to **RSTPDN**, the pin at the end of the
+    labelled 10-pin row (AUX1, AUX2, DBGRXD, DBGTXD, INT0, INT1, SIGCLK, SIGOUT,
+    SIGIN, RSTPDN). With the board lying as in the photo, it is the bottom one.
+
+    ![PN532 from the back: the orange wire on RSTPDN](../assets/images/pn532_rstpdn.jpg){ width="480" }
 
     Every build guide up to August 2026 sent it to the header opposite, where
     the module exposes an **output** rather than its reset input - so the reset
@@ -60,8 +62,6 @@ The PN532 has no connector - **wires must be soldered directly**.
     **Nothing is broken if you leave it alone.** The reader has always come up
     fine without a reset, and a scale that is never rewired behaves exactly as
     it does today.
-
-    The wiring photos further down have not been reshot yet.
 
 ### PN532 Pinout (JST SH 1.0mm 5-pin, 3rd party cable colors)
 
@@ -77,11 +77,6 @@ The PN532 has no connector - **wires must be soldered directly**.
 
 
 ## After the rewiring
-
-!!! note "Needs firmware v0.7.1 or newer"
-    The check described here arrives with v0.7.1. On v0.7.0 the menu entry does
-    not exist yet - the rewiring itself is already correct and nothing has to be
-    done twice, the scale simply cannot confirm it yet.
 
 The scale does not take the reset line on trust. It measures it, on your
 device, and only uses it once the measurement says the wire is really there.
@@ -167,5 +162,5 @@ The safest option is soldering directly to the labeled pads on the NAU7802 (VIN,
 
 ![Step 1](../assets/images/assembly_1.jpeg)
 ![Step 2](../assets/images/assembly_2.jpeg)
-![Step 3](../assets/images/assembly_3.jpeg)
+![Step 3: PN532 from the back, reset wire on RSTPDN](../assets/images/pn532_rstpdn.jpg)
 ![Step 4](../assets/images/assembly_4.jpeg)

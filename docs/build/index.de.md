@@ -26,6 +26,18 @@ hast, willst du eher [Firmware aktualisieren](../use/updating.md).
 - Einen 3D-Drucker für das Gehäuse
 - Ein USB-C-**Datenkabel** und ein 5V-Netzteil
 
+Optional:
+
+- **NTAG215-Aufkleber**, wenn die Waage deine Tags beschreiben soll. NTAG213
+  reicht zum Lesen, ist zum Beschreiben aber zu klein, siehe
+  [NFC-Tags](../use/tags.md#welchen-tag-soll-ich-kaufen)
+- Ein **Phomemo M220**-Etikettendrucker, per Bluetooth. Etikettendruck ist Beta
+
+Auch die Wägezelle ist optional. Ohne NAU7802 und Wägezelle schaltest du
+**Einstellungen → Waage → Waage vorhanden** aus, und das Gerät arbeitet als
+Tag-Terminal: es liest, verknüpft und beschreibt Tags und setzt Lagerorte, nur
+ohne Gewichte.
+
 Genaue Teile, Links und Preise in der [Stückliste](bom.md). Rechne insgesamt mit
 **50 bis 60 Euro**.
 

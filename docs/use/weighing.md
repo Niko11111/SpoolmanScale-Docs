@@ -67,6 +67,9 @@ wondering whether it did.
   alone
 - Switch it off with **Disable auto** if you would rather press the button
 
+After a save, automatic or with **Update Weight**, the fill bar and its colour
+show the new amount straight away.
+
 !!! info "FilaMan without a tag"
     With FilaMan, a spool that has no tag is also saved automatically when this
     is on, not only via the button.
@@ -75,7 +78,7 @@ wondering whether it did.
 
 ## Whole grams
 
-Since v0.7.0 the scale shows and writes back **whole grams** everywhere.
+The scale shows and writes back **whole grams** everywhere.
 
 Spoolman derived `used_weight` from the decimal it was sent and turned it into
 numbers like `251.70000000000005 g`. Sending whole grams stops that from the
@@ -83,9 +86,28 @@ next weighing onwards.
 
 ---
 
-## Last used mode
+## Last Used Mode
 
-**Settings → Scale → Last used mode**
+**Settings → Scale → Last Used Mode**
 
 What counts as "used". The choices depend on the backend - printing usage or
 weighing - so the date on the main screen means what you expect it to mean.
+
+---
+
+## Without a load cell
+
+**Settings → Scale → Scale fitted**
+
+A device built from display and reader alone works as a tag terminal: put a
+tag on, see the spool, give it a location and a printer. Switch **Scale
+fitted** off and restart:
+
+- the weights leave the main screen, and so does TARE
+- the **Update Weight** button becomes the location button
+- **Calibration** and **Bag weight** leave the menu
+- the scale no longer reports a missing load cell as a fault
+
+The switch is also on the **Settings** page of the [web interface](web.md), in
+the **Panel** card, with a restart button next to it. Switch it back on the
+same way.

@@ -9,7 +9,7 @@ one.
 
 ## The reminder
 
-**Settings → Scale → Drying reminder**
+**Settings → Scale → Drying Reminder**
 
 ![Drying reminder modes](../assets/images/ui/en/16_drying.png)
 
@@ -40,15 +40,24 @@ you dry everything on the same rhythm.
 
 ## Recording a drying run
 
-When you take a spool out of the dryer, put it on the scale and record it. The
-date is stored with the spool at your [backend](backends.md).
+When you take a spool out of the dryer, put it on the scale, tap **Dried today**
+and confirm. The date is stored with the spool at your [backend](backends.md).
 
 !!! info "Stored on the correct calendar day"
-    A spool dried shortly after midnight used to count as dried *yesterday*, and
-    the reminder counted a day too many. Fixed in v0.7.0.
+    The date is your local calendar day, so a spool dried shortly after midnight
+    counts as dried today, not yesterday.
 
-With Spoolman the date lives in the `last_dried` extra field, created for you
-during [first setup](index.md#step-4-where-the-tag-uid-is-stored).
+With Spoolman the date lives in the `last_dried` extra field. If the field is
+missing, the scale creates it on the first write.
+
+### From the AMS
+
+With FilaMan and BamBuddy a spool does not have to leave the AMS for this. Tap
+a filled bay in the AMS view, and the card offers to record today's drying. On
+an AMS 2 Pro it offers all spools in the unit at once. The drying reminder's
+traffic light shows on the card as well.
+
+![AMS card with a drying date in red](../assets/images/ui/en/dry_03_card_red.png)
 
 ---
 
@@ -61,13 +70,14 @@ box or shelf it came from.
 
 **Settings → Scale → Location on removal**
 
-Lift a spool off the pad and the scale asks where it is going. Tap the location
-and it is written back.
+Lift a spool off the pad, and after about 1.5 seconds the scale asks where it
+is going. Tap the location and it is written back.
 
-!!! warning "Switch it off if it fires by itself"
-    With NTAG tags the reader can briefly lose the tag while the spool has not
-    moved, which reads as a removal and opens the picker unprompted. Check the
-    [tag positioning](tags.md#positioning-closer-is-not-better) first - too
-    little distance is the more frequent cause. If it persists, switch this off.
+The scale tells a removal from the weight, not from the reader alone. A spool
+that is still lying there does not trigger the question, even when the reader
+briefly loses its tag. The exceptions, very light spools and a device without a
+load cell, are on [NFC tags](tags.md#lost-reads-and-the-location-question).
 
-    Bambu Lab spools do not show this.
+A list that opened by itself closes after 30 seconds as if you had pressed
+**Cancel**, and the Cancel button drains meanwhile. Opened from **More info**,
+it waits for you.

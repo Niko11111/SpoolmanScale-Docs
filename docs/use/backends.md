@@ -7,9 +7,9 @@
 </div>
 
 SpoolmanScale talks to three filament managers. One is active at a time, chosen
-under **Settings → Connection** or on the [web interface](web.md)'s backend page.
-Switching keeps the credentials of the others, clears the display and asks the
-new backend about whatever spool is on the pad.
+under **Settings → Connection → Filament manager** or on the backend page of the
+[web interface](web.md). Switching keeps what you entered for the others, and
+the spool on the pad is looked up again at the new backend.
 
 ---
 
@@ -21,15 +21,12 @@ new backend about whatever spool is on the pad.
 |---|---|---|---|
 | Usual port | `7912` | `8083` | `8000` |
 | Credentials | none | device token **and** API key | one API key, optional |
-| Find, weigh, write back | yes | yes | yes |
-| Link and unlink tags | yes | yes | yes |
-| [Write tags](tags.md) | yes | yes | yes |
-| Create a spool | yes | yes | yes, also straight from a Bambu tag |
-| Archive and bring back | yes | yes | yes |
-| Location, drying date | yes | yes | yes |
-| Tare per filament or vendor | yes | yes | no |
-| AMS assignment | - | yes | - |
-| Mobile app | - | yes | - |
+| Weigh, link, [write tags](tags.md), copy, archive, location, drying | yes | yes | yes |
+| Second tag per spool | 0.27 and newer | 1.3.1 and newer | - |
+| Tare per filament or vendor | yes | yes | - |
+| Create a spool from a Bambu tag | - | - | yes |
+| [AMS view](ams.md) | - | yes | yes |
+| Browser follows the scale | 0.27 and newer | 1.3.7 and newer | - |
 
 !!! note "Leave the port off and you get port 80"
     The address field takes `host` or `host:port`. Without a port the request
@@ -43,89 +40,83 @@ new backend about whatever spool is on the pad.
 
     ![Spoolman](../assets/images/backends/Logo_Spoolman.png){ .backend-logo }
 
-    The full range, and the backend the project started on. A plain base URL,
+    The full range, and the backend the project started on. A plain address,
     no credentials.
 
-    **Where the tag UID lives is yours to pick.** `tag`, `nfc_id` or
-    `card_uids`, depending on what else reads your database - see
-    [First setup](index.md#step-4-where-the-tag-uid-is-stored). Several tags on
-    one spool work.
+    **Spoolman 0.27 and newer** keeps tags itself, attached to the spool, and a
+    spool can carry several. The scale uses this by default, and a scale that
+    stored its tags in `extra.tag` before moves them over once, by itself. A
+    scan at the scale can open the spool in Spoolman's web page.
 
-    UIDs are written as plain hex (`04B9E542447080`), the same as every other
-    tool in the Spoolman ecosystem. A spool another program linked is found by
-    the scale, and the other way round. Spools carrying the older colon form are
-    still matched and get rewritten once, on their first scan.
+    **Older Spoolman versions** keep the tag in an extra field. The scale
+    creates any field it is missing on the first write, so there is nothing to
+    set up beforehand.
 
-    !!! tip "Coming: Spoolman's own tag handling"
-        Spoolman is growing tag support of its own. Tags will belong to the
-        spool instead of sitting in an extra field, and the scale registers
-        itself as a reader, so a scan at the scale opens that spool in your
-        browser. That arrives with **Spoolman 0.27.0**, which is not released
-        yet. SpoolmanScale supports it from day one.
+    !!! tip "Using OpenSpoolman too?"
+        OpenSpoolman does not know the native tags yet. Turn on
+        **For OpenSpoolman** and the scale also writes the Bambu UUID into
+        `extra.tag`, where OpenSpoolman looks for it.
 
 === "FilaMan"
 
     ![FilaMan](../assets/images/backends/filaman_logo.png){ .backend-logo }
 
-    The full range, plus what FilaMan brings itself. It needs two credentials,
-    created in two different places in FilaMan:
+    The full range, plus what FilaMan brings itself. It needs two credentials:
 
-    | Credential | Used for | Created in FilaMan |
-    |---|---|---|
-    | API key | everything that writes | gear icon next to your user name → **API Keys** |
-    | Device token | heartbeat, weight reporting, reading | **Admin Panel → Devices → Create Device** |
+    | Credential | Created in FilaMan |
+    |---|---|
+    | API key | gear icon next to your user name → **API Keys** |
+    | Device token | **Admin Panel → Devices → Create Device** |
 
-    Creating a device gives you a 6 character code, not the token itself: enter
-    the code on the scale and it trades it for the token. FilaMan shows the key
-    and the code only once, and both should come from an admin account. Step by
-    step in [First setup](index.md#step-3-pick-a-backend).
+    Creating a device gives you a 6 character code: enter it on the scale and
+    the scale trades it for the token. FilaMan shows the key and the code only
+    once. Step by step in [First setup](index.md#step-3-pick-a-backend).
 
-    **The tag features reach furthest here.** FilaMan can send the scale a write
-    request together with the tag contents, and you confirm it on the device.
-    The other way round, FilaMan can ask the scale to read a tag and takes the
-    data into its inventory. Spool status can be changed at the scale directly.
+    **Tags from FilaMan.** FilaMan can send the scale a tag to write, which you
+    confirm on the device, and it can ask the scale to read a tag.
 
-    **AMS.** Lift a freshly weighed spool off the pad and the scale asks whether
-    it goes into the AMS. Tap yes and FilaMan holds it ready for the next
-    printer that loads a tray, so you do not assign it by hand.
+    **AMS.** Lift a freshly weighed spool and the scale asks "Putting the spool
+    into the AMS?". Say yes and FilaMan assigns it to the next tray the printer
+    loads. More in [AMS view](ams.md).
 
-    !!! info "Weighing without a tag"
-        FilaMan can take a weight for a spool that has no tag. With automatic
-        saving on this happens by itself, not only via the button. FilaMan's own
-        dialog reports an error while doing so even though the spool is loaded -
-        that is FilaMan's message, not a failure at the scale.
+    **The browser follows the scale** (FilaMan 1.3.7 and newer). Put a spool on
+    the pad and the FilaMan tab on your computer jumps to it. Pick the scale as
+    your reader once in FilaMan's browser settings.
 
 === "BamBuddy"
 
     ![BamBuddy](../assets/images/backends/BamBuddy_logo.png){ .backend-logo }
 
-    A single API key, sent as `X-API-Key`, created under **Settings → API Keys**
-    with **Read Status** and **Manage Inventory**. The key is optional: an
-    instance with authentication switched off answers without one.
+    One API key with **Read Status** and **Manage Inventory**, created in
+    BamBuddy under **Settings → API Keys**. Without authentication in BamBuddy
+    no key is needed.
 
-    **BamBuddy keeps its inventory in one of two places** - its own database, or
-    a Spoolman server behind it. The scale works out which and writes to the
-    right one. The status bar names it:
-
-    | Status bar | Meaning |
-    |---|---|
-    | `Inventory: BamBuddy` | BamBuddy's own database |
-    | `Inventory: Spoolman` | a Spoolman server behind BamBuddy |
+    **BamBuddy keeps its inventory in one of two places:** in its own database
+    or in Spoolman behind BamBuddy. The scale works out which and says so in the
+    status bar: `Inventory: BamBuddy` or `Inventory: Spoolman`.
 
     **Only BamBuddy creates a spool straight from a Bambu tag**, with material,
-    brand, colour and temperatures taken off the tag. Put it down, create it,
-    done.
+    brand, colour and temperatures taken off the tag.
+
+    **AMS.** With **Into the AMS after weighing** on, you weigh the spool, lift
+    it and tap the bay. More in [AMS view](ams.md).
 
     !!! warning "No tare per filament or vendor"
-        BamBuddy keeps neither filaments nor vendors as objects of their own, so
-        a tare value cannot hang off them. Set the empty spool weight per spool,
-        or use the [bag weight](weighing.md#bag-weight).
+        BamBuddy has no filament or vendor objects to hang a tare value on. Set
+        the empty spool weight per spool, or use the
+        [bag weight](weighing.md#bag-weight).
 
 ---
 
-## Switching
+## Options
 
-**Settings → Connection → Backend**, or the backend page in the
-[web interface](web.md). What you entered for the other two stays. After the
-switch the display clears and the spool on the pad is looked up again at the new
-backend, so you are never looking at data from the one you just left.
+Each backend has a few options of its own, under
+**Settings → Connection → More options**. Only those of the active backend are
+shown, and the **?** next to each one explains it on the device.
+
+- **Spoolman:** tag field and extra fields, **For OpenSpoolman**, several tags
+  per spool, **Ask for a second tag**, **Also write the chip UID** (Happy Hare).
+- **FilaMan:** **Ask for a second tag**, linking and weighing without asking,
+  writing tags FilaMan sends, **Auto AMS assign**.
+- **BamBuddy:** where the drying date goes (by default into the note field),
+  **Into the AMS after weighing**.

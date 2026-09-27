@@ -2,8 +2,23 @@
 
 ![System settings](../assets/images/ui/en/14_system.png)
 
-After the [first flash](index.md#first-flash-the-web-flasher) you never need the
-USB cable again. Updates run on the device or from your browser.
+After the [first flash](index.md#first-flash-the-web-flasher) updates run on the
+device or from your browser, without the USB cable.
+
+!!! note "Coming from 0.7.x: one update over USB"
+    v0.8.0 divides the scale's memory anew (6 MB instead of 3 MB for the
+    firmware), and that can only be done over the cable, once. Open the
+    [web flasher](https://niko11111.github.io/SpoolmanScale/) in Chrome or Edge,
+    connect the scale and choose **Update**. It takes about 2 minutes, and WiFi,
+    calibration and backend settings are kept. If the flasher offers "Install"
+    instead, leave "Erase" unticked, or WiFi and calibration are gone.
+
+    A scale that skips this step keeps working and gets v0.8.0 over the air as
+    well. It reminds you at every start, with a QR code to the flasher. Later
+    updates that are larger than the old layout allows will no longer install
+    over the air.
+
+    ![The reminder with a QR code to the web flasher](../assets/images/ui/en/x03_partition_hint.png)
 
 ---
 
@@ -26,6 +41,8 @@ goes.
 
 The firmware page of the [web interface](web.md) does the same thing with more
 room to read, and works from a phone.
+
+![The Firmware page in the browser](../assets/images/ui/en/web_firmware.png){ width="420" }
 
 !!! note "Needs Maintenance"
     The firmware page sits behind the **Maintenance** switch, which is off by

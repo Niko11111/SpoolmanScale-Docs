@@ -13,13 +13,27 @@ Everything the scale knows about the spool in front of you, on one screen.
 
 | Area | Shows |
 |---|---|
-| Top row | filament name, vendor, colour swatch |
-| Status bar | WiFi, backend, and any [diagnostic finding](../help/index.md) |
+| Header | firmware version and status chips: SD card, Bluetooth, WiFi, NFC, SCL (load cell), AMS and the backend badge |
+| Status bar | what the scale is doing, any [diagnostic finding](../help/index.md), the scan counter |
+| Spool | ID, material, filament name, colour swatch, vendor, temperature, and the **More info** button |
+| Below it | last used, last dried |
 | Remaining | what your inventory says is left on the spool |
-| Scale | what the load cell reads right now |
-| Difference | scale minus inventory, so you can see at a glance what a print used |
-| Bottom | last used, last dried |
+| Scale - Spool | the filament on the scale right now, without the empty spool. Below it the total and the weight without the bag |
+| Diff | scale minus inventory, so you can see at a glance what a print used |
+| **TARE** | zeroes the scale |
+| Bottom | **Update Weight** and **Dried today**. For a tag that is not linked yet, **Link Spool** and **Copy spool** |
 | Bottom right | settings |
+
+Two of the header chips are buttons:
+
+- **NFC** opens the tag view: what the tag on the reader holds, and for an
+  NTAG buttons to erase it or write the spool onto it. It reads **NFC!** in
+  red when the reader does not answer.
+- **AMS** opens the AMS view. It only appears with FilaMan or BamBuddy, and
+  only when your printer has an AMS.
+
+The backend badge (**SPM**, **FLM**, **BBY** or **BBS**) turns red when the
+server does not answer. **SCL!** in red means the load cell does not answer.
 
 Weights are shown and written back as **whole grams**.
 
@@ -39,6 +53,12 @@ Weights are shown and written back as **whole grams**.
 
     A spool with little left on it. The remaining weight is highlighted so an
     almost-empty spool is obvious before you start a long print.
+
+=== "Long name"
+
+    ![Long filament name cut off](../assets/images/ui/en/04_main_long_name.png)
+
+    A filament name too long for its field is cut off with three dots.
 
 === "Backend unreachable"
 
@@ -72,9 +92,13 @@ Every message it can show is listed under
 
 ## Detail view
 
-Tap the spool area for the full record: article number, production date,
-temperatures, Spoolman ID, tag UID. Main screen and detail view share one layout
-grid, so nothing jumps when you switch between them.
+Tap **More info** for the full record: ID, material, filament, colour,
+production date, article number, empty spool weight, tag UID, location and the
+backend's UUID. Main screen and detail view share one layout grid, so nothing
+jumps when you switch between them.
+
+From here you also change the location, unlink the tag and, with Bluetooth on
+and a label printer set up, tap **Print label**.
 
 ---
 
@@ -82,11 +106,21 @@ grid, so nothing jumps when you switch between them.
 
 Bottom right. Four tiles:
 
-![Settings](../assets/images/ui/en/10_settings.png)
+=== "Settings"
+
+    ![Settings](../assets/images/ui/en/10_settings.png)
+
+=== "Display"
+
+    ![Display settings](../assets/images/ui/en/13_display.png)
+
+=== "System"
+
+    ![System settings](../assets/images/ui/en/14_system.png)
 
 | Tile | Holds |
 |---|---|
-| **Connection** | WiFi, backend, addresses and credentials |
-| **Scale** | [bag weight](weighing.md), [drying](drying.md), location, [tag writing](tags.md), calibration |
-| **Display** | brightness, timeout, date format |
-| **System** | [web interface](web.md), [firmware](updating.md), language, info, [NFC reset check](../build/wiring.md#after-the-rewiring), restart, factory reset |
+| **Connection** | WiFi, Bluetooth and the label printer, filament manager with address and credentials, **More options** for the active backend |
+| **Scale** | **Show the AMS** (FilaMan and BamBuddy, with an AMS), [bag weight](weighing.md), [drying reminder](drying.md), location on removal, [tag writing](tags.md), last used mode, calibration, **Scale fitted** |
+| **Display** | brightness, dim after, screen off after, deep sleep after |
+| **System** | [web interface](web.md), [firmware](updating.md), language with time zone and date format, info, [NFC reset check](../build/wiring.md#after-the-rewiring), restart, factory reset |

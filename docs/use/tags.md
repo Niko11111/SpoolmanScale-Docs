@@ -1,217 +1,151 @@
 # NFC tags
 
-Which tags work, how the scale reads them, and - new in v0.7.0 - how it writes
-them.
-
----
-
-## How the scale identifies a tag
-
-Everything follows from the length of the tag's UID:
-
-| UID length | Tag type | What happens |
-|---|---|---|
-| 4 bytes | MIFARE Classic: Bambu Lab's internal tags, Snapmaker and Creality spool tags, plain cards and stickers | **Bambu flow** - KDF decryption; a tag that refuses the Bambu keys is looked up by its UID |
-| 7 bytes | NTAG / MIFARE Ultralight | **NTAG flow** - UID is the link key |
-| anything else | unknown | **ignored**, no action |
-
-An unknown tag does not crash or freeze anything. The NFC indicator blinks
-green, no spool appears, and removing the tag resets it.
-
-A 4 byte tag that is not from Bambu Lab, such as a Snapmaker or Creality spool
-tag or a plain MIFARE Classic sticker, takes around ten seconds to show up.
-The scale tries the Bambu keys first, six times over, and only then accepts
-that the tag is a plain one and looks its UID up in the backend. That order is
-deliberate: a Bambu tag that reads badly gets every one of those attempts, so
-it is never mistaken for a plain card. From then on the tag behaves like an
-NTAG: it can be linked to a spool, and the UID is what the backend stores. The
-scale never reads what Snapmaker or Creality wrote into their tags.
+Which tags work, how the scale reads them, and how it writes them.
 
 ---
 
 ## Reading
 
-Put a spool on the pad. The scale reads the UID, looks it up at your
+Put a spool on the pad. The scale reads the tag, looks it up at your
 [backend](backends.md) and shows the spool. That is the whole interaction.
 
-The UID is stored as plain hex (`04B9E542447080`), which is what every other
-tool around Spoolman uses, so links made elsewhere are found here and the other
-way round.
+![A spool from an NTAG with an OpenSpool record](../assets/images/ui/en/20_main_ntag.png)
+
+- **NTAG stickers** are found by their UID. It is stored as plain hex
+  (`04B9E542447080`), the same way every other tool around Spoolman does it,
+  so links made elsewhere are found here and the other way round.
+- **Bambu Lab tags** are read and decrypted: material, colour and the spool
+  come up by themselves.
+- **MIFARE Classic cards and stickers** are found by their UID. A card your
+  backend knows shows up after 3 to 5 seconds, an unknown one after about ten.
+- **Snapmaker tags** can be read as well. Switch on **Read Snapmaker tags** in
+  the [web interface](web.md) under **Settings**. It is off by default because
+  it slows down other MIFARE tags a little.
+
+### The tag view
+
+Tap the NFC chip in the header to see what is on the tag on the reader. For an
+NTAG, **Erase** empties it and **Write spool #N** writes the spool on the
+screen onto it.
+
+![The tag view with Erase and Write spool #12](../assets/images/ui/en/x01_tag_view.png)
 
 ---
 
 ## Writing
 
-Until v0.7.0 the scale only read tags. Now it writes them too, on its own, in
-the background, **with every backend** - Spoolman included, and it needs nothing
-special on the server for that.
+The scale also writes tags, with every backend, and needs nothing special on the
+server for that.
 
 !!! danger "Writing replaces everything on the tag"
-    A write replaces the tag's contents completely. Whatever is on it now is
-    lost. Bambu tags are never written.
-
-### When it writes
+    Whatever is on the tag now is lost. Bambu tags are never written.
 
 **Settings → Scale → Write tag after linking**
 
 ![Tag writing options](../assets/images/ui/en/15_tagwrite.png)
 
-| Mode | Behaviour |
-|---|---|
-| **Off** | Only the UID is bound to the spool, the tag is left alone. You can still write from the [web interface](web.md), where you see beforehand what goes on. |
-| **Ask** | The scale asks every time. |
-| **Write every time** | No question, only the result is reported. |
+- **Off** - only the UID is bound to the spool, the tag is left alone.
+- **Ask** - the scale asks every time.
+- **Write every time** - no question, only the result is reported.
 
-### Keeping the tag honest
-
-The scale keeps an eye on things afterwards. If the tag says something different
-from your inventory - the material changed, the colour, or the spool itself - it
-says so and offers to put it right. Switch that off under
-**Settings → Scale → Write tag after linking**.
+A card with a progress bar asks you to leave the spool where it is while the
+scale writes. **Ask on a mismatch** on the same screen lets the scale offer a
+rewrite later, when the tag no longer matches the spool.
 
 ### Formats
 
-The format decides who can read the tag.
-
 === "OpenSpool"
 
-    An NDEF record carrying material, colour, brand, temperatures and the spool
-    id. This is what filament managers and OpenSpool readers understand.
-
-    **The default, and the right answer unless you have a reason otherwise.**
+    Material, colour, brand, temperatures and the spool ID, readable by
+    filament managers and OpenSpool readers. **The default, and the right
+    choice unless you have a reason otherwise.**
 
 === "FilaMan"
 
-    The same record, under the protocol name a FilaMan installation expects.
-
-    Pick this if FilaMan is your backend and you want its own readers to pick
-    the tag up.
+    The same record under the name FilaMan expects. Pick this if FilaMan is
+    your backend and you want its own readers and app to pick the tag up.
 
 === "Anycubic ACE"
 
-    No NDEF record at all, but raw pages holding SKU, brand, material, colour,
-    nozzle and bed temperature, diameter, length and weight.
-
-    The ACE reads those pages itself, so this is the format for feeding the
-    printer directly rather than a filament manager.
-
-=== "Erase"
-
-    Puts the tag back to empty. Available from the tag page in the
-    [web interface](web.md).
+    The raw pages the Anycubic ACE reads itself. For feeding the printer
+    directly rather than a filament manager.
 
 ### From the browser
 
-The tag page in the [web interface](web.md) gives you the most control: both
-sides next to each other, what is on the tag and what would go on it, with the
-differences highlighted, and the format is yours to pick.
+The **Tags** page in the [web interface](web.md) shows what is on the tag next
+to what would go on it, and lets you pick the format. There you can also link a
+tag without writing it (**Link only**) and look at the tag's raw data. The tag
+has to be on the reader.
 
-The write itself still happens on the device - the NFC bus belongs to the scale,
-so a browser request is parked and carried out on the next pass. The tag has to
-be on the reader.
+---
+
+## A second tag per spool
+
+A tag on each side of the spool means it is found whichever way round it lies.
+Right after a link the scale asks for the second one: turn the spool over,
+done. Switch the question on or off under **Settings → Connection → More
+options → Ask for a second tag**.
+
+This needs a backend that can hold more than one tag per spool: Spoolman 0.27 or
+newer with native tags (or the `card_uids` field), or FilaMan 1.3.1 or newer.
+BamBuddy cannot.
+
+If you link a tag that already belongs to another spool, the scale shows both
+spools and offers to **Move** it.
+
+!!! tip "Happy Hare"
+    Happy Hare reads the chip's hardware UID from the `rfid_tag` field. Switch
+    on **Also write the chip UID** (Spoolman only, under **More options**) and
+    the scale fills it in for you.
 
 ---
 
 ## Which tag should I buy?
 
-!!! warning "NTAG213 is too small to write"
-    An NTAG213 has 144 bytes of user memory, which is **not enough for the
-    OpenSpool or FilaMan record**. It works perfectly for reading, since only
-    the UID matters there, but it cannot be written.
+**NTAG215.** It reads reliably and has room for a record if you want the scale
+to write it.
 
-    **If you want the scale to write your tags, buy NTAG215 or NTAG216.**
-
-| If you want | Buy | Search for |
-|---|---|---|
-| Reading only | NTAG213 | *"NTAG213 NFC sticker"* |
-| Reading and writing | **NTAG215** | *"NTAG215 NFC sticker"* |
-| Writing, with room to spare | NTAG216 | *"NTAG216 NFC sticker"* |
-| Maximum read stability | MIFARE Ultralight | *"MIFARE Ultralight NFC sticker"* |
+| Tag | Read | Write | Notes |
+|---|---|---|---|
+| NTAG213 | yes | **no** | 144 bytes, too small for a record |
+| **NTAG215** | yes | yes | **recommended** |
+| NTAG216 | yes | yes | more memory, slightly pricier |
+| MIFARE Ultralight | yes | no | very stable to read |
+| MIFARE Classic, Creality, Snapmaker | yes | no | by UID |
+| Bambu Lab | yes | **never** | encrypted |
+| ISO 15693, Prusa OpenPrintTag | no | no | a different radio standard |
 
 Round 25 mm stickers are the most common and sit well on spool hubs.
 
 ---
 
-## Compatibility
-
-| Tag type | UID | Read | Write | Notes |
-|---|---|---|---|---|
-| NTAG213 | 7 bytes | yes | **no** | 144 bytes, too small for a record |
-| NTAG215 | 7 bytes | yes | yes | recommended |
-| NTAG216 | 7 bytes | yes | yes | more memory, slightly pricier |
-| MIFARE Ultralight | 7 bytes | yes | no | most stable to read |
-| MIFARE Ultralight C | 7 bytes | yes | no | works fine |
-| Bambu Lab internal | 4 bytes | yes | **never** | encrypted, Bambu flow |
-| Snapmaker, Creality spool tags | 4 bytes | yes | no | MIFARE Classic 1K, identified by UID only |
-| MIFARE Classic 1K / 4K / Mini | 4 bytes | yes | no | by UID, after the Bambu attempt: around ten seconds |
-| MIFARE DESFire | 7 bytes | unreliable | no | not recommended |
-| ISO 15693 | - | no | no | wrong protocol |
-
----
-
 ## Positioning - closer is not better
 
-This is the most common cause of unreliable NTAG reads, and it is the opposite
-of what most people expect: a tag pressed directly against the reader often
-reads **worse** than one a few millimetres away.
-
-The reader antenna and the tag form a loosely coupled transformer. At very close
-range the coupling becomes so strong that the tag's load is reflected back onto
-the reader's resonant circuit and detunes it away from 13.56 MHz. The field
-collapses, and at the same time the tag's response becomes small relative to the
-carrier, so the reader struggles to decode it. The result is a dead zone right
-at the antenna surface, with reliable reading starting a little further out.
+The most common cause of unreliable reads is the opposite of what most people
+expect: a tag pressed directly against the reader often reads **worse** than one
+a few millimetres away. At very close range the tag detunes the reader's
+antenna, and the field collapses.
 
 !!! tip "If a tag reads badly, add distance before replacing it"
     A gap of roughly **5 to 20 mm** is the sweet spot for most sticker tags. A
     few layers of foam tape or a small printed spacer under the tag is usually
-    all it takes. Some users have needed as much as 20 mm.
+    all it takes.
 
-- Do not stick the tag where it ends up flush against the reader surface.
-- Larger tags tolerate closer placement than small ones - a 25 mm sticker
-  behaves differently from a 15 mm one.
-- Do not stick the tag onto metal or over a metal spool insert, which detunes
-  the tag itself.
-- The reader position is fixed by the case and a spool can only shift about
-  10 mm on the weighing plate, so the distance has to come from the tag side.
+- Do not stick the tag onto metal or over a metal spool insert.
+- The spool can only shift a little on the plate, so the distance has to come
+  from the tag side.
 
-**Why Bambu Lab spools rarely show this:** their tag sits recessed inside the
-spool core and naturally keeps a few millimetres of distance. A sticker glued to
-the outside of a third-party spool does not. That is a large part of why NTAG has
-a reputation for being the less reliable of the two, when the real difference is
-often just mounting.
+Bambu Lab spools rarely show this because their tag sits recessed inside the
+spool core.
 
 ---
 
-## Known limitation - the location popup
+## Lost reads and the location question
 
-NTAG tags use a more complex RF protocol than Bambu Lab's MIFARE Classic tags.
-The PN532 can intermittently fail to detect an NTAG even when the spool has not
-moved, briefly reading it as removed and then re-detected.
+Now and then the reader briefly loses an NTAG although the spool has not moved.
+The [location question](drying.md#location-on-removal) does not fall for it: it
+checks the weight and only comes when you really lift the spool.
 
-Normally this has no visible effect. **The exception is the automatic location
-popup** - a spurious removal can open the location picker while the spool is
-still sitting there.
-
-!!! tip "Workaround"
-    Check the positioning above first, too little distance is the more frequent
-    cause. If it persists, switch off **Automatic location popup** under
-    **Settings → Scale**. Nothing else is affected.
-
-Bambu Lab spools do not show this.
-
----
-
-## Identifying tags you already have
-
-With a free NFC app such as **NFC Tools**:
-
-1. Scan the tag
-2. The app names the type, for example "NTAG215" or "MIFARE Classic 1K"
-3. A UID of 7 bytes means it will read; NTAG215 or 216 means it will also write
-
-Or just put it on the scale:
-
-- Spool info, or "not found" → compatible
-- Reading animation for around ten seconds, then spool info or "not found" → plain MIFARE Classic, identified by its UID
-- Nothing at all → ignored, wrong UID length
+Below 50 g, or on a device without a load cell, the scale has only the reader to
+go by. If the location list then opens on its own, check the positioning above,
+or switch off **Location on removal** under **Settings → Scale**.

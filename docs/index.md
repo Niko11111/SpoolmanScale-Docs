@@ -32,69 +32,55 @@ manager - without opening a browser.
 
 ---
 
-## New in v0.7.0
+## New in v0.8.0
 
-<div class="tx-feature-grid">
-  <div class="tx-feature-card">
-    <div class="tx-feature-card__icon">🔌</div>
-    <h3>Three backends</h3>
-    <p>Spoolman, FilaMan and now BamBuddy. Switch any time, your settings for the others are kept.</p>
-  </div>
-  <div class="tx-feature-card">
-    <div class="tx-feature-card__icon">🏷️</div>
-    <h3>Writing NFC tags</h3>
-    <p>OpenSpool, FilaMan or Anycubic ACE format, on its own or on request, with every backend.</p>
-  </div>
-  <div class="tx-feature-card">
-    <div class="tx-feature-card__icon">🌐</div>
-    <h3>New web interface</h3>
-    <p>Separate pages, two languages, firmware updates from the browser, and as usable on a phone.</p>
-  </div>
-  <div class="tx-feature-card">
-    <div class="tx-feature-card__icon">🩺</div>
-    <h3>It says what is wrong</h3>
-    <p>The scale checks itself and names the fault in plain words, with the fix and a button that gets you there.</p>
-  </div>
-</div>
+- 🏷️ **Label printing** *(beta, first version)* - via Bluetooth on a Phomemo M220
+  (M110 experimental), with material, colour, spool ID and a QR code to the
+  spool. This is a start: labels from the backend, a small editor in the
+  browser, more printers and sizes are planned.
+- ⚡ **Much faster** - linking a new spool takes under a second instead of 2 to
+  7 s, the inventory loads in the background while the screen keeps working,
+  and touch is read 100 times a second.
+- 🧵 **Spoolman 0.27 native tags** - tags belong to the spool, several per
+  spool, and existing scales move over by themselves.
+- 📇 **Tags** - tap the NFC chip in the header to see the tag on the reader,
+  writing shows its progress, and Snapmaker tags can be read (optional).
+- 📝 **Log without an SD card** - in the scale's internal memory, read in the
+  browser.
+- 🇫🇷 **French** - on the scale and in the web interface.
 
-[Full release notes on GitHub :material-arrow-right:](https://github.com/Niko11111/SpoolmanScale/releases){ .md-button }
+!!! note "Already running 0.7.x?"
+    Because 0.8.0 divides the memory anew, this one update goes through the
+    [web flasher](https://niko11111.github.io/SpoolmanScale/) once: connect,
+    choose **Update**, about 2 minutes, all settings are kept. From then on
+    updates arrive over the air as before. [More](use/updating.md)
+
+[All release notes on GitHub :material-arrow-right:](https://github.com/Niko11111/SpoolmanScale/releases/tag/v0.8.0){ .md-button }
 
 ---
 
 ## What it does
 
-<div class="tx-feature-grid">
-  <div class="tx-feature-card">
-    <div class="tx-feature-card__icon">📡</div>
-    <h3>NFC identification</h3>
-    <p>Tag your spools once. Put one down to identify it. NTAG213/215/216, Bambu Lab's own tags and any MIFARE Classic tag.</p>
-  </div>
-  <div class="tx-feature-card">
-    <div class="tx-feature-card__icon">⚖️</div>
-    <h3>Precision scale</h3>
-    <p>24-bit NAU7802 on a 2 kg load cell. Tare, bag weight correction, live difference to your inventory.</p>
-  </div>
-  <div class="tx-feature-card">
-    <div class="tx-feature-card__icon">📺</div>
-    <h3>480x320 touchscreen</h3>
-    <p>Everything on the device. No computer needed for day to day use.</p>
-  </div>
-  <div class="tx-feature-card">
-    <div class="tx-feature-card__icon">💧</div>
-    <h3>Drying reminder</h3>
-    <p>Per material or one rule for everything, with a multiplier for airtight storage.</p>
-  </div>
-  <div class="tx-feature-card">
-    <div class="tx-feature-card__icon">🔄</div>
-    <h3>OTA updates</h3>
-    <p>The scale checks GitHub itself and installs over WiFi. The cable is for the first flash only.</p>
-  </div>
-  <div class="tx-feature-card">
-    <div class="tx-feature-card__icon">🏠</div>
-    <h3>Fully local</h3>
-    <p>No cloud, no account. Runs on your own network. Your data stays yours.</p>
-  </div>
-</div>
+- 🔌 **Three backends** - [Spoolman, FilaMan or BamBuddy](use/backends.md).
+  Switch any time, your settings for the others are kept.
+- 📡 **NFC identification** - put a spool down and it is identified: NTAG,
+  Bambu Lab's own tags, MIFARE Classic, a tag on each side of the spool if you
+  like. [NFC tags](use/tags.md)
+- ✍️ **Writing tags** - OpenSpool, FilaMan or Anycubic ACE format, on its own
+  or on request, with every backend.
+- ⚖️ **Precision scale** - 24-bit NAU7802 on a 2 kg load cell. Tare, bag weight,
+  live difference to your inventory. [Weighing](use/weighing.md)
+- 🖨️ **AMS view** - with FilaMan and BamBuddy: every bay with its spool,
+  remaining filament and drying, and the drying recorded right from the card.
+- 💧 **Drying reminder** - per material or one rule for everything, with a
+  multiplier for airtight storage. [Drying & location](use/drying.md)
+- 🌐 **Web interface** - separate pages in three languages, firmware updates
+  from the browser, just as usable on a phone. [Web interface](use/web.md)
+- 🩺 **It says what is wrong** - the scale checks itself and names the fault in
+  plain words, with the fix. [What the scale is telling you](help/index.md)
+- 🔄 **Updates over WiFi** - the scale checks GitHub itself and installs over
+  the air. [Updating](use/updating.md)
+- 🏠 **Fully local** - no cloud, no account. Runs on your own network.
 
 ---
 
@@ -127,7 +113,7 @@ Around **€50 to €60** in parts. Details on the
 === "I have one already"
 
     - [Updating the firmware](use/updating.md)
-    - [What is new in v0.7.0](https://github.com/Niko11111/SpoolmanScale/releases)
+    - [What is new in v0.8.0](https://github.com/Niko11111/SpoolmanScale/releases/tag/v0.8.0)
     - [The web interface](use/web.md)
 
 === "Something is wrong"

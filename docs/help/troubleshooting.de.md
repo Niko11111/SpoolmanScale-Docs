@@ -60,7 +60,8 @@ der Pi.
     - Leuchtet die **LED auf dem PN532**? Wenn nicht, prüfe die Versorgung -
       5V auf Pin 1 der WT32-I/O-Buchse
     - DIP-Schalter des PN532 prüfen - muss auf I²C stehen (SW1 = ON, SW2 = OFF)
-    - Verkabelung prüfen: SDA → Pin 3, SCL → Pin 4, RST → Pin 7
+    - Verkabelung prüfen: SDA → Pin 3, SCL → Pin 4, RST (PN532 RSTPDN) → Pin 7,
+      siehe [Verkabelung](../build/wiring.md)
     - Den PN532 nicht über den STEMMA-QT-Durchgang der NAU7802 anschließen
       (nur 3,3V)
 
@@ -68,7 +69,8 @@ der Pi.
     - Die Spule ruhig direkt über dem NFC-Fenster halten
     - Einen anderen [NTAG](../use/tags.md)-Aufkleber probieren - manche billigen
       Sticker sind defekt
-    - Zu wenig Abstand ist häufiger als zu viel, siehe
+    - Zu wenig Abstand ist häufiger als zu viel: 5 bis 20 mm zwischen Tag und
+      Leser funktionieren am besten, siehe
       [Position](../use/tags.md#position-naher-ist-nicht-besser)
     - Unsicher, ob dein Tag passt? Siehe [NFC-Tags](../use/tags.md)
 
@@ -110,8 +112,36 @@ der Pi.
       abbrechen
     - Scheitert es weiterhin, über den Web-Flasher oder den Datei-Upload gehen
 
+??? question "Update wird nicht angeboten, oder \"passt nicht mehr\""
+    0.8.0 teilt den Speicher der Waage neu auf, und das geht nur über das Kabel.
+    Eine Waage mit der alten Aufteilung meldet, dass das Update nicht mehr
+    passt, oder der Upload im Browser meldet, dass die Datei größer ist als der
+    Speicher dieser Waage. Die Firmware auf dem Gerät ist in Ordnung, nur die
+    Speicheraufteilung ist zu klein.
+
+    - Einmal per USB aktualisieren: den
+      [Web-Flasher](https://niko11111.github.io/SpoolmanScale/) in Chrome oder
+      Edge öffnen, die Waage anschließen und **Update** wählen. Das dauert etwa
+      2 Minuten, alle Einstellungen bleiben erhalten
+    - Bietet der Flasher "Install" statt "Update" an, das Häkchen bei "Erase"
+      nicht setzen, sonst sind WLAN und Kalibrierung weg
+    - Danach kommen Updates wieder wie gewohnt drahtlos. Details unter
+      [Firmware aktualisieren](../use/updating.md)
+
 ??? question "Nach dem Flashen bleibt die Anzeige dunkel"
     - Über den Web-Flasher neu flashen
+
+??? question "Ein Log oder einen Fehlerbericht schicken"
+    - In der Weboberfläche die Seite **Logs** öffnen. Dafür muss der Schalter
+      [Wartung](../use/web.md#die-drei-schalter) an sein
+    - **Umfang** auf **Ausführlich** stellen und wiederholen, was schiefging
+    - Keine SD-Karte? **Protokoll schreiben** auf **Intern** stellen. Der
+      interne Speicher fasst 4.096 Zeilen, das sind im Umfang "Ausführlich"
+      mehrere Stunden
+    - Das Log mit **Speichern** herunterladen und auf
+      [Discord](https://discord.gg/xadskCrPFu) oder in ein
+      [GitHub-Issue](https://github.com/Niko11111/SpoolmanScale/issues)
+      stellen, zusammen mit der Firmware-Version und dem Backend, das du nutzt
 
 ---
 

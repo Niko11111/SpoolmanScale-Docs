@@ -26,6 +26,16 @@ have one, you want [Updating the firmware](../use/updating.md) instead.
 - A 3D printer for the enclosure
 - A USB-C **data** cable and a 5V supply
 
+Optional:
+
+- **NTAG215 stickers** if the scale should write your tags. NTAG213 is fine for
+  reading but too small to write, see [NFC tags](../use/tags.md#which-tag-should-i-buy)
+- A **Phomemo M220** label printer, over Bluetooth. Label printing is beta
+
+The load cell is optional too. Without NAU7802 and load cell, switch off
+**Settings → Scale → Scale fitted** and the device works as a tag terminal:
+it reads, links and writes tags and sets locations, without weights.
+
 Exact parts, links and prices on the [bill of materials](bom.md). Reckon on
 **€50 to €60** in total.
 

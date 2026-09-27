@@ -1,40 +1,33 @@
 # The web interface
 
-Everything the device can do, in a browser - rebuilt for v0.7.0 as separate
-pages instead of one long list, in both languages, and as usable on a phone as
-on a desktop.
+Everything the device can do, in a browser: separate pages, in German, English
+and French, as usable on a phone as on a desktop. What you change here and on
+the device is the same setting.
 
-Reach it at **`http://spoolmanscale.local`** or the device's IP address. Switch
-it on under **Settings → System → Web interface**.
+Reach it at **`http://spoolmanscale.local`** or the device's IP address. The IP
+is shown under **Settings → Connection → WiFi settings → WiFi status**.
 
-!!! tip "No IP address to remember"
-    The scale announces itself over mDNS as `spoolmanscale.local`. If your
-    network or browser does not resolve that, the IP still works - it is shown
-    on **Settings → Connection → WiFi status**.
+![WiFi settings with the IP address under WiFi status](../assets/images/ui/en/21_wifi_menu.png)
 
 ---
 
 ## The three switches
 
-Access is not all-or-nothing. Three switches under
-**Settings → System → Web interface** decide how much is served:
+Three switches under **Settings → System → Web interface** decide how much is
+served:
 
 | Switch | Serves | Default |
 |---|---|---|
-| **Web server** | the master switch. Off, port 80 stops answering. | off |
-| **Settings** | list limits, drying, display, backend credentials | off |
-| **Maintenance** | firmware, logs, tags, restart | off |
+| **Web server** | the master switch. Off, port 80 stops answering. | on |
+| **Settings** | backend, drying, printer, list limits, display, tag options | off |
+| **Maintenance** | tags, logs, firmware, restart | off |
 
-!!! warning "Off by default, and for a reason"
-    **Settings** changes how the scale behaves and **Maintenance** writes
-    firmware and NFC tags - both without a password. They are off until you turn
-    them on. Turn them on when you need them, on a network you trust.
+Turn **Settings** and **Maintenance** on when you need them, on a network you
+trust. **Password** on the same screen protects both with 4 to 8 digits.
 
-!!! note "One exception to the master switch"
-    With FilaMan configured and a device token stored, FilaMan's own tag trigger
-    stays reachable even with the web server switched off. It drives the scale
-    from the server side and would break silently otherwise. Nothing else
-    answers.
+!!! note "FilaMan keeps working"
+    With FilaMan set up, FilaMan's own tag requests still reach the scale when
+    the web server is off.
 
 ---
 
@@ -43,48 +36,45 @@ Access is not all-or-nothing. Three switches under
 | Page | What it does | Needs |
 |---|---|---|
 | **Status** | live weight, the spool on the pad, WiFi, backend, diagnosis | web server |
-| **Backend** | switch backend, enter addresses and credentials | Settings |
-| **Drying** | drying reminder modes and per-material intervals | Settings |
-| **Write tags** | read a tag, compare it against your inventory, write it | Maintenance |
-| **Settings** | list limits, display, device name, timezone | Settings |
-| **Logs** | read the log, follow it live, sort it, copy it, clear it | Maintenance |
-| **Firmware** | check GitHub, read release notes, install, or upload a file | Maintenance |
+| **Backend** | backend, address, credentials, [options](backends.md#options) | Settings |
+| **Drying** | drying reminder and intervals per material | Settings |
+| **Tags** | read, compare, write, link or erase the tag on the reader | Maintenance |
+| **Printer** | Bluetooth and the [label printer](labels.md) | Settings |
+| **Settings** | list limits, display, device name, time zone, Snapmaker tags | Settings |
+| **Logs** | where the log goes and how much, read and download it | Maintenance |
+| **Firmware** | update from GitHub or upload a file | Maintenance |
 
-A page you do not have access to is not shown in the tab strip, and its
-`/api/*` routes answer 403 rather than quietly doing nothing.
+![The Status page](../assets/images/ui/en/web_status.png){ width="420" }
 
 ---
 
-## Write tags
+## Tags
 
-The page worth coming here for. It shows **both sides next to each other** -
-what is on the tag now, and what would go on it from your inventory - with the
-differences highlighted, and you pick the format:
+The Tags page shows what is on the tag next to what would go on it from your
+inventory, with the differences highlighted. Pick the format, then write, erase
+or just link the tag. The tag has to be on the reader. More in
+[NFC tags](tags.md).
 
-| Format | For |
-|---|---|
-| **OpenSpool** | what the filament managers read |
-| **FilaMan** | the same record under FilaMan's own name |
-| **Anycubic ACE** | the printer itself, which reads it directly |
-| **Erase** | tag back to empty |
+![The Tags page](../assets/images/ui/en/web_tags.png){ width="420" }
 
-Full detail in [NFC tags](tags.md).
+---
 
-!!! info "The write happens on the device"
-    A browser request does not touch the NFC bus. It parks the job, and the
-    scale carries it out on its next pass. So the tag has to be on the reader.
+## Logs
+
+- **Write the log:** **Off**, **SD card** or **Internal**. Internal needs no
+  card and holds the last 4,096 lines.
+- **Scope:** **Minimal**, **Normal** or **Verbose**. For a bug report, set it to
+  Verbose first.
+- Read, filter and download the logs. The **Session log** below shows the
+  lines since the last start.
+
+![The Logs page](../assets/images/ui/en/web_logs.png){ width="420" }
 
 ---
 
 ## Firmware updates
 
-The scale checks GitHub itself, shows you the release notes, asks before writing
-anything and reports how far it got. You can also upload a `.bin` by hand. See
+The page checks GitHub, shows the release notes and installs the update. You can
+also upload a `.bin` file yourself. An update that no longer fits the scale is
+not offered; the page points you to the web flasher instead. See
 [Updating the firmware](updating.md).
-
----
-
-## Settings in both places
-
-What works on the device works in the browser, and both show the same state.
-There is no separate "web configuration" to keep in step.

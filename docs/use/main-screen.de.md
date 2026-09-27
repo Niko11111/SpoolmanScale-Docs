@@ -13,13 +13,28 @@ Alles, was die Waage über die Spule vor dir weiß, auf einem Bildschirm.
 
 | Bereich | Zeigt |
 |---|---|
-| Kopfzeile | Filamentname, Hersteller, Farbfeld |
-| Statuszeile | WLAN, Backend und jeden [Diagnosebefund](../help/index.md) |
+| Kopfzeile | Firmware-Version und Status-Chips: SD-Karte, Bluetooth, WLAN, NFC, SCL (Wägezelle), AMS und das Backend-Kürzel |
+| Statuszeile | was die Waage gerade tut, jeden [Diagnosebefund](../help/index.md), den Scan-Zähler |
+| Spule | ID, Material, Filamentname, Farbfeld, Hersteller, Temperatur und der Knopf **Mehr Info** |
+| Darunter | letzte Benutzung, letzte Trocknung |
 | Rest | was dein Bestand als Restmenge führt |
-| Waage | was die Wägezelle gerade misst |
-| Differenz | Waage minus Bestand, damit du auf einen Blick siehst, was ein Druck verbraucht hat |
-| Fußzeile | zuletzt benutzt, zuletzt getrocknet |
+| Waage - Spule | das Filament, das gerade auf der Waage liegt, ohne die leere Spule. Darunter das Gesamtgewicht und das Gewicht ohne Beutel |
+| Diff | Waage minus Bestand, damit du auf einen Blick siehst, was ein Druck verbraucht hat |
+| **TARE** | setzt die Waage auf null |
+| Unten | **Gewicht updaten** und **Heute getrocknet**. Bei einem Tag, der noch nicht verknüpft ist, **Spule verknüpfen** und **Spule kopieren** |
 | Unten rechts | Einstellungen |
+
+Zwei der Chips in der Kopfzeile sind Knöpfe:
+
+- **NFC** öffnet die Tag-Ansicht: was der Tag auf dem Leser enthält, und bei
+  einem NTAG Knöpfe, um ihn zu löschen oder die Spule darauf zu schreiben.
+  Antwortet der Leser nicht, steht dort rot **NFC!**.
+- **AMS** öffnet die AMS-Ansicht. Er erscheint nur mit FilaMan oder BamBuddy,
+  und nur, wenn dein Drucker ein AMS hat.
+
+Das Backend-Kürzel (**SPM**, **FLM**, **BBY** oder **BBS**) wird rot, wenn der
+Server nicht antwortet. Ein rotes **SCL!** heißt, die Wägezelle antwortet
+nicht.
 
 Gewichte werden in **ganzen Gramm** angezeigt und zurückgeschrieben.
 
@@ -39,6 +54,13 @@ Gewichte werden in **ganzen Gramm** angezeigt und zurückgeschrieben.
 
     Eine Spule mit wenig Rest. Die Restmenge wird hervorgehoben, damit eine fast
     leere Spule auffällt, bevor du einen langen Druck startest.
+
+=== "Langer Name"
+
+    ![Langer Filamentname, abgeschnitten](../assets/images/ui/de/04_main_long_name.png)
+
+    Ein Filamentname, der nicht in sein Feld passt, wird mit drei Punkten
+    abgeschnitten.
 
 === "Backend nicht erreichbar"
 
@@ -71,10 +93,15 @@ Jede Meldung, die dort erscheinen kann, steht unter
 
 ## Detailansicht
 
-Tippe auf den Spulenbereich für den vollständigen Datensatz: Artikelnummer,
-Produktionsdatum, Temperaturen, Spoolman-ID, Tag-UID. Hauptbildschirm und
-Detailansicht liegen auf einem gemeinsamen Raster, es springt also nichts, wenn
-du zwischen ihnen wechselst.
+Tippe auf **Mehr Info** für den vollständigen Datensatz: ID, Material,
+Filament, Farbe, Produktionsdatum, Artikelnummer, Leergewicht der Spule,
+Tag-UID, Lagerort und die UUID im Backend. Hauptbildschirm und Detailansicht
+liegen auf einem gemeinsamen Raster, es springt also nichts, wenn du zwischen
+ihnen wechselst.
+
+Hier änderst du auch den Lagerort, löst die Verknüpfung (**Unlink**) und
+tippst, mit Bluetooth an und eingerichtetem Etikettendrucker, auf
+**Etikett drucken**.
 
 ---
 
@@ -82,11 +109,21 @@ du zwischen ihnen wechselst.
 
 Unten rechts. Vier Kacheln:
 
-![Einstellungen](../assets/images/ui/de/10_settings.png)
+=== "Einstellungen"
+
+    ![Einstellungen](../assets/images/ui/de/10_settings.png)
+
+=== "Anzeige"
+
+    ![Anzeige-Einstellungen](../assets/images/ui/de/13_display.png)
+
+=== "System"
+
+    ![System-Einstellungen](../assets/images/ui/de/14_system.png)
 
 | Kachel | Enthält |
 |---|---|
-| **Verbindung** | WLAN, Backend, Adressen und Zugangsdaten |
-| **Waage** | [Beutelgewicht](weighing.md), [Trocknung](drying.md), Lagerort, [Tag-Schreiben](tags.md), Kalibrierung |
-| **Anzeige** | Helligkeit, Zeitabschaltung, Datumsformat |
-| **System** | [Weboberfläche](web.md), [Firmware](updating.md), Sprache, Info, [NFC-Reset prüfen](../build/wiring.de.md#nach-dem-umloten), Neustart, Werksreset |
+| **Verbindung** | WLAN, Bluetooth und der Etikettendrucker, Filamentverwaltung mit Adresse und Zugangsdaten, **Weitere Optionen** für das aktive Backend |
+| **Waage** | **AMS ansehen** (FilaMan und BamBuddy, mit AMS), [Beutelgewicht](weighing.md), [Trocknungserinnerung](drying.md), Ortsabfrage bei Entnahme, [Tag-Schreiben](tags.md), Last Used Modus, Kalibrierung, **Waage vorhanden** |
+| **Display** | Helligkeit, Dimmen nach, Bildschirm aus nach, Tiefschlaf nach |
+| **System** | [Weboberfläche](web.md), [Firmware](updating.md), Sprache mit Zeitzone und Datumsformat, Info, [NFC-Reset prüfen](../build/wiring.de.md#nach-dem-umloten), Neustart, Werksreset |

@@ -12,9 +12,10 @@ browser (Chrome, Edge, Brave), with nothing to install.
 
 1. Connect the WT32-SC01 Plus to your computer with a USB-C cable
 2. Open **[niko11111.github.io/SpoolmanScale](https://niko11111.github.io/SpoolmanScale)**
-3. Click **Flash Latest**
-4. Pick the serial port of your device
-5. Wait about 60 seconds
+3. Click the button on the page and pick the serial port of your device
+4. Choose **Install**. A scale that already runs SpoolmanScale is offered
+   **Update** instead, which keeps WiFi, calibration and backend settings
+5. Wait about 2 minutes
 6. The browser offers to set up your WiFi. Enter it now, or skip it and do it
    on the scale in step 2
 
@@ -24,6 +25,11 @@ browser (Chrome, Edge, Brave), with nothing to install.
 
 !!! note "Chrome, not Firefox"
     The flasher uses the WebSerial API. Firefox does not implement it.
+
+!!! warning "Keeping your settings"
+    If the flasher offers **Install** on a scale that already has your
+    settings and asks whether to erase the device, leave that box unticked.
+    Tick it only if you want a clean start.
 
 !!! tip "Changing the WiFi later"
     The flasher page also changes the WiFi of a scale that is already
@@ -36,9 +42,13 @@ again.
 
 ---
 
-## Step 1 - Language
+## Step 1 - Language and time zone
 
-**English** or **German**. Changeable later under **Settings → System → Language**.
+**English**, **Deutsch** or **Français**, and below it your time zone, so the
+clock is right from the first boot. The zone follows the language until you
+pick one yourself. **Next** saves both and restarts the device once.
+
+Both can be changed later under **Settings → System → Sprache / Language**.
 
 ---
 
@@ -88,6 +98,8 @@ typed on the scale.
 SpoolmanScale talks to three filament managers. Pick one now, change it any
 time under **Settings → Connection** or from the
 [web interface](web.md) - your entries for the others are kept.
+
+![The Connection menu on the device](../assets/images/ui/en/11_connection.png)
 
 === "Spoolman"
 
@@ -164,27 +176,29 @@ Tap **Test connection** before moving on.
 
 ---
 
-## Step 4 - Where the tag UID is stored
+## Where the tag UID is stored
 
 !!! info "Spoolman only"
-    FilaMan and BamBuddy keep tag identifiers themselves. This step does not
-    apply to them.
+    FilaMan and BamBuddy keep tag identifiers themselves. This does not apply
+    to them.
 
-SpoolmanScale stores the UID of an NFC tag in a Spoolman extra field, and you
-choose which one:
+There is no setup step for this any more. After the connection test,
+**Next** goes straight on to calibration.
+
+With **Spoolman 0.27 or newer** the scale stores tags natively in Spoolman
+(**Spoolman NFC (native)**). A new setup picks this by itself on the first
+scan, and a scale that was on `extra.tag` moves over once by itself. The old
+field stays filled. On an older Spoolman the UID goes into an extra field:
 
 | Field | Use it when |
 |---|---|
-| `tag` | Nothing else reads your tags. The default. |
+| `tag` | Nothing else reads your tags. The default before Spoolman 0.27. |
 | `nfc_id` | Another tool in your setup already uses this name |
 | `card_uids` | You want several tags on one spool |
 
-A second extra field, `last_dried`, holds the drying date. On first connect the
-scale checks whether the fields exist and offers to create them for you.
-
-!!! tip "If the fields will not create"
-    Make a test field by hand in Spoolman under **Settings → Extra fields**.
-    If that fails too, the problem is the Spoolman connection, not the scale.
+Missing fields, such as the tag field or `last_dried` for the drying date,
+are created by the scale on the first write. To change the choice later, go to
+**Settings → Connection → More options → Spoolman Extra Fields → Tag field**.
 
 The UID is written as **plain hex** (`04B9E542447080`), the same way every other
 tool around Spoolman writes it. Spools linked by an older firmware, which used
@@ -192,23 +206,34 @@ colons, are still found and get rewritten once on their first scan.
 
 ---
 
-## Step 5 - Calibrate
+## Step 4 - Calibrate
 
 A scale that has never been calibrated shows the converter's raw value, not
 grams - a six digit number that drifts by hundreds on its own. That is expected
 on a new build, and the scale says so in the status bar.
 
+At the end of the setup the scale asks about it: **Calibrate now** opens the
+calibration straight away, **Got it!** leaves it for later.
+
 1. **Settings → Scale → Calibration**
-2. Clear the platform, tap **Tare**, wait for 0
+2. Clear the platform, tap **TARE**, wait for 0
 3. Put on a weight you know precisely, ideally around 1000 g
 4. Type that weight in grams
-5. Tap **Calculate** and save
+5. Tap **Calculate**. The factor is saved right away
+
+![Calibration on the device](../assets/images/ui/en/19_calibration.png)
 
 !!! tip "The reference weight sets the ceiling"
     A full spool checked on a kitchen scale is plenty. Whatever error is in
     your reference weight is baked into every measurement afterwards.
 
 Details and the finer points in [Weighing & calibration](weighing.md).
+
+!!! note "No load cell fitted"
+    A device built without a load cell skips this. Turn off
+    **Settings → Scale → Scale fitted** and restart: the device then works as
+    a tag terminal. Weights leave the screen, the weight button becomes
+    **Location**, and calibration and bag weight leave the menu.
 
 ---
 

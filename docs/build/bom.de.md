@@ -20,6 +20,10 @@
 | ![](../assets/images/parts/jst_cables.png) | Verbindungskabel | STEMMA QT / JST | [AliExpress](https://de.aliexpress.com/item/1005011904682215.html) |
 | ![](../assets/images/parts/jst_sh_cables.png) | Verbindungskabel (einfacherer Zusammenbau) | Micro JST 1.0 SH, 5-polig | [Amazon](https://amzn.eu/d/0aKJ4Va9) |
 
+Lieber alles in einem Warenkorb? Ein Nutzer aus der Community hat eine
+AliExpress-Liste mit Teilen zusammengestellt, die ebenfalls gut funktionieren:
+👉 [SpoolmanScale-Teileliste auf AliExpress](https://www.aliexpress.com/p/wish-manage/share.html?spm=a2g0o.cart.headerAcount.6.321738dayZTIa0&wishGroupId=800000022363334&smbPageCode=wishlist-amp&spreadId=E95BDFF0E1B4367408F1423D8C0ABF206981C084C10F93E3EE124B0AFA678D69)
+
 !!! tip "2 kg oder 5 kg Wägezelle"
     Empfohlen ist die 2-kg-Zelle - die meisten Filamentspulen liegen gut
     innerhalb ihres Bereichs. Eine 5-kg-Zelle geht auch, ist bei kleinen
@@ -37,6 +41,21 @@
 
 Blechschrauben sind empfohlen, normale Maschinenschrauben (M2,5x5, M2x4)
 funktionieren aber vermutlich genauso.
+
+---
+
+## Optional
+
+| Teil | Wofür |
+|---|---|
+| **NTAG215**-NFC-Aufkleber | Tags, die die Waage beschreiben kann. NTAG213 reicht zum Lesen, ist zum Beschreiben aber zu klein - siehe [NFC-Tags](../use/tags.md#welchen-tag-soll-ich-kaufen) |
+| **Phomemo M220**-Etikettendrucker | Spulenetiketten per Bluetooth drucken. Etikettendruck ist Beta |
+
+!!! note "Auch die Wägezelle ist optional"
+    Lass NAU7802 und Wägezelle weg und schalte
+    **Einstellungen → Waage → Waage vorhanden** aus. Das Gerät arbeitet dann als
+    Tag-Terminal: es liest, verknüpft und beschreibt Tags und setzt Lagerorte,
+    nur ohne Gewichte.
 
 ---
 

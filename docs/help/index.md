@@ -1,7 +1,7 @@
 # What the scale is telling you
 
-Since v0.7.0 the scale checks itself while it runs and writes the result in
-plain words into the status bar. Tap the bar and it explains what it sees, what
+The scale checks itself while it runs and writes the result in plain words
+into the status bar. Tap the bar and it explains what it sees, what
 causes it, and what to do. Where there is something to do, the button takes you
 straight there.
 
@@ -17,6 +17,13 @@ are looking at.
     quality. Showing three warnings at once gets none of them fixed, so the
     scale names only the most important one. With a healthy scale you never see
     any of this.
+
+!!! note "A device without a load cell"
+    With **Settings → Scale → Scale fitted** switched off, the scale does not
+    look for the NAU7802 at all. The findings for the scale ADC and the load
+    cell never appear, and an empty bus shows up as
+    [NFC reader missing](#nfc-reader-missing-pn532). Only the NFC reader is
+    checked.
 
 ---
 

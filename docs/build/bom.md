@@ -18,6 +18,10 @@
 | ![](../assets/images/parts/jst_cables.png) | Connector Cables | STEMMA QT / JST cables | [AliExpress](https://de.aliexpress.com/item/1005011904682215.html) |
 | ![](../assets/images/parts/jst_sh_cables.png) | Connector Cables (easier assembly) | Micro JST 1.0 SH 5-pin | [Amazon](https://amzn.eu/d/0aKJ4Va9) |
 
+Prefer everything in one cart? A community member put together an AliExpress
+list with parts that work well too:
+👉 [SpoolmanScale parts list on AliExpress](https://www.aliexpress.com/p/wish-manage/share.html?spm=a2g0o.cart.headerAcount.6.321738dayZTIa0&wishGroupId=800000022363334&smbPageCode=wishlist-amp&spreadId=E95BDFF0E1B4367408F1423D8C0ABF206981C084C10F93E3EE124B0AFA678D69)
+
 !!! tip "2 kg vs 5 kg load cell"
     The 2 kg cell is recommended - most filament spools are well within range. A 5 kg cell works too but may be slightly less precise at low weights.
 
@@ -32,6 +36,21 @@
 - 2–4× M2×4.4 self-tapping screws ([example](https://a.aliexpress.com/_EyCD3rS))
 
 Self-tapping screws are recommended, but standard machine screws (M2.5×5, M2×4) will likely work as well.
+
+---
+
+## Optional
+
+| Item | What for |
+|---|---|
+| **NTAG215** NFC stickers | Tags the scale can write. NTAG213 works for reading, but is too small to write - see [NFC tags](../use/tags.md#which-tag-should-i-buy) |
+| **Phomemo M220** label printer | Printing spool labels over Bluetooth. Label printing is beta |
+
+!!! note "The load cell is optional too"
+    Leave out the NAU7802 and the load cell, and switch off
+    **Settings → Scale → Scale fitted**. The device then works as a tag
+    terminal: it reads, links and writes tags and sets locations, without
+    weights.
 
 ---
 

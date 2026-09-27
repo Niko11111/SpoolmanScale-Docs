@@ -1,7 +1,7 @@
 # Was die Waage dir sagt
 
-Seit v0.7.0 prüft sich die Waage im Betrieb selbst und schreibt das Ergebnis im
-Klartext in die Statuszeile. Ein Tippen darauf erklärt, was sie beobachtet,
+Die Waage prüft sich im Betrieb selbst und schreibt das Ergebnis im Klartext in
+die Statuszeile. Ein Tippen darauf erklärt, was sie beobachtet,
 woran es liegt und was zu tun ist. Wo es etwas zu tun gibt, führt der Knopf
 direkt dorthin.
 
@@ -17,6 +17,13 @@ findest, den du gerade vor dir hast.
     Messqualität. Drei Warnungen auf einmal führen dazu, dass keine davon
     behoben wird, also nennt die Waage nur die wichtigste. Ist alles in
     Ordnung, siehst du davon nichts.
+
+!!! note "Ein Gerät ohne Wägezelle"
+    Ist **Einstellungen → Waage → Waage vorhanden** ausgeschaltet, sucht die
+    Waage die NAU7802 gar nicht erst. Die Befunde zum Waagen-ADC und zur
+    Wägezelle erscheinen dann nie, und ein leerer Bus zeigt sich als
+    [NFC-Reader fehlt](#nfc-reader-fehlt-pn532). Geprüft wird nur der
+    NFC-Reader.
 
 ---
 

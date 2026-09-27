@@ -6,10 +6,10 @@
 ![BamBuddy](../assets/images/backends/BamBuddy_logo.png)
 </div>
 
-SpoolmanScale spricht mit drei Filament-Verwaltungen. Aktiv ist immer eine,
-gewählt unter **Einstellungen → Verbindung** oder auf der Backend-Seite der
-[Weboberfläche](web.md). Beim Wechsel bleiben die Zugangsdaten der anderen
-erhalten, die Anzeige wird geleert, und die aufliegende Spule wird beim neuen
+SpoolmanScale spricht mit drei Filamentverwaltungen. Eine ist jeweils aktiv,
+gewählt unter **Einstellungen → Verbindung → Filamentverwaltung** oder auf der
+Backend-Seite der [Weboberfläche](web.md). Beim Wechsel bleibt erhalten, was du
+für die anderen eingetragen hast, und die aufliegende Spule wird beim neuen
 Backend neu abgefragt.
 
 ---
@@ -22,19 +22,16 @@ Backend neu abgefragt.
 |---|---|---|---|
 | Üblicher Port | `7912` | `8083` | `8000` |
 | Zugangsdaten | keine | Device-Token **und** API-Key | ein API-Key, optional |
-| Finden, wiegen, zurückschreiben | ja | ja | ja |
-| Tags verknüpfen und lösen | ja | ja | ja |
-| [Tags beschreiben](tags.md) | ja | ja | ja |
-| Spule anlegen | ja | ja | ja, auch direkt aus einem Bambu-Tag |
-| Archivieren und zurückholen | ja | ja | ja |
-| Lagerort, Trocknungsdatum | ja | ja | ja |
-| Tara je Filament oder Hersteller | ja | ja | nein |
-| AMS-Zuordnung | - | ja | - |
-| Mobile App | - | ja | - |
+| Wiegen, verknüpfen, [Tags schreiben](tags.md), kopieren, archivieren, Lagerort, Trocknung | ja | ja | ja |
+| Zweiter Tag pro Spule | ab 0.27 | ab 1.3.1 | - |
+| Tara je Filament oder Hersteller | ja | ja | - |
+| Spule aus einem Bambu-Tag anlegen | - | - | ja |
+| [AMS-Ansicht](ams.md) | - | ja | ja |
+| Browser folgt der Waage | ab 0.27 | ab 1.3.7 | - |
 
 !!! note "Ohne Port geht es auf 80"
     Das Adressfeld nimmt `Host` oder `Host:Port`. Ohne Port geht die Anfrage an
-    Port 80 und scheitert so, dass es aussieht, als sei der Server aus.
+    80, und das scheitert so, als wäre der Server aus.
 
 ---
 
@@ -45,94 +42,87 @@ Backend neu abgefragt.
     ![Spoolman](../assets/images/backends/Logo_Spoolman.png){ .backend-logo }
 
     Der volle Umfang, und das Backend, mit dem das Projekt angefangen hat. Eine
-    einfache Basis-URL, keine Zugangsdaten.
+    einfache Adresse, keine Zugangsdaten.
 
-    **Wo die Tag-UID landet, entscheidest du.** `tag`, `nfc_id` oder
-    `card_uids`, je nachdem, was sonst noch in deine Datenbank schaut - siehe
-    [Ersteinrichtung](index.md#schritt-4-wo-die-tag-uid-landet). Mehrere Tags an
-    einer Spule gehen.
+    **Spoolman 0.27 und neuer** verwaltet Tags selbst, an der Spule, und eine
+    Spule kann mehrere tragen. Die Waage nutzt das standardmäßig, und eine
+    Waage, die ihre Tags vorher in `extra.tag` abgelegt hat, zieht sie einmal
+    von selbst um. Ein Scan an der Waage kann die Spule in Spoolmans Webseite
+    öffnen.
 
-    UIDs werden als reines Hex geschrieben (`04B9E542447080`), genau wie bei
-    jedem anderen Werkzeug im Spoolman-Umfeld. Eine Spule, die ein anderes
-    Programm verknüpft hat, findet die Waage - und umgekehrt. Spulen mit der
-    älteren Doppelpunkt-Schreibweise werden weiterhin gefunden und beim ersten
-    Scan einmalig umgeschrieben.
+    **Ältere Spoolman-Versionen** speichern den Tag in einem Zusatzfeld. Fehlende
+    Felder legt die Waage beim ersten Schreiben selbst an, vorher ist nichts
+    einzurichten.
 
-    !!! tip "Kommt: Spoolmans eigene Tag-Verwaltung"
-        Spoolman bekommt eine eigene Tag-Verwaltung. Tags gehören dann zur
-        Spule statt in ein Zusatzfeld, und die Waage meldet sich als Lesegerät
-        an, ein Scan an der Waage öffnet die Spule im Browser. Das kommt mit
-        **Spoolman 0.27.0** und ist dort noch nicht veröffentlicht.
-        SpoolmanScale unterstützt es ab Tag 1.
+    !!! tip "Nutzt du auch OpenSpoolman?"
+        OpenSpoolman kennt die nativen Tags noch nicht. Schalte
+        **Für OpenSpoolman** ein, und die Waage schreibt die Bambu-UUID
+        zusätzlich in `extra.tag`, wo OpenSpoolman sie sucht.
 
 === "FilaMan"
 
     ![FilaMan](../assets/images/backends/filaman_logo.png){ .backend-logo }
 
-    Der volle Umfang, plus alles, was FilaMan selbst mitbringt. Es braucht zwei
-    Zugänge, die in FilaMan an zwei verschiedenen Stellen entstehen:
+    Der volle Umfang, dazu, was FilaMan selbst mitbringt. Es braucht zwei
+    Zugänge:
 
-    | Zugang | Wofür | Anzulegen in FilaMan |
-    |---|---|---|
-    | API-Key | alles, was schreibt | Zahnrad neben dem Benutzernamen → **API Keys** |
-    | Device-Token | Heartbeat, Gewicht melden, Lesen | **Admin-Bereich → Geräte → Gerät erstellen** |
+    | Zugang | Anzulegen in FilaMan |
+    |---|---|
+    | API-Key | Zahnrad neben dem Benutzernamen → **API Keys** |
+    | Device-Token | **Admin-Bereich → Geräte → Gerät erstellen** |
 
-    Ein neues Gerät liefert einen 6-stelligen Code, nicht das Token selbst: Du
-    trägst den Code an der Waage ein, und sie tauscht ihn gegen das Token.
-    FilaMan zeigt Key und Code nur einmal, und beides sollte von einem
-    Admin-Konto kommen. Schritt für Schritt in der
+    Beim Anlegen eines Geräts bekommst du einen 6-stelligen Code: Gib ihn an der
+    Waage ein, und sie tauscht ihn gegen das Token. FilaMan zeigt Key und Code
+    nur einmal. Schritt für Schritt in der
     [Ersteinrichtung](index.md#schritt-3-backend-wahlen).
 
-    **Hier greifen die Tag-Funktionen am weitesten.** FilaMan kann der Waage
-    einen Schreibauftrag samt Tag-Inhalt schicken, den du am Gerät bestätigst.
-    Umgekehrt kann FilaMan die Waage bitten, einen Tag zu lesen, und übernimmt
-    die Daten in seinen Bestand. Der Spulenstatus lässt sich direkt an der Waage
-    ändern.
+    **Tags von FilaMan.** FilaMan kann der Waage einen Tag zum Schreiben
+    schicken, den du am Gerät bestätigst, und die Waage bitten, einen Tag zu
+    lesen.
 
-    **AMS.** Hebst du eine frisch gewogene Spule ab, fragt die Waage, ob sie ins
-    AMS wandert. Ein Tipp auf Ja, und FilaMan hält sie für den nächsten Drucker
-    bereit, der ein Fach lädt - das Zuordnen von Hand entfällt.
+    **AMS.** Hebst du eine frisch gewogene Spule ab, fragt die Waage "Spule jetzt
+    ins AMS legen?". Sagst du ja, ordnet FilaMan sie dem nächsten Fach zu, das
+    der Drucker lädt. Mehr unter [AMS-Ansicht](ams.md).
 
-    !!! info "Wiegen ohne Tag"
-        FilaMan kann ein Gewicht auch für eine Spule ohne Tag übernehmen. Bei
-        eingeschalteter Automatik passiert das von selbst, nicht nur über den
-        Knopf. FilaMans eigener Dialog meldet dabei einen Fehler, obwohl die
-        Spule geladen ist - das ist FilaMans Meldung, kein Fehlschlag an der
-        Waage.
+    **Der Browser folgt der Waage** (FilaMan 1.3.7 und neuer). Leg eine Spule
+    auf, und der FilaMan-Tab am Rechner springt zu ihr. Wähle die Waage dafür
+    einmal in den Browser-Einstellungen von FilaMan als Leser.
 
 === "BamBuddy"
 
     ![BamBuddy](../assets/images/backends/BamBuddy_logo.png){ .backend-logo }
 
-    Ein einzelner API-Key, gesendet als `X-API-Key`, anzulegen unter
-    **Settings → API Keys** mit **Read Status** und **Manage Inventory**. Der
-    Key ist optional: eine Instanz mit abgeschalteter Authentifizierung
-    antwortet auch ohne.
+    Ein API-Key mit **Read Status** und **Manage Inventory**, angelegt in
+    BamBuddy unter **Settings → API Keys**. Ohne Anmeldung in BamBuddy braucht es
+    keinen Key.
 
-    **BamBuddy führt seinen Bestand an einem von zwei Orten** - in der eigenen
-    Datenbank oder auf einem Spoolman-Server dahinter. Die Waage erkennt,
-    welcher Fall vorliegt, und schreibt in den richtigen. In der Statuszeile
-    steht, welcher:
-
-    | Statuszeile | Bedeutung |
-    |---|---|
-    | `Inventar: BamBuddy` | BamBuddys eigene Datenbank |
-    | `Inventar: Spoolman` | ein Spoolman-Server hinter BamBuddy |
+    **BamBuddy führt seinen Bestand an einem von zwei Orten:** in der eigenen
+    Datenbank oder in Spoolman hinter BamBuddy. Die Waage findet heraus, welcher
+    es ist, und zeigt es in der Statusleiste: `Inventar: BamBuddy` oder
+    `Inventar: Spoolman`.
 
     **Nur BamBuddy legt eine Spule direkt aus einem Bambu-Tag an**, mit
-    Material, Marke, Farbe und Temperaturen vom Tag. Auflegen, anlegen, fertig.
+    Material, Marke, Farbe und Temperaturen vom Tag.
+
+    **AMS.** Ist **Nach dem Wiegen ins AMS** an, wiegst du die Spule, hebst sie
+    ab und tippst auf das Fach. Mehr unter [AMS-Ansicht](ams.md).
 
     !!! warning "Keine Tara je Filament oder Hersteller"
-        BamBuddy kennt weder Filamente noch Hersteller als eigene Objekte, also
-        kann dort auch kein Tarawert hängen. Trag das Leergewicht je Spule ein
-        oder nimm das [Beutelgewicht](weighing.md#beutelgewicht).
+        BamBuddy kennt keine Filamente oder Hersteller als eigene Objekte, an
+        denen ein Tarawert hängen könnte. Trag das Leerspulengewicht je Spule
+        ein oder nimm das [Beutelgewicht](weighing.md#beutelgewicht).
 
 ---
 
-## Wechseln
+## Optionen
 
-**Einstellungen → Verbindung → Backend**, oder die Backend-Seite in der
-[Weboberfläche](web.md). Was du für die anderen beiden eingetragen hast, bleibt
-stehen. Nach dem Wechsel wird die Anzeige geleert und die aufliegende Spule beim
-neuen Backend neu abgefragt - du siehst also nie Daten aus dem gerade
-verlassenen.
+Jedes Backend hat ein paar eigene Optionen, unter
+**Einstellungen → Verbindung → Weitere Optionen**. Angezeigt werden nur die des
+aktiven Backends, und das **?** daneben erklärt jede am Gerät.
+
+- **Spoolman:** Tag-Feld und Zusatzfelder, **Für OpenSpoolman**, mehrere Tags
+  pro Spule, **Zweites Tag abfragen**, **Chip-UID mitschreiben** (Happy Hare).
+- **FilaMan:** **Zweites Tag abfragen**, verknüpfen und wiegen ohne Nachfrage,
+  Tags schreiben, die FilaMan schickt, **Auto AMS-Zuordnung**.
+- **BamBuddy:** wohin das Trocknungsdatum geht (standardmäßig ins Notizfeld),
+  **Nach dem Wiegen ins AMS**.

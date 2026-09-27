@@ -41,17 +41,26 @@ im selben Rhythmus trocknest.
 
 ## Eine Trocknung festhalten
 
-Wenn du eine Spule aus dem Trockner nimmst, leg sie auf die Waage und halte es
-fest. Das Datum wird bei deinem [Backend](backends.md) zur Spule gespeichert.
+Wenn du eine Spule aus dem Trockner nimmst, leg sie auf die Waage, tippe auf
+**Heute getrocknet** und bestätige. Das Datum wird bei deinem
+[Backend](backends.md) zur Spule gespeichert.
 
 !!! info "Im richtigen Kalendertag gespeichert"
-    Eine Spule, die kurz nach Mitternacht getrocknet wurde, galt früher als
-    *gestern* getrocknet, und die Erinnerung zählte einen Tag zu viel. In v0.7.0
-    behoben.
+    Das Datum ist dein örtlicher Kalendertag. Eine Spule, die kurz nach
+    Mitternacht getrocknet wurde, gilt also als heute getrocknet, nicht als
+    gestern.
 
-Bei Spoolman liegt das Datum im Zusatzfeld `last_dried`, das bei der
-[Ersteinrichtung](index.md#schritt-4-wo-die-tag-uid-landet) für dich angelegt
-wird.
+Bei Spoolman liegt das Datum im Zusatzfeld `last_dried`. Fehlt das Feld, legt
+die Waage es beim ersten Schreiben an.
+
+### Aus dem AMS
+
+Mit FilaMan und BamBuddy muss eine Spule dafür nicht aus dem AMS. Tippe in der
+AMS-Ansicht auf ein belegtes Fach, und die Karte bietet an, die Trocknung von
+heute zu speichern. Bei einem AMS 2 Pro bietet sie alle Spulen der Einheit auf
+einmal an. Die Ampel der Trocknungserinnerung gilt auch auf der Karte.
+
+![AMS-Karte mit rotem Trocknungsdatum](../assets/images/ui/de/dry_03_card_red.png)
 
 ---
 
@@ -64,14 +73,14 @@ welcher Kiste oder welchem Regal sie kam.
 
 **Einstellungen → Waage → Ortsabfrage bei Entnahme**
 
-Hebst du eine Spule ab, fragt die Waage, wohin sie geht. Ein Tipp auf den
-Lagerort, und er wird zurückgeschrieben.
+Hebst du eine Spule ab, fragt die Waage nach etwa 1,5 Sekunden, wohin sie geht.
+Ein Tipp auf den Lagerort, und er wird zurückgeschrieben.
 
-!!! warning "Abschalten, wenn sie von selbst aufgeht"
-    Bei NTAG-Tags kann der Leser den Tag kurz verlieren, obwohl die Spule sich
-    nicht bewegt hat - das liest sich wie eine Entnahme und öffnet die Auswahl
-    ungefragt. Prüfe zuerst die
-    [Tag-Position](tags.md#position-naher-ist-nicht-besser), zu wenig Abstand ist
-    die häufigere Ursache. Bleibt es dabei, schalte das hier aus.
+Die Waage erkennt die Entnahme am Gewicht, nicht am Leser allein. Eine Spule,
+die noch daliegt, löst die Frage nicht aus, auch wenn der Leser ihren Tag kurz
+verliert. Die Ausnahmen, sehr leichte Spulen und ein Gerät ohne Wägezelle,
+stehen unter [NFC-Tags](tags.md#verlorene-lesungen-und-die-lagerort-frage).
 
-    Bambu-Lab-Spulen zeigen das nicht.
+Eine Liste, die sich von selbst geöffnet hat, schließt sich nach 30 Sekunden,
+als hättest du **Abbrechen** gedrückt, und der Knopf läuft dabei leer. Aus
+**Mehr Info** geöffnet, wartet sie auf dich.

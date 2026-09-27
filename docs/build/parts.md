@@ -40,7 +40,7 @@ leaves both modules unpowered, which the scale reports as
 
 ## PN532 NFC reader
 
-Reads and, since v0.7.0, writes NFC tags.
+Reads and writes NFC tags.
 
 | Property | Value |
 |---|---|

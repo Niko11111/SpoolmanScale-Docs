@@ -12,9 +12,12 @@ Das allererste Mal läuft über USB. Es funktioniert in jedem Chrome-Browser
 
 1. WT32-SC01 Plus per USB-C an den Rechner
 2. **[niko11111.github.io/SpoolmanScale](https://niko11111.github.io/SpoolmanScale)** öffnen
-3. Auf **Flash Latest** klicken
-4. Den seriellen Port des Geräts auswählen
-5. Etwa 60 Sekunden warten
+3. Auf den Knopf auf der Seite klicken und den seriellen Port des Geräts
+   auswählen
+4. **Install** wählen. Einer Waage, auf der SpoolmanScale schon läuft, wird
+   stattdessen **Update** angeboten, das WLAN, Kalibrierung und
+   Backend-Einstellungen behält
+5. Etwa 2 Minuten warten
 6. Der Browser bietet an, dein WLAN einzurichten. Jetzt eingeben, oder
    überspringen und in Schritt 2 an der Waage erledigen
 
@@ -24,6 +27,11 @@ Das allererste Mal läuft über USB. Es funktioniert in jedem Chrome-Browser
 
 !!! note "Chrome, nicht Firefox"
     Der Flasher benutzt die WebSerial-API. Firefox hat sie nicht.
+
+!!! warning "Einstellungen behalten"
+    Bietet der Flasher bei einer Waage, die schon deine Einstellungen trägt,
+    **Install** an und fragt, ob das Gerät gelöscht werden soll, lass das
+    Häkchen weg. Setz es nur, wenn du ganz neu anfangen willst.
 
 !!! tip "WLAN später ändern"
     Die Flasher-Seite ändert auch das WLAN einer Waage, die schon läuft. Per
@@ -36,9 +44,13 @@ danach nicht mehr.
 
 ---
 
-## Schritt 1 - Sprache
+## Schritt 1 - Sprache und Zeitzone
 
-**Deutsch** oder **Englisch**. Später änderbar unter
+**Deutsch**, **English** oder **Français**, darunter deine Zeitzone, damit die
+Uhr vom ersten Start an stimmt. Die Zone folgt der Sprache, bis du selbst eine
+wählst. **Weiter** speichert beides und startet das Gerät einmal neu.
+
+Beides ist später änderbar unter
 **Einstellungen → System → Sprache / Language**.
 
 ---
@@ -89,6 +101,8 @@ der Waage.
 SpoolmanScale spricht mit drei Filament-Verwaltungen. Wähle jetzt eine, ändern
 kannst du das jederzeit unter **Einstellungen → Verbindung** oder in der
 [Weboberfläche](web.md) - deine Eingaben für die anderen bleiben erhalten.
+
+![Das Menü Verbindung am Gerät](../assets/images/ui/de/11_connection.png)
 
 === "Spoolman"
 
@@ -166,29 +180,31 @@ Vor dem Weitergehen **Verbindung testen** antippen.
 
 ---
 
-## Schritt 4 - Wo die Tag-UID landet
+## Wo die Tag-UID landet
 
 !!! info "Nur Spoolman"
-    FilaMan und BamBuddy führen Tag-Kennungen selbst. Dieser Schritt betrifft
-    sie nicht.
+    FilaMan und BamBuddy führen Tag-Kennungen selbst. Das hier betrifft sie
+    nicht.
 
-SpoolmanScale legt die UID eines NFC-Tags in einem Spoolman-Zusatzfeld ab, und
-du entscheidest, in welchem:
+Einen eigenen Einrichtungsschritt gibt es dafür nicht mehr. Nach dem
+Verbindungstest geht es mit **Weiter** direkt zur Kalibrierung.
+
+Ab **Spoolman 0.27** legt die Waage Tags nativ in Spoolman ab
+(**Spoolman NFC (nativ)**). Eine neue Einrichtung wählt das beim ersten Scan
+von selbst, und eine Waage, die bisher `extra.tag` benutzt hat, zieht einmalig
+von selbst um. Das alte Feld bleibt gefüllt. Bei einem älteren Spoolman landet
+die UID in einem Zusatzfeld:
 
 | Feld | Nimm es, wenn |
 |---|---|
-| `tag` | Nichts anderes deine Tags liest. Die Voreinstellung. |
+| `tag` | Nichts anderes deine Tags liest. Die Voreinstellung vor Spoolman 0.27. |
 | `nfc_id` | Ein anderes Werkzeug bei dir diesen Namen schon benutzt |
 | `card_uids` | Du mehrere Tags an einer Spule haben willst |
 
-Ein zweites Zusatzfeld, `last_dried`, hält das Trocknungsdatum. Beim ersten
-Verbinden prüft die Waage, ob die Felder existieren, und bietet an, sie
-anzulegen.
-
-!!! tip "Wenn sich die Felder nicht anlegen lassen"
-    Leg in Spoolman unter **Settings → Extra fields** ein Testfeld von Hand an.
-    Klappt das auch nicht, liegt es an der Spoolman-Verbindung, nicht an der
-    Waage.
+Fehlende Felder, etwa das Tag-Feld oder `last_dried` für das Trocknungsdatum,
+legt die Waage beim ersten Schreiben selbst an. Ändern lässt sich die Auswahl
+später unter
+**Einstellungen → Verbindung → Weitere Optionen → Spoolman Extra-Felder → Tag-Feld**.
 
 Die UID wird als **reines Hex** geschrieben (`04B9E542447080`), so wie jedes
 andere Werkzeug rund um Spoolman sie schreibt. Spulen, die eine ältere Firmware
@@ -197,23 +213,35 @@ einmalig umgeschrieben.
 
 ---
 
-## Schritt 5 - Kalibrieren
+## Schritt 4 - Kalibrieren
 
 Eine nie kalibrierte Waage zeigt den Rohwert des Wandlers, keine Gramm - eine
 sechsstellige Zahl, die von selbst um Hunderte springt. Bei einem frischen
 Aufbau ist das normal, und die Waage sagt es in der Statuszeile auch.
 
+Am Ende der Einrichtung fragt die Waage danach: **Jetzt kalibrieren** öffnet
+die Kalibrierung sofort, **Verstanden** verschiebt sie auf später.
+
 1. **Einstellungen → Waage → Kalibrierung**
 2. Plattform leer räumen, **TARE** antippen, warten bis 0 dasteht
 3. Ein Gewicht auflegen, das du genau kennst, ideal etwa 1000 g
 4. Dieses Gewicht in Gramm eintippen
-5. **Berechnen** antippen und speichern
+5. **Berechnen** antippen. Der Faktor wird sofort gespeichert
+
+![Kalibrierung am Gerät](../assets/images/ui/de/19_calibration.png)
 
 !!! tip "Das Referenzgewicht setzt die Obergrenze"
     Eine volle Spule, auf einer Küchenwaage nachgewogen, reicht völlig. Der
     Fehler deines Referenzgewichts steckt danach in jeder Messung.
 
 Einzelheiten in [Wiegen & Kalibrieren](weighing.md).
+
+!!! note "Ohne Wägezelle"
+    Ein Gerät ohne Wägezelle überspringt das. Schalte
+    **Einstellungen → Waage → Waage vorhanden** aus und starte neu: Das Gerät
+    arbeitet dann als Tag-Terminal. Die Gewichte verschwinden vom Bildschirm,
+    der Gewichtsknopf wird zu **Lagerort**, und Kalibrierung und
+    Beutelgewicht verschwinden aus dem Menü.
 
 ---
 

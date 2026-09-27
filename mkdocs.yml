@@ -125,6 +125,8 @@ plugins:
             NFC tags: NFC-Tags
             Weighing & calibration: Wiegen & Kalibrieren
             Drying & location: Trocknung & Lagerort
+            AMS view: AMS-Ansicht
+            Bluetooth & labels: Bluetooth & Etiketten
             The web interface: Web-Interface
             Updating the firmware: Firmware aktualisieren
             Pro: Pro
@@ -172,6 +174,8 @@ nav:
     - NFC tags: use/tags.md
     - Weighing & calibration: use/weighing.md
     - Drying & location: use/drying.md
+    - AMS view: use/ams.md
+    - Bluetooth & labels: use/labels.md
     - The web interface: use/web.md
     - Updating the firmware: use/updating.md
   - Pro:

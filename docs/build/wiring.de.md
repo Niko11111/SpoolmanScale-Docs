@@ -55,10 +55,12 @@ Der PN532 hat keinen Stecker - **die Adern werden direkt angelötet**.
     Halterung gerade groß genug, den Stecker durchzuführen - dann kannst du alles
     außerhalb des Gehäuses löten und beim Endzusammenbau nur noch einstecken.
 
-!!! danger "Die Reset-Leitung wandert - die Fotos auf dieser Seite zeigen noch den alten Stand"
-    Löte den orangen RST-Draht auf **RSTPDN**, den obersten Pin der beschrifteten
-    10-poligen Stiftleiste (die mit RSTPDN, SIGIN, SIGOUT, SIGCLK, INT1, INT0,
-    DBGTXD, DBGRXD, AUX1, AUX2).
+!!! danger "Die Reset-Leitung gehört auf RSTPDN"
+    Löte den orangen RST-Draht auf **RSTPDN**, den Pin am Ende der beschrifteten
+    10-poligen Reihe (AUX1, AUX2, DBGRXD, DBGTXD, INT0, INT1, SIGCLK, SIGOUT,
+    SIGIN, RSTPDN). Liegt die Platine wie auf dem Foto, ist es der unterste.
+
+    ![PN532 von hinten: der orange Draht auf RSTPDN](../assets/images/pn532_rstpdn.jpg){ width="480" }
 
     Alle Bauanleitungen bis August 2026 führten ihn auf die gegenüberliegende
     Leiste, wo das Modul einen **Ausgang** herausführt statt seines
@@ -68,8 +70,6 @@ Der PN532 hat keinen Stecker - **die Adern werden direkt angelötet**.
     **Es geht nichts kaputt, wenn du ihn lässt.** Der Leser kam auch ohne Reset
     immer sauber hoch, und eine Waage, die nie umgelötet wird, verhält sich
     genau wie heute.
-
-    Die Verkabelungsfotos weiter unten sind noch nicht neu aufgenommen.
 
 ### PN532-Belegung (JST SH 1,0 mm, 5-polig, Kabelfarben von Drittanbietern)
 
@@ -85,11 +85,6 @@ Der PN532 hat keinen Stecker - **die Adern werden direkt angelötet**.
 
 
 ## Nach dem Umlöten
-
-!!! note "Braucht Firmware v0.7.1 oder neuer"
-    Die hier beschriebene Prüfung kommt mit v0.7.1. Unter v0.7.0 gibt es den
-    Menüeintrag noch nicht - das Umlöten selbst ist trotzdem richtig und muss
-    nicht zweimal gemacht werden, die Waage kann es nur noch nicht bestätigen.
 
 Die Waage glaubt der Reset-Leitung nicht einfach. Sie misst sie, auf deinem
 Gerät, und benutzt sie erst, wenn die Messung sagt, dass der Draht sitzt.
@@ -181,5 +176,5 @@ umgepinnt werden müssen.
 
 ![Schritt 1](../assets/images/assembly_1.jpeg)
 ![Schritt 2](../assets/images/assembly_2.jpeg)
-![Schritt 3](../assets/images/assembly_3.jpeg)
+![Schritt 3: PN532 von hinten, Reset-Draht auf RSTPDN](../assets/images/pn532_rstpdn.jpg)
 ![Schritt 4](../assets/images/assembly_4.jpeg)
