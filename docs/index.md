@@ -122,10 +122,6 @@ Around **€50 to €60** in parts. Details on the
     - [Troubleshooting](help/troubleshooting.md)
     - [FAQ](help/faq.md)
 
-=== "SpoolmanScale Pro"
-
-    The Pro variant brings its own Raspberry Pi Zero 2W running the backend
-    locally. See the [Pro overview](pro/index.md).
 
 ---
 

@@ -145,21 +145,6 @@ der Pi.
 
 ---
 
-## SpoolmanScale Pro (Pi)
-
-??? question "spoolmanscale.local nicht erreichbar"
-    - Unter Windows: [Bonjour Print Services](https://support.apple.com/kb/DL999)
-      installieren
-    - Ersatzweise direkt die IP-Adresse des Pi benutzen
-    - Prüfen, ob der Pi Strom hat und im WLAN hängt
-
-??? question "Backend startet nach dem Neustart nicht"
-    - systemd-Dienst prüfen: `sudo systemctl status spoolmanscale-backend`
-    - Docker prüfen: `docker ps`
-    - Logs prüfen: `docker logs spoolmanscale-ui`
-
----
-
 !!! tip "Kommst du nicht weiter?"
     Komm in den [Discord](https://discord.gg/xadskCrPFu) - dort hilft die
     Community gern.

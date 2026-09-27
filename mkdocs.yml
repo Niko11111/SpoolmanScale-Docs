@@ -63,6 +63,11 @@ extra:
 
 copyright: Copyright &copy; 2025-2026 Nikolai Herrmann | FormFollowsFunction
 
+# SpoolmanScale Pro is paused until it is reworked: its pages stay in the repo
+# but are not built or linked.
+exclude_docs: |
+  pro/
+
 plugins:
   - search
   - redirects:
@@ -92,9 +97,9 @@ plugins:
         features/weight.md: use/weighing.md
         features/auto-weight.md: use/weighing.md
         features/drying.md: use/drying.md
-        reference/pro.md: pro/index.md
-        reference/pi-setup.md: pro/pi-setup.md
-        reference/flask-ui.md: pro/web-ui.md
+        reference/pro.md: index.md
+        reference/pi-setup.md: index.md
+        reference/flask-ui.md: index.md
         community/discord.md: help/contributing.md
         community/contributing.md: help/contributing.md
         community/troubleshooting.md: help/troubleshooting.md
@@ -129,9 +134,6 @@ plugins:
             Bluetooth & labels: Bluetooth & Etiketten
             The web interface: Web-Interface
             Updating the firmware: Firmware aktualisieren
-            Pro: Pro
-            Raspberry Pi setup: Raspberry Pi einrichten
-            Pro web UI: Pro Web-UI
             Help: Hilfe
             What the scale is telling you: Was die Waage dir sagt
             Troubleshooting: Troubleshooting
@@ -178,10 +180,6 @@ nav:
     - Bluetooth & labels: use/labels.md
     - The web interface: use/web.md
     - Updating the firmware: use/updating.md
-  - Pro:
-    - pro/index.md
-    - Raspberry Pi setup: pro/pi-setup.md
-    - Pro web UI: pro/web-ui.md
   - Help:
     - help/index.md
     - Troubleshooting: help/troubleshooting.md

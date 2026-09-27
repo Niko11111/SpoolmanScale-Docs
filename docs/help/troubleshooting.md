@@ -133,19 +133,5 @@ Problems the scale cannot work out by itself: network, backend, tags, the Pi.
 
 ---
 
-## SpoolmanScale Pro (Pi)
-
-??? question "Can't reach spoolmanscale.local"
-    - On Windows: install [Bonjour Print Services](https://support.apple.com/kb/DL999)
-    - Use the Pi's IP address directly as an alternative
-    - Check that the Pi is powered and connected to WiFi
-
-??? question "Backend doesn't start after reboot"
-    - Check systemd service: `sudo systemctl status spoolmanscale-backend`
-    - Check Docker: `docker ps`
-    - Check logs: `docker logs spoolmanscale-ui`
-
----
-
 !!! tip "Still stuck?"
     Join the [Discord](https://discord.gg/xadskCrPFu) - the community is happy to help.
