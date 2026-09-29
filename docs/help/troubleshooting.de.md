@@ -106,13 +106,26 @@ der Pi.
     - Anderen USB-Port oder anderen Rechner probieren
     - Chrome oder Edge benutzen - Firefox kann kein WebSerial
 
+??? question "Web-Flasher meldet: Failed to initialize"
+    Der Flasher sieht den Port, kommt aber nicht an den Chip heran. Probier
+    nacheinander:
+
+    1. Alles schließen, was den USB-Port belegen könnte: Arduino IDE, Slicer,
+       ein zweiter Tab mit dem Flasher.
+    2. Ein anderes Kabel, sicher ein Datenkabel, an einer USB-Buchse direkt am
+       Rechner, ohne Hub.
+    3. Die Waage von Hand in den Download-Modus bringen, mit den beiden
+       kleinen Tastern auf der Rückseite der Display-Platine: **BOOT**
+       gedrückt halten, **RST** kurz drücken, **BOOT** loslassen. Dann im
+       Flasher verbinden und installieren. Danach einmal **RST** drücken.
+
 ??? question "OTA-Update scheitert"
     - WLAN-Verbindung prüfen
     - Nochmal versuchen - der Download von GitHub kann bei langsamer Leitung
       abbrechen
     - Scheitert es weiterhin, über den Web-Flasher oder den Datei-Upload gehen
 
-??? question "Update wird nicht angeboten, oder \"passt nicht mehr\""
+??? question "Update wird nicht angeboten, oder „passt nicht mehr“"
     0.8.0 teilt den Speicher der Waage neu auf, und das geht nur über das Kabel.
     Eine Waage mit der alten Aufteilung meldet, dass das Update nicht mehr
     passt, oder der Upload im Browser meldet, dass die Datei größer ist als der

@@ -97,12 +97,24 @@ Problems the scale cannot work out by itself: network, backend, tags, the Pi.
     - Try a different USB port or computer
     - Use Chrome or Edge - Firefox does not support WebSerial
 
+??? question "Web Flasher says: Failed to initialize"
+    The flasher found the port but cannot reach the chip. Try these in order:
+
+    1. Close everything that may hold the USB port: Arduino IDE, a slicer,
+       a second tab with the flasher.
+    2. Use a different cable, one that carries data, in a USB port straight on
+       the computer, no hub.
+    3. Put the scale into download mode by hand, with the two small buttons
+       on the back of the display board: hold **BOOT**, press and release
+       **RST**, release **BOOT**. Then connect in the flasher and install.
+       Press **RST** once when it is done.
+
 ??? question "OTA update fails"
     - Check WiFi connection
     - Try again - the GitHub download can time out on slow connections
     - Fall back to the Web Flasher or manual file upload if OTA keeps failing
 
-??? question "Update is not offered, or \"no longer fits\""
+??? question "Update is not offered, or “no longer fits”"
     0.8.0 divides the scale's memory anew, and that only works over the cable.
     A scale still on the old layout says the update no longer fits, or the web
     upload reports that the file is larger than the storage of this scale.
