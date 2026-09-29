@@ -21,16 +21,17 @@ am Gerät oder aus dem Browser, ohne USB-Kabel.
 
     ![Die Erinnerung mit QR-Code zum Web-Flasher](../assets/images/ui/de/x03_partition_hint.png)
 
-!!! tip "Wenn der Flasher meldet: Failed to initialize"
+??? tip "Wenn der Flasher meldet: Failed to initialize"
     Er kommt nicht an den Chip heran. Probier nacheinander:
 
     1. Alles schließen, was den USB-Port belegen könnte: Arduino IDE, Slicer,
        ein zweiter Tab mit dem Flasher.
     2. Ein anderes Kabel, sicher ein Datenkabel, an einer USB-Buchse direkt am
        Rechner, ohne Hub.
-    3. Die Waage von Hand in den Download-Modus bringen: **BOOT** gedrückt
-       halten, **RST** kurz drücken, **BOOT** loslassen. Dann im Flasher
-       verbinden und installieren. Danach einmal **RST** drücken.
+    3. Die Waage von Hand in den Download-Modus bringen, mit den beiden
+       kleinen Tastern auf der Rückseite der Display-Platine: **BOOT**
+       gedrückt halten, **RST** kurz drücken, **BOOT** loslassen. Dann im
+       Flasher verbinden und installieren. Danach einmal **RST** drücken.
 
 ---
 
