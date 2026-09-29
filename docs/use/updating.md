@@ -20,6 +20,17 @@ device or from your browser, without the USB cable.
 
     ![The reminder with a QR code to the web flasher](../assets/images/ui/en/x03_partition_hint.png)
 
+!!! tip "If the flasher says: Failed to initialize"
+    It cannot reach the chip. Try these in order:
+
+    1. Close everything that may hold the USB port: Arduino IDE, a slicer,
+       a second tab with the flasher.
+    2. Use a different cable, one that carries data, in a USB port straight on
+       the computer, no hub.
+    3. Put the scale into download mode by hand: hold **BOOT**, press and
+       release **RST**, release **BOOT**. Then connect in the flasher and
+       install. Press **RST** once when it is done.
+
 ---
 
 ## From the device
