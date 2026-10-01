@@ -114,10 +114,22 @@ der Pi.
        ein zweiter Tab mit dem Flasher.
     2. Ein anderes Kabel, sicher ein Datenkabel, an einer USB-Buchse direkt am
        Rechner, ohne Hub.
-    3. Die Waage von Hand in den Download-Modus bringen, mit den beiden
-       kleinen Tastern auf der Rückseite der Display-Platine: **BOOT**
-       gedrückt halten, **RST** kurz drücken, **BOOT** loslassen. Dann im
-       Flasher verbinden und installieren. Danach einmal **RST** drücken.
+    3. Die Waage von Hand in den Download-Modus bringen. Die Display-Platine
+       hat auf der Rückseite nur einen Taster, **RST**. **BOOT** (GPIO0) liegt
+       am 7-poligen **DEBUG**-Stecker daneben, und das optionale Debug-Board
+       (ZXACC-ESPDB), das dort aufgesteckt wird, hat beide Taster.
+
+        **Mit Debug-Board:** **BOOT** gedrückt halten, **RST** kurz drücken,
+        **BOOT** loslassen.
+
+        **Ohne:** Pin 6 (BOOT) und Pin 7 (GND) des DEBUG-Steckers mit einem
+        kurzen Draht verbinden, **RST** drücken, Draht abziehen. Pin 1 am
+        anderen Ende führt 5V, deshalb GND vorher mit dem Multimeter suchen:
+        Er piept gegen das Metallgehäuse der USB-C-Buchse.
+
+        Das Display bleibt dunkel, das ist richtig: Der Chip wartet jetzt auf
+        den Flasher. Im Flasher verbinden und installieren, danach einmal
+        **RST** drücken.
 
 ??? question "OTA-Update scheitert"
     - WLAN-Verbindung prüfen

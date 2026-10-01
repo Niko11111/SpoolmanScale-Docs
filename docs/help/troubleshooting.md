@@ -104,10 +104,21 @@ Problems the scale cannot work out by itself: network, backend, tags, the Pi.
        a second tab with the flasher.
     2. Use a different cable, one that carries data, in a USB port straight on
        the computer, no hub.
-    3. Put the scale into download mode by hand, with the two small buttons
-       on the back of the display board: hold **BOOT**, press and release
-       **RST**, release **BOOT**. Then connect in the flasher and install.
-       Press **RST** once when it is done.
+    3. Put the scale into download mode by hand. The display board has only
+       a **RST** button on its back. **BOOT** (GPIO0) is on the 7-pin
+       **DEBUG** connector next to it, and the optional debug board
+       (ZXACC-ESPDB) plugged in there has both buttons.
+
+        **With the debug board:** hold **BOOT**, press and release **RST**,
+        release **BOOT**.
+
+        **Without it:** bridge pin 6 (BOOT) and pin 7 (GND) of the DEBUG
+        connector with a short wire, press **RST**, remove the wire. Pin 1 at
+        the other end carries 5V, so find GND with a multimeter first: it
+        beeps against the metal shell of the USB-C socket.
+
+        The screen stays dark, that is right: the chip now waits for the
+        flasher. Connect in the flasher and install, then press **RST** once.
 
 ??? question "OTA update fails"
     - Check WiFi connection
