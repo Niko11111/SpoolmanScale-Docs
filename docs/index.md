@@ -34,8 +34,8 @@ manager - without opening a browser.
 
 ## New in v0.8.0
 
-- 🏷️ **Label printing** *(beta, first version)* - via Bluetooth on a Phomemo M220
-  (M110 experimental), with material, colour, spool ID and a QR code to the
+- 🏷️ **Label printing** *(beta, first version)* - via Bluetooth on a Phomemo M220,
+  M110 or M100, with material, colour, spool ID and a QR code to the
   spool. This is a start: labels from the backend, a small editor in the
   browser, more printers and sizes are planned.
 - ⚡ **Much faster** - linking a new spool takes under a second instead of 2 to

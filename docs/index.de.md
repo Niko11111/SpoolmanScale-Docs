@@ -35,7 +35,7 @@ deiner Filamentverwaltung ab - ohne dass du einen Browser aufmachen musst.
 ## Neu in v0.8.0
 
 - 🏷️ **Etikettendruck** *(Beta, erste Version)* - per Bluetooth auf einen Phomemo
-  M220 (M110 experimentell), mit Material, Farbe, Spulen-ID und QR-Code zur
+  M220, M110 oder M100, mit Material, Farbe, Spulen-ID und QR-Code zur
   Spule. Das ist ein Anfang: Etiketten aus dem Backend, ein kleiner Editor im
   Browser, weitere Drucker und Größen sind geplant.
 - ⚡ **Deutlich schneller** - eine neue Spule verknüpfen dauert unter einer
