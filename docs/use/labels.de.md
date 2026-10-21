@@ -27,10 +27,10 @@ QR-Code, der die Spule in deinem Backend öffnet.
 
 ![Drucker-Screen](../assets/images/ui/de/26_printer.png)
 
-Unterstützt sind vorerst der **Phomemo M220**, der **M110** und der **M100**, mit
-Etiketten in **40 x 30 mm**, beim M220 auch **50 x 30 mm**. Die
-Etikettengröße ist Breite quer zum Druckkopf mal Länge in Laufrichtung, so wie
-sie auf der Rolle steht.
+Welche Drucker unterstützt sind, welche zwei wir empfehlen und welche Etiketten
+dazu passen, steht unter [Empfohlene Drucker](printers.md). Die Etikettengröße
+ist Breite quer zum Druckkopf mal Länge in Laufrichtung, so wie sie auf der
+Rolle steht.
 
 ---
 

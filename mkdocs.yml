@@ -48,6 +48,7 @@ extra_css:
 
 extra_javascript:
   - assets/lightbox.js
+  - assets/shop.js
 
 extra:
   social:
@@ -132,6 +133,7 @@ plugins:
             Drying & location: Trocknung & Lagerort
             AMS view: AMS-Ansicht
             Bluetooth & labels: Bluetooth & Etiketten
+            Recommended printers: Empfohlene Drucker
             The web interface: Web-Interface
             Updating the firmware: Firmware aktualisieren
             Help: Hilfe
@@ -178,6 +180,7 @@ nav:
     - Drying & location: use/drying.md
     - AMS view: use/ams.md
     - Bluetooth & labels: use/labels.md
+    - Recommended printers: use/printers.md
     - The web interface: use/web.md
     - Updating the firmware: use/updating.md
   - Help:

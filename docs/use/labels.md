@@ -25,9 +25,9 @@ your backend.
 
 ![Printer screen](../assets/images/ui/en/26_printer.png)
 
-Supported for now: the **Phomemo M220**, **M110** and **M100**, with labels of
-**40 x 30 mm**, on the M220 also **50 x 30 mm**. The label stock
-is width across the head by length along the feed, as printed on the roll.
+Which printers are supported, which two we recommend and the labels that go
+with them: see [Recommended printers](printers.md). The label stock is width
+across the head by length along the feed, as printed on the roll.
 
 ---
 
