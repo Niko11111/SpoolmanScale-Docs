@@ -34,7 +34,7 @@ Cheap, no ribbon, labels of **40 x 30** and **50 x 30 mm**.
     In the AMS HT at 85 °C the label mostly turns black on the first drying,
     at lower temperatures bit by bit.
 
-*TODO: photo of the printer.*
+![Phomemo M220](../assets/images/printers/phomemo_m220.webp){ width="240" loading=lazy }
 
 <div class="shop-links" markdown>
 <a class="shop-link md-button" data-product="phomemo-m220">Phomemo M220</a>
@@ -50,7 +50,7 @@ Stands the dryer, and at 300 dpi text and QR code come out finer. Labels of
 Tested with NIIMBOT's original white 50 x 30 mm roll and the black ribbon.
 Third-party rolls we have not tried.
 
-*TODO: photo of the printer.*
+![NIIMBOT M2](../assets/images/printers/niimbot_m2.webp){ width="240" loading=lazy }
 
 <div class="shop-links" markdown>
 <a class="shop-link md-button" data-product="niimbot-m2">NIIMBOT M2</a>

@@ -33,7 +33,7 @@ Günstig, ohne Farbband, Etiketten mit **40 x 30** und **50 x 30 mm**.
     Im AMS HT bei 85 °C wird das Etikett meist schon beim ersten Trocknen
     schwarz, bei niedrigeren Temperaturen nach und nach.
 
-*TODO: Foto des Druckers.*
+![Phomemo M220](../assets/images/printers/phomemo_m220.webp){ width="240" loading=lazy }
 
 <div class="shop-links" markdown>
 <a class="shop-link md-button" data-product="phomemo-m220">Phomemo M220</a>
@@ -49,7 +49,7 @@ Etiketten mit **50 x 30 mm**.
 Getestet mit der originalen weißen NIIMBOT-Rolle 50 x 30 mm und schwarzem
 Farbband. Rollen anderer Hersteller haben wir nicht ausprobiert.
 
-*TODO: Foto des Druckers.*
+![NIIMBOT M2](../assets/images/printers/niimbot_m2.webp){ width="240" loading=lazy }
 
 <div class="shop-links" markdown>
 <a class="shop-link md-button" data-product="niimbot-m2">NIIMBOT M2</a>
