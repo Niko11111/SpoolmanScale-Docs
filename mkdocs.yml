@@ -62,15 +62,23 @@ extra:
       link: https://ko-fi.com/formfollowsfunction
       name: Ko-fi
 
-copyright: Copyright &copy; 2025-2026 Nikolai Herrmann | FormFollowsFunction
+copyright: Copyright &copy; 2025-2026 Nikolai Herrmann | FormFollowsFunction | <a href="https://niko11111.github.io/SpoolmanScale-Docs/privacy/">Privacy</a>
 
 # SpoolmanScale Pro is paused until it is reworked: its pages stay in the repo
 # but are not built or linked.
 exclude_docs: |
   pro/
 
+# Linked from the footer, not from the navigation.
+not_in_nav: |
+  /privacy.md
+  /privacy.de.md
+
 plugins:
   - search
+  # Fonts and other outside assets are fetched at build time and served from
+  # this site, so a visit sends nothing to Google or any other host.
+  - privacy
   - redirects:
       redirect_maps:
         # The old six-tab tree. These paths are linked from MakerWorld, Discord
@@ -117,6 +125,7 @@ plugins:
         - locale: de
           name: Deutsch
           build: true
+          copyright: Copyright &copy; 2025-2026 Nikolai Herrmann | FormFollowsFunction | <a href="https://niko11111.github.io/SpoolmanScale-Docs/de/privacy/">Datenschutz</a>
           nav_translations:
             Build: Bauen
             Bill of materials: Stückliste

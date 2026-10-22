@@ -2,3 +2,5 @@
 # been committed before this rule existed. Global rather than per folder: the
 # next one appears in whichever directory gets opened next.
 **/.DS_Store
+# The privacy plugin's downloads of fonts and badges, refetched by every build.
+.cache/
