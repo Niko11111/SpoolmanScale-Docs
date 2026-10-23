@@ -150,6 +150,7 @@ plugins:
             Troubleshooting: Troubleshooting
             FAQ: FAQ
             Contributing & Discord: Mitmachen & Discord
+            Integrating a server: Einen Server anbinden
 
 markdown_extensions:
   - admonition
@@ -197,3 +198,4 @@ nav:
     - Troubleshooting: help/troubleshooting.md
     - FAQ: help/faq.md
     - Contributing & Discord: help/contributing.md
+    - Integrating a server: help/integrate.md
