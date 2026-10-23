@@ -4,7 +4,9 @@ Diese Seite richtet sich an Entwickler. Wer die Waage nur benutzt, kann sie
 überspringen: die drei eingebauten Backends stehen unter
 [Backends](../use/backends.md).
 
-SpoolmanScale spricht per HTTP mit den Servern, die der Nutzer einträgt. Was
+SpoolmanScale spricht per HTTP mit den Servern, die der Nutzer einträgt: einem
+Server im eigenen Netz, wie bei Spoolman, FilaMan und BamBuddy, oder einem
+Online-Dienst über HTTPS. Was
 sie sendet und was sie zurückerwartet, steht in einer öffentlichen
 Spezifikation, damit ein anderes Inventarsystem oder eine Drucker-Brücke die
 Waage bedienen kann, ohne dass die Firmware einen eigenen Treiber dafür

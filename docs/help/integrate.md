@@ -3,7 +3,9 @@
 This page is for developers. If you only use the scale, skip it: the three
 built-in backends are described under [Backends](../use/backends.md).
 
-SpoolmanScale talks HTTP to the servers the user enters. What it sends and
+SpoolmanScale talks HTTP to the servers the user enters: a server on the
+user's own network, as with Spoolman, FilaMan and BamBuddy, or an online
+service over HTTPS. What it sends and
 what it expects back is written down in one public specification, so another
 inventory system or a printer bridge can serve the scale without a driver of
 its own in the firmware:
