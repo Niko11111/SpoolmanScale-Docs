@@ -276,7 +276,7 @@
 
 .tx-hero__cta {
   display: flex;
-  gap: 1rem;
+  gap: 0.75rem;
   justify-content: center;
   flex-wrap: wrap;
 }
@@ -312,6 +312,39 @@
 .tx-hero__cta .secondary:hover {
   background-color: rgba(52, 211, 153, 0.1);
   transform: translateY(-2px);
+}
+
+/* The buttons are Markdown links so they can carry icons; the paragraph
+   Markdown wraps them in must not break the flex row. */
+.tx-hero__cta > p {
+  display: contents;
+}
+
+.tx-hero__cta a {
+  justify-content: center;
+  min-width: 8.5rem;
+  padding: 0.75rem 1rem;
+}
+
+.tx-hero__cta a .twemoji svg {
+  width: 1.25em;
+  height: 1.25em;
+}
+
+/* On a phone the three buttons stack at one width instead of wrapping 2 + 1. */
+@media screen and (max-width: 30em) {
+  /* A 390 px phone leaves about 282 px for the title: 3rem breaks
+     "SpoolmanScale" in two, 1.875rem keeps it on one line. */
+  .tx-hero h1 {
+    font-size: 1.875rem;
+  }
+
+  .tx-hero__cta {
+    flex-direction: column;
+    align-items: stretch;
+    max-width: 18rem;
+    margin: 0 auto;
+  }
 }
 
 /* Feature Grid */

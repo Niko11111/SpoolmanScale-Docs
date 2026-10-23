@@ -1,9 +1,9 @@
-<div class="tx-hero">
+<div class="tx-hero" markdown>
   <div align="center">
   <img src="../assets/images/logo_trans_4.png" width="200"/>
   </div>
   <h1>SpoolmanScale</h1>
-  <p>Quelloffene ESP32-S3-Filamentwaage mit NFC - spricht mit Spoolman, FilaMan und BamBuddy. Keine Cloud. Kein Abo. Läuft einfach.</p>
+  <p>Quelloffene ESP32-S3-Filamentwaage mit NFC - spricht mit Spoolman, FilaMan und BamBuddy. Keine Cloud<a href="#cloud-note">*</a>. Kein Abo. Läuft einfach.</p>
 
   <div class="tx-hero__badges">
     <img src="https://img.shields.io/github/v/release/Niko11111/SpoolmanScale?label=Firmware&color=28d49a&style=flat-square" alt="Version">
@@ -11,9 +11,10 @@
     <img src="https://img.shields.io/badge/Discord-Join-5865F2?style=flat-square&logo=discord&logoColor=white" alt="Discord">
   </div>
 
-  <div class="tx-hero__cta">
-    <a href="build/" class="primary">🚀 Selbst bauen</a>
-    <a href="https://github.com/Niko11111/SpoolmanScale" class="secondary">⭐ GitHub</a>
+  <div class="tx-hero__cta" markdown>
+  [:material-hammer-wrench: Selbst bauen](build/index.md){ .primary }
+  [:material-printer-3d-nozzle: MakerWorld](https://makerworld.com/models/2713675){ .secondary }
+  [:fontawesome-brands-github: GitHub](https://github.com/Niko11111/SpoolmanScale){ .secondary }
   </div>
 </div>
 
@@ -32,55 +33,70 @@ deiner Filamentverwaltung ab - ohne dass du einen Browser aufmachen musst.
 
 ---
 
-## Neu in v0.8.0
+## Neu in v0.8.3
 
-- 🏷️ **Etikettendruck** *(Beta, erste Version)* - per Bluetooth auf einen Phomemo
-  M220, M110 oder M100, mit Material, Farbe, Spulen-ID und QR-Code zur
-  Spule. Das ist ein Anfang: Etiketten aus dem Backend, ein kleiner Editor im
-  Browser, weitere Drucker und Größen sind geplant.
-- ⚡ **Deutlich schneller** - eine neue Spule verknüpfen dauert unter einer
-  Sekunde statt 2 bis 7 s, das Inventar lädt im Hintergrund, während der
-  Bildschirm weiterläuft, und der Touch wird 100-mal pro Sekunde gelesen.
-- 🧵 **Spoolman 0.27: native Tags** - Tags gehören zur Spule, mehrere pro
-  Spule, bestehende Waagen ziehen von selbst um.
-- 📇 **Tags** - Tipp auf den NFC-Chip in der Kopfzeile zeigt den Tag auf dem
-  Leser, Schreiben zeigt seinen Fortschritt, und Snapmaker-Tags lassen sich
-  lesen (optional).
-- 📝 **Log ohne SD-Karte** - im internen Speicher der Waage, lesbar im Browser.
-- 🇫🇷 **Französisch** - auf der Waage und in der Weboberfläche.
+- 🧵 **Spulen an der Waage anlegen** - aus einem Bambu-Tag oder einem leeren
+  NTAG: Hersteller, Material und Farbe aus der SpoolmanDB, FilaMans FilamentDB
+  oder BamBuddys Katalog wählen, und die Spule ist in einem Zug angelegt und
+  verknüpft.
+- ♻️ **Tag beim Archivieren freigeben** - archivierst du eine leere Spule, bietet
+  die Waage an, ihren Tag zu lösen; ein aufliegender NTAG wird gelöscht und ist
+  bereit für die nächste Spule.
+- 🏷️ **Etiketten auf mehr Druckern** - NIIMBOT B1 und M2 (300 dpi) und der
+  Phomemo M110S kommen zu M220, M110 und M100. Der Editor im Browser hat fünf
+  Anordnungen und viele weitere Felder. [Empfohlene Drucker](use/printers.md)
+- 🪟 **In BamBuddy oder FilaMan** - die Weboberfläche der Waage als Seite in
+  deinem Backend, in dessen hellem oder dunklem Modus.
+- ⚖️ **Auto-Tara und Beutel optional** - eine langsame Drift auf der leeren Waage
+  geht auf null zurück, und ohne Beutel zeigt der Hauptbildschirm zwei Zeilen
+  statt vier.
+- 🎨 **BamBuddy-Themes** und sieben Farbvorlagen.
 
-!!! note "Schon auf 0.7.x?"
-    Weil 0.8.0 den Speicher neu aufteilt, geht dieses eine Update einmal über
-    den [Web-Flasher](https://niko11111.github.io/SpoolmanScale/): verbinden,
+!!! note "Noch auf 0.7.x?"
+    0.8.3 braucht die Speicheraufteilung, die mit 0.8.0 kam. Hatte deine Waage
+    dieses eine USB-Update nie, zeigt sie statt des Updates einen QR-Code zum
+    [Web-Flasher](https://niko11111.github.io/SpoolmanScale/): verbinden,
     **Update** wählen, etwa 2 Minuten, alle Einstellungen bleiben. Danach kommen
     Updates wie gewohnt über WLAN. [Mehr](use/updating.md)
 
-[Alle Release Notes auf GitHub :material-arrow-right:](https://github.com/Niko11111/SpoolmanScale/releases/tag/v0.8.0){ .md-button }
+[Alle Release Notes auf GitHub :material-arrow-right:](https://github.com/Niko11111/SpoolmanScale/releases/tag/v0.8.3){ .md-button }
 
 ---
 
 ## Was sie kann
 
-- 🔌 **Drei Backends** - [Spoolman, FilaMan oder BamBuddy](use/backends.md).
-  Jederzeit umschaltbar, die Einstellungen der anderen bleiben.
+- 🔌 **Drei Backends** - [Spoolman, FilaMan oder BamBuddy](use/backends.md),
+  auch über HTTPS, Spoolman auch hinter Schlüssel oder Passwort. Jederzeit
+  umschaltbar, die Einstellungen der anderen bleiben.
 - 📡 **Erkennung per NFC** - Spule auflegen, sie wird erkannt: NTAG, Bambu Labs
-  eigene Tags, MIFARE Classic, auf Wunsch ein Tag auf jeder Seite der Spule.
-  [NFC-Tags](use/tags.md)
+  eigene Tags mit Farbname, Trocknung und Länge, MIFARE Classic, auf Wunsch ein
+  Tag auf jeder Seite der Spule. [NFC-Tags](use/tags.md)
+- 🧵 **Neue Spulen ohne Browser** - Filament und Spule direkt an der Waage
+  anlegen, aus einem Bambu-Tag oder einem leeren NTAG.
 - ✍️ **Tags beschreiben** - als OpenSpool, FilaMan oder Anycubic ACE, von selbst
   oder auf Nachfrage, mit jedem Backend.
 - ⚖️ **Präzise Waage** - 24-Bit-NAU7802 an einer 2-kg-Wägezelle. Tarieren,
-  Beutelgewicht, Live-Differenz zum Bestand. [Wiegen](use/weighing.md)
+  Auto-Tara, Beutelgewicht, Live-Differenz zum Bestand. [Wiegen](use/weighing.md)
+- 🏷️ **Etikettendruck** - per Bluetooth auf Druckern von Phomemo und NIIMBOT,
+  mit QR-Code zur Spule und einem Etiketten-Editor im Browser.
+  [Etiketten](use/labels.md)
 - 🖨️ **AMS-Ansicht** - mit FilaMan und BamBuddy: jedes Fach mit Spule,
   Restmenge und Trocknung, die Trocknung direkt aus der Karte eintragen.
 - 💧 **Trocknungserinnerung** - je Material oder eine Regel für alles, mit
   Multiplikator für luftdichte Lagerung. [Trocknung & Lagerort](use/drying.md)
+- 🎨 **Themes** - dunkel oder hell, im Look von Spoolman, FilaMan oder
+  BamBuddy, oder in deinen eigenen Farben.
 - 🌐 **Weboberfläche** - einzelne Seiten in drei Sprachen, Firmware-Update im
-  Browser, auf dem Handy genauso brauchbar. [Weboberfläche](use/web.md)
+  Browser, auf dem Handy genauso brauchbar, auf Wunsch auch in BamBuddy oder
+  FilaMan. [Weboberfläche](use/web.md)
 - 🩺 **Sie sagt, was ihr fehlt** - die Waage prüft sich selbst und benennt den
   Fehler im Klartext, mit Abhilfe. [Was die Waage dir sagt](help/index.md)
 - 🔄 **Updates über WLAN** - die Waage prüft GitHub selbst und installiert
   drahtlos. [Aktualisieren](use/updating.md)
-- 🏠 **Vollständig lokal** - keine Cloud, kein Konto. Läuft im eigenen Netz.
+- 🏠 **Vollständig lokal** - keine Cloud\*, kein Konto. Läuft im eigenen Netz.
+
+<p id="cloud-note"><small>* Die Waage selbst braucht keine Cloud und kein Konto. Auf Wunsch kann
+sie aber auch ein Backend nutzen, das im Internet läuft.</small></p>
 
 ---
 
@@ -113,7 +129,7 @@ Etwa **50 bis 60 Euro** an Teilen. Einzelheiten in der
 === "Ich habe schon eine"
 
     - [Firmware aktualisieren](use/updating.md)
-    - [Was in v0.8.0 neu ist](https://github.com/Niko11111/SpoolmanScale/releases/tag/v0.8.0)
+    - [Was in v0.8.3 neu ist](https://github.com/Niko11111/SpoolmanScale/releases/tag/v0.8.3)
     - [Die Weboberfläche](use/web.md)
 
 === "Etwas stimmt nicht"
