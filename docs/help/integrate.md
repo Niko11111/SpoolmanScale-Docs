@@ -44,6 +44,17 @@ check" with a filament and a spool is created and deleted again.
 
 ---
 
+## Partner servers
+
+Compatible is enough: every scale can use your server without anyone's
+permission. If you want more, a partner server gets its own entry on the
+scale next to Spoolman, FilaMan and BamBuddy, your colours, a page in this
+manual, a test before every firmware release and a direct line with
+priority. What that involves and how to start:
+**[Partner servers](https://github.com/Niko11111/SpoolmanScale-Integration/blob/main/PARTNERS.md)**.
+
+---
+
 ## The rules in short
 
 - Serve `/api/v1/...` directly. The scale follows no redirects and sends no
