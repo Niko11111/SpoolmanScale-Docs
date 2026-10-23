@@ -8,7 +8,7 @@ SpoolmanScale is open-source and contributions are welcome - whether it's code, 
 
 The fastest way to get help, and where beta findings are reported:
 
-👉 **[discord.gg/xadskCrPFu](https://discord.gg/xadskCrPFu)**
+👉 **[discord.gg/K3KmKnrWhP](https://discord.gg/K3KmKnrWhP)**
 
 Over 200 people are running a SpoolmanScale. Build questions, wiring photos,
 tag troubles - all welcome.
@@ -18,7 +18,7 @@ tag troubles - all welcome.
 ## Ways to Contribute
 
 - **Bug reports** - open an [issue on GitHub](https://github.com/Niko11111/SpoolmanScale/issues)
-- **Feature requests** - open an issue or discuss on [Discord](https://discord.gg/xadskCrPFu)
+- **Feature requests** - open an issue or discuss on [Discord](https://discord.gg/K3KmKnrWhP)
 - **Code** - open a Pull Request
 - **Documentation** - fix errors or add missing content in the [Docs repo](https://github.com/Niko11111/SpoolmanScale-Docs)
 - **Testing** - try beta firmware and report findings on Discord

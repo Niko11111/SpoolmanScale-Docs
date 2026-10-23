@@ -32,6 +32,6 @@ Screws and quantities are on the [bill of materials](bom.md#additional-materials
 
 !!! warning "Report what does not fit"
     Hardware batches vary. If something is unclear or does not fit yours, say so
-    on [Discord](https://discord.gg/xadskCrPFu) or on
+    on [Discord](https://discord.gg/K3KmKnrWhP) or on
     [MakerWorld](https://makerworld.com/de/models/2713675-spoolmanscale#profileId-3005075) -
     that is how the guide gets better.

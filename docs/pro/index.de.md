@@ -82,5 +82,5 @@ Umschalten geht jederzeit über die Web-UI, ohne Neuinstallation.
 
 Keine Lust, selbst zu bauen? Schreib einen Kommentar auf
 [MakerWorld](https://makerworld.com/de/models/2713675-spoolmanscale) oder komm in
-den [Discord](https://discord.gg/xadskCrPFu) - bei genug Interesse könnte es eine
+den [Discord](https://discord.gg/K3KmKnrWhP) - bei genug Interesse könnte es eine
 fertig aufgebaute Pro geben.

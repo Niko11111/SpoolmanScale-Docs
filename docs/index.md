@@ -127,7 +127,7 @@ Around **€50 to €60** in parts. Details on the
 
 ## Community
 
-- **Discord** - [discord.gg/xadskCrPFu](https://discord.gg/xadskCrPFu)
+- **Discord** - [discord.gg/K3KmKnrWhP](https://discord.gg/K3KmKnrWhP)
 - **GitHub** - [github.com/Niko11111/SpoolmanScale](https://github.com/Niko11111/SpoolmanScale)
 - **MakerWorld** - [@FormFollowsF](https://makerworld.com/de/models/2713675-spoolmanscale#profileId-3005075)
 - **Ko-fi** - [Support the project](https://ko-fi.com/formfollowsfunction)

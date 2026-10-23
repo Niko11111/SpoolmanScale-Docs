@@ -164,12 +164,12 @@ der Pi.
       interne Speicher fasst 4.096 Zeilen, das sind im Umfang "Ausführlich"
       mehrere Stunden
     - Das Log mit **Speichern** herunterladen und auf
-      [Discord](https://discord.gg/xadskCrPFu) oder in ein
+      [Discord](https://discord.gg/K3KmKnrWhP) oder in ein
       [GitHub-Issue](https://github.com/Niko11111/SpoolmanScale/issues)
       stellen, zusammen mit der Firmware-Version und dem Backend, das du nutzt
 
 ---
 
 !!! tip "Kommst du nicht weiter?"
-    Komm in den [Discord](https://discord.gg/xadskCrPFu) - dort hilft die
+    Komm in den [Discord](https://discord.gg/K3KmKnrWhP) - dort hilft die
     Community gern.

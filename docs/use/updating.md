@@ -101,5 +101,5 @@ version carries its own notes.
 !!! tip "Beta testers welcome"
     Three backends, four tag formats and a lot of hardware combinations are more
     than one workbench can cover. If something goes wrong on a beta, say so on
-    [Discord](https://discord.gg/xadskCrPFu) or open an issue. That is what it
+    [Discord](https://discord.gg/K3KmKnrWhP) or open an issue. That is what it
     is for.

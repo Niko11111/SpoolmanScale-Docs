@@ -64,5 +64,5 @@ Genaue Teile, Links und Preise in der [Stückliste](bom.md). Rechne insgesamt mi
 
 !!! warning "Das ist eine Beta-Bauanleitung"
     Hardware-Chargen unterscheiden sich. Ist etwas unklar oder passt bei dir
-    nicht, melde es im [Discord](https://discord.gg/xadskCrPFu) oder auf
+    nicht, melde es im [Discord](https://discord.gg/K3KmKnrWhP) oder auf
     [MakerWorld](https://makerworld.com/de/models/2713675-spoolmanscale#profileId-3005075).

@@ -33,6 +33,6 @@ Schrauben und Stückzahlen stehen in der
 
 !!! warning "Melde, was nicht passt"
     Hardware-Chargen unterscheiden sich. Ist etwas unklar oder passt bei dir
-    nicht, sag es im [Discord](https://discord.gg/xadskCrPFu) oder auf
+    nicht, sag es im [Discord](https://discord.gg/K3KmKnrWhP) oder auf
     [MakerWorld](https://makerworld.com/de/models/2713675-spoolmanscale#profileId-3005075) -
     so wird die Anleitung besser.

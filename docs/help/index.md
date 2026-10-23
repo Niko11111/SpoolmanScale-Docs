@@ -147,5 +147,5 @@ joints. Also check whether a cable is pressing against the weighing platform.
 
 - [Troubleshooting](troubleshooting.md) for problems the scale cannot diagnose
   itself - network, backend, tags
-- The [Discord](https://discord.gg/xadskCrPFu), where the community is happy to
+- The [Discord](https://discord.gg/K3KmKnrWhP), where the community is happy to
   help

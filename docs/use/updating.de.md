@@ -103,5 +103,5 @@ Version bringt ihre eigenen Notizen mit.
 !!! tip "Beta-Tester willkommen"
     Drei Backends, vier Tag-Formate und jede Menge Hardware-Kombinationen sind
     mehr, als eine Werkbank abdecken kann. Wenn auf einer Beta etwas klemmt, sag
-    Bescheid, im [Discord](https://discord.gg/xadskCrPFu) oder als Issue. Genau
+    Bescheid, im [Discord](https://discord.gg/K3KmKnrWhP) oder als Issue. Genau
     dafür ist sie da.

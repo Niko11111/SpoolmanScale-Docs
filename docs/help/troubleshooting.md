@@ -150,11 +150,11 @@ Problems the scale cannot work out by itself: network, backend, tags, the Pi.
     - No SD card? Set **Write the log** to **Internal**. The internal storage
       holds 4,096 lines, that is several hours at Verbose
     - **Download** the log and post it on
-      [Discord](https://discord.gg/xadskCrPFu) or in a
+      [Discord](https://discord.gg/K3KmKnrWhP) or in a
       [GitHub issue](https://github.com/Niko11111/SpoolmanScale/issues), with
       the firmware version and the backend you use
 
 ---
 
 !!! tip "Still stuck?"
-    Join the [Discord](https://discord.gg/xadskCrPFu) - the community is happy to help.
+    Join the [Discord](https://discord.gg/K3KmKnrWhP) - the community is happy to help.

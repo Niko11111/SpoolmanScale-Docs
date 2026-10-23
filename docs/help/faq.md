@@ -66,7 +66,7 @@ tag, a NAU7802 whose readings drift, a load cell that does not settle.
 
 Swapping the suspicious module is usually quicker than hunting further. If you
 have a second one, try it. If you are still stuck, ask on
-[Discord](https://discord.gg/xadskCrPFu) and bring the boot line from the log;
+[Discord](https://discord.gg/K3KmKnrWhP) and bring the boot line from the log;
 it tells us a lot.
 
 ---
@@ -231,7 +231,7 @@ one-time step for scales coming from 0.7.x, all settings are kept. See
 
 Open the **Logs** page in the web interface and set the scope to **Verbose**,
 then repeat what went wrong. Download the log and post it on
-[Discord](https://discord.gg/xadskCrPFu) or in a
+[Discord](https://discord.gg/K3KmKnrWhP) or in a
 [GitHub issue](https://github.com/Niko11111/SpoolmanScale/issues), together
 with the firmware version and which backend you use. No SD card needed: the log
 can live in the scale's internal memory.

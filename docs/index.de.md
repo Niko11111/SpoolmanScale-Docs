@@ -127,7 +127,7 @@ Etwa **50 bis 60 Euro** an Teilen. Einzelheiten in der
 
 ## Community
 
-- **Discord** - [discord.gg/xadskCrPFu](https://discord.gg/xadskCrPFu)
+- **Discord** - [discord.gg/K3KmKnrWhP](https://discord.gg/K3KmKnrWhP)
 - **GitHub** - [github.com/Niko11111/SpoolmanScale](https://github.com/Niko11111/SpoolmanScale)
 - **MakerWorld** - [@FormFollowsF](https://makerworld.com/de/models/2713675-spoolmanscale#profileId-3005075)
 - **Ko-fi** - [Das Projekt unterstützen](https://ko-fi.com/formfollowsfunction)

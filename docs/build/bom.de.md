@@ -2,7 +2,7 @@
 
 !!! warning "Beta-Bauanleitung"
     Ist etwas unklar oder passt nicht zu deiner Hardware-Charge, melde es bitte
-    im [Discord](https://discord.gg/xadskCrPFu) oder auf
+    im [Discord](https://discord.gg/K3KmKnrWhP) oder auf
     [MakerWorld](https://makerworld.com/de/models/2713675-spoolmanscale#profileId-3005075).
 
 ---

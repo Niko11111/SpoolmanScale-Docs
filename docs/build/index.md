@@ -61,5 +61,5 @@ Exact parts, links and prices on the [bill of materials](bom.md). Reckon on
 
 !!! warning "This is a beta build guide"
     Hardware batches vary. If something is unclear or does not fit yours, report
-    it on [Discord](https://discord.gg/xadskCrPFu) or on
+    it on [Discord](https://discord.gg/K3KmKnrWhP) or on
     [MakerWorld](https://makerworld.com/de/models/2713675-spoolmanscale#profileId-3005075).

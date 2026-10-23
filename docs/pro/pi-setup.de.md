@@ -2,7 +2,7 @@
 
 Diese Anleitung führt den Pi-Stack der SpoolmanScale Pro von Grund auf ein. Wenn
 dir das Terminal nicht liegt, komm in den
-[Discord](https://discord.gg/xadskCrPFu) - dort hilft die Community gern.
+[Discord](https://discord.gg/K3KmKnrWhP) - dort hilft die Community gern.
 
 !!! note "Für Selbstbauer"
     Diese Anleitung richtet sich an alle, die den Pro-Stack selbst aufsetzen

@@ -150,4 +150,4 @@ Lötstellen. Prüfe außerdem, ob ein Kabel gegen die Wiegeplattform drückt.
 
 - [Troubleshooting](troubleshooting.md) für Probleme, die die Waage nicht selbst
   erkennen kann - Netzwerk, Backend, Tags
-- Der [Discord](https://discord.gg/xadskCrPFu), dort hilft die Community gern
+- Der [Discord](https://discord.gg/K3KmKnrWhP), dort hilft die Community gern

@@ -9,7 +9,7 @@ Dokumentation, Fehlermeldungen oder Ideen.
 
 Der schnellste Weg zu Hilfe, und der Ort, an dem Beta-Funde gemeldet werden:
 
-👉 **[discord.gg/xadskCrPFu](https://discord.gg/xadskCrPFu)**
+👉 **[discord.gg/K3KmKnrWhP](https://discord.gg/K3KmKnrWhP)**
 
 Über 200 Leute betreiben eine SpoolmanScale. Baufragen, Fotos von Verkabelungen,
 Tag-Ärger - alles gern gesehen.
@@ -19,7 +19,7 @@ Tag-Ärger - alles gern gesehen.
 ## Wie du beitragen kannst
 
 - **Fehlermeldungen** - ein [Issue auf GitHub](https://github.com/Niko11111/SpoolmanScale/issues) öffnen
-- **Feature-Wünsche** - ein Issue öffnen oder im [Discord](https://discord.gg/xadskCrPFu) besprechen
+- **Feature-Wünsche** - ein Issue öffnen oder im [Discord](https://discord.gg/K3KmKnrWhP) besprechen
 - **Code** - einen Pull Request öffnen
 - **Dokumentation** - Fehler korrigieren oder Fehlendes ergänzen im [Docs-Repo](https://github.com/Niko11111/SpoolmanScale-Docs)
 - **Testen** - Beta-Firmware ausprobieren und im Discord berichten

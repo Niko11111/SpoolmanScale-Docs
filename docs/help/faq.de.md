@@ -70,7 +70,7 @@ eine Wägezelle, die nicht zur Ruhe kommt.
 
 Das verdächtige Modul zu tauschen geht meist schneller als weiterzusuchen. Wenn
 du ein zweites hast, probier es aus. Wenn du weiter feststeckst, frag auf
-[Discord](https://discord.gg/xadskCrPFu) und bring die Startzeile aus dem Log
+[Discord](https://discord.gg/K3KmKnrWhP) und bring die Startzeile aus dem Log
 mit; die verrät uns viel.
 
 ---
@@ -237,7 +237,7 @@ bleiben erhalten. Siehe [Firmware aktualisieren](../use/updating.md).
 
 Öffne in der Weboberfläche die Seite **Logs**, stell den Umfang auf
 **Ausführlich** und wiederhole, was schiefging. Lade das Log herunter und stell
-es auf [Discord](https://discord.gg/xadskCrPFu) oder in ein
+es auf [Discord](https://discord.gg/K3KmKnrWhP) oder in ein
 [GitHub-Issue](https://github.com/Niko11111/SpoolmanScale/issues), zusammen mit
 der Firmware-Version und dem Backend, das du nutzt. Eine SD-Karte brauchst du
 dafür nicht: Das Log kann im internen Speicher der Waage liegen.
