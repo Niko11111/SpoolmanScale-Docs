@@ -1,63 +1,51 @@
-# Web UI
+# The web interface
 
-The SpoolmanScale Pro includes a built-in management interface accessible from any browser on your network at `http://spoolmanscale.local`.
-
-No app needed - just open the URL.
-
----
-
-## Backend Tab
-
-Switch between Spoolman and FilaMan, view live status and logs.
-
-| Feature | Description |
-|---|---|
-| Backend toggle | Switch between Spoolman and FilaMan |
-| Status indicator | Shows if the active backend is running |
-| Logs | Live log output |
-| Update check | Check and install backend updates |
-| Parallel mode | Run both simultaneously (Pi 4+ only) |
+Everything on one page at **http://spoolmanscale-pro.local**, in English or
+German, light or dark.
 
 ---
 
-## System Tab
+## Overview
 
-Monitor Pi health and manage system settings.
+The three backends as tiles: which one runs, *Activate*, *Open* its own
+interface, its *Log*. Below them the scale (which backend it uses, whether
+it reached it, whether it points at this Pi) and the Pi itself (RAM, SD
+card, temperature, clock). A Pi has no battery clock; when its time is off,
+one button takes the time from your device.
 
-| Feature | Description |
-|---|---|
-| RAM / SD / Temp / Uptime | Live system stats |
-| Pi OS update | Update system packages |
-| UI self-update | Install Web UI updates from GitHub |
-| WiFi | Switch network with automatic fallback |
-| Reboot / Shutdown | Safely restart or power off |
+## Scale
 
----
+The scale's own web interface, passed through by the Pi. Its settings,
+tags, logs and firmware updates are all there, on the Pi's address.
 
-## Backup Tab
+## Backup
 
-| Feature | Description |
-|---|---|
-| Generate backup | Create a database snapshot on demand |
-| Download | Save backup as a file |
-| Restore | Upload and restore a previous backup |
-| Auto-backup | Daily backups, keeps last 7 |
-| Danger zone | Reset / wipe database |
+A backup per backend, by hand or once a day from a chosen hour. Download,
+restore, delete, or restore from a file. Every restore saves the data it
+replaces first, and puts it back if the restore fails.
 
----
+## Updates
 
-## Access
+- **SpoolmanScale Pro** itself, from its GitHub releases, and back to the
+  version before.
+- **The backends:** each runs the version this release was tested with,
+  until you pick a newer one. You see the release notes of every version in
+  between. A backup is made first; if the new version does not start, the
+  old one and its data come back by themselves.
 
-| Method | URL |
-|---|---|
-| mDNS | `http://spoolmanscale.local` |
-| IP | `http://<pi-ip-address>` |
+## Pairing
 
-!!! warning "Both the scale and the Pi answer to this name"
-    The scale announces itself as `spoolmanscale.local` too. On a Pro, where
-    both sit on the same network, whichever answers first wins and the result is
-    not predictable. The name belongs to the scale; the Pi will move to its own.
-    Until then, use the Pi's IP address if you land on the wrong one.
+Find the scale on the network, enter the Pi on it, register it in FilaMan,
+pass on a BamBuddy key. See [Set up the Pi](pi-setup.md#4-pair-the-scale).
 
-!!! tip "Can't reach spoolmanscale.local on Windows?"
-    Install [Bonjour Print Services](https://support.apple.com/kb/DL999). On macOS and Linux it works out of the box.
+## Network
+
+The Pi's name on the network, the WLAN it is in, and its own WLAN. Joining
+a WLAN that does not work puts the Pi back where it was; the hotspot only
+goes off while another network is there.
+
+## System
+
+Restart and shut down, the login, language and look, and **Raspberry Pi OS
+updates**: first a search that lists every package, then the install with
+its log live on the page.

@@ -1,170 +1,92 @@
-# Raspberry Pi einrichten
+# Den Pi einrichten
 
-Diese Anleitung führt den Pi-Stack der SpoolmanScale Pro von Grund auf ein. Wenn
-dir das Terminal nicht liegt, komm in den
-[Discord](https://discord.gg/K3KmKnrWhP) - dort hilft die Community gern.
-
-!!! note "Für Selbstbauer"
-    Diese Anleitung richtet sich an alle, die den Pro-Stack selbst aufsetzen
-    wollen. Eine fertig aufgebaute Variante könnte es später geben.
+Von der leeren SD-Karte bis zur Waage, die mit dem Pi umschaltet, in vier
+Schritten.
 
 ---
 
-## Was du brauchst
+## 1. Raspberry Pi OS
 
-- Raspberry Pi (Zero 2W, 3, 4 oder 5)
-- microSD-Karte (ab 16 GB)
-- Raspberry Pi Imager ([hier laden](https://www.raspberrypi.com/software/))
-- Einen Rechner zum Beschreiben der Karte
-
----
-
-## Schritt 1 - Pi OS schreiben
-
-Im Raspberry Pi Imager auswählen:
-
-- **Betriebssystem:** Raspberry Pi OS Lite (64-Bit)
-- **Speicher:** deine microSD-Karte
-
-Auf das Zahnrad ⚙️ klicken und einstellen:
+Flashe **Raspberry Pi OS Lite (64-bit)** mit dem Raspberry Pi Imager. In
+seinen Einstellungen:
 
 | Einstellung | Wert |
 |---|---|
-| Hostname | `spoolmanscale` |
-| SSH | Aktivieren, Passwort-Anmeldung |
-| Benutzername | `pi` |
-| WLAN | Dein Netz (nur 2,4 GHz - der Pi Zero 2W kann kein 5 GHz) |
-| Region | Deine Region |
+| Hostname | `raspberrypi` lassen; der Installer benennt ihn in `spoolmanscale-pro` um |
+| SSH | an |
+| WLAN | dein Netz, oder ein Kabel einstecken |
 
-Schreiben und die Karte in den Pi stecken.
-
----
-
-## Schritt 2 - Per SSH verbinden
-
-Nach dem ersten Start etwa 60 Sekunden warten, dann:
-
-```bash
-ssh pi@spoolmanscale.local
-```
-
-Klappt das nicht, nimm stattdessen die IP-Adresse des Pi.
+!!! warning "Nicht `spoolmanscale`"
+    Dieser Name gehört der Waage. Zwei Geräte mit einem Namen sind beide
+    schlecht erreichbar.
 
 ---
 
-## Schritt 3 - Optional: sudo ohne Passwort
+## 2. Installieren
 
-Macht die folgenden Schritte bequemer:
+Auf dem Pi, mit Internet:
 
 ```bash
-echo "pi ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/010_pi-nopasswd
-sudo chmod 440 /etc/sudoers.d/010_pi-nopasswd
+git clone https://github.com/Niko11111/SpoolmanScalePro-Pi.git
+cd SpoolmanScalePro-Pi
+sudo scripts/install.sh --pull-all
 ```
+
+`--pull-all` lädt alle drei Backends gleich herunter, damit jedes später auch
+ohne Internet starten kann. Auf einem Pi 3 dauert das eine Weile.
+
+Dann **http://spoolmanscale-pro.local** öffnen und die Anmeldung anlegen:
+Benutzername und Passwort, die dein Passwortmanager speichern kann. Ohne
+Passwort geht es nach einer Warnung auch, für Netze, denen du vertraust.
 
 ---
 
-## Schritt 4 - RAM sparen (Betrieb ohne Bildschirm)
+## 3. Backend wählen
 
-Spart etwa 48 MB Grafikspeicher, nützlich auf dem Pi Zero 2W:
+In der **Übersicht** bei Spoolman, FilaMan oder BamBuddy *Aktivieren*
+drücken. Die Seite zeigt jeden Schritt: laufendes Backend stoppen, neues
+starten, warten, bis es antwortet, Waage umstellen.
 
-```bash
-echo "gpu_mem=16" | sudo tee -a /boot/firmware/config.txt
-sudo reboot
-```
-
-Nach dem Neustart per SSH neu verbinden.
-
----
-
-## Schritt 5 - Docker installieren
-
-```bash
-curl -fsSL https://get.docker.com | sudo sh
-sudo usermod -aG docker pi
-```
-
-Danach ab- und wieder anmelden:
-
-```bash
-exit
-ssh pi@spoolmanscale.local
-```
-
-Prüfen:
-
-```bash
-docker --version
-docker compose version
-```
+!!! tip "FilaMans Zugang"
+    Der Pi legt FilaMans Admin an, wenn er FilaMan zum ersten Mal startet.
+    E-Mail und Passwort stehen unter *Zugang* auf FilaMans Kachel.
 
 ---
 
-## Schritt 6 - SpoolmanScale Pro installieren
+## 4. Waage koppeln
 
-```bash
-mkdir -p ~/spoolmanscale
-cd ~/spoolmanscale
-git clone https://github.com/Niko11111/SpoolmanScalePro-Pi.git .
-chmod +x switch-backend.sh auto-backup.sh
-docker compose pull
-docker compose up -d
-```
+1. **An der Waage**, einmal: *Einstellungen → System → Weboberfläche →
+   Einstellungen* einschalten. Das ist der einzige Schritt am Gerät; damit
+   darf der Pi die Waage einrichten.
+2. Im Reiter **Kopplung**: *Im Netz suchen*, deine Waage wählen.
+3. *Diesen Pi an der Waage eintragen*: Die Waage schaltet durch die drei
+   Backends und bekommt für jedes den Pi als Server. Etwa eine halbe Minute.
+4. Mit FilaMan aktiv: *Waage in FilaMan registrieren*. Einen BamBuddy-API-Key
+   braucht es nur, wenn BamBuddys eigene Anmeldung an ist; auch den dort
+   einfügen.
 
----
-
-## Schritt 7 - Beim Booten starten
-
-```bash
-sudo nano /etc/systemd/system/spoolmanscale-backend.service
-```
-
-Folgendes einfügen:
-
-```ini
-[Unit]
-Description=SpoolmanScale Backend Auto-Start
-After=docker.service network-online.target
-Requires=docker.service
-Wants=network-online.target
-
-[Service]
-Type=oneshot
-RemainAfterExit=yes
-User=root
-WorkingDirectory=/home/pi/spoolmanscale
-ExecStart=/home/pi/spoolmanscale/switch-backend.sh auto
-
-[Install]
-WantedBy=multi-user.target
-```
-
-Mit **Strg+O** speichern, mit **Strg+X** verlassen, dann aktivieren:
-
-```bash
-sudo systemctl daemon-reload
-sudo systemctl enable spoolmanscale-backend.service
-```
+Ab jetzt nimmt jeder Wechsel in der Übersicht die Waage mit.
 
 ---
 
-## Schritt 8 - Web-UI öffnen
+## Ohne Netz
 
-Im Browser aufrufen:
+Der Reiter **Netzwerk** öffnet ein eigenes WLAN des Pi (2,4 GHz, die Waage
+hat kein 5 GHz). Waage und Handy verbinden sich damit; der Pi ist unter
+`192.168.50.1` erreichbar.
 
-```
-http://spoolmanscale.local
-```
-
-Dort Spoolman oder FilaMan aktivieren - beim ersten Aufruf wird es automatisch
-geladen.
-
-!!! tip "Erste Anmeldung bei FilaMan"
-    Standardzugang: `admin@example.com` / `admin123` - direkt nach der ersten
-    Anmeldung ändern.
+Verbindet sich nach dem Booten 90 Sekunden lang weder WLAN noch Kabel,
+öffnet der Pi von selbst **SpoolmanScale-Pro-Setup** (Passwort
+`spoolmanscale`). Damit verbinden, `http://192.168.50.1` öffnen und im
+Reiter Netzwerk ein WLAN wählen.
 
 ---
 
-## Fertig
+## Wenn etwas schiefgeht
 
-Dein Pi fährt jetzt SpoolmanScale Pro. Was du in der Verwaltungsoberfläche tun
-kannst, steht unter [Pro Web-UI](web-ui.md).
+| | |
+|---|---|
+| Anmeldung vergessen | `sudo rm /var/lib/spoolmanscale-pro/auth.json`, neu laden, neu anlegen |
+| Log des Dienstes | `journalctl -u spoolmanscale-pro -n 100` |
+| Log eines Backends | *Log* auf seiner Kachel in der Übersicht |
+| Ein Backend neu aufsetzen | im Reiter Backup ein Backup wiederherstellen |

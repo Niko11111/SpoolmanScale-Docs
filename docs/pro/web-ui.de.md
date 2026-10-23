@@ -1,66 +1,54 @@
-# Pro Web-UI
+# Die Weboberfläche
 
-Die SpoolmanScale Pro bringt eine eigene Verwaltungsoberfläche mit, erreichbar
-aus jedem Browser im Netz unter `http://spoolmanscale.local`.
-
-Keine App nötig - einfach die Adresse aufrufen.
+Alles auf einer Seite unter **http://spoolmanscale-pro.local**, auf Deutsch
+oder Englisch, hell oder dunkel.
 
 ---
 
-## Reiter Backend
+## Übersicht
 
-Zwischen Spoolman und FilaMan umschalten, Live-Status und Logs ansehen.
+Die drei Backends als Kacheln: welches läuft, *Aktivieren*, die eigene
+Oberfläche *Öffnen*, das *Log*. Darunter die Waage (welches Backend sie
+nutzt, ob sie es erreicht, ob sie auf diesen Pi zeigt) und der Pi selbst
+(RAM, SD-Karte, Temperatur, Uhrzeit). Ein Pi hat keine Uhr mit Batterie;
+geht seine Zeit falsch, übernimmt ein Knopf die Zeit deines Geräts.
 
-| Funktion | Beschreibung |
-|---|---|
-| Backend-Umschalter | Zwischen Spoolman und FilaMan wechseln |
-| Statusanzeige | Zeigt, ob das aktive Backend läuft |
-| Logs | Live-Ausgabe des Logs |
-| Update-Prüfung | Backend-Updates prüfen und installieren |
-| Parallelbetrieb | Beide gleichzeitig (nur Pi 4 und neuer) |
+## Waage
 
----
+Die eigene Weboberfläche der Waage, vom Pi durchgereicht. Ihre
+Einstellungen, Tags, Logs und Firmware-Updates sind alle da, unter der
+Adresse des Pi.
 
-## Reiter System
+## Backup
 
-Zustand des Pi im Blick behalten und Systemeinstellungen verwalten.
+Ein Backup je Backend, von Hand oder einmal täglich ab einer gewählten
+Stunde. Herunterladen, wiederherstellen, löschen, oder aus einer Datei
+wiederherstellen. Jede Wiederherstellung sichert vorher die Daten, die sie
+ersetzt, und spielt sie zurück, wenn sie scheitert.
 
-| Funktion | Beschreibung |
-|---|---|
-| RAM / SD / Temperatur / Laufzeit | Live-Systemwerte |
-| Pi-OS-Update | Systempakete aktualisieren |
-| Selbst-Update der UI | Web-UI-Updates von GitHub installieren |
-| WLAN | Netz wechseln, mit automatischem Rückfall |
-| Neustart / Herunterfahren | Sicher neu starten oder ausschalten |
+## Updates
 
----
+- **SpoolmanScale Pro** selbst, aus seinen GitHub-Releases, und zurück zur
+  vorherigen Version.
+- **Die Backends:** Jedes läuft in der Version, mit der dieses Release
+  getestet wurde, bis du eine neuere wählst. Du siehst die Release-Notes
+  aller Versionen dazwischen. Vorher entsteht ein Backup; startet die neue
+  Version nicht, kommen alte Version und Daten von selbst zurück.
 
-## Reiter Backup
+## Kopplung
 
-| Funktion | Beschreibung |
-|---|---|
-| Backup erstellen | Auf Zuruf einen Datenbank-Schnappschuss anlegen |
-| Herunterladen | Backup als Datei sichern |
-| Wiederherstellen | Ein früheres Backup hochladen und einspielen |
-| Auto-Backup | Täglich, die letzten 7 werden aufgehoben |
-| Gefahrenzone | Datenbank zurücksetzen oder löschen |
+Die Waage im Netz finden, den Pi an ihr eintragen, sie in FilaMan
+registrieren, einen BamBuddy-Key weitergeben. Siehe
+[Den Pi einrichten](pi-setup.md#4-waage-koppeln).
 
----
+## Netzwerk
 
-## Zugang
+Der Name des Pi im Netz, das WLAN, in dem er ist, und sein eigenes WLAN.
+Klappt ein neues WLAN nicht, geht der Pi zurück, wo er war; der Hotspot geht
+nur aus, solange ein anderes Netz da ist.
 
-| Weg | Adresse |
-|---|---|
-| mDNS | `http://spoolmanscale.local` |
-| IP | `http://<ip-des-pi>` |
+## System
 
-!!! warning "Waage und Pi hören beide auf diesen Namen"
-    Auch die Waage meldet sich als `spoolmanscale.local`. Bei einer Pro, wo
-    beide im selben Netz hängen, gewinnt, wer zuerst antwortet, und das ist
-    nicht vorhersagbar. Der Name gehört der Waage, der Pi weicht später auf
-    einen eigenen aus. Bis dahin: nimm die IP des Pi, wenn du beim Falschen
-    landest.
-
-!!! tip "spoolmanscale.local unter Windows nicht erreichbar?"
-    Installiere [Bonjour Print Services](https://support.apple.com/kb/DL999).
-    Unter macOS und Linux geht es von Haus aus.
+Neu starten und herunterfahren, die Anmeldung, Sprache und Aussehen, und
+**Raspberry-Pi-OS-Updates**: erst eine Suche, die jedes Paket auflistet,
+dann die Installation mit ihrem Log live auf der Seite.

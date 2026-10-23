@@ -1,72 +1,60 @@
 # SpoolmanScale Pro
 
-!!! note "Work in progress"
-    SpoolmanScale Pro is currently in development and not yet available as a pre-built device. This documentation covers the current state for makers who want to build their own.
+!!! note "Beta"
+    SpoolmanScale Pro 2.0 is in beta. It runs on a Raspberry Pi you set up
+    yourself; a ready-made SD card image is planned.
+
+SpoolmanScale Pro turns a Raspberry Pi into the filament server for your
+SpoolmanScale. It runs one of the three filament managers the scale speaks,
+**Spoolman**, **FilaMan** or **BamBuddy**, and switches between them from a
+web page. The scale is switched along with it.
 
 ---
 
-## What is SpoolmanScale Pro?
+## Who it is for
 
-SpoolmanScale Pro is an extended version of SpoolmanScale that adds a **Raspberry Pi** to the enclosure. Instead of connecting to an external Spoolman or FilaMan server on your network, the Pi runs the backend locally - self-contained, no other server needed.
-
-**In short:** plug it in, it works. Everything in one box.
-
----
-
-## Who is this for?
-
-**You don't have Spoolman or FilaMan running yet** - and don't want to set up a separate server. The Pro version includes everything: scale, NFC, display, and the filament management backend all in one device.
-
-**You have an old Raspberry Pi lying around** - a Pi 3, 4 or Zero 2W can be built into the enclosure (or run alongside it) and turn your existing SpoolmanScale into a Pro.
-
-**You want a fully local, self-contained setup** - no NAS, no home server, no cloud. Just the device.
+- **You have no filament manager yet** and don't want to set up a server by
+  hand. Install, pick a backend, done.
+- **You want to try the other backends** without touching your setup. Each
+  one keeps its own data; switching takes about a minute.
+- **You want everything on one address.** The scale's own web interface
+  shows on the Pi's page as well.
+- **You need it to work without a network**, at a fair or in a workshop.
+  The Pi can open a WLAN of its own.
 
 ---
 
-## What's included
+## What it does
 
-- Everything from the base SpoolmanScale (scale, NFC, 480×320 touchscreen)
-- Raspberry Pi running **Spoolman** or **FilaMan** - your choice on first boot
-- Built-in web UI at `http://spoolmanscale.local` for management, backups and updates
-- Automatic daily backups, self-update, WiFi management
+| | |
+|---|---|
+| Backends | Spoolman, FilaMan or BamBuddy, one at a time, in Docker |
+| Switching | one click; the scale follows, the page shows each step |
+| The scale | found on the network, set up from the page: server addresses, FilaMan registration, BamBuddy key |
+| Backups | by hand and once a day, download, restore, from a file |
+| Updates | backends with their release notes, SpoolmanScale Pro itself, Raspberry Pi OS |
+| Network | WLAN, the Pi's own hotspot, a setup WLAN when nothing else connects |
+| Access | a login your password manager can store |
 
 ---
 
-## Backends
+## What you need
 
-On first setup you choose between:
+- Raspberry Pi 3B or newer with 64-bit **Raspberry Pi OS Lite**
+- A SpoolmanScale with firmware 0.7.0 or newer
+- About 3.5 GB free on the SD card for all three backends
 
-| | Spoolman | FilaMan |
+One backend at a time fits in 1 GB of RAM. Measured right after the first
+start:
+
+| Spoolman | BamBuddy | FilaMan |
 |---|---|---|
-| Port | 7912 | 8083 |
-| Community | Large, established | Growing |
-| UI | Functional | Modern |
-| Mobile app | - | iOS & Android |
-| Recommendation | Most users | If you want a mobile app |
-
-You can switch at any time from the web UI - no reinstall needed.
-
-!!! note "The scale itself talks to three"
-    Spoolman, FilaMan and BamBuddy - see [Backends](../use/backends.md). The Pro
-    image installs the first two; a BamBuddy instance running elsewhere on your
-    network works just as well with the scale.
+| about 100 MB | about 190 MB | about 370 MB |
 
 ---
 
-## Hardware Options
+## Next
 
-| Pi Model | Works | Notes |
-|---|---|---|
-| Pi Zero 2W | ✅ | Fits Pro enclosure, recommended |
-| Pi 3 | ✅ | Works, may not fit enclosure |
-| Pi 4 / 5 | ✅ | Works, parallel mode supported |
-
-!!! note "Pi Zero 2W RAM"
-    The Pi Zero 2W has 512 MB RAM - enough for one backend at a time. Pi 4+ can run both simultaneously.
-
----
-
-## Interested in a pre-built version?
-
-Not ready to build it yourself? Leave a comment on [MakerWorld](https://makerworld.com/de/models/2713675-spoolmanscale) or join the [Discord](https://discord.gg/K3KmKnrWhP) - if there's enough interest, a pre-built Pro version may become available.
-
+- [Set up the Pi](pi-setup.md)
+- [The web interface](web-ui.md)
+- Source and issues: [SpoolmanScalePro-Pi on GitHub](https://github.com/Niko11111/SpoolmanScalePro-Pi)
