@@ -71,6 +71,30 @@ too. **Confirmed by users** means someone from the community printed on it; we
 do not have the printer ourselves. **Experimental** means the same protocol,
 but no print yet. If you have one, we would love to hear from you.
 
+## What a printer needs { #printer-needs }
+
+For the scale to drive a label printer, the printer needs three things:
+
+1. **Bluetooth Low Energy (BLE).** The scale's radio is an ESP32-S3, and it
+   only speaks BLE.
+2. **A protocol we know.** Today that is the Phomemo and NIIMBOT families.
+   Every other brand needs a driver of its own and someone to test it.
+3. **Enough room on the label.** A QR code plus a few details need about
+   18&nbsp;mm of printable height. On tape printers that means tape at least
+   24&nbsp;mm wide.
+
+??? info "Why Brother printers don't work"
+    "Bluetooth" is really two different radio standards: the older Classic
+    Bluetooth and Bluetooth Low Energy. Phones speak both, so you normally never
+    notice. Brother's P-touch printers (such as the PT-P300BT, PT-P710BT and
+    PT-E560BT) use Classic, while the scale's chip only has BLE. No update can
+    change that, the radio hardware is missing.
+
+    **How to tell:** If the data sheet says **SPP** or **iAP2**, it is Classic
+    Bluetooth. "Bluetooth 5.0" alone does not mean BLE, it is only the version
+    of the specification. The free app **nRF Connect** tells you for sure: if
+    the printer shows up there, it speaks BLE.
+
 ## Label sizes
 
 The most common sizes are tuned, **40 x 30** and **50 x 30 mm**. Need another

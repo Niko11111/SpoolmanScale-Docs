@@ -71,6 +71,31 @@ gedruckt, wir selbst haben den Drucker nicht. **Experimentell** heißt: gleiches
 Protokoll, aber noch kein Druck. Hast du einen, freuen wir uns über deine
 Rückmeldung.
 
+## Was ein Drucker können muss { #printer-needs }
+
+Damit die Waage einen Etikettendrucker ansprechen kann, braucht er drei Dinge:
+
+1. **Bluetooth Low Energy (BLE).** Die Waage funkt mit einem ESP32-S3, und der
+   kann nur BLE.
+2. **Ein Protokoll, das wir kennen.** Heute sind das die Familien von Phomemo
+   und NIIMBOT. Jeder weitere Hersteller braucht einen eigenen Treiber und
+   jemanden, der damit testet.
+3. **Genug Platz auf dem Etikett.** Für QR-Code und ein paar Angaben braucht es
+   etwa 18&nbsp;mm bedruckbare Höhe. Bei Bandgeräten heißt das: mindestens
+   24&nbsp;mm breites Band.
+
+??? info "Warum Brother-Drucker nicht gehen"
+    Hinter „Bluetooth“ stecken zwei verschiedene Funkverfahren: das ältere
+    Bluetooth Classic und Bluetooth Low Energy. Handys können beides, deshalb
+    fällt der Unterschied sonst nie auf. Brothers P-touch-Drucker (etwa
+    PT-P300BT, PT-P710BT, PT-E560BT) nutzen Classic, der Chip der Waage kann
+    nur BLE. Ein Update ändert daran nichts, es fehlt die Funkhardware.
+
+    **So erkennst du es:** Steht im Datenblatt **SPP** oder **iAP2**, ist es
+    Bluetooth Classic. „Bluetooth 5.0“ allein heißt nicht BLE, das ist nur die
+    Version der Spezifikation. Sicher zeigt es die kostenlose App
+    **nRF Connect**: Taucht der Drucker dort auf, spricht er BLE.
+
 ## Etikettengrößen
 
 Abgestimmt sind die gängigsten Größen, **40 x 30** und **50 x 30 mm**. Du
