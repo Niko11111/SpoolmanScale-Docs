@@ -13,6 +13,10 @@ it reached it, whether it points at this Pi) and the Pi itself (RAM, SD
 card, temperature, clock). A Pi has no battery clock; when its time is off,
 one button takes the time from your device.
 
+Where the Pi runs several backends at once, each tile starts and stops its
+own, shows the RAM it uses, and one of them is marked as the scale's. A
+card then lists the addresses the backends use to reach each other.
+
 ## Scale
 
 The scale's own web interface, passed through by the Pi. Its settings,

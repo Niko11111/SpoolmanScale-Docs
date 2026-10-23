@@ -66,14 +66,12 @@ From now on every switch on the Overview takes the scale along.
 
 ---
 
-## Without a network
-
-The **Network** tab opens a WLAN of the Pi's own (2.4 GHz, the scale has no
-5 GHz). Join the scale and your phone to it; the Pi is at `192.168.50.1`.
+## No WLAN the Pi knows?
 
 When neither a WLAN nor a cable connects within 90 seconds of booting, the
 Pi opens **SpoolmanScale-Pro-Setup** (password `spoolmanscale`) by itself.
-Join it, open `http://192.168.50.1` and pick a WLAN on the Network tab.
+Join it with your phone, open `http://192.168.50.1` and pick your WLAN on
+the Network page. No keyboard or screen needed.
 
 ---
 

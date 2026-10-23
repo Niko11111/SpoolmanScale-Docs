@@ -13,6 +13,11 @@ nutzt, ob sie es erreicht, ob sie auf diesen Pi zeigt) und der Pi selbst
 (RAM, SD-Karte, Temperatur, Uhrzeit). Ein Pi hat keine Uhr mit Batterie;
 geht seine Zeit falsch, übernimmt ein Knopf die Zeit deines Geräts.
 
+Betreibt der Pi mehrere Backends gleichzeitig, startet und stoppt jede
+Kachel ihr eigenes, zeigt seinen RAM-Verbrauch, und eines ist als das der
+Waage markiert. Eine Karte nennt dann die Adressen, über die sich die
+Backends gegenseitig erreichen.
+
 ## Waage
 
 Die eigene Weboberfläche der Waage, vom Pi durchgereicht. Ihre

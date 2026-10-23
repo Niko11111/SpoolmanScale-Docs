@@ -69,16 +69,12 @@ Ab jetzt nimmt jeder Wechsel in der Übersicht die Waage mit.
 
 ---
 
-## Ohne Netz
-
-Der Reiter **Netzwerk** öffnet ein eigenes WLAN des Pi (2,4 GHz, die Waage
-hat kein 5 GHz). Waage und Handy verbinden sich damit; der Pi ist unter
-`192.168.50.1` erreichbar.
+## Der Pi kennt kein WLAN?
 
 Verbindet sich nach dem Booten 90 Sekunden lang weder WLAN noch Kabel,
 öffnet der Pi von selbst **SpoolmanScale-Pro-Setup** (Passwort
-`spoolmanscale`). Damit verbinden, `http://192.168.50.1` öffnen und im
-Reiter Netzwerk ein WLAN wählen.
+`spoolmanscale`). Verbinde dich mit dem Handy, öffne `http://192.168.50.1`
+und wähle auf der Seite Netzwerk dein WLAN. Ohne Tastatur und Bildschirm.
 
 ---
 
