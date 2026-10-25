@@ -1,6 +1,6 @@
 # Bill of Materials
 
-!!! warning "Beta build guide"
+!!! note "Something unclear or not fitting?"
     If something is unclear or doesn't fit your hardware batch, please report it on [Discord](https://discord.gg/K3KmKnrWhP) or [MakerWorld](https://makerworld.com/de/models/2713675-spoolmanscale#profileId-3005075).
 
 ---
@@ -44,7 +44,7 @@ Self-tapping screws are recommended, but standard machine screws (M2.5×5, M2×4
 | Item | What for |
 |---|---|
 | **NTAG215** NFC stickers | Tags the scale can write. NTAG213 works for reading, but is too small to write - see [NFC tags](../use/tags.md#which-tag-should-i-buy) |
-| **Phomemo M220** label printer | Printing spool labels over Bluetooth. Label printing is beta |
+| **Phomemo M220** label printer | Printing spool labels over Bluetooth |
 
 !!! note "The load cell is optional too"
     Leave out the NAU7802 and the load cell, and switch off

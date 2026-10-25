@@ -28,9 +28,9 @@ Screws and quantities are on the [bill of materials](bom.md#additional-materials
 
 ---
 
-## Beta build guide
+## Does something not fit?
 
-!!! warning "Report what does not fit"
+!!! note "Report what does not fit"
     Hardware batches vary. If something is unclear or does not fit yours, say so
     on [Discord](https://discord.gg/K3KmKnrWhP) or on
     [MakerWorld](https://makerworld.com/de/models/2713675-spoolmanscale#profileId-3005075) -

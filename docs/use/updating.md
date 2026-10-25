@@ -5,18 +5,15 @@
 After the [first flash](index.md#first-flash-the-web-flasher) updates run on the
 device or from your browser, without the USB cable.
 
-!!! note "Coming from 0.7.x: one update over USB"
-    v0.8.0 divides the scale's memory anew (6 MB instead of 3 MB for the
-    firmware), and that can only be done over the cable, once. Open the
+!!! note "Still on the old memory layout? One update over USB"
+    0.8 divides the scale's memory anew (6 MB instead of 3 MB for the
+    firmware), and that can only be done over the cable, once. 0.8.3 no longer
+    fits the old layout, so a scale that skipped this step does not install it
+    over the air and shows a QR code to the web flasher instead. Open the
     [web flasher](https://niko11111.github.io/SpoolmanScale/) in Chrome or Edge,
     connect the scale and choose **Update**. It takes about 2 minutes, and WiFi,
     calibration and backend settings are kept. If the flasher offers "Install"
     instead, leave "Erase" unticked, or WiFi and calibration are gone.
-
-    A scale that skips this step keeps working and gets v0.8.0 over the air as
-    well. It reminds you at every start, with a QR code to the flasher. Later
-    updates that are larger than the old layout allows will no longer install
-    over the air.
 
     ![The reminder with a QR code to the web flasher](../assets/images/ui/en/x03_partition_hint.png)
 
@@ -85,21 +82,21 @@ If an update fails, or you want to go back to a particular release:
 
 ---
 
-## Beta or stable
+## Release or pre-release
 
 Releases come in two kinds:
 
 | Kind | Looks like | For |
 |---|---|---|
-| Release | `v0.7.0` | everyone |
-| Pre-release | `v0.7.0-beta.88` | testing, reporting back on Discord |
+| Release | `v0.8.3` | everyone |
+| Pre-release | `v0.8.4-beta.1` | testing, reporting back on Discord |
 
 The full history is on the
 [releases page](https://github.com/Niko11111/SpoolmanScale/releases) - every
 version carries its own notes.
 
-!!! tip "Beta testers welcome"
+!!! tip "Testers welcome"
     Three backends, four tag formats and a lot of hardware combinations are more
-    than one workbench can cover. If something goes wrong on a beta, say so on
+    than one workbench can cover. If something goes wrong on a pre-release, say so on
     [Discord](https://discord.gg/K3KmKnrWhP) or open an issue. That is what it
     is for.

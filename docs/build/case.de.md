@@ -29,9 +29,9 @@ Schrauben und Stückzahlen stehen in der
 
 ---
 
-## Beta-Bauanleitung
+## Passt etwas nicht?
 
-!!! warning "Melde, was nicht passt"
+!!! note "Melde, was nicht passt"
     Hardware-Chargen unterscheiden sich. Ist etwas unklar oder passt bei dir
     nicht, sag es im [Discord](https://discord.gg/K3KmKnrWhP) oder auf
     [MakerWorld](https://makerworld.com/de/models/2713675-spoolmanscale#profileId-3005075) -

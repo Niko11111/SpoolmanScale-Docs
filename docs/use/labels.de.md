@@ -4,10 +4,10 @@ Die Waage kann für die aufliegende Spule ein Etikett drucken, auf einem
 Bluetooth-Etikettendrucker. Das Etikett trägt die wichtigsten Angaben und einen
 QR-Code, der die Spule in deinem Backend öffnet.
 
-!!! warning "Beta: eine erste Version"
-    Der Etikettendruck ist neu in 0.8.0 und wird ausgebaut: Etiketten direkt vom
-    Backend (FilaMan zuerst), ein kleiner Etiketten-Editor im Browser, weitere
-    Drucker und Etikettengrößen. Ideen und Hilfe sind sehr willkommen, auf
+!!! note "Wächst weiter"
+    Der Etikettendruck wächst weiter: mehr Drucker und Etikettengrößen und der
+    Status des Druckers (Papier, Deckel). Der Etiketten-Editor im Browser ist
+    eine erste Version. Ideen und Hilfe sind sehr willkommen, auf
     [Discord oder GitHub](../help/contributing.md).
 
 ---

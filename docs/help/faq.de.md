@@ -234,9 +234,9 @@ und du kannst sie mit einem Passwort (4 bis 8 Ziffern) schützen.
 
 ### Welchen Etikettendrucker kann ich nutzen?
 
-Vorerst den **Phomemo M220** über Bluetooth, als erste Version und als Beta
-markiert. Weitere Drucker sind geplant. Siehe
-[Bluetooth & Etiketten](../use/labels.md).
+Der **Phomemo M220** und der M110S sowie der **NIIMBOT B1** und der M2 laufen
+über Bluetooth Low Energy, weitere sind experimentell. Siehe die
+[empfohlenen Drucker](../use/printers.md) und [Bluetooth & Etiketten](../use/labels.md).
 
 ---
 

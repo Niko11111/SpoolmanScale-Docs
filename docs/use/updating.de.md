@@ -5,19 +5,16 @@
 Nach dem [ersten Flash](index.md#der-erste-flash-der-web-flasher) laufen Updates
 am Gerät oder aus dem Browser, ohne USB-Kabel.
 
-!!! note "Von 0.7.x kommend: ein Update per USB"
-    v0.8.0 teilt den Speicher der Waage neu auf (6 MB statt 3 MB für die
-    Firmware), und das geht nur über das Kabel, einmal. Öffne den
+!!! note "Noch auf der alten Speicheraufteilung? Ein Update per USB"
+    0.8 teilt den Speicher der Waage neu auf (6 MB statt 3 MB für die
+    Firmware), und das geht nur über das Kabel, einmal. 0.8.3 passt nicht mehr in
+    die alte Aufteilung: Eine Waage, die den Schritt ausgelassen hat, installiert
+    es nicht über WLAN und zeigt stattdessen einen QR-Code zum Web-Flasher. Öffne den
     [Web-Flasher](https://niko11111.github.io/SpoolmanScale/) in Chrome oder
     Edge, schließ die Waage an und wähle **Update**. Das dauert etwa 2 Minuten,
     WLAN, Kalibrierung und Backend-Einstellungen bleiben erhalten. Bietet der
     Flasher stattdessen "Install" an, lass "Erase" ohne Haken, sonst sind WLAN
     und Kalibrierung weg.
-
-    Eine Waage, die den Schritt auslässt, läuft weiter und bekommt v0.8.0 auch
-    über WLAN. Sie erinnert dich bei jedem Start daran, mit QR-Code zum Flasher.
-    Spätere Updates, die größer sind als die alte Aufteilung erlaubt, lassen
-    sich dann nicht mehr über WLAN installieren.
 
     ![Die Erinnerung mit QR-Code zum Web-Flasher](../assets/images/ui/de/x03_partition_hint.png)
 
@@ -87,21 +84,21 @@ Wenn ein Update scheitert oder du auf eine bestimmte Version zurück willst:
 
 ---
 
-## Beta oder Release
+## Release oder Vorabversion
 
 Veröffentlichungen gibt es in zwei Sorten:
 
 | Sorte | Sieht aus wie | Für |
 |---|---|---|
-| Release | `v0.7.0` | alle |
-| Vorabversion | `v0.7.0-beta.88` | Testen und Rückmelden im Discord |
+| Release | `v0.8.3` | alle |
+| Vorabversion | `v0.8.4-beta.1` | Testen und Rückmelden im Discord |
 
 Die vollständige Historie steht auf der
 [Releases-Seite](https://github.com/Niko11111/SpoolmanScale/releases) - jede
 Version bringt ihre eigenen Notizen mit.
 
-!!! tip "Beta-Tester willkommen"
+!!! tip "Tester willkommen"
     Drei Backends, vier Tag-Formate und jede Menge Hardware-Kombinationen sind
-    mehr, als eine Werkbank abdecken kann. Wenn auf einer Beta etwas klemmt, sag
+    mehr, als eine Werkbank abdecken kann. Wenn auf einer Vorabversion etwas klemmt, sag
     Bescheid, im [Discord](https://discord.gg/K3KmKnrWhP) oder als Issue. Genau
     dafür ist sie da.

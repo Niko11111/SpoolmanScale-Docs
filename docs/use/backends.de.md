@@ -25,7 +25,7 @@ Backend neu abgefragt.
 | Wiegen, verknüpfen, [Tags schreiben](tags.md), kopieren, archivieren, Lagerort, Trocknung | ja | ja | ja |
 | Zweiter Tag pro Spule | ab 0.27 | ab 1.3.1 | - |
 | Tara je Filament oder Hersteller | ja | ja | - |
-| Spule aus einem Bambu-Tag anlegen | - | - | ja |
+| Spule aus einem Tag anlegen | ja | ja | ja |
 | [AMS-Ansicht](ams.md) | - | ja | ja |
 | Browser folgt der Waage | ab 0.27 | ab 1.3.7 | - |
 
@@ -55,9 +55,9 @@ Backend neu abgefragt.
     einzurichten.
 
     !!! tip "Nutzt du auch OpenSpoolman?"
-        OpenSpoolman kennt die nativen Tags noch nicht. Schalte
-        **Für OpenSpoolman** ein, und die Waage schreibt die Bambu-UUID
-        zusätzlich in `extra.tag`, wo OpenSpoolman sie sucht.
+        OpenSpoolman kennt die nativen Tags noch nicht. Stell
+        **Auch in Extra-Feld** auf `extra.tag`, und die Waage schreibt die
+        Bambu-UUID zusätzlich dorthin, wo OpenSpoolman sie sucht.
 
 === "FilaMan"
 
@@ -101,9 +101,6 @@ Backend neu abgefragt.
     es ist, und zeigt es in der Statusleiste: `Inventar: BamBuddy` oder
     `Inventar: Spoolman`.
 
-    **Nur BamBuddy legt eine Spule direkt aus einem Bambu-Tag an**, mit
-    Material, Marke, Farbe und Temperaturen vom Tag.
-
     **AMS.** Ist **Nach dem Wiegen ins AMS** an, wiegst du die Spule, hebst sie
     ab und tippst auf das Fach. Mehr unter [AMS-Ansicht](ams.md).
 
@@ -120,7 +117,7 @@ Jedes Backend hat ein paar eigene Optionen, unter
 **Einstellungen → Verbindung → Weitere Optionen**. Angezeigt werden nur die des
 aktiven Backends, und das **?** daneben erklärt jede am Gerät.
 
-- **Spoolman:** Tag-Feld und Zusatzfelder, **Für OpenSpoolman**, mehrere Tags
+- **Spoolman:** Tag-Feld und Zusatzfelder, **Auch in Extra-Feld**, mehrere Tags
   pro Spule, **Zweites Tag abfragen**, **Chip-UID mitschreiben** (Happy Hare).
 - **FilaMan:** **Zweites Tag abfragen**, verknüpfen und wiegen ohne Nachfrage,
   Tags schreiben, die FilaMan schickt, **Auto AMS-Zuordnung**.

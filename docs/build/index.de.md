@@ -31,7 +31,7 @@ Optional:
 - **NTAG215-Aufkleber**, wenn die Waage deine Tags beschreiben soll. NTAG213
   reicht zum Lesen, ist zum Beschreiben aber zu klein, siehe
   [NFC-Tags](../use/tags.md#welchen-tag-soll-ich-kaufen)
-- Ein **Phomemo M220**-Etikettendrucker, per Bluetooth. Etikettendruck ist Beta
+- Ein **Phomemo M220**-Etikettendrucker, per Bluetooth
 
 Auch die Wägezelle ist optional. Ohne NAU7802 und Wägezelle schaltest du
 **Einstellungen → Waage → Waage vorhanden** aus, und das Gerät arbeitet als
@@ -67,7 +67,7 @@ Genaue Teile, Links und Preise in der [Stückliste](bom.md). Rechne insgesamt mi
     [Discord](https://discord.gg/K3KmKnrWhP) hilft dir die Community gern
     durch den Aufbau.
 
-!!! warning "Das ist eine Beta-Bauanleitung"
+!!! note "Etwas unklar oder passt nicht?"
     Hardware-Chargen unterscheiden sich. Ist etwas unklar oder passt bei dir
     nicht, melde es im [Discord](https://discord.gg/K3KmKnrWhP) oder auf
     [MakerWorld](https://makerworld.com/de/models/2713675-spoolmanscale#profileId-3005075).

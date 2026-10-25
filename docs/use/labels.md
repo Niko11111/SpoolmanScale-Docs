@@ -4,10 +4,10 @@ The scale can print a label for the spool on the pad, on a Bluetooth label
 printer. The label carries the key facts and a QR code that opens the spool in
 your backend.
 
-!!! warning "Beta: a first version"
-    Label printing is new in 0.8.0 and will grow: labels straight from the
-    backend (FilaMan first), a small label editor in the browser, and more
-    printers and label sizes. Ideas and help are very welcome on
+!!! note "Still growing"
+    Label printing keeps growing: more printers and label sizes, and the
+    printer's status (paper, lid). The label editor in the browser is a first
+    version. Ideas and help are very welcome on
     [Discord or GitHub](../help/contributing.md).
 
 ---

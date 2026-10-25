@@ -1,6 +1,6 @@
 # Stückliste
 
-!!! warning "Beta-Bauanleitung"
+!!! note "Etwas unklar oder passt nicht?"
     Ist etwas unklar oder passt nicht zu deiner Hardware-Charge, melde es bitte
     im [Discord](https://discord.gg/K3KmKnrWhP) oder auf
     [MakerWorld](https://makerworld.com/de/models/2713675-spoolmanscale#profileId-3005075).
@@ -49,7 +49,7 @@ funktionieren aber vermutlich genauso.
 | Teil | Wofür |
 |---|---|
 | **NTAG215**-NFC-Aufkleber | Tags, die die Waage beschreiben kann. NTAG213 reicht zum Lesen, ist zum Beschreiben aber zu klein - siehe [NFC-Tags](../use/tags.md#welchen-tag-soll-ich-kaufen) |
-| **Phomemo M220**-Etikettendrucker | Spulenetiketten per Bluetooth drucken. Etikettendruck ist Beta |
+| **Phomemo M220**-Etikettendrucker | Spulenetiketten per Bluetooth drucken |
 
 !!! note "Auch die Wägezelle ist optional"
     Lass NAU7802 und Wägezelle weg und schalte

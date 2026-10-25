@@ -30,7 +30,7 @@ Optional:
 
 - **NTAG215 stickers** if the scale should write your tags. NTAG213 is fine for
   reading but too small to write, see [NFC tags](../use/tags.md#which-tag-should-i-buy)
-- A **Phomemo M220** label printer, over Bluetooth. Label printing is beta
+- A **Phomemo M220** label printer, over Bluetooth
 
 The load cell is optional too. Without NAU7802 and load cell, switch off
 **Settings → Scale → Scale fitted** and the device works as a tag terminal:
@@ -64,7 +64,7 @@ Exact parts, links and prices on the [bill of materials](bom.md). Reckon on
     [Discord](https://discord.gg/K3KmKnrWhP) is happy to help you through the
     build.
 
-!!! warning "This is a beta build guide"
+!!! note "Something unclear or not fitting?"
     Hardware batches vary. If something is unclear or does not fit yours, report
     it on [Discord](https://discord.gg/K3KmKnrWhP) or on
     [MakerWorld](https://makerworld.com/de/models/2713675-spoolmanscale#profileId-3005075).

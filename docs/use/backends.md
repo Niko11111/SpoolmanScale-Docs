@@ -24,7 +24,7 @@ the spool on the pad is looked up again at the new backend.
 | Weigh, link, [write tags](tags.md), copy, archive, location, drying | yes | yes | yes |
 | Second tag per spool | 0.27 and newer | 1.3.1 and newer | - |
 | Tare per filament or vendor | yes | yes | - |
-| Create a spool from a Bambu tag | - | - | yes |
+| Create a spool from a tag | yes | yes | yes |
 | [AMS view](ams.md) | - | yes | yes |
 | Browser follows the scale | 0.27 and newer | 1.3.7 and newer | - |
 
@@ -53,9 +53,9 @@ the spool on the pad is looked up again at the new backend.
     set up beforehand.
 
     !!! tip "Using OpenSpoolman too?"
-        OpenSpoolman does not know the native tags yet. Turn on
-        **For OpenSpoolman** and the scale also writes the Bambu UUID into
-        `extra.tag`, where OpenSpoolman looks for it.
+        OpenSpoolman does not know the native tags yet. Set
+        **Also in extra field** to `extra.tag` and the scale also writes the
+        Bambu UUID there, where OpenSpoolman looks for it.
 
 === "FilaMan"
 
@@ -95,9 +95,6 @@ the spool on the pad is looked up again at the new backend.
     or in Spoolman behind BamBuddy. The scale works out which and says so in the
     status bar: `Inventory: BamBuddy` or `Inventory: Spoolman`.
 
-    **Only BamBuddy creates a spool straight from a Bambu tag**, with material,
-    brand, colour and temperatures taken off the tag.
-
     **AMS.** With **Into the AMS after weighing** on, you weigh the spool, lift
     it and tap the bay. More in [AMS view](ams.md).
 
@@ -114,7 +111,7 @@ Each backend has a few options of its own, under
 **Settings → Connection → More options**. Only those of the active backend are
 shown, and the **?** next to each one explains it on the device.
 
-- **Spoolman:** tag field and extra fields, **For OpenSpoolman**, several tags
+- **Spoolman:** tag field and extra fields, **Also in extra field**, several tags
   per spool, **Ask for a second tag**, **Also write the chip UID** (Happy Hare).
 - **FilaMan:** **Ask for a second tag**, linking and weighing without asking,
   writing tags FilaMan sends, **Auto AMS assign**.
