@@ -19,7 +19,7 @@ are looking at.
     any of this.
 
 !!! note "A device without a load cell"
-    With **Settings → Scale → Scale fitted** switched off, the scale does not
+    With **Settings → Spools & scale → Scale fitted** switched off, the scale does not
     look for the NAU7802 at all. The findings for the scale ADC and the load
     cell never appear, and an empty bus shows up as
     [NFC reader missing](#nfc-reader-missing-pn532). Only the NFC reader is

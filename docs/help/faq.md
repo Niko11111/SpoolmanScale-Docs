@@ -108,7 +108,7 @@ server, set up and kept up to date from a web page.
 
 ### Does it work without a load cell?
 
-Yes. Switch off **Settings → Scale → Scale fitted** and restart. The device
+Yes. Switch off **Settings → Spools & scale → Scale fitted** and restart. The device
 then works as a pure tag terminal: it reads, links and writes tags and sets
 locations, and the weights leave the screen.
 

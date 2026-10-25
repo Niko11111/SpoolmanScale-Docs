@@ -8,7 +8,7 @@ without taking the spool out.
 !!! note "FilaMan and BamBuddy only"
     The AMS view needs [FilaMan or BamBuddy](backends.md) as the backend. It
     appears once the printer has answered and reports an AMS: as the **AMS**
-    chip in the header, and as **Show the AMS** under **Settings → Scale**.
+    chip in the header, and as **Show the AMS** under **Settings → Spools & scale**.
 
 ---
 

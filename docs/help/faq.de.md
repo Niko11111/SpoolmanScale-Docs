@@ -113,7 +113,7 @@ Server, eingerichtet und aktuell gehalten über eine Webseite.
 
 ### Geht es auch ohne Wägezelle?
 
-Ja. Schalte **Einstellungen → Waage → Waage vorhanden** aus und starte neu. Das
+Ja. Schalte **Einstellungen → Spulen & Waage → Waage vorhanden** aus und starte neu. Das
 Gerät arbeitet dann als reines Tag-Terminal: Es liest, verknüpft und beschreibt
 Tags und setzt Lagerorte, die Gewichte verschwinden vom Bildschirm.
 

@@ -10,7 +10,7 @@ Eine nie kalibrierte Waage zeigt den Rohwert des Wandlers, keine Gramm - eine
 sechsstellige Zahl, die von selbst um Hunderte springt. Das ist kein Defekt, und
 die Waage sagt es in der Statuszeile auch.
 
-**Einstellungen → Waage → Kalibrierung**
+**Einstellungen → Spulen & Waage → Kalibrierung**
 
 1. Plattform leer räumen und **TARE** drücken. Die Anzeige muss auf 0 gehen.
 2. Ein Gewicht auflegen, das du genau kennst. Ideal sind etwa **1000 g** - eine
@@ -43,7 +43,7 @@ Leerwert von der Null weggelaufen ist.
 
 ## Beutelgewicht
 
-**Einstellungen → Waage → Beutelgewicht**
+**Einstellungen → Spulen & Waage → Beutelgewicht**
 
 Das Gewicht eines Vakuumbeutels samt Trockenmittelpack, in Gramm. Ist es
 gesetzt, wird es abgezogen - eine eingeschweißte Spule wiegt damit dasselbe wie
@@ -88,7 +88,7 @@ nächsten Wägung auf.
 
 ## Last Used Modus
 
-**Einstellungen → Waage → Last Used Modus**
+**Einstellungen → Spulen & Waage → Last Used Modus**
 
 Was als "benutzt" zählt. Die Auswahl hängt vom Backend ab - Druckverbrauch oder
 Wiegen - damit das Datum auf dem Hauptbildschirm das bedeutet, was du erwartest.
@@ -97,7 +97,7 @@ Wiegen - damit das Datum auf dem Hauptbildschirm das bedeutet, was du erwartest.
 
 ## Ohne Wägezelle
 
-**Einstellungen → Waage → Waage vorhanden**
+**Einstellungen → Spulen & Waage → Waage vorhanden**
 
 Ein Gerät, das nur aus Display und Leser besteht, arbeitet als Tag-Terminal:
 Tag auflegen, Spule sehen, Lagerort und Drucker zuordnen. Schalte **Waage

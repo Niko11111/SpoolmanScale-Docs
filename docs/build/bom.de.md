@@ -53,7 +53,7 @@ funktionieren aber vermutlich genauso.
 
 !!! note "Auch die Wägezelle ist optional"
     Lass NAU7802 und Wägezelle weg und schalte
-    **Einstellungen → Waage → Waage vorhanden** aus. Das Gerät arbeitet dann als
+    **Einstellungen → Spulen & Waage → Waage vorhanden** aus. Das Gerät arbeitet dann als
     Tag-Terminal: es liest, verknüpft und beschreibt Tags und setzt Lagerorte,
     nur ohne Gewichte.
 

@@ -9,7 +9,7 @@ Trocknung ein, ohne die Spule herauszunehmen.
     Die AMS-Ansicht braucht [FilaMan oder BamBuddy](backends.md) als Backend.
     Sie erscheint, sobald der Drucker geantwortet hat und ein AMS meldet: als
     Chip **AMS** in der Kopfzeile und als **AMS ansehen** unter
-    **Einstellungen → Waage**.
+    **Einstellungen → Spulen & Waage**.
 
 ---
 

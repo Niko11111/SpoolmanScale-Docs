@@ -222,7 +222,7 @@ Aufbau ist das normal, und die Waage sagt es in der Statuszeile auch.
 Am Ende der Einrichtung fragt die Waage danach: **Jetzt kalibrieren** öffnet
 die Kalibrierung sofort, **Verstanden** verschiebt sie auf später.
 
-1. **Einstellungen → Waage → Kalibrierung**
+1. **Einstellungen → Spulen & Waage → Kalibrierung**
 2. Plattform leer räumen, **TARE** antippen, warten bis 0 dasteht
 3. Ein Gewicht auflegen, das du genau kennst, ideal etwa 1000 g
 4. Dieses Gewicht in Gramm eintippen
@@ -238,7 +238,7 @@ Einzelheiten in [Wiegen & Kalibrieren](weighing.md).
 
 !!! note "Ohne Wägezelle"
     Ein Gerät ohne Wägezelle überspringt das. Schalte
-    **Einstellungen → Waage → Waage vorhanden** aus und starte neu: Das Gerät
+    **Einstellungen → Spulen & Waage → Waage vorhanden** aus und starte neu: Das Gerät
     arbeitet dann als Tag-Terminal. Die Gewichte verschwinden vom Bildschirm,
     der Gewichtsknopf wird zu **Lagerort**, und Kalibrierung und
     Beutelgewicht verschwinden aus dem Menü.

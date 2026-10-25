@@ -17,7 +17,7 @@ der Pi.
       5V auf Pin 1, GND auf Pin 2 der WT32-I/O-Buchse
     - Verkabelung der Wägezelle prüfen (E+/E-/A+/A-)
     - Sind die Werte negativ, tausche A+ und A-
-    - Neu kalibrieren über **Einstellungen → Waage → Kalibrierung**
+    - Neu kalibrieren über **Einstellungen → Spulen & Waage → Kalibrierung**
 
 ??? question "Waage zeigt eine absurde Zahl, z.B. -3487423847234 g"
     Diese Zahl ist keine Messung. Ist der I²C-Bus gestört, kommt jeder
@@ -40,7 +40,7 @@ der Pi.
     Eine Kalibrierung, die bei gestörtem Bus entstanden ist, liegt im Gerät und
     überlebt die Reparatur.
 
-    - **Einstellungen → Waage → Kalibrierung zurücksetzen**, dann TARE und mit
+    - **Einstellungen → Spulen & Waage → Kalibrierung zurücksetzen**, dann TARE und mit
       einem Referenzgewicht neu kalibrieren
 
 ??? question "Waage misst ungenau"
@@ -50,7 +50,7 @@ der Pi.
 
 ??? question "Waage misst richtig, aber die Differenz zum Bestand stimmt nicht"
     - Prüfen, ob das Spulengewicht im Bestand richtig hinterlegt ist
-    - Beutelgewicht anpassen über **Einstellungen → Waage → Beutelgewicht**
+    - Beutelgewicht anpassen über **Einstellungen → Spulen & Waage → Beutelgewicht**
 
 ---
 

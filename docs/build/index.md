@@ -33,7 +33,7 @@ Optional:
 - A **Phomemo M220** label printer, over Bluetooth
 
 The load cell is optional too. Without NAU7802 and load cell, switch off
-**Settings → Scale → Scale fitted** and the device works as a tag terminal:
+**Settings → Spools & scale → Scale fitted** and the device works as a tag terminal:
 it reads, links and writes tags and sets locations, without weights.
 
 Exact parts, links and prices on the [bill of materials](bom.md). Reckon on

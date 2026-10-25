@@ -48,7 +48,7 @@ Self-tapping screws are recommended, but standard machine screws (M2.5×5, M2×4
 
 !!! note "The load cell is optional too"
     Leave out the NAU7802 and the load cell, and switch off
-    **Settings → Scale → Scale fitted**. The device then works as a tag
+    **Settings → Spools & scale → Scale fitted**. The device then works as a tag
     terminal: it reads, links and writes tags and sets locations, without
     weights.
 

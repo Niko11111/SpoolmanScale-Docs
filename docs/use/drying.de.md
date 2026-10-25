@@ -9,7 +9,7 @@ mit einer feuchten einen Druck startest.
 
 ## Die Erinnerung
 
-**Einstellungen → Waage → Trocknungserinnerung**
+**Einstellungen → Spulen & Waage → Trocknungserinnerung**
 
 ![Modi der Trocknungserinnerung](../assets/images/ui/de/16_drying.png)
 
@@ -71,7 +71,7 @@ welcher Kiste oder welchem Regal sie kam.
 
 ### Ortsabfrage bei Entnahme
 
-**Einstellungen → Waage → Ortsabfrage bei Entnahme**
+**Einstellungen → Spulen & Waage → Ortsabfrage bei Entnahme**
 
 Hebst du eine Spule ab, fragt die Waage nach etwa 1,5 Sekunden, wohin sie geht.
 Ein Tipp auf den Lagerort, und er wird zurückgeschrieben.

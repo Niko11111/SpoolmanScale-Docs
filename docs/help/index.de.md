@@ -19,7 +19,7 @@ findest, den du gerade vor dir hast.
     Ordnung, siehst du davon nichts.
 
 !!! note "Ein Gerät ohne Wägezelle"
-    Ist **Einstellungen → Waage → Waage vorhanden** ausgeschaltet, sucht die
+    Ist **Einstellungen → Spulen & Waage → Waage vorhanden** ausgeschaltet, sucht die
     Waage die NAU7802 gar nicht erst. Die Befunde zum Waagen-ADC und zur
     Wägezelle erscheinen dann nie, und ein leerer Bus zeigt sich als
     [NFC-Reader fehlt](#nfc-reader-fehlt-pn532). Geprüft wird nur der

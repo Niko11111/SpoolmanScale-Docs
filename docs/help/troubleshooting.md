@@ -15,7 +15,7 @@ Problems the scale cannot work out by itself: network, backend, tags, the Pi.
     - Does the **LED on the NAU7802** light up? If not, check power - 5V on Pin 1, GND on Pin 2 of the WT32 I/O connector
     - Check load cell wiring (E+/E-/A+/A-)
     - If values are negative, swap A+ and A-
-    - Recalibrate via **Settings → Scale → Calibration**
+    - Recalibrate via **Settings → Spools & scale → Calibration**
 
 ??? question "Scale shows an absurd number, e.g. -3487423847234 g"
     That number is not a measurement. When the I²C bus is broken, every register
@@ -36,7 +36,7 @@ Problems the scale cannot work out by itself: network, backend, tags, the Pi.
     A calibration taken while the bus was broken is stored in the device and
     survives the repair.
 
-    - **Settings → Scale → Reset calibration**, then TARE and calibrate again
+    - **Settings → Spools & scale → Reset calibration**, then TARE and calibrate again
       with a reference weight
 
 ??? question "Scale weight is inaccurate"
@@ -46,7 +46,7 @@ Problems the scale cannot work out by itself: network, backend, tags, the Pi.
 
 ??? question "Scale reads correctly but Spoolman diff is wrong"
     - Check if the spool weight is set correctly in Spoolman
-    - Update bag weight via **Settings → Scale → Bag weight**
+    - Update bag weight via **Settings → Spools & scale → Bag weight**
 
 ---
 

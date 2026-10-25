@@ -34,7 +34,7 @@ Optional:
 - Ein **Phomemo M220**-Etikettendrucker, per Bluetooth
 
 Auch die Wägezelle ist optional. Ohne NAU7802 und Wägezelle schaltest du
-**Einstellungen → Waage → Waage vorhanden** aus, und das Gerät arbeitet als
+**Einstellungen → Spulen & Waage → Waage vorhanden** aus, und das Gerät arbeitet als
 Tag-Terminal: es liest, verknüpft und beschreibt Tags und setzt Lagerorte, nur
 ohne Gewichte.
 

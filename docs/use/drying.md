@@ -9,7 +9,7 @@ one.
 
 ## The reminder
 
-**Settings → Scale → Drying Reminder**
+**Settings → Spools & scale → Drying Reminder**
 
 ![Drying reminder modes](../assets/images/ui/en/16_drying.png)
 
@@ -68,7 +68,7 @@ box or shelf it came from.
 
 ### Location on removal
 
-**Settings → Scale → Location on removal**
+**Settings → Spools & scale → Location on removal**
 
 Lift a spool off the pad, and after about 1.5 seconds the scale asks where it
 is going. Tap the location and it is written back.

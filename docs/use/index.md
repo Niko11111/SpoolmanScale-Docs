@@ -215,7 +215,7 @@ on a new build, and the scale says so in the status bar.
 At the end of the setup the scale asks about it: **Calibrate now** opens the
 calibration straight away, **Got it!** leaves it for later.
 
-1. **Settings → Scale → Calibration**
+1. **Settings → Spools & scale → Calibration**
 2. Clear the platform, tap **TARE**, wait for 0
 3. Put on a weight you know precisely, ideally around 1000 g
 4. Type that weight in grams
@@ -231,7 +231,7 @@ Details and the finer points in [Weighing & calibration](weighing.md).
 
 !!! note "No load cell fitted"
     A device built without a load cell skips this. Turn off
-    **Settings → Scale → Scale fitted** and restart: the device then works as
+    **Settings → Spools & scale → Scale fitted** and restart: the device then works as
     a tag terminal. Weights leave the screen, the weight button becomes
     **Location**, and calibration and bag weight leave the menu.
 

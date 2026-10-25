@@ -10,7 +10,7 @@ A scale that has never been calibrated shows the converter's raw value, not
 grams - a six digit number that drifts by hundreds on its own. That is not a
 fault, and the scale says so in the status bar.
 
-**Settings → Scale → Calibration**
+**Settings → Spools & scale → Calibration**
 
 1. Clear the platform and press **TARE**. The reading has to go to 0.
 2. Place a weight you know exactly. Around **1000 g** is ideal - a full spool
@@ -42,7 +42,7 @@ reading has drifted off zero.
 
 ## Bag weight
 
-**Settings → Scale → Bag weight**
+**Settings → Spools & scale → Bag weight**
 
 The weight of a vacuum bag plus its silica gel pack, in grams. When set, it is
 subtracted so a bagged spool weighs the same as an unbagged one and your
@@ -88,7 +88,7 @@ next weighing onwards.
 
 ## Last Used Mode
 
-**Settings → Scale → Last Used Mode**
+**Settings → Spools & scale → Last Used Mode**
 
 What counts as "used". The choices depend on the backend - printing usage or
 weighing - so the date on the main screen means what you expect it to mean.
@@ -97,7 +97,7 @@ weighing - so the date on the main screen means what you expect it to mean.
 
 ## Without a load cell
 
-**Settings → Scale → Scale fitted**
+**Settings → Spools & scale → Scale fitted**
 
 A device built from display and reader alone works as a tag terminal: put a
 tag on, see the spool, give it a location and a printer. Switch **Scale
