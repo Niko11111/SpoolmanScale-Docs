@@ -4,3 +4,6 @@
 **/.DS_Store
 # The privacy plugin's downloads of fonts and badges, refetched by every build.
 .cache/
+
+# The local build output of "mkdocs build", never committed.
+site/
