@@ -59,6 +59,11 @@ Exact parts, links and prices on the [bill of materials](bom.md). Reckon on
     soldered directly - and enough comfort to flash an ESP32 from a browser. No
     programming: the firmware is pre-built.
 
+    Never soldered before? The scale is not available ready-made yet, see
+    [the FAQ](../help/faq.md#can-i-buy-the-scale-ready-made). The community on
+    [Discord](https://discord.gg/K3KmKnrWhP) is happy to help you through the
+    build.
+
 !!! warning "This is a beta build guide"
     Hardware batches vary. If something is unclear or does not fit yours, report
     it on [Discord](https://discord.gg/K3KmKnrWhP) or on

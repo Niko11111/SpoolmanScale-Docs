@@ -6,6 +6,20 @@ Die Fragen, die auf Discord und MakerWorld immer wieder kommen.
 
 ## Aufbau und Hardware
 
+### Kann ich die Waage fertig kaufen?
+
+Im Moment nicht, aber eine kleine Serie steht auf der Roadmap, für alle, die die
+Bestellung der Teile und den Zusammenbau lieber auslassen. Vorher sind noch die
+rechtlichen Fragen zum Verkauf von Elektronik zu klären, auch für andere Länder,
+und der Preis muss für beide Seiten stimmen. Einen Termin gibt es noch nicht.
+Neuigkeiten kommen zuerst auf [Discord](https://discord.gg/K3KmKnrWhP) und auf
+Instagram unter [@spoolmanscale](https://www.instagram.com/spoolmanscale/).
+
+Wenn du bis dahin selbst bauen willst, auch ganz ohne Löterfahrung: Auf Discord
+hilft dir die Community gern weiter.
+
+---
+
 ### Meine Waage oder der NFC-Leser geht nicht. Wo fange ich an?
 
 Bei der Hardware, in dieser Reihenfolge. Fast jede Meldung bisher lief auf einen

@@ -62,6 +62,11 @@ Genaue Teile, Links und Preise in der [Stückliste](bom.md). Rechne insgesamt mi
     dem Browser zu flashen. Programmieren musst du nicht: die Firmware ist
     fertig gebaut.
 
+    Noch nie gelötet? Fertig gibt es die Waage noch nicht, siehe
+    [FAQ](../help/faq.md#kann-ich-die-waage-fertig-kaufen). Auf
+    [Discord](https://discord.gg/K3KmKnrWhP) hilft dir die Community gern
+    durch den Aufbau.
+
 !!! warning "Das ist eine Beta-Bauanleitung"
     Hardware-Chargen unterscheiden sich. Ist etwas unklar oder passt bei dir
     nicht, melde es im [Discord](https://discord.gg/K3KmKnrWhP) oder auf

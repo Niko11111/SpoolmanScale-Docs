@@ -6,6 +6,20 @@ The questions that come up again and again, on Discord and on MakerWorld.
 
 ## Building and hardware
 
+### Can I buy the scale ready-made?
+
+Not yet, but a small batch is on the roadmap, for everyone who would rather
+skip ordering the parts and putting them together. Before that, the legal side
+of selling electronics has to be cleared, for other countries too, and the
+price has to work for both sides. There is no date yet. News comes first on
+[Discord](https://discord.gg/K3KmKnrWhP) and on Instagram at
+[@spoolmanscale](https://www.instagram.com/spoolmanscale/).
+
+If you want to build one yourself in the meantime, even without any soldering
+experience: the community on Discord is happy to help.
+
+---
+
 ### My scale or NFC reader does not work. Where do I start?
 
 With the hardware, in this order. Almost every report so far came down to one of
