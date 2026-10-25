@@ -5,6 +5,10 @@ on:
     branches:
       - main
   workflow_dispatch:
+  # The privacy plugin freezes the badges at build time, so a daily build keeps
+  # stars, downloads and the release date from going stale.
+  schedule:
+    - cron: '17 4 * * *'
 
 permissions:
   contents: read

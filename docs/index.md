@@ -8,6 +8,10 @@
   <div class="tx-hero__badges">
     <img src="https://img.shields.io/github/v/release/Niko11111/SpoolmanScale?label=Firmware&color=28d49a&style=flat-square" alt="Version">
     <img src="https://img.shields.io/github/license/Niko11111/SpoolmanScale?color=28d49a&style=flat-square" alt="License">
+    <img src="https://img.shields.io/github/release-date/Niko11111/SpoolmanScale?color=28d49a&style=flat-square" alt="Latest release">
+    <img src="https://img.shields.io/github/stars/Niko11111/SpoolmanScale?color=28d49a&style=flat-square" alt="Stars">
+    <img src="https://img.shields.io/github/forks/Niko11111/SpoolmanScale?color=28d49a&style=flat-square" alt="Forks">
+    <img src="https://img.shields.io/github/downloads/Niko11111/SpoolmanScale/total?color=28d49a&style=flat-square" alt="Downloads">
     <img src="https://img.shields.io/badge/Discord-Join-5865F2?style=flat-square&logo=discord&logoColor=white" alt="Discord">
   </div>
 
