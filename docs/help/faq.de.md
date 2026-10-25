@@ -92,6 +92,9 @@ eine Filamentverwaltung - [Spoolman, FilaMan oder BamBuddy](../use/backends.md) 
 und die kann überall laufen: auf einem NAS, einem Server, einem vorhandenen Pi,
 einem Docker-Host.
 
+[SpoolmanScale Pro](../pro/index.md) macht einen Raspberry Pi zu so einem
+Server, eingerichtet und aktuell gehalten über eine Webseite.
+
 ---
 
 ### Geht es auch ohne Wägezelle?

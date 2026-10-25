@@ -135,6 +135,13 @@ Around **€50 to €60** in parts. Details on the
     - [Troubleshooting](help/troubleshooting.md)
     - [FAQ](help/faq.md)
 
+=== "I need a server"
+
+    The scale needs Spoolman, FilaMan or BamBuddy running somewhere.
+    [SpoolmanScale Pro](pro/index.md) turns a Raspberry Pi into that
+    server: installed with one command, then switched, backed up and
+    updated from a web page, with the scale taken along.
+
 
 ---
 

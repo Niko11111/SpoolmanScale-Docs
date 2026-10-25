@@ -1,8 +1,8 @@
 # SpoolmanScale Pro
 
-!!! note "Beta"
-    SpoolmanScale Pro 2.0 is in beta. It runs on a Raspberry Pi you set up
-    yourself; a ready-made SD card image is planned.
+!!! info "Version 0.2.0"
+    A complete rewrite of the 0.1 prototype. It runs on a Raspberry Pi you
+    set up yourself with one command.
 
 SpoolmanScale Pro turns a Raspberry Pi into the filament server for your
 SpoolmanScale. It runs the filament managers the scale speaks, **Spoolman**,
@@ -20,10 +20,11 @@ between them from a web page. The scale is switched along with it.
   not start, the old one comes back by itself.
 - **The Pi updates itself:** Raspberry Pi OS, with a list of every package
   before anything is installed, and SpoolmanScale Pro from its releases.
+  It looks for updates every six hours and installs only when you click.
 - **Backups happen by themselves**, every day, and can be downloaded or
   restored with a click.
-- **It stays a Raspberry Pi.** Use it for other things too; recommended
-  extras install from the page, starting with Tailscale for remote access.
+- **It stays a Raspberry Pi.** Use it for other things too. Remote access
+  through Tailscale installs from the page.
 
 ---
 
@@ -48,9 +49,9 @@ between them from a web page. The scale is switched along with it.
 | Switching | one click; the scale follows, the page shows each step |
 | The scale | found on the network, set up from the page: server addresses, FilaMan registration, BamBuddy key |
 | Backups | by hand and once a day, download, restore, from a file |
-| Updates | backends with their release notes, SpoolmanScale Pro itself, Raspberry Pi OS |
-| Network | WLAN from the page, and a setup WLAN when nothing else connects |
-| Extras | recommended software with one click, starting with Tailscale for remote access |
+| Updates | backends with their release notes, SpoolmanScale Pro itself, Raspberry Pi OS; looked for every six hours, BamBuddy's daily builds on request |
+| Network | WLAN from the page, the Pi's own WLAN, a fixed address, and a setup WLAN when nothing else connects |
+| Remote access | Tailscale, installed and connected from the page |
 | Access | a login your password manager can store |
 
 ---
@@ -70,7 +71,13 @@ Which Pi does what:
 | 4 / 5 with 2 GB or more | all three at once | everything |
 
 The page recognises the Pi and offers what fits. RAM in use, measured:
-Spoolman about 100 MB, BamBuddy 190 to 410 MB, FilaMan 370 to 470 MB.
+Spoolman about 100 MB, BamBuddy 240 to 420 MB, FilaMan about 480 MB.
+
+!!! note "BamBuddy below a Pi 4"
+    Inventory, printer status, print archive and notifications run on any
+    of them. BamBuddy's live camera view for X1, H2 and P2 printers and its
+    timelapses need a Pi 4 or 5. Each backend's *Info* on the overview says
+    what the Pi in front of you means for it.
 
 Several at once is useful when backends work together: BamBuddy can keep
 its inventory in Spoolman, and FilaMan has a plugin for BamBuddy.

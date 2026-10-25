@@ -43,6 +43,10 @@ Passwort geht es nach einer Warnung auch, für Netze, denen du vertraust.
 
 ## 3. Backend wählen
 
+Nach der ersten Anmeldung öffnet sich ein Einrichtungsassistent und führt
+durch diesen und den nächsten Schritt. Er lässt sich überspringen und unter
+**System** wieder öffnen; von Hand geht es so:
+
 In der **Übersicht** bei Spoolman, FilaMan oder BamBuddy *Aktivieren*
 drücken. Die Seite zeigt jeden Schritt: laufendes Backend stoppen, neues
 starten, warten, bis es antwortet, Waage umstellen.
@@ -65,7 +69,8 @@ starten, warten, bis es antwortet, Waage umstellen.
    braucht es nur, wenn BamBuddys eigene Anmeldung an ist; auch den dort
    einfügen.
 
-Ab jetzt nimmt jeder Wechsel in der Übersicht die Waage mit.
+Ab jetzt nimmt jeder Wechsel in der Übersicht die Waage mit. Neuere
+Versionen von SpoolmanScale Pro installierst du im Reiter **Updates**.
 
 ---
 

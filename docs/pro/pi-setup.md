@@ -42,6 +42,10 @@ a password is possible after a warning, for networks you trust.
 
 ## 3. Pick a backend
 
+After the first login a setup assistant opens and takes you through this
+step and the next. It can be skipped and opened again under **System**; by
+hand it goes like this:
+
 On the **Overview**, press *Activate* on Spoolman, FilaMan or BamBuddy. The
 page shows each step: stop the running backend, start the new one, wait
 until it answers, switch the scale.
@@ -62,7 +66,8 @@ until it answers, switch the scale.
 4. With FilaMan active: *Register the scale in FilaMan*. A BamBuddy API key
    is only needed when BamBuddy's own login is on; paste it there too.
 
-From now on every switch on the Overview takes the scale along.
+From now on every switch on the Overview takes the scale along. Later
+versions of SpoolmanScale Pro install from the **Updates** tab.
 
 ---
 

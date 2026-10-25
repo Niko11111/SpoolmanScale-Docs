@@ -138,6 +138,13 @@ Etwa **50 bis 60 Euro** an Teilen. Einzelheiten in der
     - [Troubleshooting](help/troubleshooting.md)
     - [FAQ](help/faq.md)
 
+=== "Ich brauche einen Server"
+
+    Die Waage braucht Spoolman, FilaMan oder BamBuddy irgendwo im Netz.
+    [SpoolmanScale Pro](pro/index.md) macht einen Raspberry Pi zu diesem
+    Server: mit einem Befehl installiert, danach über eine Webseite
+    umgeschaltet, gesichert und aktualisiert, und die Waage zieht mit.
+
 
 ---
 

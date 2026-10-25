@@ -87,6 +87,9 @@ No. SpoolmanScale is a standalone device. It needs a filament manager somewhere
 on your network - [Spoolman, FilaMan or BamBuddy](../use/backends.md) - and that
 can run anywhere: a NAS, a server, an existing Pi, a Docker host.
 
+[SpoolmanScale Pro](../pro/index.md) turns a Raspberry Pi into such a
+server, set up and kept up to date from a web page.
+
 ---
 
 ### Does it work without a load cell?

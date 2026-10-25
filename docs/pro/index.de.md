@@ -1,8 +1,8 @@
 # SpoolmanScale Pro
 
-!!! note "Beta"
-    SpoolmanScale Pro 2.0 ist in der Beta. Es läuft auf einem Raspberry Pi,
-    den du selbst einrichtest; ein fertiges SD-Karten-Image ist geplant.
+!!! info "Version 0.2.0"
+    Ein kompletter Neubau des Prototyps 0.1. Es läuft auf einem Raspberry
+    Pi, den du mit einem Befehl selbst einrichtest.
 
 SpoolmanScale Pro macht einen Raspberry Pi zum Filament-Server deiner
 SpoolmanScale. Er betreibt die Filamentverwaltungen, die die Waage spricht,
@@ -21,12 +21,12 @@ wird dabei mit umgestellt.
   startet die neue Version nicht, kommt die alte von selbst zurück.
 - **Der Pi hält sich selbst aktuell:** Raspberry Pi OS, mit einer Liste
   aller Pakete, bevor etwas installiert wird, und SpoolmanScale Pro aus
-  seinen Releases.
+  seinen Releases. Er sucht alle sechs Stunden nach Updates und installiert
+  nur, wenn du klickst.
 - **Backups laufen von selbst**, jeden Tag, und lassen sich mit einem Klick
   herunterladen oder wiederherstellen.
-- **Es bleibt ein Raspberry Pi.** Nutze ihn auch für anderes; empfohlene
-  Zusatz-Software installiert sich von der Seite aus, den Anfang macht
-  Tailscale für den Fernzugriff.
+- **Es bleibt ein Raspberry Pi.** Nutze ihn auch für anderes. Fernzugriff
+  über Tailscale installiert sich von der Seite aus.
 
 ---
 
@@ -52,9 +52,9 @@ wird dabei mit umgestellt.
 | Umschalten | ein Klick; die Waage folgt, die Seite zeigt jeden Schritt |
 | Die Waage | wird im Netz gefunden und von der Seite aus eingerichtet: Server-Adressen, FilaMan-Registrierung, BamBuddy-Key |
 | Backups | von Hand und einmal täglich, herunterladen, wiederherstellen, aus Datei |
-| Updates | Backends mit ihren Release-Notes, SpoolmanScale Pro selbst, Raspberry Pi OS |
-| Netzwerk | WLAN über die Seite, und ein Einrichtungs-WLAN, wenn sonst nichts verbindet |
-| Extras | empfohlene Software mit einem Klick, den Anfang macht Tailscale für den Fernzugriff |
+| Updates | Backends mit ihren Release-Notes, SpoolmanScale Pro selbst, Raspberry Pi OS; alle sechs Stunden gesucht, BamBuddys Daily-Builds auf Wunsch |
+| Netzwerk | WLAN über die Seite, das eigene WLAN des Pi, eine feste Adresse, und ein Einrichtungs-WLAN, wenn sonst nichts verbindet |
+| Fernzugriff | Tailscale, von der Seite aus installiert und verbunden |
 | Zugang | eine Anmeldung, die dein Passwortmanager speichern kann |
 
 ---
@@ -74,8 +74,14 @@ Welcher Pi was kann:
 | 4 / 5 ab 2 GB | alle drei gleichzeitig | alles |
 
 Die Seite erkennt den Pi und bietet an, was passt. RAM im Betrieb,
-gemessen: Spoolman etwa 100 MB, BamBuddy 190 bis 410 MB, FilaMan 370 bis
-470 MB.
+gemessen: Spoolman etwa 100 MB, BamBuddy 240 bis 420 MB, FilaMan etwa
+480 MB.
+
+!!! note "BamBuddy unter einem Pi 4"
+    Bestand, Druckerstatus, Druckarchiv und Benachrichtigungen laufen auf
+    jedem. BamBuddys Kamera-Liveansicht für X1-, H2- und P2-Drucker und
+    seine Zeitraffer brauchen einen Pi 4 oder 5. Die *Info* jedes Backends
+    in der Übersicht sagt, was der Pi vor dir für es bedeutet.
 
 Mehrere gleichzeitig lohnen sich, wenn Backends zusammenarbeiten: BamBuddy
 kann sein Inventar in Spoolman führen, und FilaMan hat ein Plugin für

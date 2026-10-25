@@ -170,6 +170,26 @@ der Pi.
 
 ---
 
+## SpoolmanScale Pro (Pi)
+
+??? question "spoolmanscale-pro.local nicht erreichbar"
+    - Unter Windows: [Bonjour Print Services](https://support.apple.com/kb/DL999)
+      installieren
+    - Ersatzweise die IP-Adresse des Pi aus deinem Router benutzen
+    - Der Pi findet gar kein Netz? Nach 90 Sekunden öffnet er sein eigenes
+      Einrichtungs-WLAN, siehe [Den Pi einrichten](../pro/pi-setup.md#der-pi-kennt-kein-wlan)
+
+??? question "Ein Backend startet nicht"
+    - *Log* auf seiner Kachel in der Übersicht zeigt, was das Backend meldet
+    - Das Log des Dienstes: `journalctl -u spoolmanscale-pro -n 100`
+    - Seine Daten kaputt? Im Reiter **Backup** ein Backup wiederherstellen
+
+??? question "Anmeldung des Pi vergessen"
+    - Auf dem Pi: `sudo rm /var/lib/spoolmanscale-pro/auth.json`, die Seite
+      neu laden und die Anmeldung neu anlegen
+
+---
+
 !!! tip "Kommst du nicht weiter?"
     Komm in den [Discord](https://discord.gg/K3KmKnrWhP) - dort hilft die
     Community gern.
