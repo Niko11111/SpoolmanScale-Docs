@@ -32,6 +32,19 @@ screen onto it.
 
 ---
 
+## Creating a spool
+
+A spool that is not in your inventory yet can be created at the scale.
+
+- **A Bambu tag:** put the spool on the pad. A card says the spool is not in
+  the inventory yet and offers **Create**. The scale makes the filament and the
+  spool from what the tag says: material, colour, weight and temperatures.
+- **A blank NTAG:** put the tag on the reader and tap **New from database**.
+  Choose maker, material, colour and size, and the scale creates the spool and
+  links the tag to it.
+
+---
+
 ## Writing
 
 The scale also writes tags, with every backend, and needs nothing special on the
@@ -40,7 +53,7 @@ server for that.
 !!! danger "Writing replaces everything on the tag"
     Whatever is on the tag now is lost. Bambu tags are never written.
 
-**Settings → Scale → Write tag after linking**
+**Settings → Spools & scale → Write tag after linking**
 
 ![Tag writing options](../assets/images/ui/en/15_tagwrite.png)
 
@@ -148,4 +161,4 @@ checks the weight and only comes when you really lift the spool.
 
 Below 50 g, or on a device without a load cell, the scale has only the reader to
 go by. If the location list then opens on its own, check the positioning above,
-or switch off **Location on removal** under **Settings → Scale**.
+or switch off **Location on removal** under **Settings → Spools & scale**.

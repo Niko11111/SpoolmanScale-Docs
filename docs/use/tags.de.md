@@ -34,6 +34,19 @@ schreibt die Spule vom Bildschirm darauf.
 
 ---
 
+## Eine Spule anlegen
+
+Eine Spule, die noch nicht im Inventar steht, legst du an der Waage an.
+
+- **Ein Bambu-Tag:** Leg die Spule auf. Eine Karte sagt, dass die Spule noch
+  nicht im Inventar ist, und bietet **Anlegen** an. Die Waage legt Filament und
+  Spule aus den Angaben des Tags an: Material, Farbe, Gewicht und Temperaturen.
+- **Ein leerer NTAG:** Leg den Tag auf den Leser und tippe auf
+  **Neu aus Datenbank**. Wähle Hersteller, Material, Farbe und Größe, und die
+  Waage legt die Spule an und verknüpft den Tag mit ihr.
+
+---
+
 ## Schreiben
 
 Die Waage beschreibt Tags auch, mit jedem Backend, und auf dem Server braucht es
@@ -43,7 +56,7 @@ dafür nichts Besonderes.
     Was jetzt auf dem Tag steht, ist danach weg. Bambu-Tags werden nie
     beschrieben.
 
-**Einstellungen → Waage → Tag nach Verlinken beschreiben**
+**Einstellungen → Spulen & Waage → Tag nach Verlinken beschreiben**
 
 ![Optionen für das Tag-Schreiben](../assets/images/ui/de/15_tagwrite.png)
 
@@ -152,4 +165,4 @@ abnimmst.
 
 Unter 50 g oder an einem Gerät ohne Wägezelle hat die Waage nur den Leser. Öffnet
 sich die Lagerort-Liste dann von selbst, prüf die Position oben oder schalte
-**Ortsabfrage bei Entnahme** unter **Einstellungen → Waage** aus.
+**Ortsabfrage bei Entnahme** unter **Einstellungen → Spulen & Waage** aus.
