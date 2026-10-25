@@ -563,3 +563,51 @@
   font-size: 0.75rem;
   color: var(--md-default-fg-color--light);
 }
+
+/* ================================================
+   Pages of the current section, on phones only
+   ================================================
+   Under 76.25em the theme drops the tabs and the sidebar. subnav.js puts the
+   section's pages in one row there. It scrolls away with the page: pinned, it
+   would cost a phone 52 px of a small screen for good. */
+.ss-subnav {
+  display: none;
+}
+
+@media screen and (max-width: 76.1875em) {
+  .ss-subnav {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.4rem 0.8rem;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    background: var(--md-default-bg-color);
+    border-bottom: 1px solid var(--md-default-fg-color--lightest);
+  }
+
+  .ss-subnav::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* 44 px high, the smallest comfortable tap target on a touch screen. */
+  .ss-subnav__link {
+    display: inline-flex;
+    align-items: center;
+    flex: none;
+    min-height: 44px;
+    padding: 0 0.9rem;
+    border: 1px solid var(--md-default-fg-color--lighter);
+    border-radius: 22px;
+    font-size: 0.7rem;
+    color: var(--md-default-fg-color--light);
+  }
+
+  .ss-subnav__link--active {
+    background: #10b981;
+    border-color: #10b981;
+    color: #0f172a;
+    font-weight: 600;
+  }
+}
