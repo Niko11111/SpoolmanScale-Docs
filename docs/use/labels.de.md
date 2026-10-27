@@ -28,7 +28,7 @@ QR-Code, der die Spule in deinem Backend öffnet.
 ![Drucker-Screen](../assets/images/ui/de/26_printer.png)
 
 Welche Drucker unterstützt sind, welche zwei wir empfehlen und welche Etiketten
-dazu passen, steht unter [Empfohlene Drucker](printers.md). Die Etikettengröße
+dazu passen, steht unter [Etikettendrucker](printers.md). Die Etikettengröße
 ist Breite quer zum Druckkopf mal Länge in Laufrichtung, so wie sie auf der
 Rolle steht.
 

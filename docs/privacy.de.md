@@ -29,7 +29,7 @@ anderen Anbieter.
 
 Einige Einstellungen merkt sich die Seite im lokalen Speicher deines Browsers:
 das Farbschema, den gewählten Reiter (etwa Spoolman oder FilaMan) und auf der
-Seite [Empfohlene Drucker](use/printers.md) den gewählten Amazon-Shop. Diese
+Seite [Etikettendrucker](use/printers.md) den gewählten Amazon-Shop. Diese
 Werte verlassen deinen Browser nicht, und du kannst sie jederzeit über die
 Browser-Einstellungen löschen. Sie dienen nur der Funktion, die du selbst
 gewählt hast (§ 25 Abs. 2 Nr. 2 TDDDG).

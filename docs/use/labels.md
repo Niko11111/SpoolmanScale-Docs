@@ -26,7 +26,7 @@ your backend.
 ![Printer screen](../assets/images/ui/en/26_printer.png)
 
 Which printers are supported, which two we recommend and the labels that go
-with them: see [Recommended printers](printers.md). The label stock is width
+with them: see [Label printers](printers.md). The label stock is width
 across the head by length along the feed, as printed on the roll.
 
 ---

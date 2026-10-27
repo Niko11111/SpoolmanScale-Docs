@@ -46,7 +46,7 @@ manager - without opening a browser.
   to unlink its tag; an NTAG on the pad is erased, ready for the next spool.
 - 🏷️ **Labels on more printers** - NIIMBOT B1 and M2 (300 dpi) and the Phomemo
   M110S join the M220, M110 and M100. The editor in the browser has five
-  arrangements and many more fields. [Recommended printers](use/printers.md)
+  arrangements and many more fields. [Label printers](use/printers.md)
 - 🪟 **Inside BamBuddy or FilaMan** - the scale's web interface as a page in
   your backend, in its light or dark mode.
 - ⚖️ **Auto-tare and optional bag** - a slow drift on the empty pad goes back to

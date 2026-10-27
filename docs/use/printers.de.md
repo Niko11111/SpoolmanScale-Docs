@@ -1,4 +1,4 @@
-# Empfohlene Drucker
+# Etikettendrucker
 
 Zwei Drucker empfehlen wir: Sie sind von uns aus erster Hand verifiziert, und
 jede neue Etikettenfunktion wird zuerst auf ihnen gebaut und getestet. Die

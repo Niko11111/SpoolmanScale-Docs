@@ -117,6 +117,47 @@ Waage beide Spulen und bietet **Umhängen** an.
 
 ---
 
+## Welche Tags funktionieren?
+
+=== "Funktioniert gut"
+
+    - **NTAG213, NTAG215, NTAG216**: werden über ihre UID gefunden, die Waage
+      liest und schreibt die Datensätze darauf. NTAG215 empfehlen wir.
+    - **MIFARE Ultralight und Ultralight C**: werden über ihre UID gefunden und
+      sind sehr stabil beim Lesen.
+    - **Bambu Lab**: wird gelesen und entschlüsselt, die Spule erscheint von
+      selbst.
+    - **OpenSpool-, FilaMan- und Anycubic-ACE-Datensätze** auf einem NTAG: werden
+      mit ihrem Inhalt angezeigt.
+
+=== "Funktioniert mit Einschränkungen"
+
+    - **MIFARE Classic, nicht von Bambu**: wird nur über die UID gefunden und
+      langsamer. Eine bekannte Spule erscheint nach 3 bis 5 Sekunden, eine
+      unbekannte nach etwa zehn, weil die Waage sie zuerst als Bambu-Tag
+      versucht. Beschreiben kann die Waage ihn nicht. Für neue Spulen lieber NTAG
+      kaufen.
+    - **Snapmaker**-Tags: lesbar, mit einem Schalter im Web-Interface.
+    - **Creality-CFS**-Tags: in Entwicklung für 0.8.4, ebenfalls hinter einem
+      Schalter.
+    - **NTAG213**: wird gut gelesen, ist aber zu klein für die Datensätze der
+      Waage.
+    - **MIFARE DESFire**: wird über die UID eventuell gefunden, aber nicht
+      zuverlässig. Nicht empfohlen.
+
+=== "Funktioniert nicht"
+
+    - **ISO-15693-Tags**, auch Prusas OpenPrintTag: ein anderer Funkstandard, den
+      der Reader nicht sieht. Siehe
+      [OpenPrintTag](compatibility.md#openprinttag).
+    - **Tags mit 10-Byte-UID**: vom Reader gesehen, dann ignoriert.
+    - **Tags auf Metall** oder über einem Metalleinsatz der Spule.
+
+Welche Marke welchen Tag nutzt und wie weit wir sie unterstützen:
+[Spulen, Tags und Drucker](compatibility.md).
+
+---
+
 ## Welchen Tag soll ich kaufen?
 
 **NTAG215.** Er wird zuverlässig gelesen und hat Platz für einen Datensatz, falls
@@ -134,6 +175,8 @@ die Waage ihn beschreiben soll.
 
 Runde 25-mm-Sticker sind am verbreitetsten und sitzen gut auf Spulennaben.
 
+Welche Spulenmarken und Drucker welchen Tag nutzen: [Spulen, Tags und Drucker](compatibility.md).
+
 ---
 
 ## Position - näher ist nicht besser
@@ -149,10 +192,16 @@ Antenne des Lesers, und das Feld bricht zusammen.
     Tag reichen meist.
 
 - Klebe den Tag nicht auf Metall oder über einen Metalleinsatz der Spule.
-- Die Spule kann auf der Platte nur wenig rutschen, der Abstand muss also vom
-  Tag kommen.
 
 Bambu-Lab-Spulen zeigen das selten, weil ihr Tag vertieft im Spulenkern sitzt.
+
+!!! tip "Schieb die Spule, und es hängt vom Hersteller ab"
+    Auf der Platte lässt sich eine Spule um etwa **1 cm** verschieben, zum Reader
+    hin oder von ihm weg. Eine **Bambu-Lab**-Spule liest am besten **so nah am
+    Reader wie möglich**. Jeder **andere Tag** liest am besten andersherum: **vom
+    Reader weggeschoben**, denn ein Tag nah an der Antenne liest schlechter.
+    Liest eine Spule nicht, schieb sie ein Stück, bevor du etwas anderes
+    änderst.
 
 ---
 

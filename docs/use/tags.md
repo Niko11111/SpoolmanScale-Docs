@@ -113,6 +113,43 @@ spools and offers to **Move** it.
 
 ---
 
+## Which tags work
+
+=== "Works well"
+
+    - **NTAG213, NTAG215, NTAG216**: found by their UID, and the scale can read
+      and write the records on them. NTAG215 is the one we recommend.
+    - **MIFARE Ultralight and Ultralight C**: found by their UID, very stable
+      to read.
+    - **Bambu Lab**: read and decrypted, the spool comes up by itself.
+    - **OpenSpool, FilaMan and Anycubic ACE records** on an NTAG: shown with
+      their contents.
+
+=== "Works with limits"
+
+    - **MIFARE Classic, not from Bambu**: found by the UID only, and slower. A
+      known spool shows up after 3 to 5 seconds, an unknown one after about ten,
+      because the scale tries it as a Bambu tag first. The scale cannot write
+      to it. For new spools, buy NTAG.
+    - **Snapmaker** tags: readable, with a switch in the web interface.
+    - **Creality CFS** tags: in development for 0.8.4, also behind a switch.
+    - **NTAG213**: reads fine, but is too small for the scale's records.
+    - **MIFARE DESFire**: may be found by its UID, but not reliably. Not
+      recommended.
+
+=== "Does not work"
+
+    - **ISO 15693 tags**, including Prusa's OpenPrintTag: a different radio
+      standard that the reader cannot see. See
+      [OpenPrintTag](compatibility.md#openprinttag).
+    - **Tags with a 10-byte UID**: seen by the reader, then ignored.
+    - **Tags on metal**, or over a metal spool insert.
+
+Which brand uses which tag, and how far each is supported:
+[Spools, tags and printers](compatibility.md).
+
+---
+
 ## Which tag should I buy?
 
 **NTAG215.** It reads reliably and has room for a record if you want the scale
@@ -130,6 +167,8 @@ to write it.
 
 Round 25 mm stickers are the most common and sit well on spool hubs.
 
+Which spool brands and printers use which tag: [Spools, tags and printers](compatibility.md).
+
 ---
 
 ## Positioning - closer is not better
@@ -145,11 +184,16 @@ antenna, and the field collapses.
     all it takes.
 
 - Do not stick the tag onto metal or over a metal spool insert.
-- The spool can only shift a little on the plate, so the distance has to come
-  from the tag side.
 
 Bambu Lab spools rarely show this because their tag sits recessed inside the
 spool core.
+
+!!! tip "Slide the spool, and it depends on the maker"
+    On the plate a spool can be shifted by about **1 cm**, towards the reader or
+    away from it. A **Bambu Lab** spool reads best as **close to the reader as
+    it goes**. Every **other tag** reads best the other way round: pushed
+    **away** from the reader, because a tag close to the antenna reads worse.
+    If a spool does not read, slide it a little before you change anything else.
 
 ---
 

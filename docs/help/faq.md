@@ -114,7 +114,81 @@ locations, and the weights leave the screen.
 
 ---
 
+### Why this display, and will there be a bigger one?
+
+I picked the WT32-SC01 Plus right at the start of the project, because others
+had used it for similar builds. It turned out to be a good choice: a small,
+tidy device that is about as wide as a spool and does not take up much room
+next to your printers. And in the end this is a scale for quickly measuring
+filament, not a dashboard.
+
+Bigger is not automatically better here, and a bigger screen is not only a
+display. Every layout in the firmware is built for 480x320 pixels, a 5" or 7"
+panel needs a different controller board behind it, and the case would have
+to be redesigned. Larger panels also talk a different protocol that uses many
+more pins, and that is where most boards run out of connectors (see below).
+So I do not plan to support many display sizes. If a board comes along that
+meets the points below, 5" is a size I could stand behind. 7" does not fit
+this project.
+
+You are welcome to adapt the open-source firmware to a different display
+yourself. Community ports are listed in the README.
+
+---
+
+### What is planned for the hardware?
+
+Nothing is promised and there are no dates, but this is the direction, so that
+you do not have to ask each time.
+
+**The case stays small.** I am happy with it and want it to change as little as
+possible.
+
+**An exchangeable NFC reader.** Today's reader is easy to get and well
+documented, but it cannot read ISO 15693 tags such as
+[OpenPrintTag](https://openprinttag.org/). A successor needs ISO 15693 and
+should talk to the scale over I2C or another two-wire bus, because the other
+pins are needed elsewhere. A reader with a detachable antenna would let the
+board sit at the bottom of the case, shrink the part that sticks out, and make
+it easy to move or swap for spools with the text in other places. The
+candidates I know are still hard to get and cost a multiple of today's reader.
+
+**A digital load cell over RS485.** Cells with the converter built in, wired
+and with a plug, would save soldering. That only works if the board brings
+RS485 out to a connector or an I/O port. It would also free the I2C bus for
+the NFC reader.
+
+**A Raspberry Pi inside the case** is on hold. A Pi Zero is too weak for
+FilaMan and BamBuddy, so I am waiting for a stronger successor.
+
+**What the next board has to do:**
+
+- RS485 on a connector or an I/O port, and a free I2C bus plus pins for UART
+- the USB-C socket not at the very edge of the board, so a cable can enter the
+  case in the present mounting position
+- a flush glass front with no frame or lip
+- more performance than the ESP32-S3, with WiFi and Bluetooth on board
+- easy to get from several shops and not from one small maker that is out of
+  stock for months, at a fair price
+- widely used libraries with plenty of community experience
+
+I have not found a board that meets all of these. Ideas and board tips are
+welcome on [Discord](https://discord.gg/K3KmKnrWhP).
+
+---
+
 ## Tags
+
+### Which spools, tags and printers work?
+
+The full list, with what works today, what is in development and what we do not
+know yet, is on [Spools, tags and printers](../use/compatibility.md). In short:
+Bambu Lab, NTAG stickers, OpenSpool, FilaMan and Anycubic ACE tags work,
+Snapmaker can be read, Creality is in development, and TigerTag, OpenTag3D,
+Elegoo and Qidi are planned. Prusa's OpenPrintTag does not work with today's
+reader, see [OpenPrintTag](../use/compatibility.md#openprinttag).
+
+---
 
 ### Do I have to write anything to my tags?
 
@@ -155,7 +229,9 @@ after linking, the scale asks for the second one. See
 
 **Snapmaker** tags can be read (an option in the web settings), **Creality**
 tags by their UID. **Prusa's OpenPrintTag** uses a radio standard the PN532
-cannot read.
+cannot read. See
+[OpenPrintTag](../use/compatibility.md#openprinttag) and
+[What is planned for the hardware?](#what-is-planned-for-the-hardware).
 
 ---
 
@@ -231,7 +307,7 @@ a password (4 to 8 digits).
 
 The **Phomemo M220** and M110S and the **NIIMBOT B1** and M2 work over
 Bluetooth Low Energy, more are experimental. See the
-[recommended printers](../use/printers.md) and [Bluetooth & labels](../use/labels.md).
+[label printers](../use/printers.md) and [Bluetooth & labels](../use/labels.md).
 
 ---
 

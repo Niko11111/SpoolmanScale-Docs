@@ -1,4 +1,4 @@
-# Recommended printers
+# Label printers
 
 We recommend two printers: we verified them first-hand, and every new label
 feature is built and tested on them first. The other models were cleared by

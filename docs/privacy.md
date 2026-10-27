@@ -27,7 +27,7 @@ Your browser does not connect to Google or any other provider for them.
 
 The site remembers a few settings in your browser's local storage: the colour
 scheme, the tab you picked (such as Spoolman or FilaMan) and, on the
-[Recommended printers](use/printers.md) page, the Amazon shop you picked. These
+[Label printers](use/printers.md) page, the Amazon shop you picked. These
 values never leave your browser, and you can delete them at any time in your
 browser's settings. They only serve the function you chose yourself (Section
 25(2) No. 2 TDDDG).

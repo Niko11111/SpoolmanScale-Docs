@@ -48,7 +48,7 @@ deiner Filamentverwaltung ab - ohne dass du einen Browser aufmachen musst.
   bereit für die nächste Spule.
 - 🏷️ **Etiketten auf mehr Druckern** - NIIMBOT B1 und M2 (300 dpi) und der
   Phomemo M110S kommen zu M220, M110 und M100. Der Editor im Browser hat fünf
-  Anordnungen und viele weitere Felder. [Empfohlene Drucker](use/printers.md)
+  Anordnungen und viele weitere Felder. [Etikettendrucker](use/printers.md)
 - 🪟 **In BamBuddy oder FilaMan** - die Weboberfläche der Waage als Seite in
   deinem Backend, in dessen hellem oder dunklem Modus.
 - ⚖️ **Auto-Tara und Beutel optional** - eine langsame Drift auf der leeren Waage

@@ -134,11 +134,12 @@ plugins:
             The main screen: Der Hauptbildschirm
             Backends: Backends
             NFC tags: NFC-Tags
+            Spools, tags & printers: Spulen, Tags & Drucker
             Weighing & calibration: Wiegen & Kalibrieren
             Drying & location: Trocknung & Lagerort
             AMS view: AMS-Ansicht
             Bluetooth & labels: Bluetooth & Etiketten
-            Recommended printers: Empfohlene Drucker
+            Label printers: Etikettendrucker
             The web interface: Web-Interface
             Updating the firmware: Firmware aktualisieren
             Pro: Pro
@@ -185,11 +186,12 @@ nav:
     - The main screen: use/main-screen.md
     - Backends: use/backends.md
     - NFC tags: use/tags.md
+    - Spools, tags & printers: use/compatibility.md
     - Weighing & calibration: use/weighing.md
     - Drying & location: use/drying.md
     - AMS view: use/ams.md
     - Bluetooth & labels: use/labels.md
-    - Recommended printers: use/printers.md
+    - Label printers: use/printers.md
     - The web interface: use/web.md
     - Updating the firmware: use/updating.md
   - Pro:
