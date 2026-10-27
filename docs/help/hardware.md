@@ -7,6 +7,10 @@ dates. Status of 27 October 2026.
 Each section has its own link, so you can point to exactly the question that
 was asked.
 
+**Want to suggest a board or another part?** Thank you for thinking along.
+Please check it against [what the next board has to do](#next-board) first. It
+saves us both time.
+
 ---
 
 ## Why this display { #display }

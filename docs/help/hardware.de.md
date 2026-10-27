@@ -7,6 +7,10 @@ Stand 27. Oktober 2026.
 Jeder Abschnitt hat einen eigenen Link, damit du genau auf die Frage verweisen
 kannst, die gestellt wurde.
 
+**Du willst ein Board oder ein anderes Teil vorschlagen?** Danke, dass du
+mitdenkst. Prüf es bitte zuerst gegen [was das nächste Board können muss](#next-board).
+Das spart uns beiden Zeit.
+
 ---
 
 ## Warum dieses Display { #display }
