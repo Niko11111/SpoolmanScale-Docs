@@ -76,8 +76,10 @@ Showing the same UI on a bigger display works like this:
   the voltage converter and the charging electronics saves a separate board
   for each of them. It is not a must: a really good board without it would
   still win.
-- **The NFC reader's interrupt on a pin that can wake the scale from deep
-  sleep**, so that putting a spool on the reader wakes it.
+- **One free pin that can wake the board from deep sleep**, for the NFC reader's
+  interrupt: it has to be a pin from the chip's low-power part (on the ESP32-S3
+  GPIO 0 to 21, not a boot pin), at 3.3 V and with a pull-up, so that the reader
+  pulling the line low wakes the scale when a spool is put on.
 - **A separate power input.** If the USB-C socket sits badly, a second way to
   power the board lets us take only the power from USB-C and feed it in
   elsewhere. To flash the board you would then take it out of the case. That is

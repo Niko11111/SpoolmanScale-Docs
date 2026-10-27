@@ -77,8 +77,11 @@ Dieselbe UI auf einem größeren Display zu zeigen, geht so:
   laufen am liebsten mit Akku. Ein Board, das Anschluss, Spannungswandler und
   Ladeelektronik schon hat, spart für jedes davon eine eigene Platine. Es ist kein
   Muss: Ein richtig gutes Board ohne diese Funktion würde trotzdem gewinnen.
-- **Der Interrupt des NFC-Readers auf einem Pin, der die Waage aus dem Deep Sleep
-  wecken kann**, damit das Auflegen einer Spule sie aufweckt.
+- **Ein freier Pin, der das Board aus dem Deep Sleep wecken kann**, für den
+  Interrupt des NFC-Readers: Er muss aus dem Low-Power-Teil des Chips stammen (beim
+  ESP32-S3 GPIO 0 bis 21, kein Boot-Pin), mit 3,3 V arbeiten und einen Pull-up
+  haben, damit der Reader die Leitung auf Low ziehen und die Waage beim Auflegen
+  einer Spule wecken kann.
 - **Ein eigener Stromeingang.** Liegt die USB-C-Buchse ungünstig, kann man mit einem
   zweiten Weg zur Stromversorgung von USB-C nur die Spannung abgreifen und sie
   woanders einspeisen. Zum Flashen müsste man das Board dann aus dem Gehäuse
