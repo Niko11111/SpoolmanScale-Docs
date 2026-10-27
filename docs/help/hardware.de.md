@@ -56,7 +56,12 @@ Dieselbe UI auf einem größeren Display zu zeigen, geht so:
 
 ## Was das nächste Board können muss { #next-board }
 
-- RS485 an einem Stecker oder I/O-Port, dazu ein freier I2C-Bus und Pins für UART
+- **Ein freier I2C-Bus an einem Stecker.** Viele Boards haben keinen. Er darf mit
+  nichts anderem auf dem Board geteilt werden: kein weiterer Baustein daran, damit
+  keine Adresse mit der des NFC-Readers kollidiert. Am besten sind sogar **zwei**
+  freie I2C-Busse.
+- **RS485 an einem Stecker oder I/O-Port**
+- **Zwei freie Pins für einen UART**
 - die USB-C-Buchse nicht ganz am Rand des Boards, damit ein Kabel in der jetzigen
   Einbaulage ins Gehäuse kommt
 - eine bündige Glasfront ohne Rahmen oder Kante

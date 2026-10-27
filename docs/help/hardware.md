@@ -55,7 +55,11 @@ Showing the same UI on a bigger display works like this:
 
 ## What the next board has to do { #next-board }
 
-- RS485 on a connector or an I/O port, and a free I2C bus plus pins for UART
+- **A free I2C bus on a connector.** Many boards do not have one. It must not be
+  shared with anything else on the board: no other chip on it, so no address
+  can clash with the NFC reader's. Best of all are **two** free I2C buses.
+- **RS485 on a connector or an I/O port**
+- **Two free pins for a UART**
 - the USB-C socket not at the very edge of the board, so a cable can enter the
   case in the present mounting position
 - a flush glass front with no frame or lip
