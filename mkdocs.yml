@@ -7,21 +7,27 @@ edit_uri: ""
 
 theme:
   name: material
+  # Three steps on the toggle: follow the browser (the first visit), light,
+  # dark. Whoever picks light or dark can get back to the browser's choice.
   palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
       primary: custom
       accent: custom
       toggle:
-        icon: material/weather-night
+        icon: material/brightness-7
         name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       primary: custom
       accent: custom
       toggle:
-        icon: material/weather-sunny
-        name: Switch to light mode
+        icon: material/brightness-4
+        name: Switch to the browser's setting
   font:
     text: Inter
     code: JetBrains Mono
