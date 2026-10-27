@@ -93,7 +93,7 @@ scale (ISO 14443 A), and no software update can change that.
 
 What we are waiting for is a successor reader that fits into the case and meets
 our criteria: two-wire connection, a detachable antenna, good availability and a
-fair price (see [What is planned for the hardware?](../help/faq.md#what-is-planned-for-the-hardware)).
+fair price (see [Hardware choices](../help/hardware.md#next-board)).
 We have not found one yet.
 
 OpenPrintTag is also still young. Prusa has put it on every new Prusament spool

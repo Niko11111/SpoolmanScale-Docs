@@ -65,7 +65,8 @@ What it can and cannot read is on the [NFC tags](../use/tags.md) page.
 
 ## NAU7802 load cell ADC
 
-A 24 bit ADC built for bridge sensors, which is what a load cell is.
+A 24 bit ADC built for bridge sensors, which is what a load cell is. Why this
+one and not the cheaper HX711: see [Hardware choices](../help/hardware.md#adc).
 
 | Property | Value |
 |---|---|

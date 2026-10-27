@@ -11,6 +11,24 @@ PN532 und NAU7802 teilen sich denselben I²C-Bus (SDA/SCL) und werden
     Der STEMMA-QT-Durchgang der NAU7802 liefert nur **3,3V**. Der PN532 braucht
     **5V**. Schließe beide Module immer direkt an die WT32-I/O-Buchse an.
 
+Ein Video vom Aufbau kommt bald.
+
+!!! tip "Welcher Weg passt zu dir?"
+    **Löten** (am schnellsten und günstigsten): Teile die vier Adern zu einem Y auf
+    und löte sie an beide Platinen. Du brauchst nur dünne Litze in ein paar Farben.
+    Ein defektes Teil ist schwerer zu tauschen.
+
+    **Stecken** (leicht zu tauschen): ein JST-SH-Pigtail am PN532 und ein
+    STEMMA-QT-Kabel an der NAU7802, beides aus der [Stückliste](bom.md). Kabel aus
+    anderen Shops haben eigene Farben und eine eigene Pinreihenfolge, siehe
+    [Pinreihenfolge der Stecker](#connector-pin-order).
+
+    **Verteilerplatine:** eine Breakout-Platine aus der Community-Liste in der
+    [Stückliste](bom.md).
+
+    Pin 8 am Board ist für später frei (siehe Tabelle). Willst du dir diese Option
+    offenhalten, bestell ein 8-poliges Kabel oder einen Stecker gleich mit.
+
 ---
 
 <div style="position: relative; width: 100%; padding-top: calc(max(56.25%, 400px));">
@@ -20,17 +38,20 @@ PN532 und NAU7802 teilen sich denselben I²C-Bus (SDA/SCL) und werden
 
 ---
 
-## WT32-SC01 Plus I/O-Buchse
+## Was wohin geht
 
-| Pin | Farbe | Signal | Geht an |
-|---|---|---|---|
-| **1** | Rot | 5V | PN532 VCC + NAU7802 VIN |
-| **2** | Schwarz | GND | PN532 GND + NAU7802 GND |
-| **3** | Gelb | GPIO10 (SDA) | PN532 SDA + NAU7802 SDA |
-| **4** | Grün | GPIO11 (SCL) | PN532 SCL + NAU7802 SCL |
-| **5** | Blau | GPIO12 | unbenutzt |
-| **6** | Weiß | GPIO13 | unbenutzt |
-| **7** | Braun | GPIO14 | PN532 RSTPDN - siehe Hinweis unten |
+Eine Tabelle, nach Signalname. Die Farben sind die des mitgelieferten Kabels.
+
+| WT32-Pin | Farbe | Signal | PN532 | NAU7802 |
+|---|---|---|---|---|
+| **1** | Rot | 5V | VCC | VIN |
+| **2** | Schwarz | GND | GND | GND |
+| **3** | Gelb | GPIO10 (SDA) | SDA | SDA |
+| **4** | Grün | GPIO11 (SCL) | SCL | SCL |
+| **5** | Blau | GPIO12 | | unbenutzt |
+| **6** | Weiß | GPIO13 | | unbenutzt |
+| **7** | Braun | GPIO14 | RSTPDN (optional, siehe Hinweis unten) | |
+| **8** | nicht im Kabel | GPIO21 | | für später frei |
 
 ---
 
@@ -71,16 +92,6 @@ Der PN532 hat keinen Stecker - **die Adern werden direkt angelötet**.
     immer sauber hoch, und eine Waage, die nie umgelötet wird, verhält sich
     genau wie heute.
 
-### PN532-Belegung (JST SH 1,0 mm, 5-polig, Kabelfarben von Drittanbietern)
-
-| PN532-Pin | Farbe (Drittanbieter) | Signal | WT32-I/O-Pin |
-|---|---|---|---|
-| 1 | Schwarz | GND | Pin 2 (schwarz) |
-| 2 | Rot | 5V | Pin 1 (rot) |
-| 3 | Gelb | SDA | Pin 3 (gelb) |
-| 4 | Weiß | SCL | Pin 4 (grün) |
-| 5 | Orange | **RSTPDN** | Pin 7 (braun) |
-
 ---
 
 
@@ -120,14 +131,31 @@ SDA, SCL). Alternativ geht der STEMMA-QT-Stecker - beachte aber, dass
 JST-SH-1.0-mm-Kabel von Drittanbietern eine **andere Pinreihenfolge** haben und
 umgepinnt werden müssen.
 
-### NAU7802-Belegung (STEMMA QT, JST SH 1,0 mm, 4-polig)
+---
 
-| STEMMA-QT-Pin | Farbe (Drittanbieter) | Signal | WT32-I/O-Pin |
-|---|---|---|---|
-| 1 | Schwarz | GND | Pin 2 (schwarz) |
-| 2 | Rot | 5V | Pin 1 (rot) |
-| 3 | Gelb | SDA | Pin 3 (gelb) |
-| 4 | Weiß | SCL | Pin 4 (grün) |
+## Pinreihenfolge der Stecker { #connector-pin-order }
+
+Nur für Steck-Aufbauten. Ein Pigtail oder Kabel aus einem anderen Shop kann andere
+Farben haben: Richte dich nach der Pinnummer am Stecker und dem Signal.
+
+??? info "PN532, JST SH 1,0 mm, 5-polig (Farben eines Fremdkabels)"
+
+    | PN532-Pin | Farbe (Drittanbieter) | Signal | WT32-Pin |
+    |---|---|---|---|
+    | 1 | Schwarz | GND | 2 (schwarz) |
+    | 2 | Rot | 5V | 1 (rot) |
+    | 3 | Gelb | SDA | 3 (gelb) |
+    | 4 | Weiß | SCL | 4 (grün) |
+    | 5 | Orange | **RSTPDN** | 7 (braun) |
+
+??? info "NAU7802, STEMMA QT, JST SH 1,0 mm, 4-polig (Farben eines Fremdkabels)"
+
+    | STEMMA-QT-Pin | Farbe (Drittanbieter) | Signal | WT32-Pin |
+    |---|---|---|---|
+    | 1 | Schwarz | GND | 2 (schwarz) |
+    | 2 | Rot | 5V | 1 (rot) |
+    | 3 | Gelb | SDA | 3 (gelb) |
+    | 4 | Weiß | SCL | 4 (grün) |
 
 ---
 

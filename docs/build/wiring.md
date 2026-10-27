@@ -7,6 +7,24 @@ The PN532 and NAU7802 share the same I²C bus (SDA/SCL) and are wired **in paral
 !!! danger "Do not daisy-chain via NAU7802 STEMMA QT passthrough"
     The NAU7802's STEMMA QT passthrough port only supplies **3.3V**. The PN532 requires **5V**. Always connect both modules directly to the WT32 I/O connector.
 
+A video of the build is coming soon.
+
+!!! tip "Which way suits you?"
+    **Solder** (fastest and cheapest): split the four wires into a Y and solder
+    them to both boards. You need only thin wire in a few colours. A faulty part
+    is harder to swap.
+
+    **Plug** (easy to swap): a JST SH pigtail on the PN532 and a STEMMA QT cable
+    on the NAU7802, both from the [parts list](bom.md). Cables from other shops
+    have their own colours and pin order, see
+    [the connector pin order](#connector-pin-order).
+
+    **Splitter board:** a breakout board from the community list on the
+    [parts list](bom.md).
+
+    Pin 8 on the board is free for later (see the table). If you want to keep
+    that option, order an 8-pin cable or connector now.
+
 ---
 
 <div style="position: relative; width: 100%; padding-top: calc(max(56.25%, 400px));">
@@ -16,17 +34,20 @@ The PN532 and NAU7802 share the same I²C bus (SDA/SCL) and are wired **in paral
 
 ---
 
-## WT32-SC01 Plus I/O Connector
+## What goes where
 
-| Pin | Color | Signal | Connects to |
-|---|---|---|---|
-| **1** | Red | 5V | PN532 VCC + NAU7802 VIN |
-| **2** | Black | GND | PN532 GND + NAU7802 GND |
-| **3** | Yellow | GPIO10 (SDA) | PN532 SDA + NAU7802 SDA |
-| **4** | Green | GPIO11 (SCL) | PN532 SCL + NAU7802 SCL |
-| **5** | Blue | GPIO12 | unused |
-| **6** | White | GPIO13 | unused |
-| **7** | Brown | GPIO14 | PN532 RSTPDN - see the note below |
+One table, by signal name. The colours are those of the supplied cable.
+
+| WT32 pin | Colour | Signal | PN532 | NAU7802 |
+|---|---|---|---|---|
+| **1** | Red | 5V | VCC | VIN |
+| **2** | Black | GND | GND | GND |
+| **3** | Yellow | GPIO10 (SDA) | SDA | SDA |
+| **4** | Green | GPIO11 (SCL) | SCL | SCL |
+| **5** | Blue | GPIO12 | | unused |
+| **6** | White | GPIO13 | | unused |
+| **7** | Brown | GPIO14 | RSTPDN (optional, see the note below) | |
+| **8** | not in the cable | GPIO21 | | free for later |
 
 ---
 
@@ -63,16 +84,6 @@ The PN532 has no connector - **wires must be soldered directly**.
     fine without a reset, and a scale that is never rewired behaves exactly as
     it does today.
 
-### PN532 Pinout (JST SH 1.0mm 5-pin, 3rd party cable colors)
-
-| PN532 Pin | Color (3rd party) | Signal | WT32 I/O Pin |
-|---|---|---|---|
-| 1 | Black | GND | Pin 2 (Black) |
-| 2 | Red | 5V | Pin 1 (Red) |
-| 3 | Yellow | SDA | Pin 3 (Yellow) |
-| 4 | White | SCL | Pin 4 (Green) |
-| 5 | Orange | **RSTPDN** | Pin 7 (Brown) |
-
 ---
 
 
@@ -106,14 +117,31 @@ safe to offer to everyone.
 
 The safest option is soldering directly to the labeled pads on the NAU7802 (VIN, GND, SDA, SCL). Alternatively, use the STEMMA QT connector - but note that 3rd-party JST SH 1.0mm cables have a **different pin order** and require re-pinning.
 
-### NAU7802 Pinout (STEMMA QT, JST SH 1.0mm 4-pin)
+---
 
-| STEMMA QT Pin | Color (3rd party) | Signal | WT32 I/O Pin |
-|---|---|---|---|
-| 1 | Black | GND | Pin 2 (Black) |
-| 2 | Red | 5V | Pin 1 (Red) |
-| 3 | Yellow | SDA | Pin 3 (Yellow) |
-| 4 | White | SCL | Pin 4 (Green) |
+## Connector pin order { #connector-pin-order }
+
+Only for plug-in builds. A pigtail or cable from another shop may use other
+colours: go by the pin number on the connector and the signal.
+
+??? info "PN532, JST SH 1.0mm, 5 pins (colours of a third-party cable)"
+
+    | PN532 pin | Colour (3rd party) | Signal | WT32 pin |
+    |---|---|---|---|
+    | 1 | Black | GND | 2 (black) |
+    | 2 | Red | 5V | 1 (red) |
+    | 3 | Yellow | SDA | 3 (yellow) |
+    | 4 | White | SCL | 4 (green) |
+    | 5 | Orange | **RSTPDN** | 7 (brown) |
+
+??? info "NAU7802, STEMMA QT, JST SH 1.0mm, 4 pins (colours of a third-party cable)"
+
+    | STEMMA QT pin | Colour (3rd party) | Signal | WT32 pin |
+    |---|---|---|---|
+    | 1 | Black | GND | 2 (black) |
+    | 2 | Red | 5V | 1 (red) |
+    | 3 | Yellow | SDA | 3 (yellow) |
+    | 4 | White | SCL | 4 (green) |
 
 ---
 

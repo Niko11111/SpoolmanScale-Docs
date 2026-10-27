@@ -34,6 +34,11 @@ theme:
     - navigation.indexes
     - navigation.top
     - navigation.tracking
+    # A breadcrumb over the title says where you are, and the page's own
+    # headings open as a sub-menu under it in the left menu instead of a
+    # second list on the right.
+    - navigation.path
+    - toc.integrate
     - navigation.footer
     - toc.follow
     - search.highlight
@@ -149,6 +154,7 @@ plugins:
             What the scale is telling you: Was die Waage dir sagt
             Troubleshooting: Troubleshooting
             FAQ: FAQ
+            Hardware choices: Hardware-Entscheidungen
             Contributing & Discord: Mitmachen & Discord
             Integrating a server: Einen Server anbinden
 
@@ -202,5 +208,6 @@ nav:
     - help/index.md
     - Troubleshooting: help/troubleshooting.md
     - FAQ: help/faq.md
+    - Hardware choices: help/hardware.md
     - Contributing & Discord: help/contributing.md
     - Integrating a server: help/integrate.md

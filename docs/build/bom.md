@@ -18,6 +18,42 @@
 | ![](../assets/images/parts/jst_cables.png) | Connector Cables | STEMMA QT / JST cables | [AliExpress](https://de.aliexpress.com/item/1005011904682215.html) |
 | ![](../assets/images/parts/jst_sh_cables.png) | Connector Cables (easier assembly) | Micro JST 1.0 SH 5-pin | [Amazon](https://amzn.eu/d/0aKJ4Va9) |
 
+!!! info "How the parts connect: simpler than it looks"
+    The WT32-SC01 Plus comes with a 7-pin cable with bare wire ends. Four wires
+    carry the whole scale, and the PN532 and the NAU7802 take the same four.
+    Go by the signal names, not the colours: cables from other shops use other
+    colours.
+
+    | Wire (WT32 pin) | Signal | PN532 | NAU7802 |
+    |---|---|---|---|
+    | Red (1) | 5 V | VCC | VIN |
+    | Black (2) | GND | GND | GND |
+    | Yellow (3) | SDA | SDA | SDA |
+    | Green (4) | SCL | SCL | SCL |
+
+    Split each wire into a Y, one end to each board. The PN532 gets one more
+    wire, RSTPDN (brown, pin 7), which is optional.
+
+    **Three ways to build it:**
+
+    1. **Solder the Y** to the boards. Fastest and cheapest, no extra parts, but
+       a faulty part is harder to swap.
+    2. **Plug it together** with small connectors (the JST SH pigtails in the
+       list). A bit more to buy, and parts swap easily.
+    3. **Use a splitter board** from the community list below.
+
+    **To keep options open:** the socket on the board has 8 pins, the supplied
+    cable only 7. Pin 8 may be used later to wake the scale from the NFC reader.
+    It does nothing today. If you want it, order an 8-pin cable or connector now.
+
+    The step by step is on [Wiring](wiring.md). A video is coming soon.
+
+!!! question "Why these parts and not others?"
+    Why not an HX711, a bigger display or another NFC reader? The answers are on
+    [Hardware choices](../help/hardware.md), for example
+    [why the NAU7802](../help/hardware.md#adc) and
+    [which boards we looked at](../help/hardware.md#boards).
+
 Prefer everything in one cart? A community member put together an AliExpress
 list with parts that work well too:
 👉 [SpoolmanScale parts list on AliExpress](https://www.aliexpress.com/p/wish-manage/share.html?spm=a2g0o.cart.headerAcount.6.321738dayZTIa0&wishGroupId=800000022363334&smbPageCode=wishlist-amp&spreadId=E95BDFF0E1B4367408F1423D8C0ABF206981C084C10F93E3EE124B0AFA678D69)

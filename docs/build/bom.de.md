@@ -20,6 +20,44 @@
 | ![](../assets/images/parts/jst_cables.png) | Verbindungskabel | STEMMA QT / JST | [AliExpress](https://de.aliexpress.com/item/1005011904682215.html) |
 | ![](../assets/images/parts/jst_sh_cables.png) | Verbindungskabel (einfacherer Zusammenbau) | Micro JST 1.0 SH, 5-polig | [Amazon](https://amzn.eu/d/0aKJ4Va9) |
 
+!!! info "So werden die Teile verbunden: einfacher, als es aussieht"
+    Zur WT32-SC01 Plus gehört ein 7-poliges Kabel mit blanken Enden. Vier Adern
+    tragen die ganze Waage, und PN532 und NAU7802 bekommen dieselben vier. Achte
+    auf die Signalnamen, nicht auf die Farben: Kabel aus anderen Shops haben
+    andere Farben.
+
+    | Ader (WT32-Pin) | Signal | PN532 | NAU7802 |
+    |---|---|---|---|
+    | Rot (1) | 5 V | VCC | VIN |
+    | Schwarz (2) | GND | GND | GND |
+    | Gelb (3) | SDA | SDA | SDA |
+    | Grün (4) | SCL | SCL | SCL |
+
+    Teile jede Ader zu einem Y auf, ein Ende zu jeder Platine. Der PN532 bekommt
+    eine fünfte Ader, RSTPDN (braun, Pin 7), die optional ist.
+
+    **Drei Wege, es zu bauen:**
+
+    1. **Das Y anlöten.** Am schnellsten und günstigsten, ohne Zusatzteile, aber
+       ein defektes Teil ist schwerer zu tauschen.
+    2. **Mit kleinen Steckern verbinden** (die JST-SH-Pigtails in der Liste).
+       Etwas mehr zu kaufen, dafür lassen sich Teile leicht tauschen.
+    3. **Eine Verteilerplatine nehmen** aus der Community-Liste unten.
+
+    **Wenn du dir Optionen offenhalten willst:** Die Buchse am Board hat 8 Pins,
+    das mitgelieferte Kabel nur 7. Pin 8 kann später genutzt werden, um die Waage
+    vom NFC-Reader aufzuwecken. Heute hat er keine Funktion. Bestell ein
+    8-poliges Kabel oder einen Stecker gleich mit, wenn du ihn nutzen willst.
+
+    Die Schritt-für-Schritt-Anleitung steht unter [Verkabelung](wiring.md). Ein
+    Video kommt bald.
+
+!!! question "Warum diese Teile und keine anderen?"
+    Warum kein HX711, kein größeres Display und kein anderer NFC-Reader? Die
+    Antworten stehen unter [Hardware-Entscheidungen](../help/hardware.md), zum
+    Beispiel [warum der NAU7802](../help/hardware.md#adc) und
+    [welche Boards wir uns angesehen haben](../help/hardware.md#boards).
+
 Lieber alles in einem Warenkorb? Ein Nutzer aus der Community hat eine
 AliExpress-Liste mit Teilen zusammengestellt, die ebenfalls gut funktionieren:
 👉 [SpoolmanScale-Teileliste auf AliExpress](https://www.aliexpress.com/p/wish-manage/share.html?spm=a2g0o.cart.headerAcount.6.321738dayZTIa0&wishGroupId=800000022363334&smbPageCode=wishlist-amp&spreadId=E95BDFF0E1B4367408F1423D8C0ABF206981C084C10F93E3EE124B0AFA678D69)

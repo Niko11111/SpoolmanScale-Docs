@@ -66,7 +66,8 @@ Was er lesen kann und was nicht, steht auf der Seite
 
 ## NAU7802 Waagen-ADC
 
-Ein 24-Bit-ADC für Brückensensoren, und genau das ist eine Wägezelle.
+Ein 24-Bit-ADC für Brückensensoren, und genau das ist eine Wägezelle. Warum dieser
+und nicht der günstigere HX711: siehe [Hardware-Entscheidungen](../help/hardware.md#adc).
 
 | Eigenschaft | Wert |
 |---|---|

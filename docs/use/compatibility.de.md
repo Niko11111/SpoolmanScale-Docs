@@ -97,7 +97,7 @@ der Waage (ISO 14443 A), und das lässt sich mit keinem Update ändern.
 
 Wir warten auf einen Nachfolger-Reader, der ins Gehäuse passt und unsere Kriterien
 erfüllt: Anschluss über zwei Leitungen, absetzbare Antenne, gute Verfügbarkeit
-und ein fairer Preis (siehe [Was ist an der Hardware geplant?](../help/faq.md#was-ist-an-der-hardware-geplant)).
+und ein fairer Preis (siehe [Hardware-Entscheidungen](../help/hardware.md#next-board)).
 Einen solchen haben wir noch nicht gefunden.
 
 OpenPrintTag ist außerdem noch jung. Prusa hat es seit Oktober 2025 auf jede neue

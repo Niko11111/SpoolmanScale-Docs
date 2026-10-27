@@ -121,65 +121,22 @@ Tags und setzt Lagerorte, die Gewichte verschwinden vom Bildschirm.
 
 ### Warum dieses Display, und gibt es ein größeres?
 
-Ich habe die WT32-SC01 Plus ganz am Anfang des Projekts gewählt, weil andere
-sie für ähnliche Bauprojekte genutzt hatten. Das hat sich als gute
-Entscheidung erwiesen: ein kleines, aufgeräumtes Gerät, ungefähr so breit wie
-eine Spule, das neben den Druckern wenig Platz braucht. Und am Ende ist es eine
-Waage, die schnell Filament messen soll, kein Dashboard.
-
-Größer ist hier nicht automatisch besser, und ein größerer Bildschirm ist mehr
-als nur ein Display. Jedes Layout der Firmware ist für 480x320 Pixel gebaut, ein
-5"- oder 7"-Panel braucht ein anderes Board dahinter, und das Gehäuse müsste neu
-entworfen werden. Größere Panels sprechen außerdem ein anderes Protokoll, das
-viel mehr Pins belegt, und daran scheitern die meisten Boards (siehe unten).
-Ich plane deshalb nicht, viele Displaygrößen zu unterstützen. Käme ein Board,
-das die folgenden Punkte erfüllt, wäre 5" eine Größe, die ich vertreten könnte.
-7" passt nicht zu diesem Projekt.
-
-Du kannst die Open-Source-Firmware gern selbst an ein anderes Display anpassen.
-Community-Ports stehen in der README.
+Die WT32-SC01 Plus war eine Entscheidung ganz am Anfang, und sie ergibt ein kleines,
+aufgeräumtes Gerät, ungefähr so breit wie eine Spule. Ein größeres Display
+bedeutet auch eine neue UI, ein neues Board und ein neues Gehäuse, deshalb plane
+ich nicht viele Größen. Erfüllt ein Board die Anforderungen, wäre 5" eine Größe,
+die ich vertreten könnte. 7" passt nicht zu diesem Projekt. Die Einzelheiten
+stehen unter [Hardware-Entscheidungen](hardware.md#bigger-display).
 
 ---
 
 ### Was ist an der Hardware geplant?
 
-Nichts davon ist zugesagt und es gibt keine Termine. Es ist die Richtung, damit
-du nicht jedes Mal nachfragen musst.
-
-**Das Gehäuse bleibt klein.** Ich bin zufrieden damit und will es möglichst
-wenig verändern.
-
-**Ein austauschbarer NFC-Reader.** Der heutige Reader ist leicht erhältlich und
-gut dokumentiert, kann aber keine ISO-15693-Tags wie
-[OpenPrintTag](https://openprinttag.org/) lesen. Ein Nachfolger braucht
-ISO 15693 und sollte per I2C oder einem anderen Bus mit zwei Leitungen
-angeschlossen sein, weil ich die übrigen Pins anderweitig brauche. Mit einer
-absetzbaren Antenne könnte die Platine unten im Gehäuse sitzen, der Teil, der
-herausschaut, würde kleiner, und man könnte ihn leicht versetzen oder für Spulen
-mit dem Text an anderen Stellen tauschen. Die Kandidaten, die ich kenne, sind
-noch schwer zu bekommen und kosten ein Mehrfaches des heutigen Readers.
-
-**Eine digitale Wägezelle über RS485.** Zellen mit eingebautem Wandler, fertig
-verkabelt und mit Stecker, würden das Löten sparen. Das geht nur, wenn das Board
-RS485 an einen Stecker oder einen I/O-Port herausführt. Außerdem würde es den
-I2C-Bus für den NFC-Reader freimachen.
-
-**Ein Raspberry Pi im Gehäuse** ist pausiert. Ein Pi Zero ist für FilaMan und
-BamBuddy zu schwach, deshalb warte ich auf einen stärkeren Nachfolger.
-
-**Was das nächste Board können muss:**
-
-- RS485 an einem Stecker oder I/O-Port, dazu ein freier I2C-Bus und Pins für UART
-- die USB-C-Buchse nicht ganz am Rand des Boards, damit ein Kabel in der
-  jetzigen Einbaulage ins Gehäuse kommt
-- eine bündige Glasfront ohne Rahmen oder Kante
-- mehr Leistung als der ESP32-S3, mit WLAN und Bluetooth auf dem Board
-- bei mehreren Shops erhältlich und nicht von einem kleinen Hersteller, der
-  monatelang nichts liefern kann, zu einem fairen Preis
-- weit verbreitete Bibliotheken mit viel Erfahrung in der Community
-
-Ein Board, das alles erfüllt, habe ich noch nicht gefunden. Ideen und
-Board-Tipps gern auf [Discord](https://discord.gg/K3KmKnrWhP).
+Nichts ist zugesagt, und es gibt keine Termine. Die Richtung: Das Gehäuse bleibt
+klein, ein austauschbarer NFC-Reader (am besten mit absetzbarer Antenne und
+ISO 15693) und eine digitale Wägezelle über RS485. Ein Raspberry Pi im Gehäuse ist
+pausiert. Was das nächste Board können muss, welche Boards wir uns angesehen haben
+und warum nicht: siehe [Hardware-Entscheidungen](hardware.md).
 
 ---
 
@@ -238,7 +195,7 @@ liegt. Direkt nach dem Verknüpfen fragt die Waage nach dem zweiten. Siehe
 **Creality**-Tags über ihre UID. **Prusas OpenPrintTag** nutzt einen
 Funkstandard, den der PN532 nicht lesen kann. Siehe
 [OpenPrintTag](../use/compatibility.md#openprinttag) und
-[Was ist an der Hardware geplant?](#was-ist-an-der-hardware-geplant).
+[Hardware-Entscheidungen](hardware.md#nfc-reader).
 
 ---
 
