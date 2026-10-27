@@ -611,3 +611,61 @@
     font-weight: 600;
   }
 }
+
+/* The tab row (Build, Use, Pro, Help) is not part of the sticky header: it
+   scrolls away with the page and the theme then fades its links out. It is the
+   one row that says where you are, so pin it under the header. Everything
+   that sits at the top has to know about it: the row itself is slimmed down to
+   1.9 rem so the page keeps its room, and the sidebar, the back-to-top button
+   and the jump-to-heading offset start below header (2.5 rem) plus tabs.
+   Only where the tabs show at all. */
+@media screen and (min-width: 76.25em) {
+  .md-tabs {
+    position: sticky;
+    top: 2.4rem;
+  }
+
+  .md-tabs__item {
+    height: 1.9rem;
+  }
+
+  .md-tabs__link {
+    margin-top: 0.45rem;
+  }
+
+  /* The theme sets the sidebar's top itself (the header height), which would
+     slide it under the pinned tab row, so this needs !important. The menu is
+     cut to the space below the tabs and scrolls inside that. */
+  .md-sidebar {
+    top: 4.5rem !important;
+  }
+
+  .md-sidebar__scrollwrap {
+    max-height: calc(100vh - 6.2rem);
+  }
+
+  /* Its default place is behind the pinned tab row; the theme positions it
+     with a script, hence !important. */
+  .md-top {
+    top: 5rem !important;
+  }
+
+  .md-typeset :target {
+    --md-scroll-margin: 5.6rem;
+  }
+}
+
+/* Safety net for when the theme sets [hidden] on the tab row anyway. */
+.md-tabs[hidden] {
+  pointer-events: auto;
+}
+
+.md-tabs[hidden] .md-tabs__link {
+  opacity: 0.7;
+  transform: none;
+  transition: none;
+}
+
+.md-tabs[hidden] .md-tabs__item--active .md-tabs__link {
+  opacity: 1;
+}
