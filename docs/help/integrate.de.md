@@ -52,10 +52,12 @@ angelegt und wieder gelöscht.
 ## Partner-Server
 
 Kompatibel reicht: Jede Waage kann deinen Server nutzen, ohne dass jemand
-zustimmen muss. Wenn du mehr möchtest, bekommt ein Partner-Server einen
-eigenen Eintrag auf der Waage neben Spoolman, FilaMan und BamBuddy, deine
-Farben, eine Seite in diesem Handbuch, einen Test vor jedem Firmware-Release
-und einen direkten Draht mit Vorrang. Was dazugehört und wie du anfängst:
+zustimmen muss. Möchtest du mit Namen und Farben auf der Waage und mit einer
+Seite in diesem Handbuch erscheinen, reichst du das als Pull-Request ein
+(Selbsthoster und kleine nicht kommerzielle Projekte). Größere Server und
+kommerzielle Dienste können Partner werden, mit Test vor jedem
+Firmware-Release und direktem Draht mit Vorrang. Was dazugehört und wie du
+anfängst:
 **[Partner-Server](https://github.com/Niko11111/SpoolmanScale-Integration/blob/main/PARTNERS.md)** (Englisch).
 
 ---

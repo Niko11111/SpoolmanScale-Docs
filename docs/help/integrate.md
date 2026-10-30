@@ -49,9 +49,10 @@ check" with a filament and a spool is created and deleted again.
 ## Partner servers
 
 Compatible is enough: every scale can use your server without anyone's
-permission. If you want more, a partner server gets its own entry on the
-scale next to Spoolman, FilaMan and BamBuddy, your colours, a page in this
-manual, a test before every firmware release and a direct line with
+permission. If you want your server on the scale by name, with your colours
+and a page in this manual, send it as a pull request (self-hosted and small
+non-commercial projects). Larger servers and commercial services can become a
+partner, with a test before every firmware release and a direct line with
 priority. What that involves and how to start:
 **[Partner servers](https://github.com/Niko11111/SpoolmanScale-Integration/blob/main/PARTNERS.md)**.
 
