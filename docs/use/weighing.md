@@ -40,6 +40,17 @@ reading has drifted off zero.
 
 ---
 
+## Empty spool weight
+
+A part-used spool shows the filament left: weight on the scale minus the empty
+spool. If the empty weight is wrong, tap **Update Weight**, then **Options**,
+and weigh the empty spool or enter its weight. You pick whether it applies to
+this spool, to all spools of the filament or to all of the vendor, depending on
+the backend. Details and screenshots in
+[Your first spools](first-spools.md#a-part-used-spool-and-the-empty-weight).
+
+---
+
 ## Bag weight
 
 **Settings → Spools & scale → Bag weight**

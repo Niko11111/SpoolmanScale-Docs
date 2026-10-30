@@ -30,7 +30,7 @@ Optional:
 
 - **NTAG215-Aufkleber**, wenn die Waage deine Tags beschreiben soll. NTAG213
   reicht zum Lesen, ist zum Beschreiben aber zu klein, siehe
-  [NFC-Tags](../use/tags.md#welchen-tag-soll-ich-kaufen)
+  [NFC-Tags](../use/tags.md#welche-tags-funktionieren)
 - Ein **Phomemo M220**-Etikettendrucker, per Bluetooth
 
 Auch die Wägezelle ist optional. Ohne NAU7802 und Wägezelle schaltest du

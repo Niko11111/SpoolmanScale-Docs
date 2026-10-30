@@ -101,7 +101,9 @@ the spool on the pad is looked up again at the new backend.
     !!! warning "No tare per filament or vendor"
         BamBuddy has no filament or vendor objects to hang a tare value on. Set
         the empty spool weight per spool, or use the
-        [bag weight](weighing.md#bag-weight).
+        [bag weight](weighing.md#bag-weight). That works with BamBuddy's own
+        inventory only. With Spoolman behind BamBuddy, enter the empty weight
+        in Spoolman itself.
 
 ---
 

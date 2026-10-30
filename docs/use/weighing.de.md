@@ -41,6 +41,17 @@ Leerwert von der Null weggelaufen ist.
 
 ---
 
+## Leergewicht der Spule
+
+Eine angefangene Spule zeigt das Restfilament: Gewicht auf der Waage minus
+Leerspule. Stimmt das Leergewicht nicht, tippe auf **Update Weight**, dann
+**Optionen**, und wiege die leere Spule oder gib das Gewicht ein. Je nach
+Backend wählst du, ob es für diese Spule gilt, für alle Spulen des Filaments
+oder für alle des Herstellers. Einzelheiten und Bilder unter
+[Deine ersten Spulen](first-spools.md#angefangene-spule-und-leergewicht).
+
+---
+
 ## Beutelgewicht
 
 **Einstellungen → Spulen & Waage → Beutelgewicht**

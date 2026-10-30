@@ -86,7 +86,7 @@ funktionieren aber vermutlich genauso.
 
 | Teil | Wofür |
 |---|---|
-| **NTAG215**-NFC-Aufkleber | Tags, die die Waage beschreiben kann. NTAG213 reicht zum Lesen, ist zum Beschreiben aber zu klein - siehe [NFC-Tags](../use/tags.md#welchen-tag-soll-ich-kaufen) |
+| **NTAG215**-NFC-Aufkleber | Tags, die die Waage beschreiben kann. NTAG213 reicht zum Lesen, ist zum Beschreiben aber zu klein - siehe [NFC-Tags](../use/tags.md#welche-tags-funktionieren) |
 | **Phomemo M220**-Etikettendrucker | Spulenetiketten per Bluetooth drucken |
 
 !!! note "Auch die Wägezelle ist optional"

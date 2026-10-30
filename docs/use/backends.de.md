@@ -107,7 +107,9 @@ Backend neu abgefragt.
     !!! warning "Keine Tara je Filament oder Hersteller"
         BamBuddy kennt keine Filamente oder Hersteller als eigene Objekte, an
         denen ein Tarawert hängen könnte. Trag das Leerspulengewicht je Spule
-        ein oder nimm das [Beutelgewicht](weighing.md#beutelgewicht).
+        ein oder nimm das [Beutelgewicht](weighing.md#beutelgewicht). Das geht
+        nur mit dem eigenen Inventar von BamBuddy. Mit Spoolman hinter BamBuddy
+        trägst du das Leergewicht im Spoolman selbst ein.
 
 ---
 

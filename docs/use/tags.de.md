@@ -11,18 +11,12 @@ und zeigt die Spule. Mehr ist nicht zu tun.
 
 ![Eine Spule von einem NTAG mit OpenSpool-Datensatz](../assets/images/ui/de/20_main_ntag.png)
 
-- **NTAG-Sticker** werden an ihrer UID erkannt. Sie wird als reines Hex
-  gespeichert (`04B9E542447080`), so wie es jedes andere Werkzeug rund um
-  Spoolman macht. Verknüpfungen von woanders werden hier gefunden und
-  umgekehrt.
-- **Bambu-Lab-Tags** werden gelesen und entschlüsselt: Material, Farbe und die
-  Spule kommen von selbst.
-- **MIFARE-Classic-Karten und -Sticker** werden an ihrer UID erkannt. Kennt
-  dein Backend die Karte, erscheint sie nach 3 bis 5 Sekunden, sonst nach etwa
-  zehn.
-- **Snapmaker-Tags** lassen sich ebenfalls lesen. Schalte dafür in der
-  [Weboberfläche](web.md) unter **Einstellungen** **Snapmaker-Tags lesen** ein.
-  Standardmäßig ist das aus, weil es andere MIFARE-Tags etwas bremst.
+Die Waage erkennt einen Tag an seiner UID. Sie wird als reines Hex gespeichert
+(`04B9E542447080`), so wie es jedes andere Werkzeug rund um Spoolman macht.
+Verknüpfungen von woanders werden hier gefunden und umgekehrt. Manche Tags tragen
+mehr als die UID: Bambu-Lab-Tags werden gelesen und entschlüsselt, und
+OpenSpool-, FilaMan- und Anycubic-ACE-Datensätze werden mit ihrem Inhalt
+angezeigt. Was welcher Tag kann, steht in der [Tabelle weiter unten](#welche-tags-funktionieren).
 
 ### Die Tag-Ansicht
 
@@ -36,7 +30,8 @@ schreibt die Spule vom Bildschirm darauf.
 
 ## Eine Spule anlegen
 
-Eine Spule, die noch nicht im Inventar steht, legst du an der Waage an.
+Eine Spule, die noch nicht im Inventar steht, legst du an der Waage an. Die
+Anleitung Schritt für Schritt steht unter [Deine ersten Spulen](first-spools.md).
 
 - **Ein Bambu-Tag:** Leg die Spule auf. Eine Karte sagt, dass die Spule noch
   nicht im Inventar ist, und bietet **Anlegen** an. Die Waage legt Filament und
@@ -119,63 +114,28 @@ Waage beide Spulen und bietet **Umhängen** an.
 
 ## Welche Tags funktionieren?
 
-=== "Funktioniert gut"
+Für neue Spulen kauf **NTAG215**: Er wird zuverlässig gelesen und hat Platz für
+jeden Datensatz, den die Waage schreibt. Runde 25-mm-Sticker sind am
+verbreitetsten und sitzen gut auf Spulennaben. Wie du einen auf eine Spule
+klebst, steht Schritt für Schritt unter [Deine ersten Spulen](first-spools.md).
 
-    - **NTAG213, NTAG215, NTAG216**: werden über ihre UID gefunden, die Waage
-      liest und schreibt die Datensätze darauf. NTAG215 empfehlen wir.
-    - **MIFARE Ultralight und Ultralight C**: werden über ihre UID gefunden und
-      sind sehr stabil beim Lesen.
-    - **Bambu Lab**: wird gelesen und entschlüsselt, die Spule erscheint von
-      selbst.
-    - **OpenSpool-, FilaMan- und Anycubic-ACE-Datensätze** auf einem NTAG: werden
-      mit ihrem Inhalt angezeigt.
-
-=== "Funktioniert mit Einschränkungen"
-
-    - **MIFARE Classic, nicht von Bambu**: wird nur über die UID gefunden und
-      langsamer. Eine bekannte Spule erscheint nach 3 bis 5 Sekunden, eine
-      unbekannte nach etwa zehn, weil die Waage sie zuerst als Bambu-Tag
-      versucht. Beschreiben kann die Waage ihn nicht. Für neue Spulen lieber NTAG
-      kaufen.
-    - **Snapmaker**-Tags: lesbar, mit einem Schalter im Web-Interface.
-    - **Creality-CFS**-Tags: in Entwicklung für 0.8.4, ebenfalls hinter einem
-      Schalter.
-    - **NTAG213**: wird gut gelesen, ist aber zu klein für die Datensätze der
-      Waage.
-    - **MIFARE DESFire**: wird über die UID eventuell gefunden, aber nicht
-      zuverlässig. Nicht empfohlen.
-
-=== "Funktioniert nicht"
-
-    - **ISO-15693-Tags**, auch Prusas OpenPrintTag: ein anderer Funkstandard, den
-      der Reader nicht sieht. Siehe
-      [OpenPrintTag](compatibility.md#openprinttag).
-    - **Tags mit 10-Byte-UID**: vom Reader gesehen, dann ignoriert.
-    - **Tags auf Metall** oder über einem Metalleinsatz der Spule.
+| Tag | Wird erkannt | Die Waage schreibt | Hinweis |
+|---|---|---|---|
+| **NTAG215** | ja, mit Inhalt | ja | **empfohlen** |
+| NTAG216 | ja, mit Inhalt | ja | mehr Speicher, etwas teurer |
+| NTAG213 | nur UID | nein | 144 Byte, zu klein für die Datensätze der Waage |
+| MIFARE Ultralight, Ultralight C | nur UID | nein | sehr stabil beim Lesen |
+| MIFARE Classic, nicht von Bambu | nur UID | nein | langsamer: eine bekannte Spule erscheint nach 3 bis 5 Sekunden, eine unbekannte nach etwa zehn, weil die Waage sie zuerst als Bambu-Tag versucht |
+| Bambu Lab (MIFARE Classic) | ja, gelesen und entschlüsselt | **nie** | die Spule erscheint von selbst und lässt sich aus dem Tag anlegen |
+| Snapmaker (MIFARE Classic) | ja, mit Inhalt | nein | schalte **Snapmaker-Tags lesen** in der [Weboberfläche](web.md) unter **Einstellungen** ein; standardmäßig aus, weil es andere MIFARE-Tags etwas bremst |
+| Creality CFS (MIFARE Classic) | in Entwicklung für 0.8.4 | nein | ebenfalls hinter einem Schalter |
+| MIFARE DESFire | nicht zuverlässig | nein | wird über die UID eventuell gefunden, nicht empfohlen |
+| ISO 15693, auch Prusa OpenPrintTag | nein | nein | ein anderer Funkstandard, den der Reader nicht sieht; Hardware-Upgrade in Planung, siehe [OpenPrintTag](compatibility.md#openprinttag) |
+| Tag mit 10-Byte-UID | nein | nein | vom Reader gesehen, dann ignoriert |
+| Tag auf Metall oder über einem Metalleinsatz der Spule | schlecht | nein | Tags nicht auf Metall kleben |
 
 Welche Marke welchen Tag nutzt und wie weit wir sie unterstützen:
 [Spulen, Tags und Drucker](compatibility.md).
-
----
-
-## Welchen Tag soll ich kaufen?
-
-**NTAG215.** Er wird zuverlässig gelesen und hat Platz für einen Datensatz, falls
-die Waage ihn beschreiben soll.
-
-| Tag | Lesen | Schreiben | Hinweis |
-|---|---|---|---|
-| NTAG213 | ja | **nein** | 144 Byte, zu klein für einen Datensatz |
-| **NTAG215** | ja | ja | **empfohlen** |
-| NTAG216 | ja | ja | mehr Speicher, etwas teurer |
-| MIFARE Ultralight | ja | nein | sehr stabil beim Lesen |
-| MIFARE Classic, Creality, Snapmaker | ja | nein | über die UID |
-| Bambu Lab | ja | **nie** | verschlüsselt |
-| ISO 15693, Prusa OpenPrintTag | nein | nein | anderer Funkstandard |
-
-Runde 25-mm-Sticker sind am verbreitetsten und sitzen gut auf Spulennaben.
-
-Welche Spulenmarken und Drucker welchen Tag nutzen: [Spulen, Tags und Drucker](compatibility.md).
 
 ---
 

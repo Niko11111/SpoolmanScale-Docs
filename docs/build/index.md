@@ -29,7 +29,7 @@ have one, you want [Updating the firmware](../use/updating.md) instead.
 Optional:
 
 - **NTAG215 stickers** if the scale should write your tags. NTAG213 is fine for
-  reading but too small to write, see [NFC tags](../use/tags.md#which-tag-should-i-buy)
+  reading but too small to write, see [NFC tags](../use/tags.md#which-tags-work)
 - A **Phomemo M220** label printer, over Bluetooth
 
 The load cell is optional too. Without NAU7802 and load cell, switch off

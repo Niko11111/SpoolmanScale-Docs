@@ -142,6 +142,7 @@ plugins:
             The parts in detail: Die Bauteile im Detail
             Use: Benutzen
             Flashing & first setup: Flashen & Ersteinrichtung
+            Your first spools: Deine ersten Spulen
             The main screen: Der Hauptbildschirm
             Backends: Backends
             NFC tags: NFC-Tags
@@ -195,6 +196,7 @@ nav:
     - The parts in detail: build/parts.md
   - Use:
     - use/index.md
+    - Your first spools: use/first-spools.md
     - The main screen: use/main-screen.md
     - Backends: use/backends.md
     - NFC tags: use/tags.md

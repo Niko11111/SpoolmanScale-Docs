@@ -11,16 +11,12 @@ Put a spool on the pad. The scale reads the tag, looks it up at your
 
 ![A spool from an NTAG with an OpenSpool record](../assets/images/ui/en/20_main_ntag.png)
 
-- **NTAG stickers** are found by their UID. It is stored as plain hex
-  (`04B9E542447080`), the same way every other tool around Spoolman does it,
-  so links made elsewhere are found here and the other way round.
-- **Bambu Lab tags** are read and decrypted: material, colour and the spool
-  come up by themselves.
-- **MIFARE Classic cards and stickers** are found by their UID. A card your
-  backend knows shows up after 3 to 5 seconds, an unknown one after about ten.
-- **Snapmaker tags** can be read as well. Switch on **Read Snapmaker tags** in
-  the [web interface](web.md) under **Settings**. It is off by default because
-  it slows down other MIFARE tags a little.
+The scale knows a tag by its UID, stored as plain hex (`04B9E542447080`), the
+same way every other tool around Spoolman does it, so links made elsewhere are
+found here and the other way round. Some tags carry more than the UID: Bambu Lab
+tags are read and decrypted, and OpenSpool, FilaMan and Anycubic ACE records are
+shown with their contents. What each kind of tag can do is in the
+[table below](#which-tags-work).
 
 ### The tag view
 
@@ -34,7 +30,8 @@ screen onto it.
 
 ## Creating a spool
 
-A spool that is not in your inventory yet can be created at the scale.
+A spool that is not in your inventory yet can be created at the scale. The
+step-by-step version is [Your first spools](first-spools.md).
 
 - **A Bambu tag:** put the spool on the pad. A card says the spool is not in
   the inventory yet and offers **Create**. The scale makes the filament and the
@@ -115,59 +112,27 @@ spools and offers to **Move** it.
 
 ## Which tags work
 
-=== "Works well"
+For new spools buy **NTAG215**: it reads reliably and has room for every record
+the scale writes. Round 25 mm stickers are the most common and sit well on spool
+hubs. How to put one on a spool step by step: [Your first spools](first-spools.md).
 
-    - **NTAG213, NTAG215, NTAG216**: found by their UID, and the scale can read
-      and write the records on them. NTAG215 is the one we recommend.
-    - **MIFARE Ultralight and Ultralight C**: found by their UID, very stable
-      to read.
-    - **Bambu Lab**: read and decrypted, the spool comes up by itself.
-    - **OpenSpool, FilaMan and Anycubic ACE records** on an NTAG: shown with
-      their contents.
-
-=== "Works with limits"
-
-    - **MIFARE Classic, not from Bambu**: found by the UID only, and slower. A
-      known spool shows up after 3 to 5 seconds, an unknown one after about ten,
-      because the scale tries it as a Bambu tag first. The scale cannot write
-      to it. For new spools, buy NTAG.
-    - **Snapmaker** tags: readable, with a switch in the web interface.
-    - **Creality CFS** tags: in development for 0.8.4, also behind a switch.
-    - **NTAG213**: reads fine, but is too small for the scale's records.
-    - **MIFARE DESFire**: may be found by its UID, but not reliably. Not
-      recommended.
-
-=== "Does not work"
-
-    - **ISO 15693 tags**, including Prusa's OpenPrintTag: a different radio
-      standard that the reader cannot see. See
-      [OpenPrintTag](compatibility.md#openprinttag).
-    - **Tags with a 10-byte UID**: seen by the reader, then ignored.
-    - **Tags on metal**, or over a metal spool insert.
+| Tag | Recognised | The scale writes | Notes |
+|---|---|---|---|
+| **NTAG215** | yes, with contents | yes | **recommended** |
+| NTAG216 | yes, with contents | yes | more memory, slightly pricier |
+| NTAG213 | UID only | no | 144 bytes, too small for the scale's records |
+| MIFARE Ultralight, Ultralight C | UID only | no | very stable to read |
+| MIFARE Classic, not from Bambu | UID only | no | slower: a known spool shows up after 3 to 5 seconds, an unknown one after about ten, because the scale tries it as a Bambu tag first |
+| Bambu Lab (MIFARE Classic) | yes, read and decrypted | **never** | the spool comes up by itself and can be created from the tag |
+| Snapmaker (MIFARE Classic) | yes, with contents | no | switch on **Read Snapmaker tags** in the [web interface](web.md) under **Settings**; off by default because it slows other MIFARE tags a little |
+| Creality CFS (MIFARE Classic) | in development for 0.8.4 | no | also behind a switch |
+| MIFARE DESFire | not reliably | no | may be found by its UID, not recommended |
+| ISO 15693, including Prusa OpenPrintTag | no | no | a different radio standard that the reader cannot see; hardware upgrade planned, see [OpenPrintTag](compatibility.md#openprinttag) |
+| Tag with a 10-byte UID | no | no | seen by the reader, then ignored |
+| Tag on metal or over a metal spool insert | poorly | no | do not stick tags on metal |
 
 Which brand uses which tag, and how far each is supported:
 [Spools, tags and printers](compatibility.md).
-
----
-
-## Which tag should I buy?
-
-**NTAG215.** It reads reliably and has room for a record if you want the scale
-to write it.
-
-| Tag | Read | Write | Notes |
-|---|---|---|---|
-| NTAG213 | yes | **no** | 144 bytes, too small for a record |
-| **NTAG215** | yes | yes | **recommended** |
-| NTAG216 | yes | yes | more memory, slightly pricier |
-| MIFARE Ultralight | yes | no | very stable to read |
-| MIFARE Classic, Creality, Snapmaker | yes | no | by UID |
-| Bambu Lab | yes | **never** | encrypted |
-| ISO 15693, Prusa OpenPrintTag | no | no | a different radio standard |
-
-Round 25 mm stickers are the most common and sit well on spool hubs.
-
-Which spool brands and printers use which tag: [Spools, tags and printers](compatibility.md).
 
 ---
 

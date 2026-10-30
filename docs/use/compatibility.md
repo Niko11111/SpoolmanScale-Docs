@@ -1,7 +1,7 @@
 # Spools, tags and printers
 
 Which spools, tags and printers work with SpoolmanScale, and what we know about
-the rest. Status of 27 October 2026: firmware 0.8.3 (public) and 0.8.4 (beta).
+the rest. Status of 30 October 2026: firmware 0.8.3 (public) and 0.8.4 (beta).
 
 !!! info "How to read this page"
     Three questions get mixed up all the time:
@@ -40,8 +40,8 @@ cannot read ISO 15693, see OpenPrintTag.
 |---|---|---|---|---|---|
 | **Bambu Lab** | MIFARE Classic | encrypted, keys derivable from the UID | **Works** | **Works**, all backends | never written |
 | **Any NTAG sticker** | NTAG 213/215/216 | n/a | **Works** | link by UID **works** | recommended: NTAG215 |
-| **OpenSpool** | NTAG 215/216, JSON | open | **Works** | **Works** as a link | no product ID on the tag |
-| **FilaMan** | NTAG | open | **Works** | **Works** | |
+| **OpenSpool** | NTAG 215/216, JSON | open | **Works** | linking **works**, creating **planned** | no product ID on the tag |
+| **FilaMan** | NTAG | open | **Works** | linking **works**, creating **planned** | |
 | **Anycubic ACE** | NTAG | no official document known to us | **Works** | write only | |
 | **Snapmaker** | MIFARE Classic | no official document known to us | **Works** (switch in the web settings) | **Planned** | keys and layout: partly unknown |
 | **Creality CFS** | MIFARE Classic | encrypted, not officially published | **In development** (0.8.4) | **In development** | not tested on enough hardware yet |

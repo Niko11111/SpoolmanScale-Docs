@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 600" width="640" height="600" font-family="system-ui, sans-serif" font-size="15">
+<circle cx="320" cy="290" r="200.0" fill="none" stroke="#8a8f98" stroke-width="3"/>
+<circle cx="320" cy="290" r="55.0" fill="none" stroke="#8a8f98" stroke-width="3"/>
+<circle cx="320" cy="290" r="110.0" fill="none" stroke="#10b981" stroke-width="2" stroke-dasharray="7 6"/>
+<line x1="320" y1="290" x2="430.0" y2="290.0" stroke="#10b981" stroke-width="2"/>
+<circle cx="320" cy="290" r="3.5" fill="#10b981"/>
+<text x="379.0" y="310" text-anchor="middle" fill="#10b981" font-weight="600">55 mm</text>
+<line x1="210.0" y1="290.0" x2="120.0" y2="290.0" stroke="#10b981" stroke-width="2"/>
+<text x="165.0" y="280.0" text-anchor="middle" fill="#10b981" font-weight="600">45 mm</text>
+<circle cx="375.0" cy="194.73720558371176" r="10" fill="#8a8f98" opacity="0.6"/>
+<circle cx="264.99999999999994" cy="385.2627944162882" r="25.0" fill="#10b981" fill-opacity="0.25" stroke="#10b981" stroke-width="2"/>
+<line x1="375.0" y1="194.73720558371176" x2="432.0" y2="96.01030955228575" stroke="#8a8f98" stroke-width="1.5"/>
+<text x="440.0" y="92.01030955228575" fill="#8a8f98">Bambu Lab tag</text>
+<line x1="264.99999999999994" y1="385.2627944162882" x2="207.9999999999999" y2="483.9896904477142" stroke="#8a8f98" stroke-width="1.5"/>
+<text x="199.9999999999999" y="497.9896904477142" text-anchor="end" fill="#10b981" font-weight="600">your sticker</text>
+<text x="199.9999999999999" y="515.9896904477142" text-anchor="end" fill="#8a8f98">(round, 25 mm)</text>
+<text x="320" y="227.0" text-anchor="middle" fill="#8a8f98" font-size="13">hole Ø 55 mm</text>
+<text x="320" y="80.0" text-anchor="middle" fill="#8a8f98" font-size="13">spool Ø 200 mm</text>
+<text x="320" y="586" text-anchor="middle" fill="#8a8f98">Stick the tag on the outside of the flange, not on metal.</text>
+</svg>

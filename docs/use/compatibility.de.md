@@ -1,7 +1,7 @@
 # Spulen, Tags und Drucker
 
 Welche Spulen, Tags und Drucker mit SpoolmanScale funktionieren und was wir über
-den Rest wissen. Stand 27. Oktober 2026: Firmware 0.8.3 (öffentlich) und 0.8.4
+den Rest wissen. Stand 30. Oktober 2026: Firmware 0.8.3 (öffentlich) und 0.8.4
 (Beta).
 
 !!! info "So liest du diese Seite"
@@ -42,8 +42,8 @@ Waage kann kein ISO 15693 lesen, siehe OpenPrintTag.
 |---|---|---|---|---|---|
 | **Bambu Lab** | MIFARE Classic | verschlüsselt, Schlüssel aus der UID ableitbar | **Funktioniert** | **Funktioniert**, alle Backends | wird nie beschrieben |
 | **Jeder NTAG-Sticker** | NTAG 213/215/216 | n. z. | **Funktioniert** | Verknüpfen per UID **funktioniert** | empfohlen: NTAG215 |
-| **OpenSpool** | NTAG 215/216, JSON | offen | **Funktioniert** | **Funktioniert** als Verknüpfung | keine Produkt-ID auf dem Tag |
-| **FilaMan** | NTAG | offen | **Funktioniert** | **Funktioniert** | |
+| **OpenSpool** | NTAG 215/216, JSON | offen | **Funktioniert** | Verknüpfen **funktioniert**, Anlegen **geplant** | keine Produkt-ID auf dem Tag |
+| **FilaMan** | NTAG | offen | **Funktioniert** | Verknüpfen **funktioniert**, Anlegen **geplant** | |
 | **Anycubic ACE** | NTAG | uns ist kein offizielles Dokument bekannt | **Funktioniert** | nur Schreiben | |
 | **Snapmaker** | MIFARE Classic | uns ist kein offizielles Dokument bekannt | **Funktioniert** (Schalter in den Web-Einstellungen) | **Geplant** | Schlüssel und Aufbau: teils unbekannt |
 | **Creality CFS** | MIFARE Classic | verschlüsselt, nicht offiziell veröffentlicht | **In Entwicklung** (0.8.4) | **In Entwicklung** | noch nicht an genug Hardware getestet |

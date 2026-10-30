@@ -79,7 +79,7 @@ Self-tapping screws are recommended, but standard machine screws (M2.5×5, M2×4
 
 | Item | What for |
 |---|---|
-| **NTAG215** NFC stickers | Tags the scale can write. NTAG213 works for reading, but is too small to write - see [NFC tags](../use/tags.md#which-tag-should-i-buy) |
+| **NTAG215** NFC stickers | Tags the scale can write. NTAG213 works for reading, but is too small to write - see [NFC tags](../use/tags.md#which-tags-work) |
 | **Phomemo M220** label printer | Printing spool labels over Bluetooth |
 
 !!! note "The load cell is optional too"
