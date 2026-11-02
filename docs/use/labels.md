@@ -42,7 +42,9 @@ confirmation usually means: check the paper and the lid.
 
 The label shows the manufacturer, material, name, colour with hex code, a date
 (first use or when the spool was added), the backend with the spool ID, and a QR
-code that opens the spool in your backend.
+code that opens the spool in your backend. The narrow tape of the NIIMBOT D110
+has no room for that: it carries maker, material, name and the spool ID, see
+[Narrow tape](printers.md#tape).
 
 The **Printer** page of the [web interface](web.md) offers the same setup and
 the test print.
@@ -52,4 +54,5 @@ the test print.
 ## Thanks
 
 Thanks to @akira69, whose printer support in his fork was the groundwork and
-the proof of concept for this feature.
+the proof of concept for this feature, and to @NDRST for the NIIMBOT D110 M and
+the tape label.

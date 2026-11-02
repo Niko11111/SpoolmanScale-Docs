@@ -65,11 +65,35 @@ Third-party rolls we have not tried.
 | Phomemo M110, M110S, M100 | 40 x 30 mm | confirmed by users |
 | NIIMBOT B1, B21, B203 | 50 x 30 mm | confirmed by users |
 | Phomemo M120, M200, M221 | 40 x 30 mm | experimental |
+| NIIMBOT D110, D110 M | 12 x 40 mm, no QR code ([Narrow tape](#tape)) | D110 M confirmed by users, D110 experimental |
 
 All of them print direct thermal at 203 dpi, so the dryer warning applies here
 too. **Confirmed by users** means someone from the community printed on it; we
 do not have the printer ourselves. **Experimental** means the same protocol,
 but no print yet. If you have one, we would love to hear from you.
+
+## Narrow tape: NIIMBOT D110 and D110 M { #tape }
+
+The D110 prints on **12 x 40 mm** rolls. A QR code does not fit on 12&nbsp;mm, so
+it gets a fixed label: maker, material and name on the left, the spool ID large
+on the right. The filament label comes without a number.
+
+![Tape label 12 x 40 mm](../assets/images/printers/tape_label_12x40.png){ width="320" loading=lazy }
+
+In the [web interface](web.md), the template under **Labels** is greyed out for
+this printer, and the preview shows the finished label. Your template stays
+saved and applies again once you pick another printer. FilaMan's presets are
+not used here.
+
+So far one user has printed on a D110 M with the T12\*40-160 roll. The plain
+D110 has not printed yet.
+
+!!! note "Other rolls"
+    The scale only offers 12 x 40 mm and does not detect which roll is loaded.
+    The print head is 12&nbsp;mm wide. So on a 14 or 15 mm roll the print stays
+    12&nbsp;mm across the tape, and a longer label is only printed on 40&nbsp;mm
+    of its length. We have not tried this yet. If you have such a roll, a photo
+    showing where the print sits helps us.
 
 ## What a printer needs { #printer-needs }
 
@@ -81,7 +105,8 @@ For the scale to drive a label printer, the printer needs three things:
    Every other brand needs a driver of its own and someone to test it.
 3. **Enough room on the label.** A QR code plus a few details need about
    18&nbsp;mm of printable height. On tape printers that means tape at least
-   24&nbsp;mm wide.
+   24&nbsp;mm wide. Without a QR code less will do: the
+   [NIIMBOT D110](#tape) gets by on 12&nbsp;mm.
 
 ??? info "Why Brother printers don't work"
     "Bluetooth" is really two different radio standards: the older Classic
@@ -97,6 +122,6 @@ For the scale to drive a label printer, the printer needs three things:
 
 ## Label sizes
 
-The most common sizes are tuned, **40 x 30** and **50 x 30 mm**. Need another
-one? Tell us on [GitHub](https://github.com/Niko11111/SpoolmanScale/issues) or
+The most common sizes are tuned, **40 x 30** and **50 x 30 mm**, plus
+**12 x 40 mm** for the [NIIMBOT D110](#tape). Need another one? Tell us on [GitHub](https://github.com/Niko11111/SpoolmanScale/issues) or
 on [Discord](../help/contributing.md). What several people need, we add.

@@ -64,12 +64,37 @@ Farbband. Rollen anderer Hersteller haben wir nicht ausprobiert.
 | Phomemo M110, M110S, M100 | 40 x 30 mm | durch Nutzer bestätigt |
 | NIIMBOT B1, B21, B203 | 50 x 30 mm | durch Nutzer bestätigt |
 | Phomemo M120, M200, M221 | 40 x 30 mm | experimentell |
+| NIIMBOT D110, D110 M | 12 x 40 mm, ohne QR-Code ([Schmales Band](#tape)) | D110 M durch Nutzer bestätigt, D110 experimentell |
 
 Alle drucken per Thermodirekt mit 203 dpi, also gilt die Trockner-Warnung auch
 hier. **Durch Nutzer bestätigt** heißt: Jemand aus der Community hat darauf
 gedruckt, wir selbst haben den Drucker nicht. **Experimentell** heißt: gleiches
 Protokoll, aber noch kein Druck. Hast du einen, freuen wir uns über deine
 Rückmeldung.
+
+## Schmales Band: NIIMBOT D110 und D110 M { #tape }
+
+Der D110 druckt auf Rollen mit **12 x 40 mm**. Auf 12&nbsp;mm passt kein
+QR-Code, deshalb bekommt er ein festes Etikett: links Hersteller, Material und
+Name, rechts groß die Spulen-ID. Das Filament-Etikett kommt ohne Nummer.
+
+![Bandetikett 12 x 40 mm](../assets/images/printers/tape_label_12x40.png){ width="320" loading=lazy }
+
+In der [Weboberfläche](web.md) ist die Vorlage unter **Etiketten** bei diesem
+Drucker ausgegraut, die Vorschau zeigt das fertige Etikett. Deine Vorlage bleibt
+gespeichert und gilt wieder, sobald du einen anderen Drucker wählst. Vorlagen
+aus FilaMan werden hier nicht genutzt.
+
+Gedruckt hat bisher ein Nutzer auf einem D110 M mit der Rolle T12\*40-160. Auf
+dem normalen D110 gab es noch keinen Druck.
+
+!!! note "Andere Rollen"
+    Die Waage bietet nur 12 x 40 mm an und erkennt nicht, welche Rolle eingelegt
+    ist. Der Druckkopf ist 12&nbsp;mm breit. Auf einer 14- oder 15-mm-Rolle
+    bleibt der Druck deshalb quer zum Band 12&nbsp;mm groß, und ein längeres
+    Etikett wird nur auf 40&nbsp;mm bedruckt. Das haben wir noch nicht
+    ausprobiert. Hast du so eine Rolle, hilft uns ein Foto davon, wo der Druck
+    sitzt.
 
 ## Was ein Drucker können muss { #printer-needs }
 
@@ -82,7 +107,8 @@ Damit die Waage einen Etikettendrucker ansprechen kann, braucht er drei Dinge:
    jemanden, der damit testet.
 3. **Genug Platz auf dem Etikett.** Für QR-Code und ein paar Angaben braucht es
    etwa 18&nbsp;mm bedruckbare Höhe. Bei Bandgeräten heißt das: mindestens
-   24&nbsp;mm breites Band.
+   24&nbsp;mm breites Band. Ohne QR-Code reicht weniger, der
+   [NIIMBOT D110](#tape) kommt mit 12&nbsp;mm aus.
 
 ??? info "Warum Brother-Drucker nicht gehen"
     Hinter „Bluetooth“ stecken zwei verschiedene Funkverfahren: das ältere
@@ -98,7 +124,7 @@ Damit die Waage einen Etikettendrucker ansprechen kann, braucht er drei Dinge:
 
 ## Etikettengrößen
 
-Abgestimmt sind die gängigsten Größen, **40 x 30** und **50 x 30 mm**. Du
-brauchst eine andere? Schreib uns auf
+Abgestimmt sind die gängigsten Größen, **40 x 30** und **50 x 30 mm**, dazu
+**12 x 40 mm** für den [NIIMBOT D110](#tape). Du brauchst eine andere? Schreib uns auf
 [GitHub](https://github.com/Niko11111/SpoolmanScale/issues) oder im
 [Discord](../help/contributing.md). Was mehrere brauchen, nehmen wir auf.

@@ -262,7 +262,7 @@ a password (4 to 8 digits).
 
 ### Which label printer can I use?
 
-The **Phomemo M220** and M110S and the **NIIMBOT B1** and M2 work over
+The **Phomemo M220** and M110S and the **NIIMBOT B1**, M2 and D110 M work over
 Bluetooth Low Energy, more are experimental. See the
 [label printers](../use/printers.md) and [Bluetooth & labels](../use/labels.md).
 

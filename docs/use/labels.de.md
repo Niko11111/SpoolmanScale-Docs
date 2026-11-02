@@ -45,7 +45,9 @@ Eine Karte begleitet den Druck und endet mit der Antwort des Druckers.
 
 Auf dem Etikett stehen Hersteller, Material, Name, Farbe mit Hex-Code, ein Datum
 (erste Benutzung oder wann die Spule angelegt wurde), das Backend mit der
-Spulen-ID und ein QR-Code, der die Spule in deinem Backend öffnet.
+Spulen-ID und ein QR-Code, der die Spule in deinem Backend öffnet. Auf dem
+schmalen Band des NIIMBOT D110 ist dafür kein Platz: Es trägt Hersteller,
+Material, Name und die Spulen-ID, siehe [Schmales Band](printers.md#tape).
 
 Die Seite **Drucker** der [Weboberfläche](web.md) bietet dieselbe Einrichtung
 und den Testdruck.
@@ -55,4 +57,5 @@ und den Testdruck.
 ## Danke
 
 Danke an @akira69, dessen Druckerunterstützung in seinem Fork die Grundlage und
-der Machbarkeitsnachweis für diese Funktion war.
+der Machbarkeitsnachweis für diese Funktion war, und an @NDRST für den
+NIIMBOT D110 M und das Bandetikett.
