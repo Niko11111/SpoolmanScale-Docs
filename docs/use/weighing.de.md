@@ -6,9 +6,12 @@
 
 ## Kalibrierung
 
-Eine nie kalibrierte Waage zeigt den Rohwert des Wandlers, keine Gramm - eine
-sechsstellige Zahl, die von selbst um Hunderte springt. Das ist kein Defekt, und
-die Waage sagt es in der Statuszeile auch.
+Eine nie kalibrierte Waage rechnet mit einem groben Näherungswert. Bei einer
+2-kg-Zelle liegt das Gewicht damit ungefähr richtig, kann aber um ein Viertel
+danebenliegen; bei einer 1-kg- oder 5-kg-Zelle um mehr als das Doppelte. Die
+Statuszeile sagt deshalb **Nicht kalibriert: Gewicht stimmt nicht**, bis du
+kalibriert hast. Firmware bis 0.8.3 zeigt stattdessen den Rohwert des Wandlers,
+eine sechsstellige Zahl.
 
 **Einstellungen → Spulen & Waage → Kalibrierung**
 

@@ -212,7 +212,8 @@ the spool on the pad is looked up again at the new backend.
 ### Why does it say six digits instead of grams?
 
 The scale has never been calibrated, so it is showing the converter's raw value.
-That is normal on a new build. See
+That holds up to firmware 0.8.3; newer versions show a rough weight and say that
+it is wrong. Either is normal on a new build. See
 [Scale not calibrated](index.md#scale-not-calibrated).
 
 ---

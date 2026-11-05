@@ -99,10 +99,13 @@ on the bus without being able to work.
 
 ## Scale not calibrated
 
-> **Scale not calibrated**
+> **Not calibrated: weight is wrong**
 
-The value on screen is the raw ADC reading, not grams. That is why it is a six
-digit number that jumps by hundreds on its own.
+The scale still works with a rough estimate. The weight on screen can be far
+off, so better not save it to your inventory yet.
+
+Firmware up to 0.8.3 calls this **Scale not calibrated** and shows the raw ADC
+reading instead of grams: a six digit number that jumps by hundreds on its own.
 
 This is **neither a defect nor a wiring mistake**. The scale simply does not
 know yet how many counts make a gram.

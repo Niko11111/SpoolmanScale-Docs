@@ -208,9 +208,11 @@ colons, are still found and get rewritten once on their first scan.
 
 ## Step 4 - Calibrate
 
-A scale that has never been calibrated shows the converter's raw value, not
-grams - a six digit number that drifts by hundreds on its own. That is expected
-on a new build, and the scale says so in the status bar.
+A scale that has never been calibrated works with a rough estimate. On a 2 kg
+cell the weight is about right but can be a quarter off; on a 1 kg or 5 kg cell
+it is off by more than double. That is why the status bar says **Not calibrated:
+weight is wrong** until you calibrate. Firmware up to 0.8.3 shows the
+converter's raw value instead, a six digit number.
 
 At the end of the setup the scale asks about it: **Calibrate now** opens the
 calibration straight away, **Got it!** leaves it for later.

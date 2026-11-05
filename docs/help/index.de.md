@@ -102,10 +102,13 @@ melden, ohne dass er arbeiten kann.
 
 ## Waage nicht kalibriert
 
-> **Waage nicht kalibriert**
+> **Nicht kalibriert: Gewicht stimmt nicht**
 
-Der angezeigte Wert ist der Rohwert des ADC, nicht Gramm. Deshalb steht dort
-eine sechsstellige Zahl, die von selbst um Hunderte springt.
+Die Waage rechnet noch mit einem groben Näherungswert. Das angezeigte Gewicht
+kann weit danebenliegen, also besser noch nicht im Inventar speichern.
+
+Firmware bis 0.8.3 heißt hier **Waage nicht kalibriert** und zeigt den Rohwert
+des ADC statt Gramm: eine sechsstellige Zahl, die von selbst um Hunderte springt.
 
 Das ist **kein Defekt und kein Verkabelungsfehler**. Die Waage weiß nur noch
 nicht, wie viele Messschritte ein Gramm sind.

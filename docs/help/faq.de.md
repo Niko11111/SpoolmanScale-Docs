@@ -219,7 +219,8 @@ wird geleert und die aufliegende Spule beim neuen Backend neu abgefragt.
 ### Warum stehen da sechs Ziffern statt Gramm?
 
 Die Waage ist nie kalibriert worden und zeigt deshalb den Rohwert des Wandlers.
-Bei einem frischen Aufbau ist das normal. Siehe
+Das gilt bis Firmware 0.8.3; neuere Versionen zeigen ein grobes Gewicht und den
+Hinweis, dass es nicht stimmt. Bei einem frischen Aufbau ist beides normal. Siehe
 [Waage nicht kalibriert](index.md#waage-nicht-kalibriert).
 
 ---
