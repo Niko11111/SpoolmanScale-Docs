@@ -217,7 +217,9 @@ auf einen davon hinaus:
 - Wägezelle mit allen **vier Schrauben fest**, Kabel **verdrillt und ohne
   Zug**
 - Die **Spulenauflage berührt nirgends den Rand** und drückt nicht auf die
-  Zelle, zum Beispiel weil der weiße Kleber darunter zu dick ist
+  Zelle. Achte auf den **weißen Kleber**, der die feinen Drähte auf der
+  Wägezelle abdeckt: Steht er über die Kante, kann die Auflage darauf drücken
+  und die Zelle verspannen.
 
 ??? more "Fotos vom Zusammenbau"
     ![Display mit USB-C-Buchse](../assets/images/assembly_5.jpeg)

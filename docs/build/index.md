@@ -214,7 +214,9 @@ request came down to one of them:
 - Load cell held by all **four screws, tight**, cable **twisted and without
   strain**
 - The **spool platform touches the rim nowhere** and does not press on the
-  cell, for example because the white glue underneath is too thick
+  cell. Watch the **white glue** that covers the fine wires on the load cell:
+  if it sticks out past the edge, the platform can press on it and put the
+  cell under strain.
 
 ??? more "Photos of the assembly"
     ![Display with the USB-C socket](../assets/images/assembly_5.jpeg)
