@@ -112,7 +112,7 @@ also use a backend that runs on the internet.</small></p>
 | Load cell | 2 kg single point (5 kg works too) |
 | Enclosure | 3D printed, free on MakerWorld |
 
-Around **€50 to €60** in parts. Details on the
+Around **€60 to €75** in parts. Details on the
 [bill of materials](build/bom.md).
 
 ---
@@ -122,10 +122,8 @@ Around **€50 to €60** in parts. Details on the
 === "I want to build one"
 
     1. [Buy the parts](build/bom.md)
-    2. [Print the case](build/case.md)
-    3. [Wire it up](build/wiring.md)
-    4. [Put it together](build/assembly.md)
-    5. [Flash and set up](use/index.md)
+    2. [Build guide in 8 steps](build/index.md): flash, wire, assemble,
+       calibrate
 
 === "I have one already"
 

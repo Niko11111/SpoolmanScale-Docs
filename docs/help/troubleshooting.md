@@ -54,7 +54,7 @@ Problems the scale cannot work out by itself: network, backend, tags, the Pi.
 
 ??? question "NFC reader not detected on boot"
     - Does the **LED on the PN532** light up? If not, check power - 5V on Pin 1 of the WT32 I/O connector
-    - Check PN532 jumpers - must be set to I²C mode
+    - Check the PN532 DIP switches - must be set to I²C (SW1 = ON, SW2 = OFF)
     - Verify wiring: SDA → Pin 3, SCL → Pin 4, RST (PN532 RSTPDN) → Pin 7, see
       [Wiring](../build/wiring.md)
     - Do not connect PN532 via NAU7802 STEMMA QT passthrough (only 3.3V)

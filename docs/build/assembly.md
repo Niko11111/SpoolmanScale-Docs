@@ -1,65 +1,42 @@
 # Assembly
 
-!!! note "Something unclear or not fitting?"
-    If something is unclear or doesn't fit your hardware batch, please report it on [Discord](https://discord.gg/K3KmKnrWhP) or [MakerWorld](https://makerworld.com/de/models/2713675-spoolmanscale#profileId-3005075).
+For reference: screws and photos. The steps are in the
+[build guide](index.md).
 
 ---
 
-## Before you start
+## Screws
 
-Print the enclosure first - see [Printing the case](case.md).
-
----
-
-## Screws & Hardware
-
-| Screw | Qty | Use |
+| Screw | Count | What for |
 |---|---|---|
-| M5×25 socket head | 2 | - |
-| M4×15 socket head | 2 | - |
-| M2.5×5 self-tapping | 9 | Main enclosure |
-| M2×4.4 self-tapping | 2–4 | Small parts |
+| M5, 20 to 25 mm | 2 | Load cell, back: **from below through the base** into the back holes |
+| M4, 12 to 20 mm | 2 | Load cell, front: **from above through the spool platform** into the front holes |
+| M2.5x5 self-tapping | 9 | Base plate to the case, from below |
+| M2x4.4 self-tapping | 2 to 4 | NAU7802 on the base plate |
 
-Self-tapping screws are recommended, but standard machine screws (M2.5×5, M2×4) will likely work too.
-
----
-
-## Assembly Steps
-
-### Step 1 - Flash first
-
-Before assembling anything, flash the firmware to the bare board via the [Web Flasher](https://niko11111.github.io/SpoolmanScale). This confirms the board is working before you start wiring.
-
-### Step 2 - Wire one component at a time
-
-Connect components one at a time and verify each one works before moving on - much easier to debug at this stage than inside a fully assembled enclosure.
-
-**Order:**
-1. PN532 NFC reader
-2. NAU7802 scale ADC + load cell
-
-See [Wiring](wiring.md) for all connections.
-
-### Step 3 - USB-C Panel Mount
-
-The USB-C panel mount needs to be trimmed before installation. Using a utility knife, carefully shorten the connector housing little by little until it no longer protrudes beyond the display edge. Take your time - small cuts at a time. Once flush, it fits cleanly into the enclosure.
-
-### Step 4 - Close up
-
-Do a final check that all components are working, then press the display into the enclosure. It should sit snugly without screws. If you want extra security, it can be fastened from the back.
-
-### Step 5 - Calibrate
-
-Carry on with [Flashing & first setup](../use/index.md), where calibration is
-covered step by step.
+- The four load cell screws carry the measurement: tighten them firmly, the
+  cell must not have any play. The **arrow** on the cell points **down**.
+- Regular M2 or M2.5 screws work instead of self-tapping ones.
+- The NAU7802 holes sit slightly differently depending on who made the board,
+  so it does not always fit exactly.
 
 ---
 
-## Assembly Photos
+## Trimming the USB-C panel mount
 
-![Step 5](../assets/images/assembly_5.jpeg)
-![Step 6](../assets/images/assembly_6.jpeg)
-![Step 7](../assets/images/assembly_7.jpeg)
-![Step 8](../assets/images/assembly_8.jpeg)
-![Step 9](../assets/images/assembly_9.jpeg)
+The plug housing sticks out past the edge of the display. Trim it with a
+utility knife in small pieces until it sits flush.
 
+---
+
+## Photos
+
+![Display with the USB-C socket](../assets/images/assembly_5.jpeg){ width="400" }
+
+![Display with the USB-C socket, close-up](../assets/images/assembly_6.jpeg){ width="400" }
+
+![Case with load cell and NAU7802](../assets/images/assembly_7.jpeg){ width="400" }
+
+![PN532 before it goes into its mount](../assets/images/assembly_8.jpeg){ width="400" }
+
+![Everything wired, case open](../assets/images/assembly_9.jpeg){ width="400" }

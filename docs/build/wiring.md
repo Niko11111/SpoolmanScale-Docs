@@ -1,132 +1,98 @@
 # Wiring
 
-All components connect to the **I/O connector** on the WT32-SC01 Plus using the included 7-pin cable. The I/O socket has 8 pins - plug the 7-pin cable in **flush to the left**.
-
-The PN532 and NAU7802 share the same I²C bus (SDA/SCL) and are wired **in parallel**.
-
-!!! danger "Do not daisy-chain via NAU7802 STEMMA QT passthrough"
-    The NAU7802's STEMMA QT passthrough port only supplies **3.3V**. The PN532 requires **5V**. Always connect both modules directly to the WT32 I/O connector.
-
-A video of the build is coming soon.
-
-!!! tip "Which way suits you?"
-    **Solder** (fastest and cheapest): split the four wires into a Y and solder
-    them to both boards. You need only thin wire in a few colours. A faulty part
-    is harder to swap.
-
-    **Plug** (easy to swap): a JST SH pigtail on the PN532 and a STEMMA QT cable
-    on the NAU7802, both from the [parts list](bom.md). Cables from other shops
-    have their own colours and pin order, see
-    [the connector pin order](#connector-pin-order).
-
-    **Splitter board:** a breakout board from the community list on the
-    [parts list](bom.md).
-
-    Pin 8 on the board is free for later (see the table). If you want to keep
-    that option, order an 8-pin cable or connector now.
+For reference: every pin, plug and colour. The short version with a drawing is
+in the [build guide, step 4](index.md#4-wiring).
 
 ---
 
-<div style="position: relative; width: 100%; padding-top: calc(max(56.25%, 400px));">
-  <iframe src="https://app.cirkitdesigner.com/project/680d6e91-778a-40bd-a907-62be13f7a97b?view=interactive_preview" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"></iframe>
-</div>
-<p style="margin-top: 5px;">Edit this project interactively in <a href="https://app.cirkitdesigner.com/project/680d6e91-778a-40bd-a907-62be13f7a97b" target="_blank">Cirkit Designer</a>.</p>
+## The I/O socket
 
----
+The 7-pin cable from the display goes **flush to the left** into the 8-pin
+socket. The PN532 and the NAU7802 hang **in parallel** on the same four wires.
 
-## What goes where
-
-One table, by signal name. The colours are those of the supplied cable.
-
-| WT32 pin | Colour | Signal | PN532 | NAU7802 |
+| Pin | Colour | Signal | PN532 | NAU7802 |
 |---|---|---|---|---|
-| **1** | Red | 5V | VCC | VIN |
+| **1** | Red | 5 V | VCC | VIN |
 | **2** | Black | GND | GND | GND |
 | **3** | Yellow | GPIO10 (SDA) | SDA | SDA |
 | **4** | Green | GPIO11 (SCL) | SCL | SCL |
-| **5** | Blue | GPIO12 | | unused |
-| **6** | White | GPIO13 | | unused |
-| **7** | Brown | GPIO14 | RSTPDN (optional, see the note below) | |
-| **8** | not in the cable | GPIO21 | | free for later |
+| **5** | Blue | GPIO12 | | |
+| **6** | White | GPIO13 | | |
+| **7** | Brown | GPIO14 (reset) | RSTPDN | |
+| **8** | not in the cable | GPIO21 | free for later | |
+
+The colours are those of the supplied cable. With other cables, the pin number
+is what counts.
+
+??? more "Overall plan as text"
+    ```
+      WT32-SC01 Plus I/O (pins 1-7)
+      ┌─────────────────────────────────────────┐
+      │ Pin 1 (5V)   ───────┬─────────────────── PN532 VCC
+      │                     └─────────────────── NAU7802 VIN
+      │ Pin 2 (GND)  ───────┬─────────────────── PN532 GND
+      │                     └─────────────────── NAU7802 GND
+      │ Pin 3 (SDA)  ───────┬─────────────────── PN532 SDA
+      │                     └─────────────────── NAU7802 SDA
+      │ Pin 4 (SCL)  ───────┬─────────────────── PN532 SCL
+      │                     └─────────────────── NAU7802 SCL
+      │ Pin 7 (RST)  ─────────────────────────── PN532 RSTPDN
+      └─────────────────────────────────────────┘
+
+                                    NAU7802 screw terminals
+                                    ┌──────────────────────┐
+                                    │ E+ ── Load cell RED   │
+                                    │ E- ── Load cell BLACK │
+                                    │ A+ ── Load cell WHITE │
+                                    │ A- ── Load cell GREEN │
+                                    └──────────────────────┘
+    ```
 
 ---
 
-## PN532 NFC Reader
+## PN532 NFC reader
 
-The PN532 has no connector - **wires must be soldered directly**.
+- **Switches to I2C:** switch 1 up (ON), switch 2 down. When in doubt, the
+  table next to the switch decides, column I2C.
+- **Solder from the back**, there is no room at the front inside the case.
+- **Reset to RSTPDN**, the last pin of the labelled 10-pin row. Built before
+  September 2026? See
+  [Retrofitting the PN532 reset](../help/pn532-reset.md).
+- **5 V straight from pin 1**, never through the NAU7802's STEMMA QT connector
+  (3.3 V only).
 
-!!! warning "Solder from the back"
-    Always solder from the **back of the PCB** - there is not enough clearance on the front once it's mounted in the enclosure.
+??? more "Photos: switches at the front, reset at the back"
+    ![PN532 from the front: the DIP switch at the bottom right, next to the HSU / I2C / SPI table](../assets/images/assembly_4.jpeg){ width="400" }
 
-### Recommended Assembly Order
-
-1. Solder all other components first (NAU7802, load cell, WT32 breakout cable)
-2. Leave the PN532 wires loose and long enough to work with
-3. Feed the wires up through the PN532 mount opening from below
-4. Solder to the back of the PN532 PCB
-5. Slide the PN532 into its mount and route cables into the enclosure
-
-!!! tip "JST SH 1.0mm connector"
-    If you use a 5-pin JST SH 1.0mm pigtail on the PN532, the mount opening is just large enough to pass the connector through - allowing you to solder everything outside the enclosure and plug in during final assembly.
-
-!!! danger "The reset wire goes to RSTPDN"
-    Solder the orange RST wire to **RSTPDN**, the pin at the end of the
-    labelled 10-pin row (AUX1, AUX2, DBGRXD, DBGTXD, INT0, INT1, SIGCLK, SIGOUT,
-    SIGIN, RSTPDN). With the board lying as in the photo, it is the bottom one.
-
-    ![PN532 from the back: the orange wire on RSTPDN](../assets/images/pn532_rstpdn.jpg){ width="480" }
-
-    Every build guide up to August 2026 sent it to the header opposite, where
-    the module exposes an **output** rather than its reset input - so the reset
-    has never worked on any SpoolmanScale built before then.
-
-    **Nothing is broken if you leave it alone.** The reader has always come up
-    fine without a reset, and a scale that is never rewired behaves exactly as
-    it does today.
+    ![PN532 from the back: the orange wire on RSTPDN](../assets/images/pn532_rstpdn.jpg){ width="400" }
 
 ---
 
+## NAU7802 and load cell
 
-## After the rewiring
+The NAU7802 is safest soldered to its labelled pads (VIN, GND, SDA, SCL). The
+load cell goes into the screw terminals:
 
-The scale does not take the reset line on trust. It measures it, on your
-device, and only uses it once the measurement says the wire is really there.
+| Wire | Terminal | Function |
+|---|---|---|
+| Red | E+ | Excitation + |
+| Black | E- | Excitation - |
+| White | A+ | Signal + |
+| Green | A- | Signal - |
 
-1. **Settings → System → Check NFC reset**
-2. **Reset line is there** means the reader answered to being held in reset. The
-   row then reads *Line verified, in use*, and from the next start the scale
-   does a real hardware reset instead of only talking to the reader again.
-3. **No effect** means the wire is still on the old pad, or the joint is not
-   making contact. Nothing changes and the scale carries on as before.
-
-The test pulls the line to ground for five milliseconds and watches whether the
-reader notices. It drives open drain, so it only ever sinks - on a scale that
-still has the old wiring it cannot fight the module's output, which is why it is
-safe to offer to everyone.
-
-!!! info "What it buys you"
-    A hardware reset is the strongest lever there is when the PN532 locks up.
-    Without it, recovery can only talk to the reader again over I2C, which
-    handles most cases but not all. If your reader has never stumbled, this
-    changes nothing you will notice - which is why the scale only suggests the
-    modification to devices where the reader has actually needed recovery.
-
----
-
-## NAU7802 Scale ADC
-
-The safest option is soldering directly to the labeled pads on the NAU7802 (VIN, GND, SDA, SCL). Alternatively, use the STEMMA QT connector - but note that 3rd-party JST SH 1.0mm cables have a **different pin order** and require re-pinning.
+Twist the wires and lay them without strain. If the scale shows negative
+values, swap A+ and A-.
 
 ---
 
 ## Connector pin order { #connector-pin-order }
 
-Only for plug-in builds. A pigtail or cable from another shop may use other
-colours: go by the pin number on the connector and the signal.
+Only for builds with plugs. Cables from other shops have their own colours and
+often a different order: check wire by wire, by signal.
 
-??? info "PN532, JST SH 1.0mm, 5 pins (colours of a third-party cable)"
+??? more "PN532, JST SH 1.0 mm, 5-pin"
 
-    | PN532 pin | Colour (3rd party) | Signal | WT32 pin |
+    | PN532 pin | Colour (third party) | Signal | WT32 pin |
     |---|---|---|---|
     | 1 | Black | GND | 2 (black) |
     | 2 | Red | 5V | 1 (red) |
@@ -134,61 +100,11 @@ colours: go by the pin number on the connector and the signal.
     | 4 | White | SCL | 4 (green) |
     | 5 | Orange | **RSTPDN** | 7 (brown) |
 
-??? info "NAU7802, STEMMA QT, JST SH 1.0mm, 4 pins (colours of a third-party cable)"
+??? more "NAU7802, STEMMA QT, JST SH 1.0 mm, 4-pin"
 
-    | STEMMA QT pin | Colour (3rd party) | Signal | WT32 pin |
+    | STEMMA QT pin | Colour (third party) | Signal | WT32 pin |
     |---|---|---|---|
     | 1 | Black | GND | 2 (black) |
     | 2 | Red | 5V | 1 (red) |
     | 3 | Yellow | SDA | 3 (yellow) |
     | 4 | White | SCL | 4 (green) |
-
----
-
-## Load Cell
-
-| Load Cell wire | NAU7802 terminal | Function |
-|---|---|---|
-| Red | E+ | Excitation + |
-| Black | E- | Excitation - |
-| White | A+ | Signal + |
-| Green | A- | Signal - |
-
-!!! tip "Negative scale values?"
-    If the scale shows negative values, swap **A+** and **A-**.
-
----
-
-## Full System Overview
-
-```
-  WT32-SC01 Plus I/O (Pins 1-7)
-  ┌─────────────────────────────────────────┐
-  │ Pin 1 (5V)   ───────┬─────────────────── PN532 VCC
-  │                     └─────────────────── NAU7802 VIN
-  │ Pin 2 (GND)  ───────┬─────────────────── PN532 GND
-  │                     └─────────────────── NAU7802 GND
-  │ Pin 3 (SDA)  ───────┬─────────────────── PN532 SDA
-  │                     └─────────────────── NAU7802 SDA
-  │ Pin 4 (SCL)  ───────┬─────────────────── PN532 SCL
-  │                     └─────────────────── NAU7802 SCL
-  │ Pin 7 (RST)  ─────────────────────────── PN532 RSTPDN
-  └─────────────────────────────────────────┘
-
-                                NAU7802 Screw Terminals
-                                ┌──────────────────────┐
-                                │ E+ ── Load Cell RED   │
-                                │ E- ── Load Cell BLACK │
-                                │ A+ ── Load Cell WHITE │
-                                │ A- ── Load Cell GREEN │
-                                └──────────────────────┘
-```
-
----
-
-## Wiring photos
-
-![Step 1](../assets/images/assembly_1.jpeg)
-![Step 2](../assets/images/assembly_2.jpeg)
-![Step 3: PN532 from the back, reset wire on RSTPDN](../assets/images/pn532_rstpdn.jpg)
-![Step 4](../assets/images/assembly_4.jpeg)

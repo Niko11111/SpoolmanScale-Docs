@@ -32,8 +32,8 @@ Rechner und Anzeige auf einer Platine.
 | Externer I2C | SDA `GPIO10`, SCL `GPIO11` |
 
 Beide externen Module hängen an der **I/O-Buchse**, einer 8-poligen Buchse, in
-die das mitgelieferte 7-polige Kabel **bündig links** gehört. Ein Pin daneben und
-beide Module sind stromlos - die Waage meldet das als
+die das mitgelieferte 7-polige Kabel **bündig links** gehört. Ein Pin daneben,
+und beide Module sind stromlos. Die Waage meldet das als
 [Kein Modul am I2C-Bus](../help/index.md#kein-modul-am-i2c-bus).
 
 ---
@@ -48,16 +48,12 @@ Liest und beschreibt NFC-Tags.
 | I2C-Adresse | `0x24` |
 | Frequenz | 13,56 MHz |
 | Protokoll | ISO 14443A |
-| Pins | SDA `GPIO10`, SCL `GPIO11`, RST `GPIO14` (Pin 7, braun) - siehe [Verkabelung](wiring.md) |
+| Pins | SDA `GPIO10`, SCL `GPIO11`, RST `GPIO14` (Pin 7, braun), siehe [Verkabelung](wiring.md) |
 
-!!! danger "DIP-Schalter vor dem Löten stellen"
-    Der PN532 muss im **I2C-Modus** stehen: **SW1 = ON**, **SW2 = OFF**. In der
-    HSU- oder SPI-Stellung meldet er sich auf dem I2C-Bus überhaupt nicht. Die
-    Schalter nach der Montage umzustellen ist mühsam, also mach es vorher.
-
-!!! warning "5V, und nicht über die NAU7802"
-    Der PN532 braucht 5V von Pin 1 des I/O-Kabels. Der STEMMA-QT-Durchgang der
-    NAU7802 führt nur 3,3V - schleif ihn nicht darüber durch.
+- **DIP-Schalter auf I2C**: SW1 = ON, SW2 = OFF. In der HSU- oder
+  SPI-Stellung meldet er sich auf dem I2C-Bus gar nicht. Fotos in der
+  [Bauanleitung, Schritt 3](index.md#3-pn532-schalter-auf-i2c).
+- **5 V von Pin 1**, nie über den STEMMA-QT-Stecker der NAU7802 (nur 3,3 V).
 
 Was er lesen kann und was nicht, steht auf der Seite
 [NFC-Tags](../use/tags.md).
@@ -85,14 +81,10 @@ Die vier Adern der Wägezelle gehen an die Schraubklemmen:
 | Weiß | `A+` | Signal + |
 | Grün | `A-` | Signal - |
 
-!!! tip "Zahlen werden beim Auflegen kleiner"
-    A+ und A- sind vertauscht. Siehe
-    [Wägezelle verpolt](../help/index.md#wagezelle-verpolt).
-
-!!! warning "STEMMA-QT-Kabel von Drittanbietern"
-    Bei fertigen Kabeln von Drittanbietern stimmt die Pinreihenfolge oft nicht
-    mit der des WT32-Kabels überein. Prüfe Ader für Ader, statt dich auf die
-    Farben zu verlassen.
+Werden die Zahlen beim Auflegen kleiner, sind A+ und A- vertauscht, siehe
+[Wägezelle verpolt](../help/index.md#wagezelle-verpolt). Bei fertigen
+STEMMA-QT-Kabeln von Drittanbietern stimmt die Pinreihenfolge oft nicht: Prüf
+Ader für Ader, siehe [Pinreihenfolge der Stecker](wiring.md#connector-pin-order).
 
 ---
 

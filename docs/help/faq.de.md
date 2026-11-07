@@ -50,7 +50,7 @@ NFC-Leser als fehlend.
   zwischen beiden Stellungen hängt, ist der Klassiker. Schieb jeden kräftig bis
   zum Anschlag.
 - Wenn möglich **vor** dem Löten und Zusammenbauen einstellen. Details und Fotos
-  unter [Die Teile im Detail](../build/parts.md#pn532-nfc-reader).
+  in der [Bauanleitung, Schritt 3](../build/index.md#3-pn532-schalter-auf-i2c).
 - Das Modul liest die Schalter nur beim Einschalten. Nach dem Umstellen die Waage
   ganz vom Strom trennen und wieder anstecken.
 

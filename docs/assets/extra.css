@@ -669,3 +669,44 @@
 .md-tabs[hidden] .md-tabs__item--active .md-tabs__link {
   opacity: 1;
 }
+
+/* ================================================
+   "more" details: collapsible sections on the build guide that hold photos
+   or steps a builder must not miss. A plain grey bar was easy to scroll
+   past, so this one is tinted, bold and carries a plus icon.
+   ================================================ */
+
+:root {
+  --md-admonition-icon--more: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m1 5h-2v4H7v2h4v4h2v-4h4v-2h-4z"/></svg>');
+}
+
+[data-md-color-scheme] .md-typeset details.more {
+  border: 2px solid var(--md-primary-fg-color);
+  border-radius: 0.4rem;
+  margin: 1em 0;
+}
+
+[data-md-color-scheme] .md-typeset details.more > summary {
+  background-color: rgba(16, 185, 129, 0.14);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+  cursor: pointer;
+}
+
+[data-md-color-scheme] .md-typeset details.more > summary:hover {
+  background-color: rgba(16, 185, 129, 0.24);
+}
+
+[data-md-color-scheme] .md-typeset details.more > summary::before {
+  background-color: var(--md-primary-fg-color);
+  -webkit-mask-image: var(--md-admonition-icon--more);
+  mask-image: var(--md-admonition-icon--more);
+  top: 0.75rem;
+}
+
+[data-md-color-scheme] .md-typeset details.more > summary::after {
+  background-color: var(--md-primary-fg-color);
+  top: 0.75rem;
+}

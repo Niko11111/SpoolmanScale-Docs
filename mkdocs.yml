@@ -160,6 +160,7 @@ plugins:
             Help: Hilfe
             What the scale is telling you: Was die Waage dir sagt
             Troubleshooting: Troubleshooting
+            Retrofitting the PN532 reset: PN532-Reset nachrüsten
             FAQ: FAQ
             Hardware choices: Hardware-Entscheidungen
             Contributing & Discord: Mitmachen & Discord
@@ -215,6 +216,7 @@ nav:
   - Help:
     - help/index.md
     - Troubleshooting: help/troubleshooting.md
+    - Retrofitting the PN532 reset: help/pn532-reset.md
     - FAQ: help/faq.md
     - Hardware choices: help/hardware.md
     - Contributing & Discord: help/contributing.md

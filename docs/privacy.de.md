@@ -40,8 +40,8 @@ deines Browsers. Auch das geschieht nur in deinem Browser, es wird nichts
 
 ## Eingebettete Inhalte
 
-Die Seite [Verkabelung](build/wiring.md) bettet einen interaktiven Schaltplan
-von Cirkit Designer ein. Beim Aufruf dieser Seite lädt dein Browser ihn direkt
+Die [Bauanleitung](build/index.md) bettet in Schritt 4 einen interaktiven
+Schaltplan von Cirkit Designer ein. Beim Aufruf dieser Seite lädt dein Browser ihn direkt
 von app.cirkitdesigner.com, und dabei erfährt der Anbieter deine IP-Adresse.
 Es gilt die [Datenschutzerklärung von Cirkit Designer](https://www.cirkitdesigner.com/privacy-policy.html).
 

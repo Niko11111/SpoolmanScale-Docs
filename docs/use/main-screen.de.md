@@ -126,4 +126,4 @@ Unten rechts. Vier Kacheln:
 | **Verbindung** | WLAN, Bluetooth und der Etikettendrucker, Filamentverwaltung mit Adresse und Zugangsdaten, **Weitere Optionen** für das aktive Backend |
 | **Waage** | **AMS ansehen** (FilaMan und BamBuddy, mit AMS), [Beutelgewicht](weighing.md), [Trocknungserinnerung](drying.md), Ortsabfrage bei Entnahme, [Tag-Schreiben](tags.md), Last Used Modus, Kalibrierung, **Waage vorhanden** |
 | **Display** | Helligkeit, Dimmen nach, Bildschirm aus nach, Tiefschlaf nach |
-| **System** | [Weboberfläche](web.md), [Firmware](updating.md), Sprache mit Zeitzone und Datumsformat, Info, [NFC-Reset prüfen](../build/wiring.de.md#nach-dem-umloten), Neustart, Werksreset |
+| **System** | [Weboberfläche](web.md), [Firmware](updating.md), Sprache mit Zeitzone und Datumsformat, Info, [NFC-Reset prüfen](../help/pn532-reset.md), Neustart, Werksreset |

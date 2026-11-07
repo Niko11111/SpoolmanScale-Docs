@@ -1,12 +1,7 @@
 # Gehäuse drucken
 
-Das Gehäuse ist eine eigene Konstruktion, kostenlos auf MakerWorld.
-
-👉 **[makerworld.com/@FormFollowsF](https://makerworld.com/de/models/2713675-spoolmanscale#profileId-3005075)**
-
----
-
-## Drucken
+Das Gehäuse ist eine eigene Konstruktion, kostenlos auf
+[MakerWorld](https://makerworld.com/de/models/2713675-spoolmanscale#profileId-3005075).
 
 | | |
 |---|---|
@@ -15,24 +10,9 @@ Das Gehäuse ist eine eigene Konstruktion, kostenlos auf MakerWorld.
 | Material | PLA oder PETG für den Korpus |
 | Füße | TPU greift besser; selbstklebende Silikonfüße tun es genauso |
 
----
+Sitzt das Display zu stramm, schau erst nach einem Elefantenfuß in der ersten
+Schicht, bevor du zum Messer greifst.
 
-## Passung
-
-!!! note "Sitz des Displays"
-    Der WT32-SC01 Plus sitzt in einer auf die Platine abgestimmten Aussparung.
-    Sitzt deiner eine Spur zu stramm, schau erst nach einem Elefantenfuß in der
-    ersten Schicht, bevor du zum Messer greifst.
-
-Schrauben und Stückzahlen stehen in der
-[Stückliste](bom.md#weiteres-material).
-
----
-
-## Passt etwas nicht?
-
-!!! note "Melde, was nicht passt"
-    Hardware-Chargen unterscheiden sich. Ist etwas unklar oder passt bei dir
-    nicht, sag es im [Discord](https://discord.gg/K3KmKnrWhP) oder auf
-    [MakerWorld](https://makerworld.com/de/models/2713675-spoolmanscale#profileId-3005075) -
-    so wird die Anleitung besser.
+Welche Schrauben du brauchst und wofür: [Zusammenbau](assembly.md#schrauben).
+Passt etwas nicht, sag es auf [Discord](https://discord.gg/K3KmKnrWhP) oder
+[MakerWorld](https://makerworld.com/de/models/2713675-spoolmanscale#profileId-3005075).

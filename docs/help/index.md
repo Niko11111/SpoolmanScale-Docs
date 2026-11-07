@@ -92,7 +92,7 @@ on the bus without being able to work.
     Scales built before September 2026 have the orange RST wire on a pad that is
     an output of the module rather than its reset input, so no reset reaches the
     chip and unplugging is the only hard reset there is. Moving the wire to
-    RSTPDN fixes that - see [Wiring](../build/wiring.md#after-the-rewiring). The
+    RSTPDN fixes that - see [Retrofitting the PN532 reset](pn532-reset.md). The
     scale measures the line itself and only uses it once the check has passed.
 
 ---

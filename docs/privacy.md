@@ -37,7 +37,7 @@ This, too, happens only in your browser; nothing is sent.
 
 ## Embedded content
 
-The [Wiring](build/wiring.md) page embeds an interactive diagram from Cirkit
+The [build guide](build/index.md) embeds, in step 4, an interactive diagram from Cirkit
 Designer. When you open that page, your browser loads it directly from
 app.cirkitdesigner.com, which tells the provider your IP address. The
 [Cirkit Designer privacy policy](https://www.cirkitdesigner.com/privacy-policy.html)

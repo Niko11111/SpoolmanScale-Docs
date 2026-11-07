@@ -115,7 +115,7 @@ sie aber auch ein Backend nutzen, das im Internet läuft.</small></p>
 | Wägezelle | 2 kg Einpunkt (5 kg geht auch) |
 | Gehäuse | 3D-gedruckt, kostenlos auf MakerWorld |
 
-Etwa **50 bis 60 Euro** an Teilen. Einzelheiten in der
+Etwa **60 bis 75 Euro** an Teilen. Einzelheiten in der
 [Stückliste](build/bom.md).
 
 ---
@@ -125,10 +125,8 @@ Etwa **50 bis 60 Euro** an Teilen. Einzelheiten in der
 === "Ich will eine bauen"
 
     1. [Teile kaufen](build/bom.md)
-    2. [Gehäuse drucken](build/case.md)
-    3. [Verkabeln](build/wiring.md)
-    4. [Zusammenbauen](build/assembly.md)
-    5. [Flashen und einrichten](use/index.md)
+    2. [Bauanleitung in 8 Schritten](build/index.md): flashen, verkabeln,
+       zusammenbauen, kalibrieren
 
 === "Ich habe schon eine"
 

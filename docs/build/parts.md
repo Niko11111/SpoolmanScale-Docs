@@ -48,16 +48,13 @@ Reads and writes NFC tags.
 | I2C address | `0x24` |
 | Frequency | 13.56 MHz |
 | Protocol | ISO 14443A |
-| Pins | SDA `GPIO10`, SCL `GPIO11`, RST `GPIO14` (pin 7, brown) - see [Wiring](wiring.md) |
+| Pins | SDA `GPIO10`, SCL `GPIO11`, RST `GPIO14` (pin 7, brown), see [Wiring](wiring.md) |
 
-!!! danger "Set the DIP switches before you solder"
-    The PN532 has to be in **I2C mode**: **SW1 = ON**, **SW2 = OFF**. In HSU or
-    SPI mode it does not answer on the I2C bus at all. Changing the switches
-    after the module is mounted is awkward, so do it first.
-
-!!! warning "5V, and not through the NAU7802"
-    The PN532 needs 5V from pin 1 of the I/O cable. The NAU7802's STEMMA QT
-    passthrough only carries 3.3V - do not daisy-chain through it.
+- **DIP switches to I2C**: SW1 = ON, SW2 = OFF. In HSU or SPI mode it does
+  not answer on the I2C bus at all. Photos in the
+  [build guide, step 3](index.md#3-pn532-switches-to-i2c).
+- **5 V from pin 1**, never through the NAU7802's STEMMA QT connector (3.3 V
+  only).
 
 What it can and cannot read is on the [NFC tags](../use/tags.md) page.
 
@@ -84,13 +81,10 @@ The load cell's four wires go to the screw terminals:
 | White | `A+` | Signal + |
 | Green | `A-` | Signal - |
 
-!!! tip "Numbers going down when you add weight"
-    A+ and A- are swapped. See
-    [Load cell reversed](../help/index.md#load-cell-reversed).
-
-!!! warning "Third party STEMMA QT cables"
-    On ready-made cables from third parties the pin order often does not match
-    the WT32 cable. Check wire by wire rather than trusting colours.
+If the numbers go down when you add weight, A+ and A- are swapped, see
+[Load cell reversed](../help/index.md#load-cell-reversed). On ready-made
+STEMMA QT cables from third parties the pin order often does not match: check
+wire by wire, see [Connector pin order](wiring.md#connector-pin-order).
 
 ---
 

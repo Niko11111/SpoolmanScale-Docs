@@ -123,4 +123,4 @@ Bottom right. Four tiles:
 | **Connection** | WiFi, Bluetooth and the label printer, filament manager with address and credentials, **More options** for the active backend |
 | **Scale** | **Show the AMS** (FilaMan and BamBuddy, with an AMS), [bag weight](weighing.md), [drying reminder](drying.md), location on removal, [tag writing](tags.md), last used mode, calibration, **Scale fitted** |
 | **Display** | brightness, dim after, screen off after, deep sleep after |
-| **System** | [web interface](web.md), [firmware](updating.md), language with time zone and date format, info, [NFC reset check](../build/wiring.md#after-the-rewiring), restart, factory reset |
+| **System** | [web interface](web.md), [firmware](updating.md), language with time zone and date format, info, [NFC reset check](../help/pn532-reset.md), restart, factory reset |

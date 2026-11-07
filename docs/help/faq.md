@@ -48,8 +48,8 @@ reader as missing.
 
 - Look closely: the switches are tiny, and one **resting halfway** between the
   two positions is the classic case. Push each one firmly all the way.
-- Set them **before** soldering and assembly if you can. Details and photos on
-  [The parts in detail](../build/parts.md#pn532-nfc-reader).
+- Set them **before** soldering and assembly if you can. Details and photos in
+  the [build guide, step 3](../build/index.md#3-pn532-switches-to-i2c).
 - The module only reads the switches when it powers up. After changing them,
   unplug the scale completely and plug it in again.
 

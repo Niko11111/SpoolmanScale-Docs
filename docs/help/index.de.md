@@ -95,7 +95,7 @@ melden, ohne dass er arbeiten kann.
     das ein Ausgang des Moduls ist statt seines Reset-Eingangs - es erreicht
     also kein Reset den Chip, und Aus- und wieder Einstecken ist der einzige
     harte Reset. Auf RSTPDN umgelötet ist das behoben, siehe
-    [Verkabelung](../build/wiring.de.md#nach-dem-umloten). Die Waage misst die
+    [PN532-Reset nachrüsten](pn532-reset.md). Die Waage misst die
     Leitung selbst und benutzt sie erst, wenn die Prüfung bestanden ist.
 
 ---
