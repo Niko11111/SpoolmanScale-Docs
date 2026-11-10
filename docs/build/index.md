@@ -203,9 +203,28 @@ Tighten both pairs firmly; the cell must not have any play.
 
 ## 7. Fit the USB-C socket, close the case
 
-The USB-C panel mount has to be trimmed: cut the plug housing back in small
-pieces with a utility knife until it no longer sticks out past the edge of the
-display. Then press the display into the case. It holds without screws.
+The angled plug of the USB-C panel mount needs more room next to the board than
+the display leaves it out of the box. A printed bracket, the **PCB Offset
+Mount**, moves the board a little further in, so nothing has to be cut off the plug any more. The
+bracket is on the same print plate as the base.
+
+Work slowly, the ribbon cable and its connector are delicate:
+
+1. Unplug the I/O cable from the board.
+2. Open the latch on the ribbon cable connector and pull the cable out without
+   yanking it.
+3. Carefully free the board from its plastic holder on the display.
+4. Fit the bracket into the holder (photos 1 and 2).
+5. Put the board into the bracket, plug the ribbon cable back in and close the
+   latch, then plug the I/O cable back in (photo 3).
+6. Plug in the USB-C panel mount and press the display into the case (photo 4).
+   It holds without screws.
+
+If the display stays dark later, check the ribbon cable first.
+
+![Four photos: the PCB Offset Mount, fitted in the display, with the board and the angled USB-C plug, installed in the case](../assets/images/community/usb_offset_bracket.jpg){ width="480" }
+
+*Bracket and photos: thomasflummer. Tap to enlarge.*
 
 **Before you close it, check these three things.** Almost every support
 request came down to one of them:
@@ -219,8 +238,6 @@ request came down to one of them:
   cell under strain.
 
 ??? more "Photos of the assembly"
-    ![Display with the USB-C socket](../assets/images/assembly_5.jpeg)
-    ![Display with the USB-C socket, close-up](../assets/images/assembly_6.jpeg)
     ![Case with load cell and NAU7802](../assets/images/assembly_7.jpeg)
     ![PN532 before it goes into its mount](../assets/images/assembly_8.jpeg)
     ![Everything wired, case open](../assets/images/assembly_9.jpeg)

@@ -22,18 +22,20 @@ For reference: screws and photos. The steps are in the
 
 ---
 
-## Trimming the USB-C panel mount
+## PCB Offset Mount for the USB-C socket
 
-The plug housing sticks out past the edge of the display. Trim it with a
-utility knife in small pieces until it sits flush.
+The printed bracket moves the board a little further in, so the angled plug of
+the panel mount fits without cutting anything off. It is on the same print plate
+as the base. The steps are in
+[step 7 of the build guide](index.md#7-fit-the-usb-c-socket-close-the-case).
+
+![Four photos: the PCB Offset Mount, fitted in the display, with the board and the angled USB-C plug, installed in the case](../assets/images/community/usb_offset_bracket.jpg){ width="480" }
+
+*Bracket and photos: thomasflummer. Tap to enlarge.*
 
 ---
 
 ## Photos
-
-![Display with the USB-C socket](../assets/images/assembly_5.jpeg){ width="400" }
-
-![Display with the USB-C socket, close-up](../assets/images/assembly_6.jpeg){ width="400" }
 
 ![Case with load cell and NAU7802](../assets/images/assembly_7.jpeg){ width="400" }
 

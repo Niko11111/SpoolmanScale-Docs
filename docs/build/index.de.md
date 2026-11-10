@@ -206,9 +206,28 @@ Beide Paare fest anziehen, die Zelle darf kein Spiel haben.
 
 ## 7. USB-C-Buchse einbauen, Gehäuse schließen
 
-Die USB-C-Einbaubuchse muss gekürzt werden: Schneid das Steckergehäuse mit dem
-Cuttermesser in kleinen Stücken ab, bis es nicht mehr über die Displaykante
-steht. Dann das Display ins Gehäuse drücken. Es hält ohne Schrauben.
+Der gewinkelte Stecker der USB-C-Einbaubuchse braucht neben der Platine mehr
+Platz, als das Display von Haus aus lässt. Ein gedruckter Adapter, der
+**PCB Offset Mount**, rückt die Platine deshalb ein Stück nach innen, abschneiden musst du am Stecker
+nichts mehr. Der Adapter liegt auf derselben Druckplatte wie der Boden.
+
+Arbeite langsam, das Flachbandkabel und sein Stecker sind empfindlich:
+
+1. I/O-Kabel von der Platine abziehen.
+2. Verriegelung am Stecker des Flachbandkabels öffnen und das Kabel
+   herausziehen, ohne daran zu reißen.
+3. Platine vorsichtig aus ihrer Kunststoffhalterung am Display lösen.
+4. Adapter in die Halterung einsetzen (Foto 1 und 2).
+5. Platine in den Adapter setzen, Flachbandkabel wieder einstecken und
+   verriegeln, I/O-Kabel wieder aufstecken (Foto 3).
+6. USB-C-Buchse einstecken und das Display ins Gehäuse drücken (Foto 4). Es
+   hält ohne Schrauben.
+
+Bleibt das Display später dunkel, prüf zuerst das Flachbandkabel.
+
+![Vier Fotos: der PCB Offset Mount, eingesetzt im Display, mit Platine und USB-C-Winkelstecker, eingebaut im Gehäuse](../assets/images/community/usb_offset_bracket.jpg){ width="480" }
+
+*Adapter und Fotos: thomasflummer. Antippen zum Vergrößern.*
 
 **Bevor du zumachst, prüf diese drei Dinge.** Fast jede Supportanfrage lief
 auf einen davon hinaus:
@@ -222,8 +241,6 @@ auf einen davon hinaus:
   und die Zelle verspannen.
 
 ??? more "Fotos vom Zusammenbau"
-    ![Display mit USB-C-Buchse](../assets/images/assembly_5.jpeg)
-    ![Display mit USB-C-Buchse, Nahaufnahme](../assets/images/assembly_6.jpeg)
     ![Gehäuse mit Wägezelle und NAU7802](../assets/images/assembly_7.jpeg)
     ![PN532 vor dem Einsetzen in die Halterung](../assets/images/assembly_8.jpeg)
     ![Alles verkabelt, Gehäuse offen](../assets/images/assembly_9.jpeg)

@@ -22,18 +22,20 @@ Zum Nachschlagen: Schrauben und Fotos. Die Schritte stehen in der
 
 ---
 
-## USB-C-Einbaubuchse kürzen
+## PCB Offset Mount für die USB-C-Buchse
 
-Das Steckergehäuse der Buchse steht über die Displaykante. Kürz es mit dem
-Cuttermesser in kleinen Stücken, bis es bündig sitzt.
+Der gedruckte Adapter rückt die Platine ein Stück nach innen, damit der
+gewinkelte Stecker der Einbaubuchse passt, ohne dass du etwas abschneiden musst.
+Er liegt auf derselben Druckplatte wie der Boden. Die Handgriffe stehen in
+[Schritt 7 der Bauanleitung](index.md#7-usb-c-buchse-einbauen-gehause-schlieen).
+
+![Vier Fotos: der PCB Offset Mount, eingesetzt im Display, mit Platine und USB-C-Winkelstecker, eingebaut im Gehäuse](../assets/images/community/usb_offset_bracket.jpg){ width="480" }
+
+*Adapter und Fotos: thomasflummer. Antippen zum Vergrößern.*
 
 ---
 
 ## Fotos
-
-![Display mit USB-C-Buchse](../assets/images/assembly_5.jpeg){ width="400" }
-
-![Display mit USB-C-Buchse, Nahaufnahme](../assets/images/assembly_6.jpeg){ width="400" }
 
 ![Gehäuse mit Wägezelle und NAU7802](../assets/images/assembly_7.jpeg){ width="400" }
 

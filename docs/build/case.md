@@ -10,6 +10,10 @@ The case is an original design, free on
 | Material | PLA or PETG for the body |
 | Feet | TPU grips better; self-adhesive silicone feet do just as well |
 
+The PCB Offset Mount, a bracket for the board, is on the same plate as the base. Print it
+too, it is fitted in
+[step 7 of the build guide](index.md#7-fit-the-usb-c-socket-close-the-case).
+
 If the display sits too tight, check the first layer for elephant's foot
 before you reach for a knife.
 
