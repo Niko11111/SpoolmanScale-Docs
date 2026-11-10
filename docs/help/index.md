@@ -152,3 +152,6 @@ joints. Also check whether a cable is pressing against the weighing platform.
   itself - network, backend, tags
 - The [Discord](https://discord.gg/K3KmKnrWhP), where the community is happy to
   help
+- An [issue on GitHub](https://github.com/Niko11111/SpoolmanScale/issues) for a
+  bug or a feature request
+- If Discord is not for you: [support@spoolmanscale.com](mailto:support@spoolmanscale.com)

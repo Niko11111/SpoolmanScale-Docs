@@ -154,3 +154,6 @@ Lötstellen. Prüfe außerdem, ob ein Kabel gegen die Wiegeplattform drückt.
 - [Troubleshooting](troubleshooting.md) für Probleme, die die Waage nicht selbst
   erkennen kann - Netzwerk, Backend, Tags
 - Der [Discord](https://discord.gg/K3KmKnrWhP), dort hilft die Community gern
+- Ein [Issue auf GitHub](https://github.com/Niko11111/SpoolmanScale/issues) für
+  einen Fehler oder einen Wunsch
+- Falls Discord nichts für dich ist: [support@spoolmanscale.com](mailto:support@spoolmanscale.com)

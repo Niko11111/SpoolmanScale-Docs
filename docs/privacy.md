@@ -5,7 +5,7 @@ counts no visits and shows no ads.
 
 ## Responsible
 
-Nikolai Herrmann, email: cognac-passage-4v@icloud.com
+Nikolai Herrmann, email: [support@spoolmanscale.com](mailto:support@spoolmanscale.com)
 
 ## Hosting on GitHub Pages
 
@@ -56,4 +56,4 @@ processing of your data, to data portability and to object to processing
 (Art. 15 to 21 GDPR). Write to the email address above. You can also lodge a
 complaint with a data protection supervisory authority.
 
-As of October 2026
+As of November 2026

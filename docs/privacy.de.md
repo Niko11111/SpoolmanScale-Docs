@@ -5,7 +5,7 @@ Cookies, misst keine Besuche und bindet keine Werbung ein.
 
 ## Verantwortlich
 
-Nikolai Herrmann, E-Mail: cognac-passage-4v@icloud.com
+Nikolai Herrmann, E-Mail: [support@spoolmanscale.com](mailto:support@spoolmanscale.com)
 
 ## Hosting bei GitHub Pages
 
@@ -59,4 +59,4 @@ die Verarbeitung (Art. 15 bis 21 DSGVO). Schreib dafür an die E-Mail-Adresse
 oben. Außerdem kannst du dich bei einer Datenschutz-Aufsichtsbehörde
 beschweren.
 
-Stand: Oktober 2026
+Stand: November 2026

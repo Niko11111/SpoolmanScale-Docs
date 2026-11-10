@@ -60,3 +60,6 @@ from MakerWorld, Discord and the firmware README.
 ## Contributing
 
 Found an error or want to add something? PRs welcome!
+
+Questions about the scale itself go to the [Discord](https://discord.gg/K3KmKnrWhP). Discord not for
+you? Email [support@spoolmanscale.com](mailto:support@spoolmanscale.com).
