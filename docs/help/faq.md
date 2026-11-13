@@ -11,9 +11,9 @@ The questions that come up again and again, on Discord and on MakerWorld.
 Not yet, but a small batch is on the roadmap, for everyone who would rather
 skip ordering the parts and putting them together. Before that, the legal side
 of selling electronics has to be cleared, for other countries too, and the
-price has to work for both sides. There is no date yet. Interested? Email
-[support@spoolmanscale.com](mailto:support@spoolmanscale.com): the more people ask, the sooner it can
-happen. News comes first on
+price has to work for both sides. There is no date yet. Interested? Join the waitlist on
+[www.spoolmanscale.com](https://spoolmanscale.com/?ref=docs#kit): the more people sign up, the
+sooner it can happen. News comes first on
 [Discord](https://discord.gg/K3KmKnrWhP) and on Instagram at
 [@spoolmanscale](https://www.instagram.com/spoolmanscale/).
 

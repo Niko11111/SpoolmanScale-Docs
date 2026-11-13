@@ -112,7 +112,8 @@ also use a backend that runs on the internet.</small></p>
 | Load cell | 2 kg single point (5 kg works too) |
 | Enclosure | 3D printed, free on MakerWorld |
 
-Around **€60 to €75** in parts. Details on the
+Around **€60 to €75** in parts. Thanks to the new EU duty on parcels from
+China, it is around **€100** if you order from the EU. Details on the
 [bill of materials](build/bom.md).
 
 ---

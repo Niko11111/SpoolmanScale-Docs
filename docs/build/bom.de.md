@@ -73,8 +73,8 @@ vorhanden** ausschalten.
 
 Das meiste kommt aus China, rechne mit **6 bis 15 Tagen** Lieferzeit.
 
-Seit den neuen EU-Regeln für Einfuhren kann eine Bestellung bei AliExpress
-durch Zoll und Gebühren teurer werden. Es lohnt sich, die Teile einzeln zu
+Mit dem neuen EU-Zoll auf Pakete aus China kostet eine Bestellung bei
+AliExpress aus der EU eher **100 Euro**. Es lohnt sich, die Teile einzeln zu
 suchen: Elektronikhändler wie [Digi-Key](https://www.digikey.com) liefern ab
 einem Mindestbestellwert versandkostenfrei, nach Europa ab 75 Euro. Je nach
 Land gibt es einige Teile auch bei Amazon, eBay oder einem Händler vor Ort.

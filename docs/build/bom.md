@@ -72,8 +72,8 @@ scale → Scale fitted**.
 
 Most of it ships from China, expect **6 to 15 days**.
 
-If you order from the EU, the new import rules can make an AliExpress order
-more expensive through customs and fees. It pays to look for the parts one by
+If you order from the EU, the new EU duty on parcels from China brings an
+AliExpress order to around **€100**. It pays to look for the parts one by
 one: electronics distributors such as [Digi-Key](https://www.digikey.com) ship
 for free above a minimum order, to Europe from €75. Depending on your country,
 some parts are also on Amazon, eBay or at a local shop.

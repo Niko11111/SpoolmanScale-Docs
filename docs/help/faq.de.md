@@ -12,8 +12,8 @@ Im Moment nicht, aber eine kleine Serie steht auf der Roadmap, für alle, die di
 Bestellung der Teile und den Zusammenbau lieber auslassen. Vorher sind noch die
 rechtlichen Fragen zum Verkauf von Elektronik zu klären, auch für andere Länder,
 und der Preis muss für beide Seiten stimmen. Einen Termin gibt es noch nicht.
-Interesse? Schreib an [support@spoolmanscale.com](mailto:support@spoolmanscale.com): je mehr
-fragen, desto eher klappt es.
+Interesse? Trag dich auf [www.spoolmanscale.com](https://spoolmanscale.com/?ref=docs#kit) in
+die Warteliste ein: je mehr sich eintragen, desto eher klappt es.
 Neuigkeiten kommen zuerst auf [Discord](https://discord.gg/K3KmKnrWhP) und auf
 Instagram unter [@spoolmanscale](https://www.instagram.com/spoolmanscale/).
 

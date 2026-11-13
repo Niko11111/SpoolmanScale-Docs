@@ -115,8 +115,9 @@ sie aber auch ein Backend nutzen, das im Internet läuft.</small></p>
 | Wägezelle | 2 kg Einpunkt (5 kg geht auch) |
 | Gehäuse | 3D-gedruckt, kostenlos auf MakerWorld |
 
-Etwa **60 bis 75 Euro** an Teilen. Einzelheiten in der
-[Stückliste](build/bom.md).
+Etwa **60 bis 75 Euro** an Teilen. Dank des neuen EU-Zolls auf Pakete aus
+China sind es bei einer Bestellung aus der EU eher **100 Euro**. Einzelheiten
+in der [Stückliste](build/bom.md).
 
 ---
 

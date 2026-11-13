@@ -20,8 +20,8 @@ Everything is in the [bill of materials](bom.md): WT32-SC01 Plus, PN532,
 NAU7802, 2 kg load cell, USB-C panel mount, screws, wire. Plan on **€60 to
 €75** and **6 to 15 days** of shipping.
 
-If you order from the EU, the new import rules can make an AliExpress order
-more expensive than expected through customs and fees. It pays to look for the
+If you order from the EU, the new EU duty on parcels from China brings an
+AliExpress order to around **€100**. It pays to look for the
 parts one by one: electronics distributors such as
 [Digi-Key](https://www.digikey.com) ship for free above a minimum order, to
 Europe from €75. Depending on your country, some parts are also on Amazon, eBay

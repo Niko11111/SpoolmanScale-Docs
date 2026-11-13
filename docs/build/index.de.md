@@ -21,8 +21,8 @@ Alles steht in der [Stückliste](bom.md): WT32-SC01 Plus, PN532, NAU7802,
 2-kg-Wägezelle, USB-C-Einbaubuchse, Schrauben, Litze. Rechne mit **60 bis 75
 Euro** und **6 bis 15 Tagen** Lieferzeit.
 
-Seit den neuen EU-Regeln für Einfuhren kann eine Bestellung bei AliExpress
-durch Zoll und Gebühren teurer werden als gedacht. Es lohnt sich, die Teile
+Mit dem neuen EU-Zoll auf Pakete aus China kostet eine Bestellung bei
+AliExpress aus der EU eher **100 Euro**. Es lohnt sich, die Teile
 einzeln zu suchen: Elektronikhändler wie
 [Digi-Key](https://www.digikey.com) liefern ab einem Mindestbestellwert
 versandkostenfrei, nach Europa ab 75 Euro. Je nach Land gibt es einige Teile
