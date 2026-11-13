@@ -64,6 +64,9 @@ extra_javascript:
 
 extra:
   social:
+    - icon: material/web
+      link: https://spoolmanscale.com/?ref=docs
+      name: spoolmanscale.com
     - icon: fontawesome/brands/github
       link: https://github.com/Niko11111/SpoolmanScale
       name: GitHub

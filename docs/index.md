@@ -17,6 +17,7 @@
 
   <div class="tx-hero__cta" markdown>
   [:material-hammer-wrench: Build one](build/index.md){ .primary }
+  [:material-web: Website](https://spoolmanscale.com/?ref=docs){ .secondary }
   [:material-printer-3d-nozzle: MakerWorld](https://makerworld.com/models/2713675){ .secondary }
   [:fontawesome-brands-github: GitHub](https://github.com/Niko11111/SpoolmanScale){ .secondary }
   </div>
@@ -26,6 +27,11 @@
   <img src="assets/images/product_3.jpeg" alt="SpoolmanScale" />
   <img src="assets/images/product_4.jpeg" alt="SpoolmanScale" />
 </div>
+
+!!! info "New: spoolmanscale.com"
+    Everything in one place on the brand-new website, [www.spoolmanscale.com](https://spoolmanscale.com/?ref=docs).
+    Don't want to source and solder the parts yourself? I'm working on a kit,
+    [join the waitlist](https://spoolmanscale.com/?ref=docs#kit).
 
 ---
 
