@@ -124,5 +124,6 @@ For the scale to drive a label printer, the printer needs three things:
 ## Label sizes
 
 The most common sizes are tuned, **40 x 30** and **50 x 30 mm**, plus
+**60 x 30 mm** for the 3 inch Phomemo printers (M220, M200, M221, PM245-BT) and
 **12 x 40 mm** for the [NIIMBOT D110](#tape). Need another one? Tell us on [GitHub](https://github.com/Niko11111/SpoolmanScale/issues) or
 on [Discord](../help/contributing.md). What several people need, we add.

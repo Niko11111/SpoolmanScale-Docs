@@ -126,6 +126,7 @@ Damit die Waage einen Etikettendrucker ansprechen kann, braucht er drei Dinge:
 ## Etikettengrößen
 
 Abgestimmt sind die gängigsten Größen, **40 x 30** und **50 x 30 mm**, dazu
+**60 x 30 mm** für die 3-Zoll-Drucker von Phomemo (M220, M200, M221, PM245-BT) und
 **12 x 40 mm** für den [NIIMBOT D110](#tape). Du brauchst eine andere? Schreib uns auf
 [GitHub](https://github.com/Niko11111/SpoolmanScale/issues) oder im
 [Discord](../help/contributing.md). Was mehrere brauchen, nehmen wir auf.
