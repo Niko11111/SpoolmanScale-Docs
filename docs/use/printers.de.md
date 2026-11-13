@@ -65,6 +65,7 @@ Farbband. Rollen anderer Hersteller haben wir nicht ausprobiert.
 | NIIMBOT B1, B21, B203 | 50 x 30 mm | durch Nutzer bestätigt |
 | Phomemo M120, M200, M221 | 40 x 30 mm | experimentell |
 | NIIMBOT D110, D110 M | 12 x 40 mm, ohne QR-Code ([Schmales Band](#tape)) | D110 M durch Nutzer bestätigt, D110 experimentell |
+| Phomemo PM245-BT, PM241-BT | 40 x 30, 50 x 30 mm | PM245-BT durch Nutzer bestätigt, PM241-BT experimentell |
 
 Alle drucken per Thermodirekt mit 203 dpi, also gilt die Trockner-Warnung auch
 hier. **Durch Nutzer bestätigt** heißt: Jemand aus der Community hat darauf

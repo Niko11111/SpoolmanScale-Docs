@@ -66,6 +66,7 @@ Third-party rolls we have not tried.
 | NIIMBOT B1, B21, B203 | 50 x 30 mm | confirmed by users |
 | Phomemo M120, M200, M221 | 40 x 30 mm | experimental |
 | NIIMBOT D110, D110 M | 12 x 40 mm, no QR code ([Narrow tape](#tape)) | D110 M confirmed by users, D110 experimental |
+| Phomemo PM245-BT, PM241-BT | 40 x 30, 50 x 30 mm | PM245-BT confirmed by users, PM241-BT experimental |
 
 All of them print direct thermal at 203 dpi, so the dryer warning applies here
 too. **Confirmed by users** means someone from the community printed on it; we
